@@ -1,13 +1,13 @@
 /* Colori personalizzati */
 .navbar-custom {
-    background-color: #48D1CC; /* Turchese meno acceso */
+    background-color: #48D1CC; /* Turchese per lo sfondo della navbar*/
 }
 .footer-custom {
-    background-color: #48D1CC; /* Turchese meno acceso */
+    background-color: #48D1CC; /* Turchese per lo sfondo del footer*/
     color: white;
 }
 .text-custom {
-    color: #48D1CC; /* Turchese meno acceso per il testo */
+    color: #48D1CC; /* Turchese per il testo */
 }
 .welcome-section {
     text-align: center;
