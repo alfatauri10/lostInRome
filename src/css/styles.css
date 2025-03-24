@@ -1,0 +1,32 @@
+/* Colori personalizzati */
+.navbar-custom {
+    background-color: #48D1CC; /* Turchese meno acceso */
+}
+.footer-custom {
+    background-color: #48D1CC; /* Turchese meno acceso */
+    color: white;
+}
+.text-custom {
+    color: #48D1CC; /* Turchese meno acceso per il testo */
+}
+.welcome-section {
+    text-align: center;
+    padding: 50px 0;
+}
+.welcome-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.flag-button {
+    width: 100px; /* Dimensioni uguali per entrambe le bandiere */
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+.flag-button:hover {
+    transform: scale(1.1);
+}
