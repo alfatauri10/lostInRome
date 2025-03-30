@@ -1,13 +1,13 @@
 
 
 # Software Requirements Specification
-# for
-# NOME_SITO
-# una guida turistica Web Bilingue
+ for
+ NOME_SITO
+ una guida turistica Web Bilingue
 
-# Version 1.0 approved
-# Prepared by Alfandari Jacopo
-# company_name
+ Version 1.0 approved
+ Prepared by Alfandari Jacopo
+ company_name
 Data ultima modifica: 27/03/2025
 
 
