@@ -1,12 +1,14 @@
 
 
-# Software Requirements Specification (SRS)
+# Software Requirements Specification (SRS) [link al GoogleDoc](https://docs.google.com/document/d/1kh7-5ShR9EmtprC4yIMX8gcGK76Z6gOhT0xRadCtVKs/edit?usp=sharing)
 for
 
-# **LostInRome**
+# [**LostInRome**](https://lostinrome.netlify.app/)
 
                                                              una guida bilingue per chi si perde nei vicoli di Roma
- 
+							   
+[visita il sito](https://lostinrome.netlify.app/)
+
 Prepared by _**Alfandari Jacopo**_
 
  
