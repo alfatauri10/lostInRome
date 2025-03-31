@@ -5,7 +5,7 @@ for
 
 # **LostInRome**
 
-_**una guida per chi si perde nei vicoli di Roma**_
+_**una guida bilingue per chi si perde nei vicoli di Roma**_
  
 Prepared by _**Alfandari Jacopo**_
 
