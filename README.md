@@ -3,13 +3,12 @@
 # Software Requirements Specification (SRS)
 for
 
-🛠️ **TODO**: _NOME_SITO_
+# **LostInRome**
 
-	una guida turistica Web Bilingue
-     
+_**una guida per chi si perche nei vicoli di roma**_
+ 
 Prepared by _**Alfandari Jacopo**_
 
-🛠️ **TODO**: _company_name_
  
 **Data ultima modifica:** 27/03/2025
 
