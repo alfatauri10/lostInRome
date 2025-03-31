@@ -5,19 +5,19 @@ for
 
 # **LostInRome**
 
-_**una guida per chi si perche nei vicoli di roma**_
+_**una guida per chi si perde nei vicoli di Roma**_
  
 Prepared by _**Alfandari Jacopo**_
 
  
-**Data ultima modifica:** 27/03/2025
+**Data ultima modifica:** 31/03/2025
 
 # Cronologia versioni SRS
 
 | Version  | Data Ultima modifica | Autore     |   Stato    |
 |----------|----------------------|------------|----------- |
 | v1.0     | 27/03/2025           | JAlfandari |Approved ☑️  |
-|          |                      |            |            |
+| v1.1     | 31/03/2025           | JAlfandari |Approved ☑️  |
 
  
 
@@ -145,18 +145,36 @@ Inoltre, saranno presenti tre icone dei seguenti social network: Facebook, Insta
  
 
 # Stack tecnologico ⚙️
+ # LINGUAGGI DI PROGRAMMAZIONE
 - HTML5
 - CSS
 - JavaScript
+- Bootstrap
+  
+ # DIPENDENZE, LIBRERIE E ALTRI FRAMEWORK
 - Google Maps Embed
-- GitHub
+- AMBIENTE DI SVILUPPO
+- IntelliJ
 
-**AMBIENTI DI SVILUPPO**
-- INTELLIJ COME IDE
-- cross-browser (chrome, safari, firefox, ecc…)
+ # STRUMENTI E PIATTAFORME
+ - Per il **Versioning**: GitHub 
+ - **Deployment** e **Hosting**: Netlify 
 
-**Repository GitHub per il VCS (Versioning Control Software)**
-- A questo LINK c’è la repository del progetto.
+ # REQUISITI TECNICI
+ - **Cross-browser compatibility** (Browser supportati: Chrome, Firefox, Safari, Edge)
+ - **Responsive**: Bootstrap
+
+# Repository GitHub per il VCS (Versioning Control Software)
+
+A questo LINK c’è la repository del progetto.
+
+Url del progetto: https://github.com/alfatauri10/4H_TravelGuide
+
+# Deployment, Hosting e dominio - Netlify
+Come sito di hosting abbiamo scelto di usare **Netlify** a cui è stata collegata la repository **GitHub** del progetto. 
+
+L’URL del sito è https://lostinrome.netlify.app.
+
 
 # 4. TEST SUITE
 # 4.1 RF-9 TEST CASES HOMEPAGE
