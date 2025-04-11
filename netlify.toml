@@ -1,0 +1,20 @@
+[build]
+
+publish = "."
+command = "npm install && npm run build"   # Se hai uno script di build
+functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "18"  # Specifica la versione di Node.js
+  NPM_FLAGS = "--legacy-peer-deps"  # Se hai problemi con le dipendenze
+
+
+# Impostazioni di sicurezza (come nel tuo esempio)
+[[headers]]
+for = "/*"
+
+[headers.values]
+X-Frame-Options = "DENY"
+X-XSS-Protection = "1; mode=block"
+Referrer-Policy = "same-origin"
+Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
