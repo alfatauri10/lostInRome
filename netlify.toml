@@ -8,7 +8,6 @@ functions = "netlify/functions"
   NODE_VERSION = "18"  # Specifica la versione di Node.js
   NPM_FLAGS = "--legacy-peer-deps"  # Se hai problemi con le dipendenze
 
-
 # Impostazioni di sicurezza (come nel tuo esempio)
 [[headers]]
 for = "/*"
