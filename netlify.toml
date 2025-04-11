@@ -1,7 +1,7 @@
 [build]
-base = "."                  # Root del progetto (dove si trova netlify.toml)
 publish = "."               # Perché index.html è nella root (non serve "lostInRome")
 command = "npm run build"   # Se hai uno script di build
+
 
 # Se usi Gulp per processare i file (da gulpfile.js)
 [build.environment]
