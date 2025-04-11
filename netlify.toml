@@ -1,5 +1,5 @@
 [build]
-base = "."                  # La root del repository (dove si trova netlify.toml)
+base = "lostInRome"                  # La root del repository (dove si trova netlify.toml)
 publish = "lostInRome"      # La cartella che contiene index.html
 command = "npm run build"   # Il tuo comando di build (se necessario)
 
