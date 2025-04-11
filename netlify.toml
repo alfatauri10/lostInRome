@@ -1,7 +1,8 @@
 [build]
-publish = "."               # Perché index.html è nella root (non serve "lostInRome")
+base = "lostInRome"
+publish = "lostInRome/"               
 command = "npm install && npm run build"   # Se hai uno script di build
-functions = "netlify/functions"
+functions = "lostInRome/netlify/functions"
 
 [build.environment]
   NODE_VERSION = "18"  # Specifica la versione di Node.js
