@@ -1250,9 +1250,12 @@ blockquote {
     position: absolute;
     color: #a1865e;
     font-size: 1.2rem;
-    top: 60%; left: 110%;
-    transform: translateY(-50%);
+    top: 60%; left: 110%; bottom:50%;
+    animation: rotateEmoji 2s infinite ease-in-out;
 }
+
+
+
 /*logo animato + motto*/
 
 /* separatore | prima del motto (in alternativa agli altri separatori)
@@ -1296,33 +1299,41 @@ blockquote {
     }
 }
 
-
 .motto-text-body {
     font-family: 'Allison', cursive;
     font-size: 2.5rem;
     color: #6b522a;
-    position: relative;
     display: none;
+    width: 100%; /* Occupa tutta la larghezza */
+    text-align: center !important;; /* Centra il testo */
+    position: relative;
+    padding: 0 40px; /* Spazio per l'emoji */
+    box-sizing: border-box;
 }
-.motto-text-body:after {
-    content: " 🧸";
-    position: absolute;
-    color: #a1865e;
-    font-size: 1.2rem;
-    top: 60%; left: 110%;
-    transform: translateY(-50%);
+
+@keyframes rotateEmoji {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
 }
-/* Regola applicata SOLO per dispositivi con larghezza ≤ 768px (tipico breakpoint per mobile) */
 
 @media (max-width: 768px) {
     .motto-text-body {
-        text-align: center;
         display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
+        margin: 0 auto;
+    }
+
+    .motto-text-body::after {
+        content: " 🧸";
+        display: inline-block; /* Importante per il centraggio */
+        color: #a1865e;
+        font-size: 1.2rem;
+        margin-left: 8px;
+        animation: rotateEmoji 2s infinite ease-in-out;
+        vertical-align: middle;
     }
 }
-
 
 /*fine stile motto*/
