@@ -1,58 +1,133 @@
-
 <!DOCTYPE html>
 <html lang="it">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>4H Travel Rome</title>
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Collegamento al file CSS personalizzato -->
-        <link href="src/css/styles.css" rel="stylesheet">
-    </head>
-    <body>
 
-        <!-- Placeholder (segnaposto) per la navbar -->
-        <div id="navbarPlaceHolder"></div>
+<head>
+  <meta charset="utf-8">
+  <title>Lost in Rome | Scopri i Monumenti</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="src/plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="src/plugins/slick/slick.css">
+  <link rel="stylesheet" href="src/plugins/themify-icons/themify-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        <!-- Sezione di benvenuto con immagine prima del testo -->
-        <div class="welcome-section">
-            <div class="container">
-                <img src="src/resources/images/colosseoDisegno.jpeg" alt="Benvenuto" class="welcome-image">
-                <h1>Lost in Rome</h1>
-                <p class="lead">... per chi si perde nei vicoli di Roma!</p>
-                <div class="d-flex justify-content-center">
-                    <a href="https://www.travel.com/en" target="_blank">
-                        <img src="https://flagcdn.com/gb.svg" alt="English" class="flag-button">
-                    </a>
-                    <a href="https://www.travel.com/it" target="_blank">
-                        <img src="https://flagcdn.com/it.svg" alt="Italiano" class="flag-button">
-                    </a>
-                </div>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link href="/src/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Header -->
+<div id = "headerPlaceHolder"></div>
+
+<!-- Main Content -->
+<div class="page-content">
+  <!-- Featured Posts -->
+  <section class="my-4">
+    <div class="container-fluid px-0">
+      <div class="row featured-post-slider">
+        <!-- Ripeti per ogni immagine (1-6) -->
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="/src/images/copertineMonuments/post-2.jpg" alt="post-thumb">
+            <div class="card-img-overlay">
+              <div class="card-content">
+                <p class="text-uppercase">Altare Della Patria</p>
+                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html"></a></h4>
+                <a class="btn btn-outline-light" href="src/pages/monument/it/altareDellaPatria.html">vai al monumento</a>
+              </div>
             </div>
+          </article>
         </div>
 
-
-        <!-- Contenuto principale -->
-        <div class="container mt-5 text-center">
-            <h2 class="text-custom">Contatti</h2>
-            <p>Email: <a href="mailto:info@travel.com">info@travel.com</a></p>
-            <p>Visita il nostro sito: <a href="http://www.travel.com" target="_blank">www.travel.com</a></p>
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="/src/images/copertineMonuments/post-2.jpg" alt="post-thumb">
+            <div class="card-img-overlay">
+              <div class="card-content">
+                <p class="text-uppercase">Ara Pacis</p>
+                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html"></a></h4>
+                <a class="btn btn-outline-light" href="src/pages/monument/it/araPacis.html">vai al monumento</a>
+              </div>
+            </div>
+          </article>
         </div>
 
-        <!-- Placeholder per il footer -->
-        <div id="footerPlaceHolder"></div>
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="/src/images/copertineMonuments/post-3.jpg" alt="post-thumb">
+            <div class="card-img-overlay">
+              <div class="card-content">
+                <p class="text-uppercase">Fontana Di Trevi</p>
+                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html"></a></h4>
+                <a class="btn btn-outline-light" href="src/pages/monument/it/fontanaDiTrevi.html">vai al monumento</a>
+              </div>
+            </div>
+          </article>
+        </div>
 
-        <!-- Bootstrap JS e dipendenze -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="/src/images/copertineMonuments/post-4.jpg" alt="post-thumb">
+            <div class="card-img-overlay">
+              <div class="card-content">
+                <p class="text-uppercase">Pantheon</p>
+                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html"></a></h4>
+                <a class="btn btn-outline-light" href="src/pages/monument/it/pantheon.html">vai al monumento</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="/src/images/copertineMonuments/post-5.jpg" alt="post-thumb">
+            <div class="card-img-overlay">
+              <div class="card-content">
+                <p class="text-uppercase">Piazza Del Popolo</p>
+                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html"></a></h4>
+                <a class="btn btn-outline-light" href="src/pages/monument/it/piazzaDelPopolo.html">vai al monumento</a>
+              </div>
+            </div>
+          </article>
+        </div>
 
-        <!-- Script -->
-        <!-- Script inline per includere header, welcome e footer-->
-        <script src="src/js/include.js"></script>
-        <script>
-                includeHTML('src/pages/include/header.html', 'navbarPlaceHolder');
-                includeHTML('src/pages/include/footer.html', 'footerPlaceHolder');
-        </script>
-    </body>
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="/src/images/copertineMonuments/post-5.jpg" alt="post-thumb">
+            <div class="card-img-overlay">
+              <div class="card-content">
+                <p class="text-uppercase">Piazza di Spagna</p>
+                <h4 class="card-title mb-4"><a class="text-white" href="blog-single.html"></a></h4>
+                <a class="btn btn-outline-light" href="src/pages/monument/it/piazzaDiSpagna.html">vai al monumento</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- footer -->
+<div id = "footerPlaceHolder"></div>
+
+<!-- Scripts esterni-->
+<script src="/src/plugins/jQuery/jquery.min.js"></script>
+<script src="/src/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="/src/plugins/slick/slick.min.js"></script>
+<script src="/src/plugins/masonry/masonry.js"></script>
+<script src="/src/plugins/instafeed/instafeed.min.js"></script>
+<script src="/src/plugins/smooth-scroll/smooth-scroll.js"></script>
+<script src="/src/plugins/headroom/headroom.js"></script>
+<script src="/src/plugins/reading-time/readingTime.min.js"></script>
+
+<!-- Scripts di progetto-->
+<script src="/src/js/slider-card.js"></script> <!-- per scorrimento immagini -->
+<script src="/src/js/language-switcher.js"></script> <!-- per lo switch lingua. Va inserito prima di include.js -->
+<script src="/src/js/include.js"></script> <!-- per inclusione pagine al posto dei placeHolder -->
+
+
+</body>
 </html>

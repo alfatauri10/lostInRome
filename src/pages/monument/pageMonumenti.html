@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8">
+  <title>Lost in Rome | Scopri i Monumenti</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/src/plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="/src/plugins/slick/slick.css">
+  <link rel="stylesheet" href="/src/plugins/themify-icons/themify-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link href="/src/css/style.css" rel="stylesheet">
+
+  <style>
+    #googleMap {
+      height: 400px;
+      width: 100%;
+      margin-top: 50px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .map-container {
+      padding: 20px;
+      background-color: #f8f9fa;
+      margin-top: 50px;
+    }
+
+    .map-title {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #056974;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+<!-- Header -->
+<div id = "headerPlaceHolder"></div>
+
+<!-- Main Content -->
+<div class="page-content">
+  <!-- Slider Section -->
+  <section class="slider-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Monument Info (Left) -->
+        <div class="col-lg-5 monument-info">
+          <h2 class="monument-name" id="current-monument">Colosseo</h2>
+          <p class="monument-description" id="current-description">
+            Il Colosseo, originariamente conosciuto come Anfiteatro Flavio, è il più grande anfiteatro del mondo.
+            In grado di contenere un numero di spettatori stimato tra 50.000 e 87.000 unità, è il più importante
+            anfiteatro romano, nonché il più imponente monumento dell'antica Roma che sia giunto fino a noi.
+          </p>
+          <a href="#" class="btn btn-primary">Scopri di più</a>
+        </div>
+
+        <!-- Slider (Right) -->
+        <div class="col-lg-7 slider-container">
+          <div class="monument-slider">
+            <!-- Colore verdino -->
+            <div>
+              <div class="card-img rounded-0 img-fluid w-100" style="height: 400px; background-color: #7fbf7f; display: flex; justify-content: center; align-items: center;">
+                <span style="color: white; font-size: 24px; font-weight: bold;">Colosseo</span>
+              </div>
+            </div>
+
+            <!-- Colore blu -->
+            <div>
+              <div class="card-img rounded-0 img-fluid w-100" style="height: 400px; background-color: #5d8aa8; display: flex; justify-content: center; align-items: center;">
+                <span style="color: white; font-size: 24px; font-weight: bold;">Pantheon</span>
+              </div>
+            </div>
+
+            <!-- Colore beige -->
+            <div>
+              <div class="card-img rounded-0 img-fluid w-100" style="height: 400px; background-color: #f5f5dc; display: flex; justify-content: center; align-items: center;">
+                <span style="color: #333; font-size: 24px; font-weight: bold;">Fontana di Trevi</span>
+              </div>
+            </div>
+
+            <!-- Colore verdino scuro -->
+            <div>
+              <div class="card-img rounded-0 img-fluid w-100" style="height: 400px; background-color: #2e8b57; display: flex; justify-content: center; align-items: center;">
+                <span style="color: white; font-size: 24px; font-weight: bold;">Foro Romano</span>
+              </div>
+            </div>
+
+            <!-- Colore blu scuro -->
+            <div>
+              <div class="card-img rounded-0 img-fluid w-100" style="height: 400px; background-color: #003366; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <span style="color: white; font-size: 24px; font-weight: bold;">Piazza Navona</span>
+                <span style="color: rgba(255,255,255,0.7); font-size: 16px; margin-top: 10px;">(Placeholder colore)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- blog post -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-100">
+        <article data-file="articles/b.html" data-target="article" class="article-full-width">
+          <div class="post-image">
+            <img class="card-img rounded-0 img-fluid w-100" src="/src/images/copertineMonuments/post-2.jpg" alt="post-thumb">
+          </div>
+          <div class="post-content">
+
+            <h4 class="mb-4"><a href="blog-single.html" class="text-dark">Storia e costruzione</a></h4>
+            <p class="mb-0 post-summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+              ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+              ea commodo consequat.</p>
+            <a class="btn btn-transparent mb-4" href="blog-single.html">Continue...</a>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 mb-100">
+        <article data-file="articles/b.html" data-target="article" class="article-full-width article-right">
+          <div class="post-image">
+            <img class="card-img rounded-0 img-fluid w-100" src="/src/images/copertineMonuments/post-2.jpg" alt="post-thumb">
+          </div>
+          <div class="post-content">
+
+            <h4 class="mb-4"><a href="blog-single.html" class="text-dark">Come è usato oggi</a></h4>
+            <p class="mb-0 post-summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+              ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+              ea commodo consequat.</p>
+            <a class="btn btn-transparent mb-4" href="blog-single.html">Continue...</a>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 mb-100">
+        <article data-file="articles/b.html" data-target="article" class="article-full-width">
+          <div class="post-image">
+            <img class="card-img rounded-0 img-fluid w-100" src="/src/images/copertineMonuments/post-2.jpg" alt="post-thumb">
+          </div>
+          <div class="post-content">
+
+            <h4 class="mb-4"><a href="blog-single.html" class="text-dark">Fatti recenti</a></h4>
+            <p class="mb-0 post-summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+              ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+              ea commodo consequat.</p>
+            <a class="btn btn-transparent mb-4" href="blog-single.html">Continue...</a>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 mb-100">
+        <article data-file="articles/b.html" data-target="article" class="article-full-width article-right">
+          <div class="post-image">
+            <img class="card-img rounded-0 img-fluid w-100" src="/src/images/copertineMonuments/post-2.jpg" alt="post-thumb">
+          </div>
+          <div class="post-content">
+
+            <h4 class="mb-4"><a href="blog-single.html" class="text-dark">Leggende e fatti divertenti</a></h4>
+            <p class="mb-0 post-summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+              ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+              ea commodo consequat.</p>
+            <a class="btn btn-transparent mb-4" href="blog-single.html">Continue...</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /blog post -->
+
+<!-- Mappa -->
+<div class="container map-container">
+  <h3 class="map-title">Posizione del monumento</h3>
+  <div id="googleMap"></div>
+</div>
+
+<!-- footer -->
+<div id = "footerPlaceHolder"></div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script>
+    // Monument data
+    const monuments = [
+      {
+        name: "Colosseo",
+        description: "Il Colosseo, originariamente conosciuto come Anfiteatro Flavio, è il più grande anfiteatro del mondo. In grado di contenere un numero di spettatori stimato tra 50.000 e 87.000 unità, è il più importante anfiteatro romano, nonché il più imponente monumento dell'antica Roma che sia giunto fino a noi.",
+        coords: { lat: 41.8902, lng: 12.4924 }
+      },
+      {
+        name: "Pantheon",
+        description: "Il Pantheon è un edificio della Roma antica costruito come tempio dedicato a tutte le divinità. È considerato uno dei migliori esempi di architettura romana grazie alla sua magnifica cupola, che rimane la più grande cupola in calcestruzzo non armato del mondo.",
+        coords: { lat: 41.8986, lng: 12.4769 }
+      },
+      {
+        name: "Fontana di Trevi",
+        description: "La Fontana di Trevi è la più grande e una delle più note fontane di Roma. Resa celebre dal film 'La Dolce Vita' di Fellini, è tradizione lanciare una moneta nella fontana voltando le spalle per assicurarsi un ritorno nella città eterna.",
+        coords: { lat: 41.9009, lng: 12.4833 }
+      },
+      {
+        name: "Foro Romano",
+        description: "Il Foro Romano era il centro della vita pubblica romana per oltre un millennio. Qui si trovavano gli edifici più importanti dell'amministrazione della giustizia e del governo della città, oltre a templi e monumenti commemorativi.",
+        coords: { lat: 41.8925, lng: 12.4853 }
+      },
+      {
+        name: "Piazza Navona",
+        description: "Piazza Navona è una delle più celebri piazze di Roma, costruita sui resti dello Stadio di Domiziano. La piazza ospita tre magnifiche fontane, tra cui la Fontana dei Quattro Fiumi del Bernini, e rappresenta un meraviglioso esempio di urbanistica barocca.",
+        coords: { lat: 41.8992, lng: 12.4731 }
+      }
+    ];
+
+    let map;
+    let marker;
+
+    function initMap() {
+      // Create initial map centered on Colosseum
+      map = new google.maps.Map(document.getElementById("googleMap"), {
+        zoom: 15,
+        center: monuments[0].coords,
+        styles: [
+          {
+            "featureType": "all",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {"color": "#056974"}
+            ]
+          },
+          {
+            "featureType": "poi",
+            "elementType": "all",
+            "stylers": [
+              {"visibility": "off"}
+            ]
+          }
+        ]
+      });
+
+      // Add initial marker
+      marker = new google.maps.Marker({
+        position: monuments[0].coords,
+        map: map,
+        title: monuments[0].name
+      });
+    }
+
+    function updateMap(monumentIndex) {
+      const monument = monuments[monumentIndex];
+
+      // Update map center
+      map.setCenter(monument.coords);
+
+      // Update marker position
+      marker.setPosition(monument.coords);
+      marker.setTitle(monument.name);
+    }
+
+    $(document).ready(function(){
+      // Initialize slider
+      $('.monument-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        fade: false,
+        adaptiveHeight: true,
+        infinite: true,
+        autoplay: false,
+        dots: false
+      });
+
+      // Update info when slide changes
+      $('.monument-slider').on('afterChange', function(event, slick, currentSlide){
+        $('#current-monument').text(monuments[currentSlide].name);
+        $('.monument-description').text(monuments[currentSlide].description);
+
+        // Update map if it's loaded
+        if(typeof google !== 'undefined' && typeof map !== 'undefined') {
+          updateMap(currentSlide);
+        }
+      });
+    });
+</script>
+
+<!-- Replace YOUR_API_KEY with your actual Google Maps API key -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+<script src="/src/js/language-switcher.js"></script> <!-- per lo switch lingua. Va inserito prima di include.js -->
+<script src="/src/js/include.js"></script> <!-- per inclusione pagine al posto dei placeHolder -->
+</body>
+</html>
