@@ -19,11 +19,16 @@ X-XSS-Protection = "1; mode=block"
 Referrer-Policy = "same-origin"
 Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
 
+# risolve il problema del percorso su netlify
+# in locale la base directory è lostInRome mentre su netlify è /
+#quindi in locale i percorsi devono iniziare da /lostInRome/src mentre su netlify da /src/
+#si risolve dicendogli che deve sostituire /lostInRome/src in /src
 [[redirects]]
 from = "/lostInRome/src/*"
 to = "/src/:splat"
 status = 200
 
+#si risolve dicendogli che deve sostituire /lostInRome/index.html in /index.html
 [[redirects]]
 from = "/lostInRome/index.html"
 to = "/index.html"
