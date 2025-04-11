@@ -1302,7 +1302,7 @@ blockquote {
     font-size: 2.5rem;
     color: #6b522a;
     position: relative;
-
+    display: none;
 }
 .motto-text-body:after {
     content: " 🧸";
@@ -1317,11 +1317,12 @@ blockquote {
 @media (max-width: 768px) {
     .motto-text-body {
         text-align: center;
-        display: block; +
+        display: block;
         margin-left: auto;
         margin-right: auto;
         width: 100%;
     }
 }
+
 
 /*fine stile motto*/
