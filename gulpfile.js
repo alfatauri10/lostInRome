@@ -86,6 +86,7 @@ gulp.task("scss:build", function () {
 });
 
 // Javascript
+/*
 gulp.task("js:build", function () {
   return gulp
     .src(path.src.js)
@@ -116,7 +117,25 @@ gulp.task("js:build", function () {
       })
     );
 });
-
+*/
+gulp.task("js:build", function () {
+  return gulp
+    .src(path.src.js)
+    .pipe(
+      comments(`
+  WEBSITE: https://themefisher.com
+  TWITTER: https://twitter.com/themefisher
+  FACEBOOK: https://www.facebook.com/themefisher
+  GITHUB: https://github.com/themefisher/
+  `)
+    )
+    .pipe(gulp.dest(path.build.dirDev + "js/"))
+    .pipe(
+      bs.reload({
+        stream: true,
+      })
+    );
+});
 // Images
 gulp.task("images:build", function () {
   return gulp
