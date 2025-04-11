@@ -1313,7 +1313,7 @@ blockquote {
     transform: translateY(-50%);
 }
 /* Regola applicata SOLO per dispositivi con larghezza ≤ 768px (tipico breakpoint per mobile) */
-/*
+
 @media (max-width: 768px) {
     .motto-text-body {
         text-align: center;
@@ -1323,5 +1323,5 @@ blockquote {
         width: 100%;
     }
 }
-*/
+
 /*fine stile motto*/
