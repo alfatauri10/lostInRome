@@ -1291,8 +1291,37 @@ blockquote {
 /* Stile per dispositivi mobili */
 @media (max-width: 768px) {
     .motto-text {
-        /*display: none; */
+        display: none;
         /* Nascondi il motto su mobile */
     }
 }
+
+
+.motto-text-body {
+    font-family: 'Allison', cursive;
+    font-size: 2.5rem;
+    color: #6b522a;
+    position: relative;
+
+}
+.motto-text-body:after {
+    content: " 🧸";
+    position: absolute;
+    color: #a1865e;
+    font-size: 1.2rem;
+    top: 60%; left: 110%;
+    transform: translateY(-50%);
+}
+/* Regola applicata SOLO per dispositivi con larghezza ≤ 768px (tipico breakpoint per mobile) */
+/*
+@media (max-width: 768px) {
+    .motto-text-body {
+        text-align: center;
+        display: block; +
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+}
+*/
 /*fine stile motto*/
