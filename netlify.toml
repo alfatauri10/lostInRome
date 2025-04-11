@@ -23,3 +23,13 @@ Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
 from = "/lostInRome/src/*"
 to = "/src/:splat"
 status = 200
+
+[[redirects]]
+from = "/lostInRome/index.html"
+to = "/index.html"
+status = 200
+
+[[redirects]]
+from = "/lostInRome/indexEN.html"
+to = "/indexEN.html"
+status = 200
