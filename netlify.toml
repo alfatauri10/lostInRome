@@ -1,13 +1,15 @@
 [build]
-base = "lostInRome"                  # La root del repository (dove si trova netlify.toml)
-publish = "lostInRome"      # La cartella che contiene index.html
-command = "npm run build"   # Il tuo comando di build (se necessario)
+base = "."                  # Root del progetto (dove si trova netlify.toml)
+publish = "."               # Perché index.html è nella root (non serve "lostInRome")
+command = "npm run build"   # Se hai uno script di build
 
+# Se usi Gulp per processare i file (da gulpfile.js)
+[build.environment]
+NODE_VERSION = "18"         # Node.js 18+ consigliato
+
+# Impostazioni di sicurezza (come nel tuo esempio)
 [[headers]]
-for = "/*" # This defines which paths this specific [[headers]] block will cover.
-
+for = "/*"
 [headers.values]
 X-Frame-Options = "DENY"
 X-XSS-Protection = "1; mode=block"
-Referrer-Policy = "same-origin"
-Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
