@@ -2,7 +2,6 @@
 
 const sass = require("gulp-sass")(require("sass"));
 const gulp = require("gulp");
-const gutil = require("gulp-util");
 const sourcemaps = require("gulp-sourcemaps");
 const fileinclude = require("gulp-file-include");
 const autoprefixer = require("gulp-autoprefixer");
@@ -13,210 +12,120 @@ const jshint = require("gulp-jshint");
 const notify = require("gulp-notify");
 const plumber = require("gulp-plumber");
 
-var path = {
+// Configurazione percorsi (senza /dist)
+const path = {
   src: {
-    html: "source/*.html",
-    others: "source/*.+(php|ico|png)",
-    htminc: "source/partials/**/*.htm",
-    incdir: "source/partials/",
-    plugins: "source/plugins/**/*.*",
-    js: "source/js/*.js",
-    scss: "source/scss/**/*.scss",
-    images: "source/images/**/*.+(png|jpg|gif|svg)",
-    fonts: "source/fonts/**/*.+(eot|ttf|woff|woff2|otf)",
+    html: "src/*.html",
+    others: "src/*.+(php|ico|png)",
+    htminc: "src/partials/**/*.htm",
+    incdir: "src/partials/",
+    plugins: "src/plugins/**/*.*",
+    js: "src/js/*.js",
+    scss: "src/scss/**/*.scss",
+    images: "src/images/**/*.+(png|jpg|gif|svg)",
+    fonts: "src/fonts/**/*.+(eot|ttf|woff|woff2|otf)"
   },
   build: {
-    dirBuild: "lostInRome/",
-    dirDev: "lostInRome/",
-  },
+    dirDev: "./",  // Output diretto nella root
+    css: "./css",  // CSS in /css
+    js: "./js",    // JS in /js
+    images: "./images",
+    fonts: "./fonts",
+    plugins: "./plugins"
+  }
 };
 
-// HTML
-gulp.task("html:build", function () {
-  return gulp
-    .src(path.src.html)
-    .pipe(customPlumber("Error Running html-include"))
-    .pipe(
-      fileinclude({
-        basepath: path.src.incdir,
-      })
-    )
-    .pipe(
-      comments(`
-    WEBSITE: https://lostInRomefisher.com
-    TWITTER: https://twitter.com/lostInRomefisher
-    FACEBOOK: https://www.facebook.com/lostInRomefisher
-    GITHUB: https://github.com/lostInRomefisher/
-    `)
-    )
-    .pipe(gulp.dest(path.build.dirDev))
-    .pipe(
-      bs.reload({
-        stream: true,
-      })
-    );
+// Task Clean (pulisce solo le cartelle di output)
+gulp.task("clean", function (cb) {
+  rimraf(["./css", "./js", "./images", "./fonts", "./plugins"], cb);
 });
 
-// SCSS
-gulp.task("scss:build", function () {
+// HTML Task
+gulp.task("html:build", function() {
+  return gulp
+    .src(path.src.html)
+    .pipe(customPlumber("Error HTML"))
+    .pipe(fileinclude({ basepath: path.src.incdir }))
+    .pipe(comments(`/* Your comment */`))
+    .pipe(gulp.dest(path.build.dirDev))
+    .pipe(bs.reload({ stream: true }));
+});
+
+// SCSS Task
+gulp.task("scss:build", function() {
   return gulp
     .src(path.src.scss)
     .pipe(sourcemaps.init())
-    .pipe(
-      sass({
-        outputStyle: "expanded",
-      }).on("error", sass.logError)
-    )
+    .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
     .pipe(autoprefixer())
-    .pipe(sourcemaps.write("/"))
-    .pipe(
-      comments(`
-    WEBSITE: https://lostInRomefisher.com
-    TWITTER: https://twitter.com/lostInRomefisher
-    FACEBOOK: https://www.facebook.com/lostInRomefisher
-    GITHUB: https://github.com/lostInRomefisher/
-    `)
-    )
-    .pipe(gulp.dest(path.build.dirDev + "css/"))
-    .pipe(
-      bs.reload({
-        stream: true,
-      })
-    );
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest(path.build.css))
+    .pipe(bs.reload({ stream: true }));
 });
 
-// Javascript
-gulp.task("js:build", function () {
+// JS Task
+gulp.task("js:build", function() {
   return gulp
     .src(path.src.js)
-    .pipe(jshint("./.jshintrc"))
-    .pipe(
-      notify(function (file) {
-        if (!file.jshint.success) {
-          return (
-            file.relative + " (" + file.jshint.results.length + " errors)\n"
-          );
-        }
-      })
-    )
-    .pipe(jshint.reporter("jshint-stylish"))
-    .on("error", gutil.log)
-    .pipe(
-      comments(`
-  WEBSITE: https://lostInRomefisher.com
-  TWITTER: https://twitter.com/lostInRomefisher
-  FACEBOOK: https://www.facebook.com/lostInRomefisher
-  GITHUB: https://github.com/lostInRomefisher/
-  `)
-    )
-    .pipe(gulp.dest(path.build.dirDev + "js/"))
-    .pipe(
-      bs.reload({
-        stream: true,
-      })
-    );
+    .pipe(jshint())
+    .pipe(jshint.reporter("default"))
+    .pipe(gulp.dest(path.build.js))
+    .pipe(bs.reload({ stream: true }));
 });
 
-// Images
-gulp.task("images:build", function () {
+// Assets
+gulp.task("images:build", function() {
   return gulp
     .src(path.src.images)
-    .pipe(gulp.dest(path.build.dirDev + "images/"))
-    .pipe(
-      bs.reload({
-        stream: true,
-      })
-    );
+    .pipe(gulp.dest(path.build.images));
 });
 
-// fonts
-gulp.task("fonts:build", function () {
+gulp.task("fonts:build", function() {
   return gulp
     .src(path.src.fonts)
-    .pipe(gulp.dest(path.build.dirDev + "fonts/"))
-    .pipe(
-      bs.reload({
-        stream: true,
-      })
-    );
+    .pipe(gulp.dest(path.build.fonts));
 });
 
-// Plugins
-gulp.task("plugins:build", function () {
+gulp.task("plugins:build", function() {
   return gulp
     .src(path.src.plugins)
-    .pipe(gulp.dest(path.build.dirDev + "plugins/"))
-    .pipe(
-      bs.reload({
-        stream: true,
-      })
-    );
+    .pipe(gulp.dest(path.build.plugins));
 });
-
-// Other files like favicon, php, sourcele-icon on root directory
-gulp.task("others:build", function () {
-  return gulp.src(path.src.others).pipe(gulp.dest(path.build.dirDev));
-});
-
-// Clean Build Folder
-gulp.task("clean", function (cb) {
-  rimraf("./lostInRome", cb);
-});
-
-// Error Message Show
-function customPlumber(errTitle) {
-  return plumber({
-    errorHandler: notify.onError({
-      // Customizing error title
-      title: errTitle || "Error running Gulp",
-      message: "Error: <%= error.message %>",
-      sound: "Glass",
-    }),
-  });
-}
 
 // Watch Task
-gulp.task("watch:build", function () {
+gulp.task("watch", function() {
+  bs.init({ server: "./" });  // BrowserSync punta alla root
+  
   gulp.watch(path.src.html, gulp.series("html:build"));
   gulp.watch(path.src.htminc, gulp.series("html:build"));
   gulp.watch(path.src.scss, gulp.series("scss:build"));
   gulp.watch(path.src.js, gulp.series("js:build"));
   gulp.watch(path.src.images, gulp.series("images:build"));
-  gulp.watch(path.src.fonts, gulp.series("fonts:build"));
-  gulp.watch(path.src.plugins, gulp.series("plugins:build"));
 });
 
-// Dev Task
-gulp.task(
-  "default",
-  gulp.series(
-    "clean",
+// Build principale
+gulp.task("build", gulp.series(
+  "clean",
+  gulp.parallel(
     "html:build",
-    "js:build",
     "scss:build",
-    "images:build",
-    "fonts:build",
-    "plugins:build",
-    "others:build",
-    gulp.parallel("watch:build", function () {
-      bs.init({
-        server: {
-          baseDir: path.build.dirDev,
-        },
-      });
-    })
-  )
-);
-
-// Build Task
-gulp.task(
-  "build",
-  gulp.series(
-    "html:build",
     "js:build",
-    "scss:build",
     "images:build",
     "fonts:build",
     "plugins:build"
   )
-);
+));
+
+// Default task (sviluppo)
+gulp.task("default", gulp.series("build", "watch"));
+
+// Helper function
+function customPlumber(errTitle) {
+  return plumber({
+    errorHandler: notify.onError({
+      title: errTitle || "Error in Gulp",
+      message: "Error: <%= error.message %>",
+      sound: false
+    })
+  });
+}
