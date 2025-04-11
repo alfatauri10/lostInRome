@@ -26,8 +26,8 @@ var path = {
     fonts: "source/fonts/**/*.+(eot|ttf|woff|woff2|otf)",
   },
   build: {
-    dirBuild: "theme/",
-    dirDev: "theme/",
+    dirBuild: "src/",
+    dirDev: "src/",
   },
 };
 
@@ -43,10 +43,10 @@ gulp.task("html:build", function () {
     )
     .pipe(
       comments(`
-    WEBSITE: https://themefisher.com
-    TWITTER: https://twitter.com/themefisher
-    FACEBOOK: https://www.facebook.com/themefisher
-    GITHUB: https://github.com/themefisher/
+    WEBSITE: https://srcfisher.com
+    TWITTER: https://twitter.com/srcfisher
+    FACEBOOK: https://www.facebook.com/srcfisher
+    GITHUB: https://github.com/srcfisher/
     `)
     )
     .pipe(gulp.dest(path.build.dirDev))
@@ -71,10 +71,10 @@ gulp.task("scss:build", function () {
     .pipe(sourcemaps.write("/"))
     .pipe(
       comments(`
-    WEBSITE: https://themefisher.com
-    TWITTER: https://twitter.com/themefisher
-    FACEBOOK: https://www.facebook.com/themefisher
-    GITHUB: https://github.com/themefisher/
+    WEBSITE: https://srcfisher.com
+    TWITTER: https://twitter.com/srcfisher
+    FACEBOOK: https://www.facebook.com/srcfisher
+    GITHUB: https://github.com/srcfisher/
     `)
     )
     .pipe(gulp.dest(path.build.dirDev + "css/"))
@@ -104,10 +104,10 @@ gulp.task("js:build", function () {
     .on("error", gutil.log)
     .pipe(
       comments(`
-  WEBSITE: https://themefisher.com
-  TWITTER: https://twitter.com/themefisher
-  FACEBOOK: https://www.facebook.com/themefisher
-  GITHUB: https://github.com/themefisher/
+  WEBSITE: https://srcfisher.com
+  TWITTER: https://twitter.com/srcfisher
+  FACEBOOK: https://www.facebook.com/srcfisher
+  GITHUB: https://github.com/srcfisher/
   `)
     )
     .pipe(gulp.dest(path.build.dirDev + "js/"))
@@ -123,10 +123,10 @@ gulp.task("js:build", function () {
     .src(path.src.js)
     .pipe(
       comments(`
-  WEBSITE: https://themefisher.com
-  TWITTER: https://twitter.com/themefisher
-  FACEBOOK: https://www.facebook.com/themefisher
-  GITHUB: https://github.com/themefisher/
+  WEBSITE: https://srcfisher.com
+  TWITTER: https://twitter.com/srcfisher
+  FACEBOOK: https://www.facebook.com/srcfisher
+  GITHUB: https://github.com/srcfisher/
   `)
     )
     .pipe(gulp.dest(path.build.dirDev + "js/"))
@@ -179,7 +179,7 @@ gulp.task("others:build", function () {
 
 // Clean Build Folder
 gulp.task("clean", function (cb) {
-  rimraf("./theme", cb);
+  rimraf("./src", cb);
 });
 
 // Error Message Show

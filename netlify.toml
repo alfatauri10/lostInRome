@@ -1,5 +1,5 @@
 [build]
-publish = "theme"
+publish = "src"
 command = "npm run build"
 
 [[headers]]
