@@ -1,6 +1,11 @@
 [build]
 publish = "."               # Perché index.html è nella root (non serve "lostInRome")
-command = "npm run build"   # Se hai uno script di build
+command = "npm install && npm run build"   # Se hai uno script di build
+functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "18"  # Specifica la versione di Node.js
+  NPM_FLAGS = "--legacy-peer-deps"  # Se hai problemi con le dipendenze
 
 
 # Impostazioni di sicurezza (come nel tuo esempio)
