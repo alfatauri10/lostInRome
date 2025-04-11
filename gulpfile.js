@@ -14,7 +14,7 @@ const notify = require("gulp-notify");
 const plumber = require("gulp-plumber");
 
 var path = {
-  lostInRome: {
+  src: {
     html: "source/*.html",
     others: "source/*.+(php|ico|png)",
     htminc: "source/partials/**/*.htm",
@@ -34,11 +34,11 @@ var path = {
 // HTML
 gulp.task("html:build", function () {
   return gulp
-    .lostInRome(path.lostInRome.html)
+    .src(path.src.html)
     .pipe(customPlumber("Error Running html-include"))
     .pipe(
       fileinclude({
-        basepath: path.lostInRome.incdir,
+        basepath: path.src.incdir,
       })
     )
     .pipe(
@@ -60,7 +60,7 @@ gulp.task("html:build", function () {
 // SCSS
 gulp.task("scss:build", function () {
   return gulp
-    .lostInRome(path.lostInRome.scss)
+    .src(path.src.scss)
     .pipe(sourcemaps.init())
     .pipe(
       sass({
@@ -86,10 +86,9 @@ gulp.task("scss:build", function () {
 });
 
 // Javascript
-/*
 gulp.task("js:build", function () {
   return gulp
-    .lostInRome(path.lostInRome.js)
+    .src(path.src.js)
     .pipe(jshint("./.jshintrc"))
     .pipe(
       notify(function (file) {
@@ -117,29 +116,11 @@ gulp.task("js:build", function () {
       })
     );
 });
-*/
-gulp.task("js:build", function () {
-  return gulp
-    .lostInRome(path.lostInRome.js)
-    .pipe(
-      comments(`
-  WEBSITE: https://lostInRomefisher.com
-  TWITTER: https://twitter.com/lostInRomefisher
-  FACEBOOK: https://www.facebook.com/lostInRomefisher
-  GITHUB: https://github.com/lostInRomefisher/
-  `)
-    )
-    .pipe(gulp.dest(path.build.dirDev + "js/"))
-    .pipe(
-      bs.reload({
-        stream: true,
-      })
-    );
-});
+
 // Images
 gulp.task("images:build", function () {
   return gulp
-    .lostInRome(path.lostInRome.images)
+    .src(path.src.images)
     .pipe(gulp.dest(path.build.dirDev + "images/"))
     .pipe(
       bs.reload({
@@ -151,7 +132,7 @@ gulp.task("images:build", function () {
 // fonts
 gulp.task("fonts:build", function () {
   return gulp
-    .lostInRome(path.lostInRome.fonts)
+    .src(path.src.fonts)
     .pipe(gulp.dest(path.build.dirDev + "fonts/"))
     .pipe(
       bs.reload({
@@ -163,7 +144,7 @@ gulp.task("fonts:build", function () {
 // Plugins
 gulp.task("plugins:build", function () {
   return gulp
-    .lostInRome(path.lostInRome.plugins)
+    .src(path.src.plugins)
     .pipe(gulp.dest(path.build.dirDev + "plugins/"))
     .pipe(
       bs.reload({
@@ -174,7 +155,7 @@ gulp.task("plugins:build", function () {
 
 // Other files like favicon, php, sourcele-icon on root directory
 gulp.task("others:build", function () {
-  return gulp.lostInRome(path.lostInRome.others).pipe(gulp.dest(path.build.dirDev));
+  return gulp.src(path.src.others).pipe(gulp.dest(path.build.dirDev));
 });
 
 // Clean Build Folder
@@ -196,13 +177,13 @@ function customPlumber(errTitle) {
 
 // Watch Task
 gulp.task("watch:build", function () {
-  gulp.watch(path.lostInRome.html, gulp.series("html:build"));
-  gulp.watch(path.lostInRome.htminc, gulp.series("html:build"));
-  gulp.watch(path.lostInRome.scss, gulp.series("scss:build"));
-  gulp.watch(path.lostInRome.js, gulp.series("js:build"));
-  gulp.watch(path.lostInRome.images, gulp.series("images:build"));
-  gulp.watch(path.lostInRome.fonts, gulp.series("fonts:build"));
-  gulp.watch(path.lostInRome.plugins, gulp.series("plugins:build"));
+  gulp.watch(path.src.html, gulp.series("html:build"));
+  gulp.watch(path.src.htminc, gulp.series("html:build"));
+  gulp.watch(path.src.scss, gulp.series("scss:build"));
+  gulp.watch(path.src.js, gulp.series("js:build"));
+  gulp.watch(path.src.images, gulp.series("images:build"));
+  gulp.watch(path.src.fonts, gulp.series("fonts:build"));
+  gulp.watch(path.src.plugins, gulp.series("plugins:build"));
 });
 
 // Dev Task
