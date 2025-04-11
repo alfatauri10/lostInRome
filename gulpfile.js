@@ -36,8 +36,24 @@ const path = {
 };
 
 // Task Clean (pulisce solo le cartelle di output)
+/*
 gulp.task("clean", function (cb) {
   rimraf(["./css", "./js", "./images", "./fonts", "./plugins"], cb);
+});
+*/
+
+// Sostituisci con questa versione
+gulp.task("clean", function (cb) {
+  // Esegui rimraf su ogni percorso separatamente
+  rimraf("./css", () => {
+    rimraf("./js", () => {
+      rimraf("./images", () => {
+        rimraf("./fonts", () => {
+          rimraf("./plugins", cb);
+        });
+      });
+    });
+  });
 });
 
 // HTML Task
