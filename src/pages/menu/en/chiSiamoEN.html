@@ -99,7 +99,14 @@
 
 <script src="/src/js/language-switcher.js"></script> <!-- per lo switch lingua. Va inserito prima di include.js -->
 <script src="/src/js/include.js"></script> <!-- per inclusione pagine al posto dei placeHolder -->
-
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        includeHTML({
+            headerPlaceHolder: "../../include/header.html",
+            footerPlaceHolder: "../../include/footer.html"
+        });
+    });
+</script>
 
 
 </body>

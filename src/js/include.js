@@ -1,13 +1,19 @@
 // include.js
+
+//path dei placeholder di default
 const APP_COMPONENTS = {
     headerPlaceHolder: "/src/pages/include/header.html",
     footerPlaceHolder: "/src/pages/include/footer.html"
 };
 
-function includeHTML() {
+//includeHTML riceve i path dei placeholder in ingresso
+//(perchè cambiano a seconda della pagina in cui sono inclusi)
+function includeHTML(customComponents = {}) {
+    // Unisce le componenti di default con quelle personalizzate
+    const components = { ...APP_COMPONENTS, ...customComponents };
     const promises = [];
 
-    Object.entries(APP_COMPONENTS).forEach(([elementId, filePath]) => {
+    Object.entries(components).forEach(([elementId, filePath]) => {
         const element = document.getElementById(elementId);
         if (element) {
             const promise = fetch(filePath)
@@ -21,13 +27,11 @@ function includeHTML() {
         }
     });
 
-
     Promise.all(promises).then(() => {
         if (window.LanguageSwitcher && window.LanguageSwitcher.initialize) {
             window.LanguageSwitcher.initialize();
         }
     });
-
 }
 
 document.addEventListener("DOMContentLoaded", includeHTML);
