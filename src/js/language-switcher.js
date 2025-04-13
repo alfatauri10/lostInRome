@@ -23,9 +23,10 @@ window.LanguageSwitcher = {
                 window.location.href = window.location.pathname.replace('src/pages/menu/it/contatti.html', 'src/pages/menu/en/contattiEN.html');
             }else if(window.location.pathname.includes('index.html')) {
                 window.location.href = window.location.pathname.replace('lostInRome/index.html', 'lostInRome/indexEN.html');
-            }else if(window.location.pathname.includes('')) {
+            }
+            /*else if(window.location.pathname.includes('')) {
                 window.location.href = window.location.pathname.replace('lostInRome/index.html', 'lostInRome/indexEN.html');
-           }
+           }*/
         } else {
             flag.className = 'flag-icon flag-gb';
             text.textContent = 'EN';
@@ -39,9 +40,10 @@ window.LanguageSwitcher = {
                 window.location.href = window.location.pathname.replace('src/pages/menu/en/contattiEN.html', 'src/pages/menu/it/contatti.html');
             }else if(window.location.pathname.includes('indexEN.html')) {
                 window.location.href = window.location.pathname.replace('lostInRome/indexEN.html', 'lostInRome/index.html');
-            }else if(window.location.pathname.includes('')) {
-                window.location.href = window.location.pathname.replace('lostInRome/indexEN.html', 'lostInRome/index.html');
             }
+            /*else if(window.location.pathname.includes('')) {
+                window.location.href = window.location.pathname.replace('lostInRome/indexEN.html', 'lostInRome/index.html');
+            }*/
 
         }
 
