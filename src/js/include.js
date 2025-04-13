@@ -1,6 +1,6 @@
 // include.js
 
-//path dei placeholder di default
+//Path dei placeholder di default
 const APP_COMPONENTS = {
     headerPlaceHolder: "/src/pages/include/header.html",
     footerPlaceHolder: "/src/pages/include/footer.html"

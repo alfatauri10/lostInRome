@@ -7,6 +7,7 @@ window.LanguageSwitcher = {
         const flag = languageToggle.querySelector('.flag-icon');
         const text = languageToggle.querySelector('.lang-text');
 
+
         if(newLang === 'en') {
             flag.className = 'flag-icon flag-it';
             text.textContent = 'IT';
