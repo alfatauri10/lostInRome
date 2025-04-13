@@ -38,13 +38,4 @@ from = "/lostInRome/indexEN.html"
 to = "/indexEN.html"
 status = 200
 
-[[redirects]]
-from = "/index.html"
-to = "/lostInRome/index.html"
-status = 200
-
-[[redirects]]
-from = "/indexEN.html"
-to = "/lostInRome/indexEN.html"
-status = 200
 
