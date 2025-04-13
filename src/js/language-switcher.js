@@ -23,6 +23,8 @@ window.LanguageSwitcher = {
                 window.location.href = window.location.pathname.replace('src/pages/menu/it/contatti.html', 'src/pages/menu/en/contattiEN.html');
             }else if(window.location.pathname.includes('index.html')) {
                 window.location.href = window.location.pathname.replace('/lostInRome/index.html', '/lostInRome/indexEN.html');
+            }else if(window.location.pathname === '/' || window.location.href === 'https://lostinrome.netlify.app/') {
+                window.location.href = '/lostInRome/indexEN.html';
             }
         } else {
             flag.className = 'flag-icon flag-gb';
