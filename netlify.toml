@@ -39,6 +39,6 @@ to = "/indexEN.html"
 status = 200
 
 [[redirects]]
-from = "/"
-to = "/lostInRome/index"
+from = ""
+to = "/lostInRome/index.html"
 status = 301
