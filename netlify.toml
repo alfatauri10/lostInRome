@@ -42,3 +42,8 @@ status = 200
 from = ""
 to = "/lostInRome/index.html"
 status = 301
+
+[[redirects]]
+from = "/"
+to = "/lostInRome/index.html"
+status = 301
