@@ -28,18 +28,15 @@ to = "/src/:splat"
 status = 200
 
 #si risolve dicendogli che deve sostituire /lostInRome/index.html in /index.html
-[[redirects]]
-from = "/lostInRome/index.html"
-to = "/index.html"
-status = 200
 
-[[redirects]]
-from = "/lostInRome/indexEN.html"
-to = "/indexEN.html"
-status = 200
+#[[redirects]]
+#from = "/lostInRome/index.html"
+#to = "/index.html"
+#status = 200
 
-[[redirects]]
-from = "/"
-to = "/lostInRome/index.html"
-status = 200
+#[[redirects]]
+#from = "/lostInRome/indexEN.html"
+#to = "/indexEN.html"
+#status = 200
+
 
