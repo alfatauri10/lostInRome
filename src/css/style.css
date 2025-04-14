@@ -101,15 +101,13 @@ h6, .h6 {
 }
 
 .btn-primary {
-  background: #ff6f00;
-  color: #fff;
-  border: 0;
+  background: #068D9D;
 }
 .btn-primary:active {
-  background: #ff6f00 !important;
+  background: #068D9D !important;
 }
 .btn-primary:hover {
-  background: #ff8c33;
+  background: #056974;
 }
 
 .btn-outline-light {
@@ -128,8 +126,7 @@ h6, .h6 {
 }
 
 .btn-transparent {
-  color: #ff6f00;
-  border: 0;
+  color: #068D9D;
 }
 
 body {
@@ -141,13 +138,11 @@ body {
 }
 
 ::-moz-selection {
-  background: #ff8c33;
-  color: #fff;
+  background: #056974;
 }
 
 ::selection {
-  background: #ff8c33;
-  color: #fff;
+  background: #056974;
 }
 
 /* preloader */
@@ -178,7 +173,7 @@ body {
   height: 16px;
   top: 12px;
   left: 15px;
-  background: #ff6f00;
+  background: #068D9D;
   border-radius: 50%;
   transform: translateX(0);
   -webkit-animation: dot 2.8s infinite;
@@ -198,7 +193,7 @@ body {
   width: 16px;
   height: 16px;
   margin-left: 16px;
-  background: #ff6f00;
+  background: #068D9D;
   border-radius: 50%;
 }
 
@@ -254,9 +249,8 @@ select:focus {
 }
 
 a:hover, a.text-dark:hover {
-  color: #ff6f00 !important;
+  color: #068D9D !important;
 }
-
 .slick-slide {
   outline: 0;
 }
@@ -314,7 +308,7 @@ a:hover, a.text-dark:hover {
 }
 
 .bg-primary {
-  background: #ff6f00 !important;
+  background: #068D9D !important;
 }
 
 .bg-secondary {
@@ -605,7 +599,7 @@ textarea.form-control {
   font-size: 20px;
 }
 .instagram-post ul a:hover {
-  color: #ff6f00 !important;
+  color: #068D9D !important;
 }
 .instagram-post:hover::before {
   visibility: visible;
