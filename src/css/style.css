@@ -101,15 +101,13 @@ h6, .h6 {
 }
 
 .btn-primary {
-  background: #ff6f00;
-  color: #fff;
-  border: 0;
+  background: #068D9D;
 }
 .btn-primary:active {
-  background: #ff6f00 !important;
+  background: #068D9D !important;
 }
 .btn-primary:hover {
-  background: #ff8c33;
+  background: #056974;
 }
 
 .btn-outline-light {
@@ -128,8 +126,7 @@ h6, .h6 {
 }
 
 .btn-transparent {
-  color: #ff6f00;
-  border: 0;
+  color: #068D9D;
 }
 
 body {
@@ -141,13 +138,11 @@ body {
 }
 
 ::-moz-selection {
-  background: #ff8c33;
-  color: #fff;
+  background: #056974;
 }
 
 ::selection {
-  background: #ff8c33;
-  color: #fff;
+  background: #056974;
 }
 
 /* preloader */
@@ -178,7 +173,7 @@ body {
   height: 16px;
   top: 12px;
   left: 15px;
-  background: #ff6f00;
+  background: #068D9D;
   border-radius: 50%;
   transform: translateX(0);
   -webkit-animation: dot 2.8s infinite;
@@ -198,7 +193,7 @@ body {
   width: 16px;
   height: 16px;
   margin-left: 16px;
-  background: #ff6f00;
+  background: #068D9D;
   border-radius: 50%;
 }
 
@@ -254,9 +249,8 @@ select:focus {
 }
 
 a:hover, a.text-dark:hover {
-  color: #ff6f00 !important;
+  color: #068D9D !important;
 }
-
 .slick-slide {
   outline: 0;
 }
@@ -314,7 +308,7 @@ a:hover, a.text-dark:hover {
 }
 
 .bg-primary {
-  background: #ff6f00 !important;
+  background: #068D9D !important;
 }
 
 .bg-secondary {
@@ -505,18 +499,11 @@ textarea.form-control {
 }
 
 .card-content {
-  padding: 10px;
+  padding: 30px;
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0px;
-}
-
-.card-titolo-monumento {
-    font-family: 'Allison', cursive;
-    color: #6b522a;
-    font-size: 1.5rem;
-    letter-spacing: 1.2px;
+  bottom: 30px;
 }
 
 .title-border {
@@ -612,7 +599,7 @@ textarea.form-control {
   font-size: 20px;
 }
 .instagram-post ul a:hover {
-  color: #ff6f00 !important;
+  color: #068D9D !important;
 }
 .instagram-post:hover::before {
   visibility: visible;
@@ -792,7 +779,7 @@ blockquote {
       --beige-scuro: #F5F0E6;
       --turchese: #068d9d;
       --turchese-scuro: #056974;
-      --testo: #5a716a; /*TESTO VOCI MENU*/
+      --testo: #5a716a;
     }
 
     /* Struttura base */
@@ -1190,7 +1177,6 @@ blockquote {
     margin-left: 15px;
 }
 
-/* Stile per dispositivi mobili */
 
 /* Stile per dispositivi mobili */
 @media (max-width: 768px) {
@@ -1226,26 +1212,6 @@ blockquote {
 
 }
 
-/*
-@keyframes rotateEmoji {
-      0% { transform: rotate(0deg); }
-      25% { transform: rotate(-10deg); }
-      50% { transform: rotate(0deg); }
-      75% { transform: rotate(10deg); }
-      100% { transform: rotate(0deg); }
-  }
-.motto-text-body::after {
-    content: " 🧸";
-    display: inline-block;
-    color: #a1865e;
-    font-size: 1.2rem;
-    margin-left: 8px;
-    animation: rotateEmoji 2s infinite ease-in-out;
-    vertical-align: middle;
-}
-*/
-
-
 /*fine stile motto*/
 
 .menu-monumenti-barra-link{
@@ -1253,3 +1219,4 @@ blockquote {
     opacity: 0.5;
     line-height: 1.8;
 }
+
