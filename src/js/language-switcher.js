@@ -21,6 +21,8 @@ window.LanguageSwitcher = {
                 window.location.href = window.location.pathname.replace('src/pages/menu/it/chiSiamo.html', 'src/pages/menu/en/chiSiamoEN.html');
             }else if(window.location.pathname.includes('contatti.html')) {
                 window.location.href = window.location.pathname.replace('src/pages/menu/it/contatti.html', 'src/pages/menu/en/contattiEN.html');
+            }else if(window.location.pathname.includes('/it/colosseo.html')) { //mettere anche /it perchè poichè le due pagine si chiamano uguali --> sfarfallio
+                window.location.href = window.location.pathname.replace('src/pages/monument/it/colosseo.html', 'src/pages/monument/en/colosseo.html');
             }else if(window.location.pathname.includes('index.html')) {
                 window.location.href = window.location.pathname.replace('/lostInRome/index.html', '/lostInRome/indexEN.html');
             }else if(window.location.pathname === '/' || window.location.href === 'https://lostinrome.netlify.app/') {
@@ -37,6 +39,8 @@ window.LanguageSwitcher = {
                 window.location.href = window.location.pathname.replace('src/pages/menu/en/chiSiamoEN.html', 'src/pages/menu/it/chiSiamo.html');
             }else if(window.location.pathname.includes('contattiEN.html')) {
                 window.location.href = window.location.pathname.replace('src/pages/menu/en/contattiEN.html', 'src/pages/menu/it/contatti.html');
+            }else if(window.location.pathname.includes('/en/colosseo.html')) {
+                window.location.href = window.location.pathname.replace('src/pages/monument/en/colosseo.html', 'src/pages/monument/it/colosseo.html');
             }else if(window.location.pathname.includes('indexEN.html')) {
                 window.location.href = window.location.pathname.replace('/lostInRome/indexEN.html', '/lostInRome/index.html');
             }
