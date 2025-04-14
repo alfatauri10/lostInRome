@@ -516,7 +516,6 @@ textarea.form-control {
     font-family: 'Allison', cursive;
     color: #6b522a;
     font-size: 1.5rem;
-
     letter-spacing: 1.2px;
 }
 
@@ -793,7 +792,7 @@ blockquote {
       --beige-scuro: #F5F0E6;
       --turchese: #068d9d;
       --turchese-scuro: #056974;
-      --testo: #5a716a;
+      --testo: #5a716a; /*TESTO VOCI MENU*/
     }
 
     /* Struttura base */
@@ -1248,3 +1247,9 @@ blockquote {
 
 
 /*fine stile motto*/
+
+.menu-monumenti-barra-link{
+    font-size: 1.2em;
+    opacity: 0.5;
+    line-height: 1.8;
+}
