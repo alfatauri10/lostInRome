@@ -505,11 +505,18 @@ textarea.form-control {
 }
 
 .card-content {
-  padding: 30px;
+  padding: 10px;
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 30px;
+  bottom: 0px;
+}
+
+.card-titolo-monumento {
+    font-family: 'Allison', cursive;
+    color: #6b522a;
+    font-size: 2rem;
+    letter-spacing: 1.2px;
 }
 
 .title-border {
@@ -1135,108 +1142,29 @@ blockquote {
     .slick-next {
       right: -20px;
     }
+/*STILE TITOLI PAGINE*/
+.titoli{
+    font-family: 'Allison';
+    font-size: 4.0rem;
+    color: #6b522a;
+/*#a1865e, #5d4f34, #5a3921, #d4af37, #7a6b4a, #8c6a3d, #6b522a, #d4af37, #7a6b4a colori terrosi*/
+}
+.startParagrafo{
+    font-family: 'Allison';
+    font-size: 3.0rem;
+    color: #6b522a;
+/*#a1865e, #5d4f34, #5a3921, #d4af37, #7a6b4a, #8c6a3d, #6b522a, #d4af37, #7a6b4a colori terrosi*/
 
+}
 /*stile motto*/
 .brand-container {
     display: flex;
     align-items: center;
     margin-right: 15px;
 }
-/*
-.motto-text {
-    font-family: 'Google Fonts', cursive;
-    font-size: 1.2rem;
-    color: #333;
-    margin-left: 15px;
-    font-style: italic;
-    letter-spacing: 1px;
-    position: relative;
-    padding-left: 15px;
-}
-*/
-
-/* testo animato
-.motto-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 300;
-    color: #333;
-    margin-left: 20px;
-    opacity: 0.8;
-    transition: all 0.4s ease-in-out;
-}
-.motto-text:hover {
-    opacity: 1;
-    letter-spacing: 0.5px;
-}
-*/
-
-/*
-.motto-text {
-    font-family: 'Cinzel', serif;
-    font-size: 1.2rem;
-    color: #333;
-    position: relative;
-    padding: 0 10px;
-    margin-left: 40px;
-}
-
-.motto-text:before,
-.motto-text:after {
-    content: " 🧸";
-    position: absolute;
-    color: #a1865e;
-    font-size: 1.8rem;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.motto-text:before {
-    left: -5px;
-}
-
-.motto-text:after {
-    right: -5px;
-}
-
-.motto-text:hover:before,
-.motto-text:hover:after {
-    animation: spin 1s ease;
-}
-
-@keyframes spin {
-    0% { transform: translateY(-50%) rotate(0deg); }
-    100% { transform: translateY(-50%) rotate(360deg); }
-}
-*/
 
 /*logo animato + motto*/
 
-.mosaic-container {
-    align-items: center;
-    position: relative;
-    margin-right: 20px;
-    min-width: unset; /* Aggiungi per sicurezza */
-}
-
-.mosaic-image {
-    width: 30px;
-    height: auto;
-    margin-right: 15px;
-    transition: transform 0.7s ease-in-out;
-}
-
-
-.mosaic-image:hover {
-    transform: rotate(15deg);
-    filter: drop-shadow(0 0 8px rgba(161, 134, 94, 0.5));
-}
-
-@keyframes mosaicPulse {
-    0% { filter: drop-shadow(0 0 5px rgba(161, 134, 94, 0.3)); }
-    50% { filter: drop-shadow(0 0 15px rgba(161, 134, 94, 0.6)); }
-    100% { filter: drop-shadow(0 0 5px rgba(161, 134, 94, 0.3)); }
-}
 
 .motto-text {
     font-family: 'Allison', cursive;
@@ -1245,6 +1173,8 @@ blockquote {
 /*#a1865e, #5d4f34, #5a3921, #d4af37, #7a6b4a, #8c6a3d, #6b522a, #d4af37, #7a6b4a colori terrosi*/
     position: relative;
 }
+
+/*
 .motto-text:after {
     content: " 🧸";
     position: absolute;
@@ -1253,43 +1183,14 @@ blockquote {
     top: 60%; left: 110%; bottom:50%;
     animation: rotateEmoji 2s infinite ease-in-out;
 }
-
-
-
-/*logo animato + motto*/
-
-/* separatore | prima del motto (in alternativa agli altri separatori)
-.motto-text:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 60%;
-    width: 2px;
-    background-color: currentColor;
-}
 */
-
-/*Separatore con trattino(in alternativa agli altri separatori)
-.motto-text {
-    padding-left: 15px;
-}
-
-.motto-text:before {
-    content: "—";
-    margin-right: 10px;
-}
-*/
-
 
 /*Senza Separatore (in alternativa agli altri separatori)*/
 .motto-text {
     margin-left: 15px;
 }
 
-
-
+/* Stile per dispositivi mobili */
 
 /* Stile per dispositivi mobili */
 @media (max-width: 768px) {
@@ -1298,42 +1199,51 @@ blockquote {
         /* Nascondi il motto su mobile */
     }
 }
-
 .motto-text-body {
     font-family: 'Allison', cursive;
-    font-size: 2.5rem;
     color: #6b522a;
+    text-align: center;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin: 0 auto;
     display: none;
-    width: 100%; /* Occupa tutta la larghezza */
-    text-align: center !important;; /* Centra il testo */
-    position: relative;
-    padding: 0 40px; /* Spazio per l'emoji */
-    box-sizing: border-box;
+    padding: 0 1rem; /* Spazio laterale generoso */
 }
 
-@keyframes rotateEmoji {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(-10deg); }
-    50% { transform: rotate(0deg); }
-    75% { transform: rotate(10deg); }
-    100% { transform: rotate(0deg); }
-}
-
+/* Mobile (fino a 768px) */
 @media (max-width: 768px) {
-    .motto-text-body {
-        display: block;
-        margin: 0 auto;
-    }
-
-    .motto-text-body::after {
-        content: " 🧸";
-        display: inline-block; /* Importante per il centraggio */
-        color: #a1865e;
-        font-size: 1.2rem;
-        margin-left: 8px;
-        animation: rotateEmoji 2s infinite ease-in-out;
-        vertical-align: middle;
-    }
+  .motto-text-body {
+    display: block;
+    padding: 0 12rem; /* Meno spazio ai lati */
+  }
 }
+
+/* Mobile piccolo (fino a 480px) */
+@media (max-width: 480px) {
+  .motto-text-body {
+    display: block;
+        padding: 0 12rem; /* Meno spazio ai lati */
+  }
+
+}
+
+/*
+@keyframes rotateEmoji {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(-10deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(10deg); }
+      100% { transform: rotate(0deg); }
+  }
+.motto-text-body::after {
+    content: " 🧸";
+    display: inline-block;
+    color: #a1865e;
+    font-size: 1.2rem;
+    margin-left: 8px;
+    animation: rotateEmoji 2s infinite ease-in-out;
+    vertical-align: middle;
+}
+*/
+
 
 /*fine stile motto*/
