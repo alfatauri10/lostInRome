@@ -80,16 +80,17 @@ h6, .h6 {
 }
 
 /* Button style */
+
 .btn {
-  font-size: 15px;
+  position: relative;
+  bottom: -50px;
+  font-size: 10px;
   font-family: "Open Sans", sans-serif;
   text-transform: capitalize;
   padding: 8px 20px;
   border-radius: 0;
   font-weight: 600;
-  border: 1px solid;
-  position: relative;
-  z-index: 1;
+  border: 2px solid;
   transition: 0.2s ease;
 }
 .btn:focus {
@@ -125,6 +126,7 @@ h6, .h6 {
   border-color: #fff;
 }
 
+
 .btn-transparent {
   color: #068D9D;
 }
@@ -144,6 +146,7 @@ body {
 ::selection {
   background: #056974;
 }
+
 
 /* preloader */
 .preloader {
@@ -670,9 +673,11 @@ textarea.form-control {
     width: 100%;
   }
 }
+
 .article-full-width .post-content .btn {
   padding-left: 0;
 }
+
 .article-full-width .post-meta {
   width: 250px;
 }
@@ -839,6 +844,7 @@ blockquote {
     .language-switcher {
       margin-left: 15px;
     }
+
     .btn-lang {
       background: none;
       border: none;
@@ -973,12 +979,15 @@ blockquote {
       object-fit: cover;
       height: 100%;
     }
+
     .btn-outline-light {
       padding: 0.25rem 0.75rem;
       font-size: clamp(0.7rem, 2vw, 0.9rem);
-      border-width: 1px;
+      border-width: 2px;
       transition: all 0.2s;
+
     }
+
 
     /* Dropdown menu */
     .dropdown-menu {
