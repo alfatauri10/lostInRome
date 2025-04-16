@@ -1140,13 +1140,13 @@ blockquote {
     }
 /*STILE TITOLI PAGINE*/
 .titoli{
-    font-family: 'Allison';
+    font-family: 'Satisfy', cursive;
     font-size: 4.0rem;
     color: #6b522a;
 /*#a1865e, #5d4f34, #5a3921, #d4af37, #7a6b4a, #8c6a3d, #6b522a, #d4af37, #7a6b4a colori terrosi*/
 }
 .startParagrafo{
-    font-family: 'Allison';
+    font-family: 'Satisfy', cursive;
     font-size: 3.0rem;
     color: #6b522a;
 /*#a1865e, #5d4f34, #5a3921, #d4af37, #7a6b4a, #8c6a3d, #6b522a, #d4af37, #7a6b4a colori terrosi*/
