@@ -879,8 +879,8 @@ blockquote {
 
     /* Cards monumenti */
     .featured-post-slider {
-      padding-left: 30px;  /* Spazio a sinistra */
-      padding-right: 8px; /* Spazio a destra */
+      padding-left: 15px;  /* Spazio a sinistra */
+      padding-right: 15px; /* Spazio a destra */
     }
 
     .featured-post-slider .card {
