@@ -878,6 +878,11 @@ blockquote {
     }
 
     /* Cards monumenti */
+    .featured-post-slider {
+      padding-left: 30px;  /* Spazio a sinistra */
+      padding-right: 8px; /* Spazio a destra */
+    }
+
     .featured-post-slider .card {
       height: 250px;
       overflow: hidden;
@@ -1064,6 +1069,11 @@ blockquote {
 
 
     /* Slider Section */
+    .galleria-monumenti {
+          margin-top: 150px;    /* aumenta per abbassare la galleria */
+          padding-top: 0;
+        }
+
     .slider-section {
       padding: 60px 0;
     }
