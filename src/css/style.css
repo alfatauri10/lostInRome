@@ -392,7 +392,7 @@ a:hover, a.text-dark:hover {
 .form-control:focus {
   outline: 0;
   box-shadow: none;
-  border-color: #ff6f00;
+  border-color: #068D9D;
 }
 
 textarea.form-control {
@@ -479,7 +479,7 @@ textarea.form-control {
 }
 .navbar .dropdown-item:active {
   color: #fff;
-  background-color: #ff6f00;
+  background-color: ##068D9D;
 }
 
 .search-icon {
@@ -775,7 +775,7 @@ blockquote {
   color: #000000;
 }
 .tag-list li a:hover {
-  color: #ff6f00;
+  color: #068D9D;
 }
 /*# sourceMappingURL=style.css.map */
 
