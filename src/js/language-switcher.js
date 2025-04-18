@@ -15,6 +15,9 @@ window.LanguageSwitcher = {
             // Mostra menu inglese e nascondi italiano
             document.querySelector('.lang-it').style.display = 'none';
             document.querySelector('.lang-en').style.display = 'flex';
+            // Mostra motto inglese e nascondi italiano
+            document.querySelector('.motto-lang-it').style.display = 'none';
+            document.querySelector('.motto-lang-en').style.display = 'flex';
 
             //redirect verso la corrispondente pagina nell'altra lingua
             if(window.location.pathname.includes('chiSiamo.html')) {
@@ -36,6 +39,9 @@ window.LanguageSwitcher = {
             // Mostra menu italiano e nascondi inglese
             document.querySelector('.lang-it').style.display = 'flex';
             document.querySelector('.lang-en').style.display = 'none';
+            // Mostra motto italiano e nascondi inglese
+            document.querySelector('.motto-lang-it').style.display = 'flex';
+            document.querySelector('.motto-lang-en').style.display = 'none';
 
             //redirect verso la corrispondente pagina nell'altra lingua
             if(window.location.pathname.includes('chiSiamoEN.html')) {
