@@ -1172,7 +1172,7 @@ blockquote {
 /*logo animato + motto*/
 
 .motto-text {
-    font-family: 'Satisfy', cursive;
+    font-family: 'Allison', cursive;
     font-size: 1.5rem;
     color: #6b522a;
 /*#a1865e, #5d4f34, #5a3921, #d4af37, #7a6b4a, #8c6a3d, #6b522a, #d4af37, #7a6b4a colori terrosi*/
@@ -1317,7 +1317,7 @@ VERSION:	Versoin Number
   position: absolute !important;
   left: calc(100% + 15px) !important;
   white-space: nowrap !important;
-  font-size: 1.5rem !important;
+  font-size: 2.5rem !important;
   transition: opacity 0.3s ease !important;
   margin-left: 0 !important;
 }
