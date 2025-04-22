@@ -1,16 +1,15 @@
 window.LanguageSwitcher = {
     switchLanguage: function(newLang) {
-        const languageToggle = document.getElementById('languageToggle');
-        if (!languageToggle) return;
+        const languageDropdown = document.getElementById('languageDropdown');
+        if (!languageDropdown) return;
 
-        // Cambia la bandiera e il testo
-        const flag = languageToggle.querySelector('.flag-icon');
-        const text = languageToggle.querySelector('.lang-text');
-
+        // Cambia la bandiera e il testo nel pulsante principale
+        const flag = languageDropdown.querySelector('.flag-icon');
+        const text = languageDropdown.querySelector('.lang-text');
 
         if(newLang === 'en') {
-            flag.className = 'flag-icon flag-it';
-            text.textContent = 'IT';
+            flag.className = 'flag-icon flag-gb';
+            text.textContent = 'EN';
 
             // Mostra menu inglese e nascondi italiano
             document.querySelector('.lang-it').style.display = 'none';
@@ -28,13 +27,13 @@ window.LanguageSwitcher = {
                 window.location.href = window.location.pathname.replace('/lostInRome/index.html', '/lostInRome/indexEN.html');
             }else if(window.location.pathname === '/' || window.location.href === 'https://lostinrome.netlify.app/') {
                 window.location.href = '/lostInRome/indexEN.html';
-            }else if(window.location.pathname.includes('/it/colosseo.html')) { //mettere anche /it perchè poichè le due pagine si chiamano uguali --> sfarfallio
+            }else if(window.location.pathname.includes('/it/colosseo.html')) {
                 window.location.href = window.location.pathname.replace('src/pages/monument/it/colosseo.html', 'src/pages/monument/en/colosseo.html');
             }
 
         } else {
-            flag.className = 'flag-icon flag-gb';
-            text.textContent = 'EN';
+            flag.className = 'flag-icon flag-it';
+            text.textContent = 'IT';
 
             // Mostra menu italiano e nascondi inglese
             document.querySelector('.lang-it').style.display = 'flex';
@@ -53,34 +52,25 @@ window.LanguageSwitcher = {
             }else if(window.location.pathname.includes('/en/colosseo.html')) {
                 window.location.href = window.location.pathname.replace('src/pages/monument/en/colosseo.html', 'src/pages/monument/it/colosseo.html');
             }
-
         }
 
         document.documentElement.lang = newLang;
         // Salva la preferenza
         localStorage.setItem('preferredLang', newLang);
-
     },
 
     initialize: function() {
+        // PER RICORDARSI L'ULTIMA LINGUA SELEZIONATA E NON RESETTARE L'IT
+        const savedLang = localStorage.getItem('preferredLang') || 'it';
+        this.switchLanguage(savedLang);
 
-
-        const languageToggle = document.getElementById('languageToggle');
-
-        if (languageToggle) {
-
-          //PER RICORDARSI L'ULTIMA LINGUA SELEZIONATA E NON RESETTARE L'IT
-          const savedLang = localStorage.getItem('preferredLang') || 'it';
-          this.switchLanguage(savedLang);
-
-
-
-            languageToggle.addEventListener('click', function() {
-                const currentLang = document.documentElement.lang;
-                const newLang = currentLang === 'it' ? 'en' : 'it';
+        // Aggiungi gestori di eventi per gli elementi del menu a tendina
+        document.querySelectorAll('.language-switcher .dropdown-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const newLang = e.currentTarget.getAttribute('data-lang');
                 window.LanguageSwitcher.switchLanguage(newLang);
             });
-
-        }
+        });
     }
 };
