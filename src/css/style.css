@@ -862,6 +862,22 @@ blockquote {
       padding: 8px 15px !important; /* Padding più equilibrato */
       white-space: nowrap !important; /* Evita il wrap del testo */
     }
+
+     /* Cambia colore freccetta dropdown in turchese scuro */
+     .language-switcher .dropdown-toggle::after {
+       border-top-color: var(--turchese-scuro) !important;
+       border-bottom-color: var(--turchese-scuro) !important;
+     }
+
+     /* Versione mobile - mantiene lo stesso colore */
+     @media (max-width: 991.98px) {
+       .language-switcher .dropdown-toggle::after {
+         display: inline-block !important; /* Riabilita la freccetta */
+         border-top-color: var(--turchese-scuro) !important;
+         border-bottom-color: var(--turchese-scuro) !important;
+       }
+     }
+
     .btn-lang {
       background: none;
       border: none;
