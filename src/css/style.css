@@ -192,8 +192,8 @@ body {
 .preloader .loader .dots span {
   display: block;
   float: left;
-  width: 16px;
-  height: 16px;
+  width: 11px;
+  height: 11px;
   margin-left: 16px;
   background: #068D9D;
   border-radius: 50%;
