@@ -1,36 +1,33 @@
-/**
- * WEBSITE: https://themefisher.com
- * TWITTER: https://twitter.com/themefisher
- * FACEBOOK: https://www.facebook.com/themefisher
- * GITHUB: https://github.com/themefisher/
- */
-
 /*!------------------------------------------------------------------
 [MAIN STYLESHEET]
 
-PROJECT:	Project Name
-VERSION:	Versoin Number
+PROJECT:    Project Name
+VERSION:    Version Number
 -------------------------------------------------------------------*/
-/*------------------------------------------------------------------
-[TABLE OF CONTENTS]
--------------------------------------------------------------------*/
-/*  typography */
+
+
+/* ==================== TIPOGRAFIA BASE ==================== */
+/* Importazione font da Google Fonts */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Playfair+Display:400,700");
+
+/* Definizione font personalizzato */
 @font-face {
   font-family: "hanskendrick";
   src: url("../plugins/fonts/hanskendrick-regular-webfont.woff") format("woff");
   font-style: normal;
-  font-display: swap;
+  font-display: swap; /* Ottimizzazione caricamento font */
 }
+
+/* Stili base per il body */
 body {
   line-height: 1.5;
   font-family: "Open Sans", sans-serif;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased; /* Migliora la leggibilità su macOS */
   font-size: 15px;
   color: #585757;
-
 }
 
+/* Stili paragrafi */
 p, .paragraph {
   font-weight: 400;
   font-size: 15px;
@@ -38,6 +35,7 @@ p, .paragraph {
   font-family: "Open Sans", sans-serif;
 }
 
+/* Stili intestazioni */
 h1, h2, h3, h4, h5, h6 {
   color: #000000;
   font-family: "hanskendrick";
@@ -45,15 +43,17 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
+/* Dimensioni responsive per h1 */
 h1, .h1 {
   font-size: 80px;
 }
 @media (max-width: 767px) {
   h1, .h1 {
-    font-size: 55px;
+    font-size: 55px; /* Riduzione dimensione su mobile */
   }
 }
 
+/* Dimensioni responsive per h2 */
 h2, .h2 {
   font-size: 50px;
 }
@@ -63,24 +63,13 @@ h2, .h2 {
   }
 }
 
-h3, .h3 {
-  font-size: 40px;
-}
+/* Dimensioni per h3-h6 */
+h3, .h3 { font-size: 40px; }
+h4, .h4 { font-size: 30px; }
+h5, .h5 { font-size: 20px; }
+h6, .h6 { font-size: 16px; }
 
-h4, .h4 {
-  font-size: 30px;
-}
-
-h5, .h5 {
-  font-size: 20px;
-}
-
-h6, .h6 {
-  font-size: 16px;
-}
-
-/* Button style */
-
+/* ==================== STILE PULSANTI ==================== */
 .btn {
   position: relative;
   bottom: -50px;
@@ -91,16 +80,20 @@ h6, .h6 {
   border-radius: 0;
   font-weight: 600;
   border: 2px solid;
-  transition: 0.2s ease;
+  transition: 0.2s ease; /* Transizione fluida */
 }
+
+/* Rimuove outline al focus per accessibilità */
 .btn:focus {
   outline: 0;
   box-shadow: none !important;
 }
+
 .btn:active {
   box-shadow: none;
 }
 
+/* Variante primary */
 .btn-primary {
   background: #068D9D;
 }
@@ -108,9 +101,10 @@ h6, .h6 {
   background: #068D9D !important;
 }
 .btn-primary:hover {
-  background: #056974;
+  background: #056974; /* Scurisce al hover */
 }
 
+/* Variante outline light */
 .btn-outline-light {
   background: transparent;
   color: #fff;
@@ -126,29 +120,28 @@ h6, .h6 {
   border-color: #fff;
 }
 
-
+/* Variante trasparente */
 .btn-transparent {
   color: #068D9D;
 }
 
+/* ==================== LAYOUT BASE ==================== */
 body {
-
-    background: #F5F0E6;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
+  background: #F5F0E6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Altezza minima viewport */
 }
 
+/* Stili selezione testo */
 ::-moz-selection {
   background: #056974;
 }
-
 ::selection {
   background: #056974;
 }
 
-
-/* preloader */
+/* ==================== PRELOADER ==================== */
 .preloader {
   position: fixed;
   top: 0;
@@ -156,11 +149,13 @@ body {
   right: 0;
   bottom: 0;
   background-color: #fff;
-  z-index: 999;
+  z-index: 999; /* Sopra tutto */
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+/* Animazione punti caricamento */
 .preloader .loader {
   position: absolute;
   top: 50%;
@@ -170,6 +165,8 @@ body {
   margin: -20px 0 0 -71px;
   background: white;
 }
+
+/* Punto animato */
 .preloader .loader .dot {
   position: absolute;
   width: 16px;
@@ -182,6 +179,8 @@ body {
   -webkit-animation: dot 2.8s infinite;
           animation: dot 2.8s infinite;
 }
+
+/* Punti statici */
 .preloader .loader .dots {
   transform: translateX(0);
   margin-top: 12px;
@@ -200,7 +199,7 @@ body {
   border-radius: 50%;
 }
 
-
+/* Animazioni */
 @-webkit-keyframes dot {
   50% {
     transform: translateX(96px);
@@ -222,42 +221,45 @@ body {
   }
 }
 
-ol,
-ul {
+/* ==================== RESET ELEMENTI BASE ==================== */
+/* Rimuove stili liste */
+ol, ul {
   list-style-type: none;
   margin: 0px;
 }
 
+/* Reset immagini */
 img {
   vertical-align: middle;
   border: 0;
 }
 
-a,
-a:hover,
-a:focus {
+/* Reset link */
+a, a:hover, a:focus {
   text-decoration: none;
 }
 
-a,
-button,
-select {
+/* Cursore puntatore */
+a, button, select {
   cursor: pointer;
   transition: 0.2s ease;
 }
-a:focus,
-button:focus,
-select:focus {
+a:focus, button:focus, select:focus {
   outline: 0;
 }
 
+/* Colore hover link */
 a:hover, a.text-dark:hover {
   color: #068D9D !important;
 }
+
+/* ==================== COMPONENTI ==================== */
+/* Slick slider */
 .slick-slide {
   outline: 0;
 }
 
+/* Sezioni */
 .section {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -270,6 +272,7 @@ a:hover, a.text-dark:hover {
   margin-bottom: 30px;
 }
 
+/* Background */
 .bg-cover {
   background-size: cover;
   background-position: center center;
@@ -283,11 +286,12 @@ a:hover, a.text-dark:hover {
   background-repeat: no-repeat;
 }
 
+/* Border */
 .border-primary {
   border-color: #ababab !important;
 }
 
-/* overlay */
+/* Overlay */
 .overlay {
   position: relative;
 }
@@ -302,88 +306,58 @@ a:hover, a.text-dark:hover {
   opacity: 0.5;
 }
 
+/* Utility */
 .outline-0 {
   outline: 0 !important;
 }
-
 .d-unset {
   display: unset !important;
 }
 
+/* Colori */
 .bg-primary {
   background: #068D9D !important;
 }
-
 .bg-secondary {
   background: #d4cec7 !important;
-
 }
-
 .text-primary {
   color: #ff6f00 !important;
 }
-
 .text-color {
   color: #585757;
 }
-
 .text-dark {
   color: #068D9D !important;
 }
-
 .font-secondary {
   font-family: "hanskendrick" !important;
   color: #068D9D !important;
 }
 
-.mb-10 {
-  margin-bottom: 10px !important;
-}
+/* Margini bottom */
+.mb-10 { margin-bottom: 10px !important; }
+.mb-20 { margin-bottom: 20px !important; }
+.mb-30 { margin-bottom: 30px !important; }
+.mb-40 { margin-bottom: 40px !important; }
+.mb-50 { margin-bottom: 50px !important; }
+.mb-60 { margin-bottom: 60px !important; }
+.mb-70 { margin-bottom: 70px !important; }
+.mb-80 { margin-bottom: 80px !important; }
+.mb-90 { margin-bottom: 90px !important; }
+.mb-100 { margin-bottom: 100px !important; }
 
-.mb-20 {
-  margin-bottom: 20px !important;
-}
-
-.mb-30 {
-  margin-bottom: 30px !important;
-}
-
-.mb-40 {
-  margin-bottom: 40px !important;
-}
-
-.mb-50 {
-  margin-bottom: 50px !important;
-}
-
-.mb-60 {
-  margin-bottom: 60px !important;
-}
-
-.mb-70 {
-  margin-bottom: 70px !important;
-}
-
-.mb-80 {
-  margin-bottom: 80px !important;
-}
-
-.mb-90 {
-  margin-bottom: 90px !important;
-}
-
-.mb-100 {
-  margin-bottom: 100px !important;
-}
-
+/* Z-index */
 .zindex-1 {
   z-index: 1;
 }
 
+/* Overflow */
 .overflow-hidden {
   overflow: hidden;
 }
 
+/* Form controls */
 .form-control {
   border: 0;
   border-bottom: 1px solid #ababab;
@@ -399,10 +373,12 @@ textarea.form-control {
   height: 150px;
 }
 
+/* ==================== NAVBAR ==================== */
 .navigation {
   z-index: 9;
 }
 
+/* Sticky header */
 .headroom {
   position: -webkit-sticky;
   position: sticky;
@@ -419,10 +395,10 @@ textarea.form-control {
   }
 }
 
+/* Comportamento sticky */
 .headroom--unpinned {
   top: -150px;
 }
-
 @media (max-width: 991px) {
   .headroom--unpinned {
     top: 0;
@@ -432,6 +408,7 @@ textarea.form-control {
   top: 0;
 }
 
+/* Link navbar */
 .navbar .nav-item .nav-link {
   padding: 20px 15px;
 }
@@ -440,6 +417,8 @@ textarea.form-control {
     padding: 10px;
   }
 }
+
+/* Dropdown menu */
 .navbar .dropdown:hover .dropdown-menu {
   visibility: visible;
   opacity: 1;
@@ -479,9 +458,10 @@ textarea.form-control {
 }
 .navbar .dropdown-item:active {
   color: #fff;
-  background-color: ##068D9D;
+  background-color: #068D9D;
 }
 
+/* Search icon */
 .search-icon {
   border: 0;
   background: transparent;
@@ -491,6 +471,8 @@ textarea.form-control {
   transform: translateY(-50%);
 }
 
+/* ==================== CARD ==================== */
+/* Overlay immagine card */
 .card-img-overlay::before {
   position: absolute;
   content: "";
@@ -501,6 +483,7 @@ textarea.form-control {
   left: 0;
 }
 
+/* Contenuto card */
 .card-content {
   padding: 30px;
   position: absolute;
@@ -509,6 +492,7 @@ textarea.form-control {
   bottom: 30px;
 }
 
+/* Bordi titoli */
 .title-border {
   position: relative;
   margin-bottom: 25px;
@@ -538,6 +522,7 @@ textarea.form-control {
   background: #ababab;
 }
 
+/* ==================== PAGINAZIONE ==================== */
 @media (max-width: 575px) {
   .pagination {
     overflow: auto;
@@ -563,7 +548,8 @@ textarea.form-control {
   color: #000000;
   background-color: transparent;
 }
-.pagination .page-item:first-child .page-link, .pagination .page-item:last-child .page-link {
+.pagination .page-item:first-child .page-link, 
+.pagination .page-item:last-child .page-link {
   font-size: 16px;
 }
 .pagination .page-item.active .page-link {
@@ -572,6 +558,7 @@ textarea.form-control {
   background: transparent;
 }
 
+/* ==================== INSTAGRAM POST ==================== */
 .instagram-post {
   position: relative;
 }
@@ -613,12 +600,13 @@ textarea.form-control {
   opacity: 1;
 }
 
-/* homepage 2 */
+/* ==================== HOMEPAGE 2 ==================== */
 .hero-section {
   padding: 70px 0 0;
   background-image: linear-gradient(#fff 45%, #fdefe6 0);
 }
 
+/* Divisori */
 .dividers {
   display: flex;
   align-items: center;
@@ -638,6 +626,7 @@ textarea.form-control {
   border-left: 1px solid #edeef0;
 }
 
+/* Articoli full width */
 .article-full-width {
   display: flex;
   flex-wrap: nowrap;
@@ -728,10 +717,12 @@ textarea.form-control {
   }
 }
 
+/* Thumbnail post */
 .post-thumb {
   height: 400px;
 }
 
+/* Blockquote */
 blockquote {
   font-style: italic;
   color: #000000;
@@ -740,10 +731,12 @@ blockquote {
   font-weight: 600;
 }
 
+/* Contenuto generico */
 .content * {
   margin-bottom: 20px;
 }
 
+/* Widget */
 .widget {
   padding: 15px 0;
 }
@@ -752,6 +745,7 @@ blockquote {
   border-bottom: 1px solid #f4f4f4;
 }
 
+/* Search box */
 .search-box {
   position: relative;
 }
@@ -762,12 +756,14 @@ blockquote {
   color: #767575;
 }
 
+/* Thumbnail small */
 .post-thumb-sm {
   max-width: 75px;
   max-height: 75px;
   overflow: hidden;
 }
 
+/* Tag list */
 .tag-list li a {
   display: block;
   background: #f4f4f4;
@@ -777,522 +773,516 @@ blockquote {
 .tag-list li a:hover {
   color: #068D9D;
 }
-/*# sourceMappingURL=style.css.map */
 
-    :root {
-      --beige: #FFFCF5;
-      --beige-scuro: #F5F0E6;
-      --turchese: #068d9d;
-      --turchese-scuro: #056974;
-      --testo: #5a716a;
-    }
+/* ==================== VARIABILI CSS ==================== */
+:root {
+  --beige: #FFFCF5;
+  --beige-scuro: #F5F0E6;
+  --turchese: #068d9d;
+  --turchese-scuro: #056974;
+  --testo: #5a716a;
+}
 
-    /* Struttura base */
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: 'Lexend', sans-serif;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-      background-color: var(--beige);
-    }
-    .page-content {
-      flex: 1 0 auto;
-    }
+/* ==================== STRUTTURA BASE ==================== */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Lexend', sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--beige);
+}
+.page-content {
+  flex: 1 0 auto; /* Flex grow, flex shrink, flex basis */
+}
 
-    /* Header */
-    .navigation {
-      background: linear-gradient(to top, var(--beige) 0%, var(--beige-scuro) 100%);
-      border-bottom: 1px solid rgba(90, 113, 106, 0.1);
+/* ==================== HEADER ==================== */
+.navigation {
+  background: linear-gradient(to top, var(--beige) 0%, var(--beige-scuro) 100%);
+  border-bottom: 1px solid rgba(90, 113, 106, 0.1);
+}
+.navbar-brand img {
+  width: 100px;
+  height: auto;
+  transition: all 0.3s ease;
+}
 
-    }
-    .navbar-brand img {
-      width: 100px;
-      height: auto;
-      transition: all 0.3s ease;
-    }
+/* ==================== NAVBAR ==================== */
+.nav-link {
+  color: var(--turchese-scuro);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  position: relative;
+}
+/* Effetto hover sottolineato */
+.nav-link:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--turchese-scuro);
+  transition: all 0.3s ease;
+}
+.nav-link:hover {
+  color: var(--turchese-scuro);
+  opacity: 0.8;
+}
+.nav-link:hover:after {
+  width: 100%;
+}
 
-    /* Navbar */
-    .nav-link {
-      color: var(--turchese-scuro);
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 1px;
-      position: relative;
-    }
-    .nav-link:after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: var(--turchese-scuro);
-      transition: all 0.3s ease;
-    }
-    .nav-link:hover {
-      color: var(--turchese-scuro);
-      opacity: 0.8;
-    }
-    .nav-link:hover:after {
-      width: 100%;
-    }
+/* ==================== LANGUAGE SWITCHER ==================== */
+.language-switcher {
+  margin-left: 15px;
+}
 
-    /* Pulsante lingua */
-    .language-switcher {
-      margin-left: 15px;
-    }
+/* Dropdown menu personalizzato */
+.language-switcher .dropdown-menu {
+  min-width: auto !important;
+  width: max-content !important;
+  right: 0 !important;
+  left: auto !important;
+  transform: none !important;
+  margin-top: 5px !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+  border: 1px solid rgba(90, 113, 106, 0.1) !important;
+}
 
-    /* Modifica lo stile del dropdown menu */
-    .language-switcher .dropdown-menu {
-      min-width: auto !important; /* Larghezza automatica basata sul contenuto */
-      width: max-content !important; /* Adatta la larghezza al contenuto */
-      right: 0 !important; /* Allinea a destra */
-      left: auto !important; /* Sovrascrive eventuali allineamenti a sinistra */
-      transform: none !important; /* Rimuove trasformazioni che potrebbero causare problemi */
-      margin-top: 5px !important; /* Spazio dal pulsante */
-      border-radius: 4px !important; /* Bordi arrotondati */
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important; /* Ombra leggera */
-      border: 1px solid rgba(90, 113, 106, 0.1) !important; /* Bordo sottile */
-    }
+.language-switcher .dropdown-item {
+  padding: 8px 15px !important;
+  white-space: nowrap !important;
+}
 
-    .language-switcher .dropdown-item {
-      padding: 8px 15px !important; /* Padding più equilibrato */
-      white-space: nowrap !important; /* Evita il wrap del testo */
-    }
+/* Freccetta dropdown personalizzata */
+.language-switcher .dropdown-toggle::after {
+  border-top-color: var(--turchese-scuro) !important;
+  border-bottom-color: var(--turchese-scuro) !important;
+}
 
-     /* Cambia colore freccetta dropdown in turchese scuro */
-     .language-switcher .dropdown-toggle::after {
-       border-top-color: var(--turchese-scuro) !important;
-       border-bottom-color: var(--turchese-scuro) !important;
-     }
-
-     /* Versione mobile - mantiene lo stesso colore */
-     @media (max-width: 991.98px) {
-       .language-switcher .dropdown-toggle::after {
-         display: inline-block !important; /* Riabilita la freccetta */
-         border-top-color: var(--turchese-scuro) !important;
-         border-bottom-color: var(--turchese-scuro) !important;
-       }
-     }
-
-    .btn-lang {
-      background: none;
-      border: none;
-      padding: 5px 10px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s ease;
-    }
-    .btn-lang:hover {
-      opacity: 0.8;
-    }
-    .flag-icon {
-      width: 24px;
-      height: 16px;
-      background-size: cover;
-      border-radius: 2px;
-      box-shadow: 0 0 2px rgba(0,0,0,0.2);
-    }
-    .flag-it {
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6"><path fill="%23009234" d="M0 0h3v6H0z"/><path fill="%23FFF" d="M3 0h3v6H3z"/><path fill="%23CE2B37" d="M6 0h3v6H6z"/></svg>');
-    }
-    .flag-gb {
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30"><rect width="60" height="30" fill="%23012169"/><path d="M0 0l60 30M60 0L0 30" stroke="%23FFF" stroke-width="6"/><path d="M30 0v30M0 15h60" stroke="%23FFF" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="%23C8102E" stroke-width="6"/></svg>');
-    }
-    .lang-text {
-      color: var(--turchese-scuro);
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    /* Cards monumenti */
-    .featured-post-slider {
-      padding-left: 15px;  /* Spazio a sinistra */
-      padding-right: 15px; /* Spazio a destra */
-    }
-
-    .featured-post-slider .card {
-      height: 250px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .featured-post-slider .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(6, 141, 157, 0.2);
-    }
-    .card-img-overlay {
-      background: rgba(6, 141, 157, 0.7);
-      display: flex;
-      align-items: flex-end;
-    }
-
-    /* Footer */
-    .sticky-footer {
-      background: linear-gradient(to bottom, var(--beige) 50%, var(--beige-scuro) 100%);
-      padding: 0.1rem 0;
-      flex-shrink: 0;
-      border-top: 1px solid rgba(90, 113, 106, 0.1);
-    }
-    .footer-turchese {
-      color: var(--turchese-scuro);
-    }
-
-    @media (max-width: 767.98px) {
-      .language-switcher {
-        margin-left: 0;
-        justify-content: center;
-      }
-    }
-
-    /* Logo responsive */
-    .navbar-brand .logo-header {
-      width: auto;
-      height: 65px;
-      transition: all 0.3s ease;
-    }
-
-    @media (max-width: 992px) {
-      .navbar-brand .logo-header {
-        height: 45px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .navbar-brand .logo-header {
-        height: 40px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .navbar-brand .logo-header {
-        height: 45px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .featured-post-slider .card {
-        height: 250px; /* Altezza ridotta per mobile */
-      }
-    }
-
-    .footer-logo {
-      height: 30px;
-      width: auto;
-    }
-
-    @media (min-width: 576px) {
-      .footer-logo {
-        height: 35px;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .footer-logo {
-        height: 40px;
-      }
-    }
-
-    @media (min-width: 992px) {
-      .footer-logo {
-        height: 45px;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .footer-logo {
-        height: 50px;
-      }
-    }
-
-    .card {
-      min-height: 150px;
-      border: none !important;
-    }
-    .card-img {
-      object-fit: cover;
-      height: 100%;
-    }
-
-    .btn-outline-light {
-      padding: 0.25rem 0.75rem;
-      font-size: clamp(0.7rem, 2vw, 0.9rem);
-      border-width: 2px;
-      transition: all 0.2s;
-
-    }
-
-
-    /* Dropdown menu */
-    .dropdown-menu {
-      background-color: var(--beige-scuro);
-      border: 1px solid rgba(90, 113, 106, 0.1);
-      border-radius: 0;
-    }
-    .dropdown-item {
-      color: var(--turchese-scuro);
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-    .dropdown-item:hover {
-      background-color: rgba(5, 105, 116, 0.1);
-      color: var(--turchese-scuro);
-    }
-
-    /* Icone social */
-    .social-icon {
-      color: var(--turchese-scuro);
-      transition: all 0.3s ease;
-    }
-    .social-icon:hover {
-      opacity: 0.7;
-      transform: translateY(-2px);
-    }
-
-    /* Navbar toggler */
-    .navbar-toggler {
-      color: var(--turchese-scuro);
-      border-color: var(--turchese-scuro);
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      background-color: var(--beige);
-      overflow-x: hidden; /* Questo previene lo scroll orizzontale */
-    }
-
-/* Struttura base per footer fisso */
-  html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Lexend', sans-serif;
+/* Versione mobile */
+@media (max-width: 991.98px) {
+  .language-switcher .dropdown-toggle::after {
+    display: inline-block !important;
+    border-top-color: var(--turchese-scuro) !important;
+    border-bottom-color: var(--turchese-scuro) !important;
   }
+}
 
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Viewport Height */
+/* Pulsante lingua */
+.btn-lang {
+  background: none;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+.btn-lang:hover {
+  opacity: 0.8;
+}
+
+/* Bandiere */
+.flag-icon {
+  width: 24px;
+  height: 16px;
+  background-size: cover;
+  border-radius: 2px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
+.flag-it {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6"><path fill="%23009234" d="M0 0h3v6H0z"/><path fill="%23FFF" d="M3 0h3v6H3z"/><path fill="%23CE2B37" d="M6 0h3v6H6z"/></svg>');
+}
+.flag-gb {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30"><rect width="60" height="30" fill="%23012169"/><path d="M0 0l60 30M60 0L0 30" stroke="%23FFF" stroke-width="6"/><path d="M30 0v30M0 15h60" stroke="%23FFF" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="%23C8102E" stroke-width="6"/></svg>');
+}
+.lang-text {
+  color: var(--turchese-scuro);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ==================== FEATURED POST SLIDER ==================== */
+.featured-post-slider {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.featured-post-slider .card {
+  height: 250px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.featured-post-slider .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(6, 141, 157, 0.2);
+}
+.card-img-overlay {
+  background: rgba(6, 141, 157, 0.7);
+  display: flex;
+  align-items: flex-end;
+}
+
+/* ==================== FOOTER ==================== */
+.sticky-footer {
+  background: linear-gradient(to bottom, var(--beige) 50%, var(--beige-scuro) 100%);
+  padding: 0.1rem 0;
+  flex-shrink: 0;
+  border-top: 1px solid rgba(90, 113, 106, 0.1);
+}
+.footer-turchese {
+  color: var(--turchese-scuro);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 767.98px) {
+  .language-switcher {
+    margin-left: 0;
+    justify-content: center;
   }
+}
 
-  .page-content {
-    flex: 1;
-    padding-bottom: 60px; /* Altezza approssimativa del footer */
+/* Logo responsive */
+.navbar-brand .logo-header {
+  width: auto;
+  height: 65px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 992px) {
+  .navbar-brand .logo-header {
+    height: 45px;
   }
+}
 
-  /* Stile del footer fisso */
-  .sticky-footer {
-   /* position: fixed;
-    bottom: 0; */
-    width: 100%;
-    background: linear-gradient(to bottom, var(--beige) 50%, var(--beige-scuro) 100%);
-    border-top: 1px solid rgba(90, 113, 106, 0.1);
-    z-index: 1000;
+@media (max-width: 768px) {
+  .navbar-brand .logo-header {
+    height: 40px;
   }
+}
 
-  /* Aggiungi spazio sotto il contenuto per evitare sovrapposizioni */
-  main {
-    margin-bottom: 80px; /* Deve essere >= all'altezza del footer */
+@media (max-width: 576px) {
+  .navbar-brand .logo-header {
+    height: 45px;
   }
+}
 
+/* Card responsive */
+@media (max-width: 576px) {
+  .featured-post-slider .card {
+    height: 250px;
+  }
+}
 
+/* Footer logo responsive */
+.footer-logo {
+  height: 30px;
+  width: auto;
+}
 
-    /* Slider Section */
-    .galleria-monumenti {
-          margin-top: 110px;    /* aumenta per abbassare la galleria */
-          padding-top: 0;
-        }
+@media (min-width: 576px) {
+  .footer-logo {
+    height: 35px;
+  }
+}
 
-    .slider-section {
-      padding: 60px 0;
-    }
+@media (min-width: 768px) {
+  .footer-logo {
+    height: 40px;
+  }
+}
 
-    .monument-info {
-      padding-right: 40px;
-    }
+@media (min-width: 992px) {
+  .footer-logo {
+    height: 45px;
+  }
+}
 
-    .monument-name {
-      color: var(--turchese-scuro);
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
+@media (min-width: 1200px) {
+  .footer-logo {
+    height: 50px;
+  }
+}
 
-    .monument-description {
-      color: var(--testo);
-      line-height: 1.6;
-      margin-bottom: 30px;
-    }
+/* ==================== CARD GENERICHE ==================== */
+.card {
+  min-height: 150px;
+  border: none !important;
+}
+.card-img {
+  object-fit: cover;
+  height: 100%;
+}
 
-    .slider-container {
-      position: relative;
-    }
+/* Pulsante outline light */
+.btn-outline-light {
+  padding: 0.25rem 0.75rem;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
+  border-width: 2px;
+  transition: all 0.2s;
+}
 
-    .monument-slider {
-      width: 100%;
-    }
+/* ==================== DROPDOWN MENU ==================== */
+.dropdown-menu {
+  background-color: var(--beige-scuro);
+  border: 1px solid rgba(90, 113, 106, 0.1);
+  border-radius: 0;
+}
+.dropdown-item {
+  color: var(--turchese-scuro);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.dropdown-item:hover {
+  background-color: rgba(5, 105, 116, 0.1);
+  color: var(--turchese-scuro);
+}
 
-    .monument-slider .slick-slide {
-      padding: 0 10px;
-    }
+/* ==================== ICONE SOCIAL ==================== */
+.social-icon {
+  color: var(--turchese-scuro);
+  transition: all 0.3s ease;
+}
+.social-icon:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
 
-    .monument-slider .slick-slide img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
+/* ==================== NAVBAR TOGGLER ==================== */
+.navbar-toggler {
+  color: var(--turchese-scuro);
+  border-color: var(--turchese-scuro);
+}
 
-    .monument-slider .slick-slide img:hover {
-      transform: scale(1.02);
-    }
+/* ==================== LAYOUT GENERALE ==================== */
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--beige);
+  overflow-x: hidden;
+}
 
-    .slick-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 10;
-      background: rgba(255,255,255,0.7);
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      color: var(--turchese-scuro);
-      font-size: 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+/* Footer fisso */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Lexend', sans-serif;
+}
 
-    .slick-arrow:hover {
-      background: var(--turchese-scuro);
-      color: white;
-    }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-    .slick-prev {
-      left: -20px;
-    }
+.page-content {
+  flex: 1;
+  padding-bottom: 60px;
+}
 
-    .slick-next {
-      right: -20px;
-    }
-/*STILE TITOLI PAGINE*/
+.sticky-footer {
+  width: 100%;
+  background: linear-gradient(to bottom, var(--beige) 50%, var(--beige-scuro) 100%);
+  border-top: 1px solid rgba(90, 113, 106, 0.1);
+  z-index: 1000;
+}
+
+main {
+  margin-bottom: 80px;
+}
+
+/* ==================== SEZIONE MONUMENTI ==================== */
+.galleria-monumenti {
+  margin-top: 110px;
+  padding-top: 0;
+}
+
+.slider-section {
+  padding: 60px 0;
+}
+
+.monument-info {
+  padding-right: 40px;
+}
+
+.monument-name {
+  color: var(--turchese-scuro);
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.monument-description {
+  color: var(--testo);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.slider-container {
+  position: relative;
+}
+
+.monument-slider {
+  width: 100%;
+}
+
+.monument-slider .slick-slide {
+  padding: 0 10px;
+}
+
+.monument-slider .slick-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.monument-slider .slick-slide img:hover {
+  transform: scale(1.02);
+}
+
+/* Frecce slider */
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255,255,255,0.7);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--turchese-scuro);
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slick-arrow:hover {
+  background: var(--turchese-scuro);
+  color: white;
+}
+
+.slick-prev {
+  left: -20px;
+}
+
+.slick-next {
+  right: -20px;
+}
+
+/* ==================== STILE TITOLI PAGINE ==================== */
 .titoli{
-    font-family: 'Allison';
-    font-size: 4.0rem;
-    color: #6b522a;
-/*#a1865e, #5d4f34, #5a3921, #d4af37, #7a6b4a, #8c6a3d, #6b522a, #d4af37, #7a6b4a colori terrosi*/
+  font-family: 'Allison';
+  font-size: 4.0rem;
+  color: #6b522a;
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(107, 82, 42, 0.2);
 }
 .startParagrafo{
-    font-family: 'Allison';
-    font-size: 3.0rem;
-    color: #6b522a;
-/*#a1865e, #5d4f34, #5a3921, #d4af37, #7a6b4a, #8c6a3d, #6b522a, #d4af37, #7a6b4a colori terrosi*/
-
+  font-family: 'Allison';
+  font-size: 3.0rem;
+  color: #6b522a;
 }
-/*stile motto*/
+
+/* ==================== STILE MOTTO ==================== */
 .brand-container {
-    display: flex;
-    align-items: center;
-    margin-right: 15px;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
 }
 
-/*logo animato + motto*/
-
+/* Motto desktop */
 .motto-text {
-    font-family: 'Allison', cursive;
-    font-size: 1.5rem;
-    color: #6b522a;
-/*#a1865e, #5d4f34, #5a3921, #d4af37, #7a6b4a, #8c6a3d, #6b522a, #d4af37, #7a6b4a colori terrosi*/
-    position: relative;
-    display: inline;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-    white-space: nowrap;
+  font-family: 'Allison', cursive;
+  font-size: 1.5rem;
+  color: #6b522a;
+  position: relative;
+  display: inline;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
 }
 
 .motto-text[style*="display: none"] {
   opacity: 0;
 }
 
-/*
-.motto-text:after {
-    content: " 🧸";
-    position: absolute;
-    color: #a1865e;
-    font-size: 1.2rem;
-    top: 60%; left: 110%; bottom:50%;
-    animation: rotateEmoji 2s infinite ease-in-out;
-}
-*/
-
-/*Senza Separatore (in alternativa agli altri separatori)*/
 .motto-text {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
-
-/* Stile per dispositivi mobili */
+/* Nascondi motto su mobile */
 @media (max-width: 768px) {
-    .motto-text {
-        display: none;
-        /* Nascondi il motto su mobile */
-    }
-}
-.motto-text-body {
-    font-family: 'Allison', cursive;
-    color: #6b522a;
-    text-align: center;
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
-    margin: 0 auto;
+  .motto-text {
     display: none;
-    padding: 0 1rem; /* Spazio laterale generoso */
-}
-
-/* Mobile (fino a 768px) */
-@media (max-width: 768px) {
-  .motto-text-body {
-    display: block;
-    padding: 0 12rem; /* Meno spazio ai lati */
   }
 }
 
-/* Mobile piccolo (fino a 480px) */
+/* Stile motto nel body (versione mobile) */
+.motto-text-body {
+  font-family: 'Allison', cursive;
+  color: #6b522a;
+  text-align: center; /* Allineamento centrale */
+  font-size: clamp(2.6rem, 5vw, 2.8rem);
+  margin: 0 auto; /* Centratura orizzontale */
+  display: none;
+  padding: 0 1rem; /* Riduci il padding laterale */
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(107, 82, 42, 0.2);
+  width: 100%; /* Occupa tutta la larghezza */
+  box-sizing: border-box; /* Include padding nella larghezza */
+
+  /* Reset eventuali float o posizionamenti ereditati */
+  float: none !important;
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+}
+
+  /* Contenitore genitore */
+.navbar-brand {
+  display: block !important;
+  text-align: center !important;
+  width: 100% !important;
+  padding-right: 0 !important;
+}
+
+/* Mostra motto body su mobile */
+@media (max-width: 768px) {
+  .motto-text-body {
+    display: block;
+    padding: 0 1rem; /* Padding ridotto e uniforme */
+    margin: 0.5rem 0; /* Aggiungi margine verticale */
+  }
+}
+
+/* Regolazioni per mobile piccolo */
 @media (max-width: 480px) {
   .motto-text-body {
-    display: block;
-        padding: 0 12rem; /* Meno spazio ai lati */
+    padding: 0 0.5rem; /* Padding ancora più stretto */
+    font-size: clamp(2.5rem, 5vw, 2.2rem); /* Dimensione più piccola */
   }
-
 }
 
-/*fine stile motto*/
-
+/* ==================== MENU MONUMENTI ==================== */
 .menu-monumenti-barra-link{
-    font-size: 1.2em;
-    opacity: 0.5;
-    line-height: 1.8;
+  font-size: 1.2em;
+  opacity: 0.5;
+  line-height: 1.8;
 }
 
-/*!------------------------------------------------------------------
-[MAIN STYLESHEET]
-
-PROJECT:	Project Name
-VERSION:	Versoin Number
--------------------------------------------------------------------*/
-
-/* [TUTTO IL TUO CSS ESISTENTE...] */
-/* ... (tutte le 8000+ righe rimangono IDENTICHE) ... */
-
-/*
-   MODIFICHE PER IL MOTTO
-   (aggiunte in fondo al file per sovrascrivere eventuali stili conflittuali)
-*/
+/* ==================== NAVBAR BRAND ==================== */
 .navbar-brand {
   display: flex !important;
   align-items: center !important;
@@ -1311,6 +1301,7 @@ VERSION:	Versoin Number
   flex-shrink: 0 !important;
 }
 
+/* Motto migliorato */
 .motto-text {
   display: inline-block !important;
   white-space: nowrap !important;
@@ -1320,24 +1311,16 @@ VERSION:	Versoin Number
   top: auto !important;
   left: auto !important;
   transform: none !important;
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(107, 82, 42, 0.2);
 }
 
-/* Mobile (mantenendo il tuo comportamento responsive esistente) */
-@media (max-width: 768px) {
-  .motto-text {
-    display: none !important;
-  }
-  .motto-text-body {
-    display: block !important;
-    padding: 0 1rem !important;
-  }
-}
-/* SOLUZIONE DEFINITIVA PER IL MOTTO */
+/* Soluzione definitiva motto */
 .navbar-brand {
   position: relative;
   display: flex !important;
   align-items: center !important;
-  padding-right: 200px !important; /* Spazio riservato al motto */
+  padding-right: 200px !important;
 }
 
 .mosaic-image {
@@ -1355,13 +1338,13 @@ VERSION:	Versoin Number
   margin-left: 0 !important;
 }
 
-/* Mantiene lo stesso spazio per entrambe le versioni */
+/* Mantiene spazio per entrambe le versioni */
 .motto-lang-it,
 .motto-lang-en {
   left: calc(100% + 15px) !important;
 }
 
-/* Mobile: nascondi il motto nell'header */
+/* Nascondi motto su mobile */
 @media (max-width: 768px) {
   .navbar-brand {
     padding-right: 0 !important;

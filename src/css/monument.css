@@ -1,137 +1,152 @@
-/* Stili per la navigazione interna */
-        .section-anchor {
-            display: block;
-            position: relative;
-            top: -80px;
-            visibility: hidden;
-        }
+/* ==================== NAVIGAZIONE INTERNA ==================== */
+/* Ancora per navigazione interna con offset per fixed header */
+.section-anchor {
+    display: block;
+    position: relative;
+    top: -80px;          /* Offset per compensare l'header fixed */
+    visibility: hidden;  /* Nasconde l'ancora mantenendo lo spazio */
+}
 
-        /* Galleria immagini */
-        .monument-gallery {
-            margin-bottom: 30px;
-        }
+/* ==================== GALLERIA IMMAGINI ==================== */
+.monument-gallery {
+    margin-bottom: 30px; /* Spaziatura inferiore */
+}
 
-        .monument-gallery .gallery-item {
-            position: relative;
-            height: 400px;
-            overflow: hidden;
-        }
+/* Contenitore singolo item galleria */
+.monument-gallery .gallery-item {
+    position: relative;
+    height: 400px;      /* Altezza fissa */
+    overflow: hidden;   /* Nasconde overflow */
+}
 
-        .monument-gallery img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
+/* Stile immagini galleria */
+.monument-gallery img {
+    width: 100%;        /* Larghezza piena */
+    height: 100%;       /* Altezza piena */
+    object-fit: cover;  /* Copertura mantenendo proporzioni */
+    transition: transform 0.5s ease; /* Animazione hover */
+}
 
-        .monument-gallery a:hover img {
-            transform: scale(1.03);
-        }
+/* Effetto hover sulle immagini */
+.monument-gallery a:hover img {
+    transform: scale(1.03); /* Leggero zoom */
+}
 
-        /* Sezioni di contenuto */
-        .content-section {
-            padding: 80px 0;
-            scroll-margin-top: 80px;
-        }
+/* ==================== SEZIONI DI CONTENUTO ==================== */
+.content-section {
+    padding: 80px 0;            /* Spaziatura verticale */
+    scroll-margin-top: 80px;    /* Offset per scroll linking */
+}
 
-        .content-section:nth-child(odd) {
-            background-color: #e1dcd3;
-        }
+/* Alternanza colore sfondo sezioni */
+.content-section:nth-child(odd) {
+    background-color: #e1dcd3; /* Colore per sezioni dispari */
+}
 
-        /* Stile per i titoli delle sezioni */
-        .section-title-left {
-            font-family: 'Lexend', sans-serif;
-            font-size: clamp(1.4rem, 3vw, 1.8rem); /* Min: 1.4rem, Max: 1.8rem */
-            color:#5a716a;
-            position: relative;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-        }
+/* ==================== TITOLI SEZIONI ==================== */
+/* Titoli allineati a sinistra */
+.section-title-left {
+    font-family: 'Lexend', sans-serif;
+    font-size: clamp(1.4rem, 3vw, 1.8rem); /* Responsivo */
+    color: #5a716a;
+    position: relative;
+    padding-bottom: 15px;       /* Spazio per la sottolineatura */
+    margin-bottom: 30px;        /* Margine inferiore */
+}
 
-        .section-title-right {
-            font-family: 'Lexend', sans-serif;
-            font-size: clamp(1.4rem, 3vw, 1.8rem); /* Min: 1.4rem, Max: 1.8rem */
-            color:#5a716a;
-            position: relative;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-        }
+/* Titoli allineati a destra */
+.section-title-right {
+    font-family: 'Lexend', sans-serif;
+    font-size: clamp(1.4rem, 3vw, 1.8rem); /* Responsivo */
+    color: #5a716a;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
 
-        .section-title-left:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: #6b522a;
-        }
+/* Sottolineatura titoli sinistra */
+.section-title-left:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;                /* Lunghezza linea */
+    height: 3px;                /* Spessore linea */
+    background: #6b522a;        /* Colore linea */
+}
 
-        .section-title-right:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 60px;
-            height: 3px;
-            background: #6b522a;
-        }
+/* Sottolineatura titoli destra */
+.section-title-right:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 3px;
+    background: #6b522a;
+}
 
-        .nav-link-custom:hover {
-            color: var(--bs-primary) !important;
-        }
+/* ==================== LINK DI NAVIGAZIONE ==================== */
+.nav-link-custom:hover {
+    color: var(--bs-primary) !important; /* Cambio colore hover */
+}
 
-        /* Nascondi i dots dello slider */
-        .slick-dots {
-            display: none !important;
-        }
+/* ==================== SLIDER ==================== */
+/* Nasconde i pallini di navigazione */
+.slick-dots {
+    display: none !important;
+}
 
-        /* Personalizzazione ordine */
-        .order-md-1 {
-          order: 2 !important; /* Forza prima posizione su schermi ≥768px */
-        }
+/* ==================== LAYOUT RESPONSIVE ==================== */
+/* Riordino colonne su desktop */
+.order-md-1 {
+    order: 2 !important; /* Forza seconda posizione su schermi ≥768px */
+}
 
-        .order-md-2 {
-          order: 1 !important; /* Forza seconda posizione su schermi ≥768px */
-        }
+.order-md-2 {
+    order: 1 !important; /* Forza prima posizione su schermi ≥768px */
+}
 
-        /* Per mobile (schermi <768px) */
-        @media (max-width: 767.98px) {
-          [class*="order-"] {
-            order: 0 !important; /* Ripristina ordine naturale */
-          }
-        }
+/* Ripristino ordine naturale su mobile */
+@media (max-width: 767.98px) {
+    [class*="order-"] {
+        order: 0 !important;
+    }
+}
 
-        /*Bottone vai a google maps*/
-        .btn-outline-turchese {
-          color: var(--turchese-scuro) !important;
-          border-color: var(--turchese-scuro) !important;
-          background-color: transparent !important;
-        }
+/* ==================== PULSANTE GOOGLE MAPS ==================== */
+.btn-outline-turchese {
+    color: var(--turchese-scuro) !important;
+    border-color: var(--turchese-scuro) !important;
+    background-color: transparent !important;
+}
 
-        .btn-outline-turchese:hover {
-          color: white !important;
-          background-color: var(--turchese-scuro) !important;
-          border-color: var(--turchese-scuro) !important;
-        }
-         /*FINE Bottone vai a google maps*/
+/* Effetto hover */
+.btn-outline-turchese:hover {
+    color: white !important;
+    background-color: var(--turchese-scuro) !important;
+    border-color: var(--turchese-scuro) !important;
+}
 
-         .custom-star-list {
-           list-style-type: none; /* Rimuove i pallini predefiniti */
-           padding-left: 0;
-         }
+/* ==================== LISTA A STELLINE ==================== */
+.custom-star-list {
+    list-style-type: none; /* Rimuove i pallini predefiniti */
+    padding-left: 0;       /* Rimuove padding sinistro */
+}
 
-         .custom-star-list li {
-           position: relative;
-           padding-left: 25px;
-           margin-bottom: 8px;
-           line-height: 1.5;
-         }
+/* Elementi lista */
+.custom-star-list li {
+    position: relative;
+    padding-left: 25px;    /* Spazio per la stellina */
+    margin-bottom: 8px;    /* Spaziatura tra elementi */
+    line-height: 1.5;      /* Interlinea */
+}
 
-         .custom-star-list li:before {
-           content: "★";
-           color: var(--turchese-scuro); /* Colore turchese scuro */
-           position: absolute;
-           left: 0;
-           font-size: 0.9em;
-         }
+/* Stellina personalizzata */
+.custom-star-list li:before {
+    content: "★";
+    color: var(--turchese-scuro); /* Colore turchese */
+    position: absolute;
+    left: 0;
+    font-size: 0.9em;      /* Dimensione leggermente ridotta */
+}
