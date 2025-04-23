@@ -6,10 +6,14 @@ window.LanguageSwitcher = {
         // Cambia la bandiera e il testo nel pulsante principale
         const flag = languageDropdown.querySelector('.flag-icon');
         const text = languageDropdown.querySelector('.lang-text');
+        const italianTextElement = document.querySelector('.italian-text');
+        const englishTextElement = document.querySelector('.english-text');
 
         if(newLang === 'en') {
             flag.className = 'flag-icon flag-gb';
             text.textContent = 'EN';
+            italianTextElement.textContent='Italian';
+            englishTextElement.textContent='English';
 
             // Mostra menu inglese e nascondi italiano
             document.querySelector('.lang-it').style.display = 'none';
@@ -34,6 +38,9 @@ window.LanguageSwitcher = {
         } else {
             flag.className = 'flag-icon flag-it';
             text.textContent = 'IT';
+
+            italianTextElement.textContent='Italiano';
+            englishTextElement.textContent='Inglese';
 
             // Mostra menu italiano e nascondi inglese
             document.querySelector('.lang-it').style.display = 'flex';
