@@ -115,3 +115,23 @@
           border-color: var(--turchese-scuro) !important;
         }
          /*FINE Bottone vai a google maps*/
+
+         .custom-star-list {
+           list-style-type: none; /* Rimuove i pallini predefiniti */
+           padding-left: 0;
+         }
+
+         .custom-star-list li {
+           position: relative;
+           padding-left: 25px;
+           margin-bottom: 8px;
+           line-height: 1.5;
+         }
+
+         .custom-star-list li:before {
+           content: "★";
+           color: var(--turchese-scuro); /* Colore turchese scuro */
+           position: absolute;
+           left: 0;
+           font-size: 0.9em;
+         }
