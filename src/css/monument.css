@@ -101,3 +101,17 @@
             order: 0 !important; /* Ripristina ordine naturale */
           }
         }
+
+        /*Bottone vai a google maps*/
+        .btn-outline-turchese {
+          color: var(--turchese-scuro) !important;
+          border-color: var(--turchese-scuro) !important;
+          background-color: transparent !important;
+        }
+
+        .btn-outline-turchese:hover {
+          color: white !important;
+          background-color: var(--turchese-scuro) !important;
+          border-color: var(--turchese-scuro) !important;
+        }
+         /*FINE Bottone vai a google maps*/
