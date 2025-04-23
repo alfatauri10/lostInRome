@@ -845,6 +845,23 @@ blockquote {
       margin-left: 15px;
     }
 
+    /* Modifica lo stile del dropdown menu */
+    .language-switcher .dropdown-menu {
+      min-width: auto !important; /* Larghezza automatica basata sul contenuto */
+      width: max-content !important; /* Adatta la larghezza al contenuto */
+      right: 0 !important; /* Allinea a destra */
+      left: auto !important; /* Sovrascrive eventuali allineamenti a sinistra */
+      transform: none !important; /* Rimuove trasformazioni che potrebbero causare problemi */
+      margin-top: 5px !important; /* Spazio dal pulsante */
+      border-radius: 4px !important; /* Bordi arrotondati */
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important; /* Ombra leggera */
+      border: 1px solid rgba(90, 113, 106, 0.1) !important; /* Bordo sottile */
+    }
+
+    .language-switcher .dropdown-item {
+      padding: 8px 15px !important; /* Padding più equilibrato */
+      white-space: nowrap !important; /* Evita il wrap del testo */
+    }
     .btn-lang {
       background: none;
       border: none;
