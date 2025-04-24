@@ -11,7 +11,7 @@ window.LanguageSwitcher = {
 
         if(newLang === 'en') {
             flag.className = 'flag-icon flag-gb';
-            text.textContent = 'EN';
+            text.textContent = '';
             italianTextElement.textContent='Italian';
             englishTextElement.textContent='English';
 
@@ -37,7 +37,7 @@ window.LanguageSwitcher = {
 
         } else {
             flag.className = 'flag-icon flag-it';
-            text.textContent = 'IT';
+            text.textContent = '';
 
             italianTextElement.textContent='Italiano';
             englishTextElement.textContent='Inglese';
