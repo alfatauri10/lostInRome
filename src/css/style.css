@@ -21,7 +21,7 @@ VERSION:    Version Number
 /* Stili base per il body */
 body {
   line-height: 1.5;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lexend", sans-serif;
   -webkit-font-smoothing: antialiased; /* Migliora la leggibilità su macOS */
   font-size: 15px;
   color: #585757;
@@ -32,7 +32,7 @@ p, .paragraph {
   font-weight: 400;
   font-size: 15px;
   line-height: 1.5;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lexend", sans-serif;
 }
 
 /* Stili intestazioni */
@@ -69,7 +69,7 @@ h4, .h4 { font-size: 30px; }
 h5, .h5 { font-size: 20px; }
 h6, .h6 { font-size: 16px; }
 
-/* ==================== STILE PULSANTI ==================== */
+/* ==================== STILE BOTTONI GALLERIA HOMEPAGE ==================== */
 .btn {
   position: relative;
   bottom: -50px;
@@ -104,25 +104,33 @@ h6, .h6 { font-size: 16px; }
   background: #056974; /* Scurisce al hover */
 }
 
-/* Variante outline light */
 .btn-outline-light {
-  background: transparent;
-  color: #fff;
+    background: rgba(255,255,255,0.2) !important;
+    backdrop-filter: blur(5px);
+    border: 1px solid #068D9D !important;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    padding: 5px 15px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .btn-outline-light:hover {
+    background: rgba(255,255,255,0.8) !important;
+    color: #056974 !important;
+  }
+
 }
-.btn-outline-light:active {
-  background: #fff !important;
-  color: #000000;
-  border-color: #fff;
-}
-.btn-outline-light:hover {
-  background: #fff !important;
-  color: #000000;
-  border-color: #fff;
+.btn-outline-light.active,
+.btn-outline-light:focus {
+  background-color: rgba(245, 240, 230, 0.9) !important; /* Beige trasparente */
+  border-color: rgba(255, 255, 255, 0.9) !important;
+  color: #056974 !important; /* Testo in turchese scuro */
+  backdrop-filter: blur(4px); /* Effetto vetro smerigliato */
 }
 
-/* Variante trasparente */
-.btn-transparent {
-  color: #068D9D;
+/* Transizione fluida per tutti gli stati */
+.btn {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* ==================== LAYOUT BASE ==================== */
@@ -548,7 +556,7 @@ textarea.form-control {
   color: #000000;
   background-color: transparent;
 }
-.pagination .page-item:first-child .page-link, 
+.pagination .page-item:first-child .page-link,
 .pagination .page-item:last-child .page-link {
   font-size: 16px;
 }
@@ -1015,10 +1023,53 @@ body {
 .card {
   min-height: 150px;
   border: none !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  border-radius: 8px !important;
+  overflow: hidden;
 }
+
 .card-img {
   object-fit: cover;
   height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(6,141,157,0.15);
+}
+
+.card-img {
+  transition: transform 0.8s ease;
+}
+
+.card:hover .card-img {
+  transform: scale(1.1);
+}
+
+.card-titolo-monumento {
+  font-family: 'Lexend', sans-serif;
+  font-size: 1.0rem;
+  color: #056974;
+  margin-top: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.card-titolo-monumento:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background: #d4cec7;
+  bottom: -5px;
+  left: 25%;
+  transition: all 0.3s ease;
+}
+
+.card:hover .card-titolo-monumento:after {
+  width: 80%;
+  background: #068D9D;
 }
 
 /* Pulsante outline light */
@@ -1027,6 +1078,8 @@ body {
   font-size: clamp(0.7rem, 2vw, 0.9rem);
   border-width: 2px;
   transition: all 0.2s;
+  background: rgba(255,255,255,0.15) !important;
+
 }
 
 /* ==================== DROPDOWN MENU ==================== */
@@ -1100,6 +1153,8 @@ main {
 
 /* ==================== SEZIONE MONUMENTI ==================== */
 .galleria-monumenti {
+  /*margin-top: 50px;
+  padding: 30px 0;*/
   margin-top: 110px;
   padding-top: 0;
 }
@@ -1178,6 +1233,26 @@ main {
 
 .slick-next {
   right: -20px;
+}
+
+/*Animazione galleria*/
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.galleria-monumenti .col-lg-3 {
+  animation: float 6s ease-in-out infinite;
+}
+
+.galleria-monumenti .col-lg-3:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.galleria-monumenti .col-lg-3:nth-child(3) {
+  animation-delay: 1s;
+}
+.galleria-monumenti .col-lg-3:nth-child(4) {
+  animation-delay: 1.5s;
 }
 
 /* ==================== STILE TITOLI PAGINE ==================== */
@@ -1301,7 +1376,6 @@ main {
   flex-shrink: 0 !important;
 }
 
-/* Motto migliorato */
 .motto-text {
   display: inline-block !important;
   white-space: nowrap !important;
@@ -1315,7 +1389,6 @@ main {
   text-shadow: 1px 1px 2px rgba(107, 82, 42, 0.2);
 }
 
-/* Soluzione definitiva motto */
 .navbar-brand {
   position: relative;
   display: flex !important;
