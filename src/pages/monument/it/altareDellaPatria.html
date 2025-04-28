@@ -1,10 +1,286 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+  <meta charset="utf-8">
+  <title>Lost in Rome | Altare della Patria</title>
+
+  <!-- Meta e stili -->
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="/src/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="/src/plugins/slick/slick.css" rel="stylesheet">
+  <link href="/src/plugins/themify-icons/themify-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="/src/css/style.css" rel="stylesheet">
+  <link href="/src/css/monument.css" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
+          crossorigin="anonymous">
+  </script>
+
 </head>
+
 <body>
 
+<!-- preloader -->
+<div class="preloader">
+  <div class="loader">
+    <span class="dot"></span>
+    <div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+<!-- /preloader -->
+
+<!-- Header -->
+<div id="headerPlaceHolder"></div>
+
+
+<!-- Contenuto principale -->
+<div class="page-content">
+
+
+  <!-- nav bar con i link alle varie sezioni -->
+  <div class="container mb-5">
+    <div class="d-flex justify-content-center flex-wrap gap-4 py-3 align-items-center border-bottom">
+      <a class="text-decoration-none text-dark nav-link-custom px-2" href="#storia">Storia</a>
+      <span class="menu-monumenti-barra-link">|</span>
+      <a class="text-decoration-none text-dark nav-link-custom px-2" href="#usato-oggi">Oggi</a>
+      <span class="menu-monumenti-barra-link">|</span>
+      <a class="text-decoration-none text-dark nav-link-custom px-2" href="#fatti-recenti">Fatti recenti</a>
+      <span class="menu-monumenti-barra-link">|</span>
+      <a class="text-decoration-none text-dark nav-link-custom px-2" href="#curiosita">Curiosità</a>
+      <span class="menu-monumenti-barra-link">|</span>
+      <a class="text-decoration-none text-dark nav-link-custom px-2" href="#mappa">Mappa</a>
+    </div>
+  </div>
+
+
+  <!-- Hero Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-4 mb-lg-0">
+          <!-- TODO (JAlfandari): inserisci qui il nome del monumento -->
+          <h1 class="titoli">Altare della Patria</h1>
+          <!-- TODO (JAlfandari): inserisci qui una breve frase ad effetto sul monumento -->
+          <p class="lead">L' Altare della Patria, custode eterno dell'orgoglio italiano</p>
+        </div>
+
+        <div class="col-lg-7">
+
+          <!-- Galleria immagini navigabile -->
+          <div class="monument-gallery">
+
+            <div class="gallery-item">
+              <a href="#storia">
+                <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
+                <img alt="Colosseo vista panoramica" src="/src/images/monuments/colosseo/img1.jpg">
+              </a>
+            </div>
+
+            <div class="gallery-item">
+              <a href="#usato-oggi">
+                <!-- TODO (JAlfandari): Inserisci qui la tua img2. Modifica ALT con una breve descrizione e SRC con percorso -->
+                <img alt="Dettagli architettonici" src="/src/images/monuments/colosseo/img2.jpg">
+              </a>
+            </div>
+
+            <div class="gallery-item">
+              <a href="#fatti-recenti">
+                <!-- TODO (JAlfandari): Inserisci qui la tua img3. Modifica ALT con una breve descrizione e SRC con percorso -->
+                <img alt="Colosseo oggi" src="/src/images/monuments/colosseo/img3.jpeg">
+              </a>
+            </div>
+
+            <div class="gallery-item">
+              <a href="#curiosita">
+                <!-- TODO (JAlfandari): Inserisci qui la tua img4. Modifica ALT con una breve descrizione e SRC con percorso -->
+                <img alt="Particolari curiosi" src="/src/images/monuments/colosseo/img4.jpg">
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione Storia -->
+  <section class="content-section" id="storia">
+    <span class="section-anchor"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="section-title-right text-right">Storia e costruzione</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
+              <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/images/monuments/colosseo/img1.jpg">
+            </div>
+            <div class="col-md-6 text-justify">
+              <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Storia" -->
+              <p>La costruzione del Colosseo iniziò sotto l'imperatore Vespasiano nel 72 d.C. e fu
+                completata nell'80 d.C. sotto Tito. Fu edificato sul sito del lago artificiale della
+                Domus Aurea di Nerone, come simbolo del ritorno al popolo romano degli spazi
+                pubblici.</p>
+              <p>L'anfiteatro poteva ospitare tra i 50.000 e gli 87.000 spettatori ed era utilizzato per
+                spettacoli pubblici, combattimenti tra gladiatori e rievocazioni di battaglie
+                famose.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Sezione "Come è usato oggi" -->
+  <section class="content-section" id="usato-oggi">
+    <span class="section-anchor"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="section-title-left">Come è usato oggi</h2>
+          <div class="row">
+            <div class="col-md-6 order-md-2 text-justify">
+              <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Usato oggi" -->
+              <p>Oggi il Colosseo è una delle attrazioni turistiche più visitate al mondo e un simbolo
+                iconico di Roma. Oltre ad essere un museo a cielo aperto, occasionalmente ospita eventi
+                culturali e concerti. Nel 2007 è stato inserito tra le Nuove sette meraviglie del mondo
+                moderno.</p>
+              <p>I lavori di restauro continuano per preservare questo monumento storico per le
+                generazioni future.</p>
+            </div>
+            <div class="col-md-6 order-md-1">
+              <!-- TODO (JAlfandari): Inserisci qui la tua img2. Modifica ALT con una breve descrizione e SRC con percorso -->
+              <img alt="Struttura architettonica" class="img-fluid rounded"
+                   src="/src/images/monuments/colosseo/img2.jpg"> <!-- img2 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione "Fatti recenti" -->
+  <section class="content-section" id="fatti-recenti">
+    <span class="section-anchor"></span>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="section-title-right text-right">Fatti recenti</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <!-- TODO (JAlfandari): Inserisci qui la tua img3. Modifica ALT con una breve descrizione e SRC con percorso -->
+              <img alt="Fatti recenti" class="img-fluid rounded"
+                   src="/src/images/monuments/colosseo/img3.jpeg"> <!--img3 -->
+            </div>
+            <div class="col-md-6 text-justify">
+              <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "FATTI RECENTI" -->
+              <p>Nel 2021 sono stati completati importanti lavori di restauro della facciata nord del
+                Colosseo, finanziati dalla casa di moda Tod's. Nel 2023 è stato aperto al pubblico il
+                nuovo percorso sotterraneo che permette ai visitatori di esplorare l'ipogeo.</p>
+              <p>Recenti studi archeologici hanno anche rivelato nuovi dettagli sul sistema di
+                sollevamento utilizzato per portare gli animali e le scenografie nell'arena.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione "Leggende e fatti divertenti" -->
+  <section class="content-section" id="curiosita">
+    <span class="section-anchor"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="section-title-left">Leggende e fatti divertenti</h2>
+          <div class="row">
+            <div class="col-md-6 order-md-2 text-justify">
+              <!-- TODO (JAlfandari): Inserisci qui testo della sezione "CURIOSITA" -->
+              <ul class="custom-star-list">
+                <li>Si dice che i sacerdoti cristiani usassero il Colosseo per determinare se qualcuno  fosse un vampiro</li>
+                <li>Il Colosseo aveva un enorme velario che poteva essere spiegato per proteggere gli spettatori dal sole</li>
+                <li>Durante i giochi inaugurali nel 80 d.C., gli spettacoli durarono 100 giorni</li>
+                <li>Si stima che solo un terzo dell'originale Colosseo sia sopravvissuto fino ai giorni nostri</li>
+              </ul>
+            </div>
+            <div class="col-md-6 order-md-1">
+              <!-- TODO (JAlfandari): Inserisci qui la tua img4. Modifica ALT con una breve descrizione e SRC con percorso -->
+              <img alt="Leggende e fatti divertenti" class="img-fluid rounded"
+                   src="/src/images/monuments/colosseo/img4.jpg"> <!-- img4 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mappa -->
+  <section id="mappa">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-title-left text-center">Posizione</h2>
+
+          <!-- TODO (JAlfandari): Inserisci in src la posizione del tuo monumento su openstreatmaps-->
+          <iframe id="osm-iframe"
+                  width="100%"
+                  height="400"
+                  style="border:none; border-radius:8px;"
+                  data-default-pos="41.8902,12.4924"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=12.4800,41.8800,12.5000,41.9000&layer=mapnik&marker=41.8902,12.4924">
+          </iframe>
+
+          <div class="text-center mt-4">
+            <!-- TODO (JAlfandari): Inserisci in href la posizione del tuo monumento -->
+            <a class="btn btn-outline-turchese d-inline-flex align-items-center"
+               href="https://www.google.com/maps/place/Colosseo/@41.8902102,12.4922309,17z/data=!3m1!4b1!4m6!3m5!1s0x132f61b6532013ad:0x28f1c82e908503c4!8m2!3d41.8902102!4d12.4922309!16zL20vMDZjNjI?entry=ttu"
+               target="_blank">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              Apri in Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- fine Contenuto principale -->
+
+<!-- Footer -->
+<div id="footerPlaceHolder"></div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script src="/src/js/osm-map.js"></script>
+<script src="/src/js/slider-card.js"></script>
+<script src="/src/js/gallery-monuments-scroll.js"></script> <!-- script per la galleria di immagini -->
+<script src="/src/js/language-switcher.js"></script> <!-- script per lo switch lingua -->
+<script src="/src/js/include.js"></script> <!-- script per l'inclusione di altre pagine  -->
+
+<script>
+          document.addEventListener("DOMContentLoaded", function() {
+              includeHTML({
+                  headerPlaceHolder: "../../include/header.html",
+                  footerPlaceHolder: "../../include/footer.html"
+              });
+          });
+
+    </script>
 </body>
 </html>
+
