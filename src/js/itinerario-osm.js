@@ -20,6 +20,7 @@ function initItinerarioMap() {
  }).addTo(map);
 
 
+
  // Percorso
  L.polyline(posizioni, {
    color: '#068D9D',
