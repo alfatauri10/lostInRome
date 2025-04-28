@@ -1,0 +1,353 @@
+/* ITINERARI.CSS */
+/* Stili per la sezione itinerari */
+
+
+/* Sezione principale */
+.section {
+   padding: 80px 0;
+   position: relative;
+}
+
+
+.bg-gray {
+   background-color: #FFFCF5;
+}
+
+
+.bg-primary {
+   background-color: #FFFCF5;
+}
+
+
+/* Titoli */
+.section-title {
+   font-size: 2.5rem;
+   font-weight: 600;
+   margin-bottom: 1.5rem;
+   position: relative;
+   font-family: 'Lexend', sans-serif;
+   color: #6b522a;
+}
+
+
+.section-title:after {
+   content: '';
+   display: block;
+   width: 60px;
+   height: 3px;
+   background: #068d9d; /*3498db*/
+   margin: 15px auto 0;
+}
+
+
+/* Nav tabs */
+.nav-tabs {
+   border-bottom: 2px solid #e9ecef;
+}
+
+
+.nav-tabs .nav-link {
+   border: none;
+   color: #495057;
+   font-weight: 500;
+   padding: 12px 25px;
+   font-size: 1.1rem;
+   transition: all 0.3s ease;
+   font-family: 'Lexend', sans-serif;
+}
+
+
+.nav-tabs .nav-link:hover {
+   border: none;
+   color: #6b522a;
+}
+
+
+.nav-tabs .nav-link.active {
+   color: #6b522a;
+   background-color: transparent;
+   border: none;
+   border-bottom: 3px solid #6b522a;
+}
+
+
+/* Card itinerari */
+.card {
+   border: none;
+   transition: all 0.3s ease;
+   overflow: hidden;
+}
+
+
+.card-img-container {
+   overflow: hidden;
+   height: 220px;
+}
+
+
+.card-img-top {
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   transition: transform 0.5s ease;
+}
+
+
+.card:hover .card-img-top {
+   transform: scale(1.05);
+}
+
+
+.card-badge-overlay {
+   position: absolute;
+   top: 15px;
+   right: 15px;
+}
+
+
+.badge {
+   padding: 5px 10px;
+   font-weight: 500;
+   font-size: 0.75rem;
+   letter-spacing: 0.5px;
+}
+
+
+.card-body {
+   padding: 25px;
+}
+
+
+.card-title {
+   font-size: 1.4rem;
+   font-weight: 600;
+   margin-bottom: 0.75rem;
+   color: #2c3e50;
+}
+
+
+.card-text {
+   color: #6c757d;
+   margin-bottom: 1.5rem;
+   font-size: 0.95rem;
+}
+
+
+/* Dettagli itinerario */
+.itinerary-details {
+   margin-bottom: 1.5rem;
+}
+
+
+.detail-item {
+   display: flex;
+   align-items: center;
+   margin-bottom: 0.5rem;
+   font-size: 0.95rem;
+}
+
+
+.detail-item i {
+   font-size: 1.1rem;
+}
+
+
+/* Passaggi itinerario */
+.itinerary-steps {
+   margin-bottom: 2rem;
+}
+
+
+.step {
+   display: flex;
+   margin-bottom: 1.5rem;
+   align-items: flex-start;
+}
+
+
+.step-number {
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: white;
+   font-weight: 600;
+   margin-right: 15px;
+   flex-shrink: 0;
+}
+
+
+.step-content {
+   flex: 1;
+}
+
+
+.step-content h5 {
+   font-size: 1.1rem;
+   font-weight: 600;
+   margin-bottom: 0.3rem;
+   color: #2c3e50;
+}
+
+
+.step-content p {
+   color: #6c757d;
+   font-size: 0.9rem;
+   margin-bottom: 0;
+}
+
+
+/* Testimonianze */
+.testimonial-card {
+   background-color: rgba(255, 255, 255, 0.1);
+   border-radius: 8px;
+   height: 100%;
+   transition: all 0.3s ease;
+   border: none;
+}
+
+
+.testimonial-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+.testimonial-rating {
+   color: #f1c40f;
+}
+
+
+.testimonial-text {
+   font-style: italic;
+   margin-bottom: 1.5rem;
+   font-size: 0.95rem;
+   line-height: 1.6;
+}
+
+
+.testimonial-author h5 {
+   font-size: 1.1rem;
+   font-weight: 600;
+   margin-bottom: 0.2rem;
+}
+
+
+.testimonial-author p {
+   font-size: 0.85rem;
+   opacity: 0.8;
+   margin-bottom: 0;
+}
+
+
+/* Bottoni */
+.btn {
+   padding: 10px 25px;
+   font-weight: 500;
+   border-radius: 30px;
+   transition: all 0.3s ease;
+   font-family: 'Lexend', sans-serif;
+}
+
+
+.btn-primary {
+   background-color: #3498db;
+   border-color: #3498db;
+}
+
+
+.btn-primary:hover {
+   background-color: #2980b9;
+   border-color: #2980b9;
+   transform: translateY(-2px);
+}
+
+
+.btn-dark {
+   background-color: #2c3e50;
+   border-color: #2c3e50;
+}
+
+
+.btn-dark:hover {
+   background-color: #1a252f;
+   border-color: #1a252f;
+}
+
+
+.app-buttons {
+   margin-top: 2rem;
+}
+
+
+/* Ombre e effetti */
+.shadow {
+   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+.hover-shadow {
+   transition: all 0.3s ease;
+}
+
+
+.hover-shadow:hover {
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+   .section {
+       padding: 60px 0;
+   }
+
+
+   .card-img-container {
+       height: 180px;
+   }
+}
+
+
+@media (max-width: 768px) {
+   .section-title {
+       font-size: 2rem;
+   }
+
+
+   .nav-tabs .nav-link {
+       padding: 10px 15px;
+       font-size: 1rem;
+   }
+
+
+   .step {
+       flex-direction: column;
+   }
+
+
+   .step-number {
+       margin-bottom: 10px;
+   }
+}
+
+
+@media (max-width: 576px) {
+   .section {
+       padding: 50px 0;
+   }
+
+
+   .app-buttons .btn {
+       display: block;
+       width: 100%;
+       margin-bottom: 15px;
+   }
+
+
+   .app-buttons .btn:last-child {
+       margin-bottom: 0;
+   }
+}
