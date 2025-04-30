@@ -114,9 +114,11 @@
 
 
 .card-body {
-   padding: 25px;
+  padding: 5px;
+  margin: 0 auto 0px auto;
+  width: 90%;
+  box-sizing: border-box; /* Include padding nel calcolo della width */
 }
-
 
 .card-title {
    font-size: 1.4rem;
@@ -144,6 +146,12 @@
    align-items: center;
    margin-bottom: 0.5rem;
    font-size: 0.95rem;
+}
+.detail-item-itinerari {
+   display: flex;
+   align-items: center;
+   margin-bottom: 0.5rem;
+   font-size: 0.75rem;
 }
 
 
@@ -241,6 +249,7 @@
    margin-bottom: 0;
 }
 
+/* Fine testimonianze*/
 
 /* Bottoni */
 .btn {
@@ -351,3 +360,270 @@
        margin-bottom: 0;
    }
 }
+
+/* ==================== sezioni espandibili ==================== */
+
+  .expandable-step {
+    font-family: 'Lexend', sans-serif;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 15px;
+    overflow: hidden;
+  }
+
+  .step-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: var(--beige);
+  }
+
+  .step-header:hover {
+    background: var(--beige-scuro);
+  }
+
+  .step-number {
+    background: var(--turchese-scuro);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .step-title {
+    flex-grow: 1;
+  }
+
+  .step-title h5 {
+    margin-bottom: 0.3rem;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .step-title p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .step-arrow {
+    margin-left: 10px;
+    transition: transform 0.3s;
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  .step-details {
+    display: none;
+    padding: 0 20px 20px 65px;
+    border-top: 1px solid #eee;
+    background: var(--beige);
+  }
+
+  .detail-section {
+    background: var(--beige);
+    border-radius: 5px;
+    margin: 0 auto;  /* Centra il blocco */
+  }
+
+  /* Stato espanso */
+  .expanded .step-arrow {
+    transform: rotate(180deg);
+  }
+
+/* ========= ICONE ======= */
+.icon-dettagli-turchese-scuro {
+    color: var(--turchese-scuro);
+}
+
+.icon-consigli-orari{
+    background: var(--turchese);
+    font-family: monospace; /* Allineamento perfetto */
+}
+
+.itinerario-section {
+  padding: 60px 0;
+  background: linear-gradient(to bottom, #FFFCF5 0%, #F5F0E6 100%);
+}
+
+.section-title {
+  font-family: 'Lexend', sans-serif;
+  font-size: 2.0rem;
+  color: #6b522a;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.section-subtitle {
+  font-family: 'Lexend', sans-serif;
+  font-size: 1.8rem;
+  color: #6b522a;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+
+.itinerario-section .section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: #d4cec7;
+}
+
+#itinerario-mappa {
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.tappa-card {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.tappa-card:hover {
+  transform: translateY(-5px);
+}
+
+.tappa-card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.tappa-card .card-body {
+  background: white;
+  padding: 20px;
+}
+
+.tappa-card .card-title {
+  font-family: 'hanskendrick';
+  color: #056974;
+  font-size: 1.3rem;
+}
+
+.chicca-item {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+/* box info tappe itinerario*/
+.info-box {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  font-family: 'Lexend', sans-serif;
+  margin: 20px 0;
+  font-size: 1.0rem;
+}
+
+.info-box-header {
+  background: var(--turchese-scuro); /* Usa il tuo colore */
+  color: white !important;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-box-header i {
+  font-size: 1.0rem;
+  color: inherit;
+}
+
+.info-box-header h4 {
+  margin: 0;
+  font-size: 1.0rem;
+}
+
+.info-box-content {
+  padding: 15px;
+}
+
+.info-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  align-items: flex-start;
+  font-size: 0.8rem;
+}
+
+.info-item i {
+  color: var(--turchese-scuro); /* Usa il tuo colore */
+  margin-top: 3px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #495057;
+  margin-right: 5px;
+}
+
+.info-value {
+  color: #212529;
+}
+
+.info-sublist {
+  margin-top: 5px;
+  padding-left: 5px;
+}
+
+.info-sublist div {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.info-sublist i {
+  color: #6c757d;
+  font-size: 0.8rem;
+}
+
+.price {
+  color: #28a745;
+  font-size: 0.8rem;
+}
+
+.info-tip {
+  background: #fff3cd;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border-left: 3px solid #ffc107;
+  font-size: 0.8rem;
+}
+
+.info-tip i {
+  color: #ffc107;
+  font-size: 1.1rem;
+}
+
