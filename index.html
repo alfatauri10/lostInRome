@@ -13,10 +13,10 @@
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="/src/css/itinerari.css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
         crossorigin=""/>
-
 
 
   <!-- Main Stylesheet -->
@@ -172,14 +172,15 @@
           <a class="nav-link active" id="classic-tab" data-toggle="tab" href="#classic" role="tab">LostInRome</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="baroque-tab" data-toggle="tab" href="#baroque" role="tab">Barocca</a>
+          <a class="nav-link" id="adventure-tab" data-toggle="tab" href="#adventure" role="tab">Avventura</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="secret-tab" data-toggle="tab" href="#secret" role="tab">Segreta</a>
+          <a class="nav-link" id="baroque-tab" data-toggle="tab" href="#castalli" role="tab">Castelli Romani</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="food-tab" data-toggle="tab" href="#food" role="tab">Gastronomica</a>
+          <a class="nav-link" id="food-tab" data-toggle="tab" href="#food" role="tab">EnoGastronomico</a>
         </li>
+
       </ul>
 
 
@@ -284,250 +285,338 @@
         </div>
 
 
-        <!-- Itinerario Barocco -->
-        <div class="tab-pane fade" id="baroque" role="tabpanel">
-          <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-              <div class="map-container">
-                <div id="itinerario-mappa-baroque"
-                     data-monumenti='{
-                    "Piazza Navona": [41.8994, 12.4731],
-                    "Fontana di Trevi": [41.9009, 12.4833],
-                    "Chiesa di Sant Ivo": [41.8986, 12.4768]
+        <!-- Itinerario Avventura -->
+       <!-- <div id = "adventureItineraryPlaceHolder"></div>-->
+        <!-- Itinerario Avventura -->
+        <div class="tab-pane fade" id="adventure" role="tabpanel">
+
+          <div class="container">
+            <div class="row">
+
+              <!-- Descrizione -->
+              <div class="col-12 text-center mb-4">
+                <h3 class="section-title">Avventura Romana</h3>
+                <p>
+                  <i>
+                    Dai ciottoli dell'Appia Antica, dove la storia sfiora le ruote della tua bici, alle vertigini segrete del Buco della Serratura e ai profumi del Giardino degli Aranci. Poi vola tra i ciliegi del Giardino Giapponese, un haiku di petali e pace, prima di tuffarti nei ritmi tribali del Voodoo Bar, dove i cocktail bruciano come tramonti sul Colosseo e il DJ fa tremare i fantasmi degli imperatori.
+                  </i>
+                </p>
+              </div>
+
+              <!-- Dettagli Generali -->
+              <div class="row mb-5 mx-auto" style="max-width: 800px;">
+                <div class="col-md-6">
+                  <h4 class="mb-3 text-center" style="color: var(--turchese-scuro);">Informazioni Generali</h4>
+                  <div class="itinerary-details text-md-left text-center">
+                    <div class="detail-item mb-2">
+                      <i class="fas fa-clock mr-2 icon-dettagli-turchese-scuro" ></i>
+                      <span><strong>Durata totale:</strong> 1 giorno intero</span>
+                    </div>
+                    <div class="detail-item mb-2">
+                      <i class="fas fa-route mr-2 icon-dettagli-turchese-scuro"></i>
+                      <span><strong>Distanza totale:</strong> ~25 km (in bici e a piedi)</span>
+                    </div>
+                    <div class="detail-item mb-2">
+                      <i class="fas fa-mountain mr-2 icon-dettagli-turchese-scuro" ></i>
+                      <span><strong>Difficoltà:</strong> Medio (qualche salita ripida)</span>
+                    </div>
+                    <div class="detail-item mb-2">
+                      <i class="fas fa-euro-sign mr-2 icon-dettagli-turchese-scuro"></i>
+                      <span><strong>Budget base:</strong> €50-70 (bici standard, pranzo veloce, solo aperitivo)</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="fas fa-glass-cheers mr-2 icon-dettagli-turchese-scuro" ></i>
+                      <span><strong>Budget comfort:</strong> €80-100 (e-bike, pranzo seduto, cocktail premium)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <h4 class="mb-3 text-center" style="color: var(--turchese-scuro);">Orari Consigliati</h4>
+                  <div class="itinerary-schedule text-md-left text-center">
+                    <div class="schedule-item mb-2 ">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">09:00-12:00</span>
+                      <span>Appia Antica in bici</span>
+                    </div>
+                    <div class="schedule-item mb-2">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">12:30-14:00</span>
+                      <span>Aventino + Buco della Serratura</span>
+                    </div>
+                    <div class="schedule-item mb-2">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">14:30-16:00</span>
+                      <span>Giardino Giapponese</span>
+                    </div>
+                    <div class="schedule-item">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">18:30+     </span>
+                      <span>Voodoo Bar</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+            <div class="row">
+              <!-- Mappa generale a sinistra -->
+              <div class="col-lg-6 mb-4">
+                <div class="map-container">
+                  <div id="avventura-mappa-generale"
+                       data-tappe='{
+                 "Porta San Sebastiano": [41.8725, 12.5018],
+                 "Catacombe di San Callisto": [41.8589, 12.5141],
+                 "Il Giardino di Lù": [41.8550, 12.5175],
+                 "Mausoleo di Cecilia Metella": [41.8522, 12.5194],
+                 "Villa dei Quintili": [41.8406, 12.5497],
+                 "Terme di Caracalla": [41.8793, 12.4925],
+                 "Circo Massimo": [41.8860, 12.4857],
+                 "Giardino degli Aranci": [41.8830, 12.4799],
+                 "Buco della Serratura": [41.8826, 12.4795],
+                 "Terrazza Aventino": [41.8818, 12.4790],
+                 "Zodiaco": [41.8818, 12.4790],
+                 "Giardino Giapponese": [41.8319, 12.4692],
+                 "Voodoo Bar": [41.8918, 12.4902]
                }'
-                     style="height: 400px; border-radius: 8px;"></div>
-                <div class="text-center mt-2">
-                  <a class="btn btn-outline-primary btn-sm"
-                     href="https://www.openstreetmap.org/#map=15/41.9000/12.4730"
-                     target="_blank">
-                    Visualizza mappa completa
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <h3 class="mb-4">Roma Barocca</h3>
-              <p>Un viaggio tra le meraviglie del Seicento romano, tra chiese spettacolari, fontane monumentali e piazze teatrali.</p>
+                       style="height: 600px; border-radius: 8px;"></div>
+
+                  <div class="text-center mt-2">
+                    <a class="btn btn-primary"
+                       href="https://www.openstreetmap.org/#map=13/41.87/12.49"
+                       target="_blank">
+                      Visualizza mappa completa
+                    </a>
+                    <a href="#" class="btn btn-primary">Scarica mappa completa</a>
+                  </div>
 
 
-              <div class="itinerary-details mt-4">
-                <div class="detail-item">
-                  <i class="ti-time text-primary mr-2"></i>
-                  <span><strong>Durata:</strong> 4-5 ore</span>
-                </div>
-                <div class="detail-item">
-                  <i class="ti-map-alt text-primary mr-2"></i>
-                  <span><strong>Distanza:</strong> 3 km</span>
-                </div>
-                <div class="detail-item">
-                  <i class="ti-star text-primary mr-2"></i>
-                  <span><strong>Difficoltà:</strong> Facile</span>
                 </div>
               </div>
 
+              <!-- Itinerari dettagliati a destra -->
+              <div class="col-lg-6">
 
-              <div class="itinerary-steps mt-4">
-                <div class="step">
-                  <div class="step-number bg-primary">1</div>
-                  <div class="step-content">
-                    <h5>Piazza Navona</h5>
-                    <p>Cuore del barocco romano con la Fontana dei Quattro Fiumi del Bernini.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8994" data-lon="12.4731">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
+                <!-- Parte 1: Appia Antica -->
+                <div class="step-container">
+                  <div class="step" onclick="toggleStepDetails('part1')">
+                    <div class="step-number bg-primary">1</div>
+                    <div class="step-content">
+                      <h5>L'Appia Antica in bici</h5>
+                      <p>Dalle catacombe alle terme di Caracalla, tra storia, natura e archeologia. Dove ogni pietra racconta una storia.</p>
+                    </div>
+                  </div>
+                  <div id="part1" class="step-details" style="display: none;">
+                    <div class="p-3 bg-light rounded">
+                      <p><strong>Partenza:</strong> Porta San Sebastiano</p>
+                      <p><strong>Arrivo:</strong> Terme di Caracalla</p>
+                      <p><strong>Lunghezza totale:</strong> ~12 km</p>
+                      <p><strong>Durata totale:</strong> 3 ore (con soste e visite)</p>
+                      <p><strong>Difficoltà:</strong> Facile (terreno misto: asfalto e sampietrini).</p>
+                      <p><strong>Mezzi:</strong> bici</p>
+                      <p><strong>Noleggio bici:</strong></p>
+                      <ul>
+                        <li>Appia Antica Bike Rental (€15/giorno per MTB, €25 e-bike).</li>
+                        <li>Ecobike Roma (€10/giorno, vicino al Colosseo).</li>
+                      </ul>
+                      <p><strong>Consiglio:</strong> Parti alle 9:00 per evitare il sole estivo e goderti il brunch in pace! 🌿☕</p>
+
+                      <div class="mt-3">
+                        <h6>Tappe:</h6>
+                        <div class="step-detail">
+                          <p><strong>Tappa 1. Partenza: Porta di San Sebastiano e Catacombe di San Callisto</strong></p>
+                          <p>Inizia dalla maestosa Porta San Sebastiano (ingresso all'Appia Antica) e pedala per 1,5 km (5 min in bici) fino alle Catacombe di San Callisto, tra le più grandi di Roma.</p>
+                          <p><strong>Costo Visita interna:</strong> €8 (audioguida inclusa).</p>
+                          <p><strong>Durata visita:</strong> ~30 min.</p>
+                        </div>
+
+                        <div class="step-detail">
+                          <p><strong>Tappa 2. Sosta Brunch al Il Giardino di Lù</strong></p>
+                          <p><strong>Dove:</strong> Via Appia Antica, 42</p>
+                          <p><strong>Cosa offre:</strong> Brunch biologico con torte salate, smoothie e caffè artigianale, in un giardino nascosto con vista sull'Appia.</p>
+                          <p><strong>Costo medio:</strong> €12-20 a persona.</p>
+                          <p><strong>Orari:</strong> 9:00-16:00 (perfetto per una pausa mattutina).</p>
+                        </div>
+
+                        <div class="step-detail">
+                          <p><strong>Tappa 3. Mausoleo di Cecilia Metella e Castrum Caetani</strong></p>
+                          <p>Prosegui lungo la via lastricata fino al simbolo dell'Appia: il Mausoleo di Cecilia Metella (tomba del I sec. a.C.) e l'annesso Castrum Caetani (fortezza medievale).</p>
+                          <p><strong>Costo Visita interna:</strong> €6 (cumulativo con Villa dei Quintili).</p>
+                          <p><strong>Durata visita:</strong> ~20 min.</p>
+                          <p><strong>Km da Catacombe:</strong> 3 km (10 min in bici).</p>
+                        </div>
+
+                        <div class="step-detail">
+                          <p><strong>Tappa 4. Villa dei Quintili</strong></p>
+                          <p>Una deviazione di 1 km dall'Appia ti porta alla Villa dei Quintili, lussuosa residenza imperiale con mosaici e terme private.</p>
+                          <p><strong>Costo Visita interna:</strong> €5 (o €6 cumulativo con Mausoleo).</p>
+                          <p><strong>Durata visita:</strong> ~30 min.</p>
+                          <p><strong>Km da Mausoleo:</strong> 4 km (15 min in bici, incluso deviazione).</p>
+                        </div>
+
+                        <div class="step-detail">
+                          <p><strong>Tappa 5. Terme di Caracalla</strong></p>
+                          <p>Tornando verso Roma, chiudi il tour con le Terme di Caracalla, tra i più grandiosi complessi termali antichi.</p>
+                          <p><strong>Costo Visita interna:</strong> €8.</p>
+                          <p><strong>Durata visita:</strong> ~40 min.</p>
+                          <p><strong>Km da Villa dei Quintili:</strong> 5 km (20 min in bici).</p>
+                        </div>
+                      </div>
+
+
+                    </div>
                   </div>
                 </div>
-                <div class="step">
-                  <div class="step-number bg-primary">2</div>
-                  <div class="step-content">
-                    <h5>Fontana di Trevi</h5>
-                    <p>La più scenografica fontana di Roma, capolavoro di Nicola Salvi.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.9009" data-lon="12.4833">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
+
+                <!-- Parte 2: Aventino -->
+                <div class="step-container">
+                  <div class="step" onclick="toggleStepDetails('part2')">
+                    <div class="step-number bg-primary">2</div>
+                    <div class="step-content">
+                      <h5>Dalle Terme di Caracalla al Buco della Serratura</h5>
+                      <p>Un mix perfetto di storia, panorami e curiosità, con flessibilità di movimento! 🌿🚲</p>
+                    </div>
+                  </div>
+                  <div id="part2" class="step-details" style="display: none;">
+                    <div class="p-3 bg-light rounded">
+                      <p><strong>Partenza:</strong> Terme di Caracalla</p>
+                      <p><strong>Arrivo:</strong> Buco della serratura</p>
+                      <p><strong>Lunghezza totale:</strong> ~5 km</p>
+                      <p><strong>Durata totale:</strong> 1,5 ore</p>
+                      <p><strong>Difficoltà:</strong> Medio (salita ripida).</p>
+
+                      <div class="mt-3">
+                        <h6>Tappe:</h6>
+                        <div class="step-detail">
+                          <p><strong>Tappa 1: Terme di Caracalla → Circo Massimo</strong></p>
+                          <p>Dopo la visita alle Terme, pedala per 5 minuti verso il Circo Massimo, l'antico stadio romano. Panorama suggestivo sul Palatino.</p>
+                          <p><strong>Visita:</strong> Gratuita (area esterna).</p>
+                          <p><strong>Distanza:</strong> 800 m (3 min in bici / 10 min a piedi).</p>
+                        </div>
+
+                        <div class="step-detail">
+                          <p><strong>Tappa 2: Giardino degli Aranci (Parco Savello)</strong></p>
+                          <p>Salita alla collina dell'Aventino per il Giardino degli Aranci, un'oasi tranquilla con vista mozzafiato su Roma.</p>
+                          <p><strong>Visita:</strong> Gratuita.</p>
+                          <p><strong>Durata:</strong> 20 min.</p>
+                          <p><strong>Distanza da Circo Massimo:</strong> 1,2 km (5 min in bici / 15 min a piedi, salita leggera).</p>
+                        </div>
+
+                        <div class="step-detail">
+                          <p><strong>Tappa 3: Buco della Serratura dell'Ordine di Malta</strong></p>
+                          <p>Pochi passi dal Giardino, la famosa serratura che incornicia la Cupola di San Pietro.</p>
+                          <p><strong>Visita:</strong> Gratuita.</p>
+                          <p><strong>Durata:</strong> 10 min (coda possibile).</p>
+                          <p><strong>Distanza da Giardino degli Aranci:</strong> 400 m (2 min in bici / 5 min a piedi).</p>
+                        </div>
+
+                        <div class="step-detail">
+                          <p><strong>Tappa 4: Spritz con vista e pranzo!</strong></p>
+                          <p><strong>Aperitivo alla Terrazza Aventino</strong></p>
+                          <p><strong>Dove:</strong> Via di Santa Prisca, 5</p>
+                          <p><strong>Cosa offre:</strong> Spritz con vista oppure, se vuoi qualcosa di più speciale, prova il "Cocktail del Giardino"</p>
+                          <p><strong>Costo:</strong> €8 (spritz) €12 (cocktail).</p>
+
+                          <p><strong>Pranzo allo Zodiaco</strong></p>
+                          <p><strong>Dove:</strong> Via di Santa Prisca, 11 (stesso edificio di Terrazza Aventino)</p>
+                          <p><strong>Cosa offre:</strong> Pasta fresca e vista sulla città.</p>
+                          <p><strong>Costo:</strong> €15-25 a persona.</p>
+
+                          <p><strong>(oppure) Pranzo veloce al Panificio Passi</strong></p>
+                          <p><strong>Dove:</strong> Via Marmorata, 41</p>
+                          <p><strong>Specialità:</strong> Pizza al taglio romana e supplì.</p>
+                          <p><strong>Costo:</strong> €5-10.</p>
+                        </div>
+                      </div>
+
+
                   </div>
                 </div>
-                <div class="step">
-                  <div class="step-number bg-primary">3</div>
-                  <div class="step-content">
-                    <h5>Chiesa di Sant'Ivo</h5>
-                    <p>Gioiello architettonico di Borromini con la sua originale spirale.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8986" data-lon="12.4768">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
+
+                <!-- Parte 3: Giardino Giapponese -->
+                <div class="step-container">
+                  <div class="step" onclick="toggleStepDetails('part3')">
+                    <div class="step-number bg-primary">3</div>
+                    <div class="step-content">
+                      <h5>Momento zen al Giardino Giapponese</h5>
+                      <p>Un'oasi di pace tra ciliegi e laghetti, dove il tempo sembra fermarsi.</p>
+                    </div>
+                  </div>
+                  <div id="part3" class="step-details" style="display: none;">
+                    <div class="p-3 bg-light rounded">
+                      <p><strong>Dove:</strong> Viale America, 40 (nel parco del Laghetto dell'EUR)</p>
+                      <p><strong>Ingresso:</strong> Gratuito</p>
+                      <p><strong>Orari:</strong> 9:30-19:30 (orario estivo, chiuso il lunedì)</p>
+
+                      <p><strong>Mezzi (per arrivare dalla parte2):</strong></p>
+                      <ul>
+                        <li><strong>In bici (20-25 min, 5-6 km):</strong> Segui Viale Aventino > Viale Manzoni > Viale Oceano Pacifico > Viale America (piste ciclabili per gran parte del tragitto).</li>
+                        <li><strong>Con mezzi pubblici (15-20 min):</strong> Metro B (da "Circo Massimo" a "EUR Palasport") + 5 min a piedi verso il laghetto. Bus 30Express (da "Aventino/Albania" a "EUR Magliana") + 7 min a piedi.</li>
+                        <li><strong>In monopattino elettrico (Lime/Bird):</strong> Tempo simile alla bici, ma più comodo per le salite.</li>
+                      </ul>
+
+                      <p><strong>Cosa Vedere nel Giardino Giapponese:</strong></p>
+                      <ul>
+                        <li>Ponte rosso in stile asiatico e cascatelle.</li>
+                        <li>Ciliegi (spettacolari a marzo-aprile) e aceri.</li>
+                        <li>Lanternhe tradizionali e laghetto con carpe koi.</li>
+                      </ul>
+
+                      <p>Dopo il Giardino Giapponese, concediti una sosta rigenerante sulle rive del laghetto: l'area è dotata di spazi erbosi ideali per un picnic o un riposo con vista. Un telo da stendere sarà il tuo alleato per goderti il silenzio di quest'oasi!</p>
+
+                    </div>
                   </div>
                 </div>
+
+                <!-- Parte 4: Voodoo Bar -->
+                <div class="step-container">
+                  <div class="step" onclick="toggleStepDetails('part4')">
+                    <div class="step-number bg-primary">4</div>
+                    <div class="step-content">
+                      <h5>Voodoo bar, dove i cocktail bruciano come tramonti sul Colosseo</h5>
+                      <p>Un locale che unisce l'anima underground di Roma alla maestosità dei Fori Imperiali. Qui, tra pareti dipinte con graffiti tribali e luci al neon, i cocktail prendono nomi da sortilegio e i DJ set spaziano dall'afrobeat all'elettronica.</p>
+                    </div>
+                  </div>
+                  <div id="part4" class="step-details" style="display: none;">
+                    <div class="p-3 bg-light rounded">
+                      <p><strong>Dove:</strong> Via delle Terme di Traiano, 4A (a 5 min dal Colosseo).</p>
+                      <p><strong>Ingresso:</strong> Gratuito</p>
+                      <p><strong>Orari:</strong> 18:30-2:30</p>
+
+                      <p><strong>Come arrivare dal Laghetto dell'EUR:</strong></p>
+                      <ul>
+                        <li><strong>In bici/monopattino:</strong> 25 min (7 km) – Percorso più panoramico: Viale America > Via Cristoforo Colombo > Circo Massimo > Via dei Fori Imperiali (attenzione ai sampietrini!).</li>
+                        <li><strong>Mezzi pubblici:</strong> Metro B da "EUR Fermi" a "Colosseo" (12 min) + 5 min a piedi salendo verso Monti.</li>
+                        <li><strong>Taxi:</strong> €15-20 (circa 15 min).</li>
+                      </ul>
+
+                      <p><strong>Consiglio:</strong> prendi un tavolo vista Colosseo!</p>
+                      <p><strong>Dress code:</strong> casual chic!</p>
+
+                      <p><strong>🍸 Happy Hour:</strong></p>
+                      <p><strong>Orario:</strong> 18:30 - 21:30 (durante la settimana), fino alle 22:00 (weekend).</p>
+                      <p><strong>Costo cocktail:</strong> €10-12 (incluso stuzzichini piccanti come nachos, bruschette e finger food caraibico).</p>
+
+                      <p><strong>🎧 DJ Set:</strong></p>
+                      <p>Da giovedì a domenica (dalle 22:00 all'1:30).</p>
+                      <p><strong>Ingresso dopo le 23:00:</strong> €5-10 (include un drink, dipende dall'evento).</p>
+
+
+                    </div>
+                  </div>
+                </div>
+
+
               </div>
-
-
-              <a href="#" class="btn btn-primary mt-4">Scarica mappa dettagliata</a>
             </div>
           </div>
         </div>
 
 
-        <!-- Itinerario Segreto -->
-        <div class="tab-pane fade" id="secret" role="tabpanel">
-          <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-              <div class="map-container">
-                <div id="itinerario-mappa-secret"
-                     data-monumenti='{
-                    "Aventino": [41.8830, 12.4800],
-                    "Buco della serratura": [41.8816, 12.4665],
-                    "Quartiere Coppedè": [41.9186, 12.5015]
-                  }'
-                     style="height: 400px; border-radius: 8px;"></div>
-                <div class="text-center mt-2">
-                  <a class="btn btn-outline-primary btn-sm"
-                     href="https://www.openstreetmap.org/#map=15/41.8830/12.4800"
-                     target="_blank">
-                    Visualizza mappa completa
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <h3 class="mb-4">Roma Segreta</h3>
-              <p>Scopri angoli nascosti e storie insolite della città eterna, lontano dai percorsi turistici tradizionali.</p>
 
 
-              <div class="itinerary-details mt-4">
-                <div class="detail-item">
-                  <i class="ti-time text-primary mr-2"></i>
-                  <span><strong>Durata:</strong> 3-4 ore</span>
-                </div>
-                <div class="detail-item">
-                  <i class="ti-map-alt text-primary mr-2"></i>
-                  <span><strong>Distanza:</strong> 2.5 km</span>
-                </div>
-                <div class="detail-item">
-                  <i class="ti-star text-primary mr-2"></i>
-                  <span><strong>Difficoltà:</strong> Facile</span>
-                </div>
-              </div>
-
-
-              <div class="itinerary-steps mt-4">
-                <div class="step">
-                  <div class="step-number bg-primary">1</div>
-                  <div class="step-content">
-                    <h5>Aventino</h5>
-                    <p>Il colle più tranquillo con giardini segreti e viste mozzafiato.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8830" data-lon="12.4800">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="step-number bg-primary">2</div>
-                  <div class="step-content">
-                    <h5>Buco della serratura</h5>
-                    <p>Uno scorcio unico sulla cupola di San Pietro attraverso una porta.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8816" data-lon="12.4665">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="step-number bg-primary">3</div>
-                  <div class="step-content">
-                    <h5>Quartiere Coppedè</h5>
-                    <p>Un angolo fiabesco con architetture eclettiche e misteriose.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.9186" data-lon="12.5015">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-
-              <a href="#" class="btn btn-primary mt-4">Scarica mappa dettagliata</a>
-            </div>
-          </div>
-        </div>
-
+        <!-- FINE ITINERARIO AVVENTURA -->
 
         <!-- Itinerario Gastronomico -->
-        <div class="tab-pane fade" id="food" role="tabpanel">
-          <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-              <div class="map-container">
-                <div id="itinerario-mappa-food"
-                     data-monumenti='{
-                    "Campo de Fiori": [41.8956, 12.4715],
-             "Trastevere": [41.8897, 12.4696],
-             "Gelaterie artigianali": [41.8915, 12.4900]
-             }'
-                     style="height: 400px; border-radius: 8px;"></div>
-                <div class="text-center mt-2">
-                  <a class="btn btn-outline-primary btn-sm"
-                     href="https://www.openstreetmap.org/#map=15/41.8950/12.4700"
-                     target="_blank">
-                    Visualizza mappa completa
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <h3 class="mb-4">Roma a Tavola</h3>
-              <p>Un tour tra i sapori autentici della cucina romana, dalle trattorie storiche alle migliori gelaterie.</p>
+        <!-- FINE Itinerario Gastronomico -->
 
 
-              <div class="itinerary-details mt-4">
-                <div class="detail-item">
-                  <i class="ti-time text-primary mr-2"></i>
-                  <span><strong>Durata:</strong> 5-6 ore</span>
-                </div>
-                <div class="detail-item">
-                  <i class="ti-map-alt text-primary mr-2"></i>
-                  <span><strong>Distanza:</strong> 4 km</span>
-                </div>
-                <div class="detail-item">
-                  <i class="ti-star text-primary mr-2"></i>
-                  <span><strong>Difficoltà:</strong> Facile</span>
-                </div>
-              </div>
-
-
-              <div class="itinerary-steps mt-4">
-                <div class="step">
-                  <div class="step-number bg-primary">1</div>
-                  <div class="step-content">
-                    <h5>Campo de' Fiori</h5>
-                    <p>Mercato mattutino e caffè storici per iniziare la giornata.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8956" data-lon="12.4715">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="step-number bg-primary">2</div>
-                  <div class="step-content">
-                    <h5>Trastevere</h5>
-                    <p>Pranzo in trattorie autentiche con cucina romana tradizionale.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8897" data-lon="12.4696">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="step-number bg-primary">3</div>
-                  <div class="step-content">
-                    <h5>Gelaterie artigianali</h5>
-                    <p>Degustazione dei migliori gelati della città.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8915" data-lon="12.4900">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-
-              <a href="#" class="btn btn-primary mt-4">Scarica mappa dettagliata</a>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -648,10 +737,90 @@
       document.addEventListener("DOMContentLoaded", function() {
           includeHTML({
               headerPlaceHolder: "src/pages/include/header.html",
-              footerPlaceHolder: "src/pages/include/footer.html"
+              footerPlaceHolder: "src/pages/include/footer.html",
+              adventureItineraryPlaceHolder: "src/pages/itinerary/it/avventura.html"
           });
       });
   </script>
+
+  <!-- Script per la mappa-->
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Gestione click sui pulsanti "Mostra sulla mappa"
+  document.querySelectorAll('.btn-map-marker').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const lat = this.getAttribute('data-lat');
+      const lon = this.getAttribute('data-lon');
+      const url = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=17/${lat}/${lon}`;
+      window.open(url, '_blank');
+    });
+  });
+});
+</script>
+
+  <script>
+// Funzione per mostrare/nascondere i dettagli degli step
+function toggleStepDetails(id) {
+  const element = document.getElementById(id);
+  if (element.style.display === 'none') {
+    element.style.display = 'block';
+    // Carica la mappa specifica quando si espande
+    setTimeout(() => {
+      initPartMap(id.replace('part', 'mappa-parte'));
+    }, 100);
+  } else {
+    element.style.display = 'none';
+  }
+}
+
+// Inizializza le mappe delle parti quando la pagina è caricata
+document.addEventListener('DOMContentLoaded', function() {
+  // Mappa generale
+  initAdventureMap();
+
+  // Aggiungi gestori di eventi per i pulsanti "Mostra sulla mappa"
+  document.querySelectorAll('.btn-map-marker').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const lat = this.getAttribute('data-lat');
+      const lon = this.getAttribute('data-lon');
+      const url = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=17/${lat}/${lon}`;
+      window.open(url, '_blank');
+    });
+  });
+});
+
+// Funzione per inizializzare la mappa generale
+function initAdventureMap() {
+  const map = L.map('avventura-mappa-generale').setView([41.87, 12.49], 13);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Aggiungi marcatori dalle tappe
+  const tappe = JSON.parse(document.getElementById('avventura-mappa-generale').getAttribute('data-tappe'));
+
+  Object.keys(tappe).forEach((tappa, index) => {
+    const marker = L.marker(tappe[tappa]).addTo(map)
+      .bindPopup(`<b>${index+1}. ${tappa}</b>`);
+  });
+}
+
+// Funzione per inizializzare le mappe delle singole parti
+function initPartMap(mapId) {
+  const map = L.map(mapId).setView([41.89, 12.49], 14);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Aggiungi percorso o marcatori specifici per ogni parte
+  // (Implementazione specifica per ogni parte andrebbe qui)
+}
+</script>
+
 
 </body>
 </html>
