@@ -136,10 +136,10 @@
         </style>
 
 
-        <div class ="button1">
-            <button onclick="playAudio()">
-                <i class="fas fa-volume-up icon"></i>
-            </button>
+    <div class = "button1">
+    <button onclick="playAudio()">
+            <i id="audioIcon1" class="fas fa-volume-up icon"></i>
+        </button>
 
             <audio id="myAudio">
                 <source src="/src/audio/StoriaECostruzioneColosseoIT.m4a" type="audio/mpeg">
@@ -203,7 +203,7 @@
 
         <div class ="button2">
             <button onclick="playAudio2()">
-                <i class="fas fa-volume-up icon"></i>
+                <i id="audioIcon2" class="fas fa-volume-up icon"></i>
             </button>
 
             <audio id="myAudio2">
@@ -269,7 +269,7 @@
 
         <div class ="button3">
             <button onclick="playAudio3()">
-                <i class="fas fa-volume-up icon"></i>
+                <i id="audioIcon3" class="fas fa-volume-up icon"></i>
             </button>
 
             <audio id="myAudio3">
@@ -334,7 +334,7 @@
 
         <div class ="button4">
             <button onclick="playAudio4()">
-                <i class="fas fa-volume-up icon"></i>
+                <i id="audioIcon4" class="fas fa-volume-up icon"></i>
             </button>
 
             <audio id="myAudio4">
@@ -430,26 +430,64 @@
     </script>
     <script>
         function playAudio() {
-          const audio = document.getElementById("myAudio");
-          audio.play();
+          var audio = document.getElementById("myAudio");
+
+          if (audio.paused) {
+            audio.play();
+            icon.classList.remove("fa-volume-up");
+            icon.classList.add("fa-pause");
+          } else {
+            audio.pause();
+            icon.classList.remove("fa-pause");
+            icon.classList.add("fa-volume-up");
+          }
         }
     </script>
     <script>
         function playAudio2() {
-          const audio = document.getElementById("myAudio2");
-          audio.play();
+          var audio = document.getElementById("myAudio2");
+
+
+          if (audio.paused) {
+            audio.play();
+            icon.classList.remove("fa-volume-up");
+            icon.classList.add("fa-pause");
+          } else {
+            audio.pause();
+            icon.classList.remove("fa-pause");
+            icon.classList.add("fa-volume-up");
+          }
         }
-    </script>
+    </script>>
     <script>
         function playAudio3() {
-          const audio = document.getElementById("myAudio3");
-          audio.play();
+          var audio = document.getElementById("myAudio3");
+
+
+          if (audio.paused) {
+            audio.play();
+            icon.classList.remove("fa-volume-up");
+            icon.classList.add("fa-pause");
+          } else {
+            audio.pause();
+            icon.classList.remove("fa-pause");
+            icon.classList.add("fa-volume-up");
+          }
         }
     </script>
     <script>
         function playAudio4() {
-          const audio = document.getElementById("myAudio4");
-          audio.play();
+          var audio = document.getElementById("myAudio4");
+
+          if (audio.paused) {
+            audio.play();
+            icon.classList.remove("fa-volume-up");
+            icon.classList.add("fa-pause");
+          } else {
+            audio.pause();
+            icon.classList.remove("fa-pause");
+            icon.classList.add("fa-volume-up");
+          }
         }
     </script>
 </body>
