@@ -470,7 +470,7 @@
                     <div class="step-accordion">
                       <!-- TAPPA 1 -->
                       <div class="step-card expanded"> <!-- Aperta di default -->
-                        <div class="step-header" onclick="toggleStep2(this)">
+                        <div class="step-header" onclick="toggleStep(this)">
                           <div class="step-badge bordered">1</div>
                           <div class="step-title">
                             <h5>Porta di San Sebastiano e Catacombe di San Callisto</h5>
@@ -498,7 +498,7 @@
 
                       <!-- TAPPA 2 -->
                       <div class="step-card">
-                        <div class="step-header" onclick="toggleStep2(this)">
+                        <div class="step-header" onclick="toggleStep(this)">
                           <div class="step-badge bordered">2</div>
                           <div class="step-title">
                             <h5>Brunch al Giardino di Lù</h5>
@@ -525,7 +525,7 @@
 
                       <!-- TAPPA 3 -->
                       <div class="step-card">
-                        <div class="step-header" onclick="toggleStep2(this)">
+                        <div class="step-header" onclick="toggleStep(this)">
                           <div class="step-badge bordered">3</div>
                           <div class="step-title">
                             <h5>Mausoleo di Cecilia Metella</h5>
@@ -551,7 +551,7 @@
 
                       <!-- TAPPA 4 -->
                       <div class="step-card">
-                        <div class="step-header" onclick="toggleStep2(this)">
+                        <div class="step-header" onclick="toggleStep(this)">
                           <div class="step-badge bordered">4</div>
                           <div class="step-title">
                             <h5>Villa dei Quintili</h5>
@@ -575,7 +575,7 @@
 
                       <!-- TAPPA 5 -->
                       <div class="step-card">
-                        <div class="step-header" onclick="toggleStep2(this)">
+                        <div class="step-header" onclick="toggleStep(this)">
                           <div class="step-badge bordered">5</div>
                           <div class="step-title">
                             <h5>Terme di Caracalla</h5>
@@ -910,6 +910,7 @@
 <script src="/src/js/include.js"></script> <!-- per inclusione pagine al posto dei placeHolder -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="/src/js/itinerario-osm.js"></script>
+<script src="/src/js/expandable-section.js"></script>
 <!-- passa il percoso di header e footer relativo alla funzione includeHTML -->
 <script>
       document.addEventListener("DOMContentLoaded", function() {
@@ -1000,37 +1001,6 @@ function initPartMap(mapId) {
 </script>
 
 
-<script>
-
-  function toggleStep(element) {
-    const container = element.closest('.expandable-step');
-    const details = container.querySelector('.step-details');
-
-    container.classList.toggle('expanded');
-    details.style.display = details.style.display === 'block' ? 'none' : 'block';
-  }
-</script>
-
-
-<script>
-function toggleStep2(header) {
-  const card = header.closest('.step-card');
-  const isExpanded = card.classList.contains('expanded');
-
-  // Chiudi tutte le altre card
-  document.querySelectorAll('.step-card.expanded').forEach(openCard => {
-    if(openCard !== card) {
-      openCard.classList.remove('expanded');
-      openCard.querySelector('.step-content').style.display = 'none';
-    }
-  });
-
-  // Alterna lo stato corrente
-  card.classList.toggle('expanded');
-  const content = card.querySelector('.step-content-flex-none');
-  content.style.display = isExpanded ? 'none' : 'block';
-}
-</script>
 
 </body>
 </html>
