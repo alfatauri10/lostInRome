@@ -728,3 +728,33 @@
         font-size: 0.8rem;
     }
 }
+
+/* ==================== STILE Vai alla Mappa RED ==================== */
+
+.btn-map-marker-red {
+  display: inline-flex;
+  align-items: center;
+  color: #8B0000; /* Rosso scuro */
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.btn-map-marker-red:hover {
+  transform: translateY(-2px);
+  color: #8B0000; /* Rosso scuro */
+  text-decoration: none;
+
+}
+
+.btn-map-marker-red i {
+  color: #8B0000; /* Rosso scuro */
+  font-size: 0.9em;
+  transition: transform 0.3s ease;
+}
+
+.btn-map-marker-red:hover i {
+  color: #8B0000; /* Rosso scuro */
+  transform: scale(1.1);
+}
+
+
