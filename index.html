@@ -171,7 +171,7 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs justify-content-center" id="itineraryTab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link active" id="classic-tab" data-toggle="tab" href="#classic" role="tab">LostInRome</a>
+        <a class="nav-link active" id="LostInRome-tab" data-toggle="tab" href="#LostInRome" role="tab">LostInRome</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="adventure-tab" data-toggle="tab" href="#adventure" role="tab">Avventura</a>
@@ -182,109 +182,636 @@
       <li class="nav-item">
         <a class="nav-link" id="food-tab" data-toggle="tab" href="#food" role="tab">EnoGastronomico</a>
       </li>
-
     </ul>
 
 
     <!-- Tab panes -->
     <div class="tab-content pt-5" id="itineraryTabContent">
-      <!-- Itinerario Classico -->
-      <div class="tab-pane fade show active" id="classic" role="tabpanel">
-        <div class="row align-items-center">
-          <div class="col-lg-6 mb-4 mb-lg-0">
-            <div class="map-container">
-              <div id="itinerario-mappa"
-                   data-monumenti='{
-                    "Colosseo": [41.8902, 12.4924],
-                    "Foro Romano": [41.8925, 12.4857],
-                    "Pantheon": [41.8986, 12.4768]
-                  }'
-                   style="height: 400px; border-radius: 8px;"></div>
-              <div class="text-center mt-2">
-                <a class="btn btn-outline-primary btn-sm"
-                   href="https://www.openstreetmap.org/#map=15/41.8902/12.4924"
-                   target="_blank">
-                  Visualizza mappa completa
-                </a>
-              </div>
+      <!-- Itinerario LostInRome -->
+      <div class="tab-pane fade show active" id="LostInRome" role="tabpanel">
+        <div class="container">
+          <div class="row">
+            <!-- Descrizione -->
+            <div class="col-12 text-center mb-4">
+              <h3 class="section-subtitle">LostInRome</h3>
+              <p>
+                <i>
+                  Il nostro itinerario nasce come parte di un progetto scolastico volto a scoprire e valorizzare, a modo nostro, il patrimonio storico di Roma. Abbiamo selezionato sei tra i monumenti più significativi della città eterna, ognuno rappresentativo di un'epoca e di un aspetto diverso della sua storia millenaria.
+                </i>
+              </p>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <h3 class="mb-4">Itinerario LostInRome
-            </h3>
-            <p>Il nostro itinerario nasce come parte di un progetto scolastico volto a scoprire e valorizzare, a modo nostro, il patrimonio storico di Roma. Abbiamo selezionato sei tra i monumenti più significativi della città eterna, ognuno rappresentativo di un’epoca e di un aspetto diverso della sua storia millenaria. L’itinerario include: l'altare della patria, il pantheon, piazza di Spagna, piazza del popolo, Ara Pacis e la fontana di Trevi. Ogni tappa è stata approfondita con ricerche storiche e spiegazioni preparate da noi studenti.
-            </p>
+            <!-- fine Descrizione -->
 
-
-
-            <div class="itinerary-steps mt-4">
-              <div class="step">
-                <div class="step-number bg-primary">1</div>
-                <div class="step-content">
-                  <h5>Altare della patria</h5>
-                  <p>Inizia la giornata con il simbolo di Roma. Visita l'arena e l'ipogeo.</p>
-                  <a href="#" class="btn-map-marker" data-lat="41.8902" data-lon="12.4924">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                  </a>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-number bg-primary">2</div>
-                <div class="step-content">
-                  <h5>Fontana di Trevi </h5>
-                  <p>Passeggia tra le rovine dell'antico centro politico e religioso.</p>
-                  <a href="#" class="btn-map-marker" data-lat="41.8925" data-lon="12.4857">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                  </a>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-number bg-primary">3</div>
-                <div class="step-content">
-                  <h5>Pantheon</h5>
-                  <p>Ammira la perfetta geometria di questo tempio millenario.</p>
-                  <a href="#" class="btn-map-marker" data-lat="41.8986" data-lon="12.4768">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                  </a>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-number bg-primary">4</div>
-                <div class="step-content">
-                  <h5>Ara Pacis</h5>
-                  <p>Inizia la giornata con il simbolo di Roma. Visita l'arena e l'ipogeo.</p>
-                  <a href="#" class="btn-map-marker" data-lat="41.8902" data-lon="12.4924">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                  </a>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-number bg-primary">5</div>
-                <div class="step-content">
-                  <h5>Piazza di Spagna</h5>
-                  <p>Inizia la giornata con il simbolo di Roma. Visita l'arena e l'ipogeo.</p>
-                  <a href="#" class="btn-map-marker" data-lat="41.8902" data-lon="12.4924">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                  </a>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-number bg-primary">6</div>
-                <div class="step-content">
-                  <h5>Piazza del Popolo</h5>
-                  <p>Inizia la giornata con il simbolo di Roma. Visita l'arena e l'ipogeo.</p>
-                  <a href="#" class="btn-map-marker" data-lat="41.8902" data-lon="12.4924">
-                    <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                  </a>
+            <!-- Dettagli Generali -->
+            <div class="col-md-6">
+              <div class="card testimonial-card">
+                <div class="card-body">
+                  <h5 class="mb-3 text-center" style="color: var(--turchese-scuro);">Informazioni Generali</h5>
+                  <div class="itinerary-details text-md-left text-center">
+                    <div class="detail-item-itinerari mb-2">
+                      <i class="fas fa-clock mr-2 icon-dettagli-turchese-scuro"></i>
+                      <span><strong>Durata totale:</strong> 1 giorno intero</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <i class="fas fa-route mr-2 icon-dettagli-turchese-scuro"></i>
+                      <span><strong>Distanza totale:</strong> ~6 km (a piedi)</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <i class="fas fa-mountain mr-2 icon-dettagli-turchese-scuro"></i>
+                      <span><strong>Difficoltà:</strong> Facile (percorso urbano)</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <i class="fas fa-euro-sign mr-2 icon-dettagli-turchese-scuro"></i>
+                      <span><strong>Budget base:</strong> €30-50 (ingressi e spuntini)</span>
+                    </div>
+                    <div class="detail-item-itinerari">
+                      <i class="fas fa-glass-cheers mr-2 icon-dettagli-turchese-scuro"></i>
+                      <span><strong>Budget comfort:</strong> €60-80 (ingressi, pasti seduti, aperitivi)</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <!-- fine Dettagli Generali -->
 
-
-            <a href="#" class="btn btn-primary mt-4">Scarica mappa dettagliata</a>
+            <!-- Orari consigliati -->
+            <div class="col-md-6">
+              <div class="card testimonial-card">
+                <div class="card-body">
+                  <h5 class="mb-3 text-center" style="color: var(--turchese-scuro);">Orari Consigliati</h5>
+                  <div class="itinerary-schedule text-md-left text-center">
+                    <div class="detail-item-itinerari mb-2">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">08:30-10:00</span>
+                      <span>Altare della Patria</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">10:00-11:00</span>
+                      <span>Fontana di Trevi + colazione</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">11:30-13:00</span>
+                      <span>Pantheon + pranzo</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">13:30-14:30</span>
+                      <span>Ara Pacis</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">15:00-17:00</span>
+                      <span>Piazza di Spagna + aperitivo</span>
+                    </div>
+                    <div class="detail-item-itinerari">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">17:30-19:00</span>
+                      <span>Piazza del Popolo + tramonto</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- FINE ORARI CONSIGLIATI -->
           </div>
         </div>
+
+        <div class="row mt-5">
+          <!-- Itinerari dettagliati -->
+          <div>
+            <!-- Tappa 1: Altare della Patria -->
+            <div class="expandable-step">
+              <div class="step-header" onclick="toggleStep(this)">
+                <div class="step-number">1</div>
+                <div class="step-title">
+                  <h5>Altare della Patria (Piazza Venezia)</h5>
+                  <p>Il monumento simbolo dell'Italia unita, con una terrazza panoramica mozzafiato.</p>
+                </div>
+                <div class="step-arrow">▼</div>
+              </div>
+
+              <div class="step-details">
+                <div class="detail-section">
+                  <div class="info-box">
+                    <div class="info-box-header">
+                      <i class="fas fa-info-circle"></i>
+                      <h4>Informazioni</h4>
+                    </div>
+
+                    <div class="info-box-content">
+                      <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                          <span class="info-label">Posizione:</span>
+                          <span class="info-value">Piazza Venezia</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-euro-sign"></i>
+                        <div>
+                          <span class="info-label"><a href="https://vive.cultura.gov.it/it/terrazza-panoramica" target="_blank" >Terrazza panoramica</a></span>
+                          <span class="info-value">5/18€ (ascensore incluso)</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="far fa-clock"></i>
+                        <div>
+                          <span class="info-label">Orari:</span>
+                          <span class="info-value">9:30-19:30 (ultimo ingresso 18:45)</span>
+                        </div>
+                      </div>
+
+                      <div class="info-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                          <strong>Consiglio:</strong> Arrivare presto per evitare code e godersi la vista al mattino con luce perfetta per foto!
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="itinerary-steps">
+                    <h5 class="section-subtitle-tappe"><i class="fas fa-map-marked-alt mr-2"></i>Esperienza</h5>
+                    <p>Vi consigliamo di iniziare la visita salendo sulla suggestiva terrazza panoramica dell'Altare della Patria: da qui potrete godere di una vista mozzafiato sui tetti della città. Uno spettacolo davvero imperdibile!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+<!--        linea di connessione per indicare il percorso-->
+
+            <div class="itinerary-connection">
+              <div class="connection-line"></div>
+              <div class="connection-arrow">
+                <i class="fas fa-arrow-down"></i>
+              </div>
+              <div class="connection-info">
+                <i class="fas fa-walking"></i> Proseguimento: Via del Corso (10 min )
+              </div>
+            </div>
+
+            <!-- Tappa 2: Fontana di Trevi -->
+            <div class="expandable-step">
+              <div class="step-header" onclick="toggleStep(this)">
+                <div class="step-number">2</div>
+                <div class="step-title">
+                  <h5>Fontana di Trevi e colazione</h5>
+                  <p>La fontana più celebre di Roma e una deliziosa colazione romana.</p>
+                </div>
+                <div class="step-arrow">▼</div>
+              </div>
+
+              <div class="step-details">
+                <div class="detail-section">
+                  <div class="info-box">
+                    <div class="info-box-header">
+                      <i class="fas fa-info-circle"></i>
+                      <h4>Informazioni</h4>
+                    </div>
+
+                    <div class="info-box-content">
+
+
+                      <div class="info-item">
+                        <i class="fas fa-utensils"></i>
+                        <div>
+                          <span class="info-label">Colazione:</span>
+                          <span class="info-value">Antico Forno Di Trevi</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-euro-sign"></i>
+                        <div>
+                          <span class="info-label">Costo medio:</span>
+                          <span class="info-value">€4-8 per colazione</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-ticket"></i>
+                        <div>
+                          <span class="info-label">Tour sotterraneo:</span>
+                          <span class="info-value">€15-20 (consigliato)</span>
+                        </div>
+                      </div>
+
+                      <div class="info-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                          <strong>Consiglio:</strong> Se a fine giornata avete ancora un po’ di energie, vi consigliamo di visitare la Fontana di Trevi a notte fonda: la troverete completamente deserta, illuminata da luci soffuse che creano un’atmosfera magica, davvero imperdibile.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="itinerary-steps">
+                    <h5 class="section-subtitle-tappe"><i class="fas fa-map-marked-alt mr-2"></i>Esperienza</h5>
+                    <p>Proseguendo lungo Via del Corso, raggiungerete la celebre Fontana di Trevi, perfetta per scattare una bella foto e, naturalmente, per esprimere un desiderio. Se avete tempo a disposizione, vi consigliamo vivamente di partecipare a un affascinante tour sotterraneo, che vi porterà alla scoperta dell'antico acquedotto che ancora oggi alimenta la fontana.</p>
+
+                    <div class="step-highlight">
+                      <i class="fas fa-coffee"></i> <strong>Colazione:</strong> Presso <a href="https://maps.app.goo.gl/ufU6JF6z6X2JpBHw9" target="_blank" >l'antico forno di trevi</a> per una tipica colazione romana con cornetti e cappuccino.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!--        linea di connessione-->
+            <div class="itinerary-connection">
+              <div class="connection-line"></div>
+              <div class="connection-arrow">
+                <i class="fas fa-arrow-down"></i>
+              </div>
+              <div class="connection-info">
+                <i class="fas fa-walking"></i> Proseguimento: Via delle Muratte e Via del Seminario (8 min)
+
+              </div>
+            </div>
+
+            <!--            Pantheon-->
+            <div class="expandable-step">
+              <div class="step-header" onclick="toggleStep(this)">
+                <div class="step-number">3</div>
+                <div class="step-title">
+                  <h5>Pantheon</h5>
+                  <p>Il tempio degli dèi e un salto nell’eternità romana.</p>
+                </div>
+                <div class="step-arrow">▼</div>
+              </div>
+
+              <div class="step-details">
+                <div class="detail-section">
+                  <div class="info-box">
+                    <div class="info-box-header">
+                      <i class="fas fa-info-circle"></i>
+                      <h4>Informazioni</h4>
+                    </div>
+
+                    <div class="info-box-content">
+
+                      <div class="info-item">
+                        <i class="fas fa-utensils"></i>
+                        <div>
+                          <span class="info-label">Spuntino:</span>
+                          <span class="info-value">Pizzicheria romana</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-euro-sign"></i>
+                        <div>
+                          <span class="info-label">Costo medio:</span>
+                          <span class="info-value">€5</span>
+                        </div>
+                      </div>
+                      <!--  linea di separazione-->
+                      <div class="info-separator"></div>
+                      <!--  fine linea di separazione-->
+
+                      <div class="info-item">
+                        <i class="fas fa-church"></i>
+                        <div>
+                          <span class="info-label">Per visitare il monumento:</span>
+                          <span class="info-value">prenotazione OOBLIGATORIA</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-ticket"></i>
+                        <div>
+                          <span class="info-label">acquista il tuo biglietto qui:</span>
+                          <span class="info-value"> <a href="https://cultura.gov.it/luogo/pantheon" target="_blank" >€2-5</a></span>
+                        </div>
+                      </div>
+
+                      <div class="info-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                          <strong>Consiglio:</strong>A pochi minuti a piedi, non perdete la Chiesa di San Luigi dei Francesi, che custodisce tre magnifici dipinti di Caravaggio
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="itinerary-steps">
+                    <h5 class="section-subtitle-tappe"><i class="fas fa-map-marked-alt mr-2"></i>Esperienza</h5>
+                    <p>Proseguendo lungo Via del Corso, raggiungerete la celebre Fontana di Trevi, perfetta per scattare una bella foto e, naturalmente, per esprimere un desiderio. Se avete tempo a disposizione, vi consigliamo vivamente di partecipare a un affascinante tour sotterraneo, che vi porterà alla scoperta dell'antico acquedotto che ancora oggi alimenta la fontana.</p>
+
+                    <div class="step-highlight">
+                      <i class="fas fa-pizza-slice"></i> <strong>Pranzo veloce:</strong> Pizzicheria romana: focaccia con porchetta, tartufo e altre delizie — solo 10€.
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--        linea di connessione-->
+
+            <div class="itinerary-connection">
+              <div class="connection-line"></div>
+              <div class="connection-arrow">
+                <i class="fas fa-arrow-down"></i>
+              </div>
+              <div class="connection-info">
+                <i class="fas fa-walking"></i> Proseguimento: Via di Ripetta (9 min)
+              </div>
+            </div>
+
+
+            <!-- Ara Pacis -->
+            <div class="expandable-step">
+              <div class="step-header" onclick="toggleStep(this)">
+                <div class="step-number">4</div>
+                <div class="step-title">
+                  <h5>Ara Pacis</h5>
+                  <p>Il marmo che racconta la pace più potente della guerra</p>
+                </div>
+                <div class="step-arrow">▼</div>
+              </div>
+
+              <div class="step-details">
+                <div class="detail-section">
+                  <!-- SEZIONE INFORMAZIONI -->
+                  <div class="info-box">
+                    <div class="info-box-header">
+                      <i class="fas fa-info-circle"></i>
+                      <h4>Informazioni</h4>
+                    </div>
+
+                    <div class="info-box-content">
+                      <div class="info-item">
+                        <i class="fas fa-landmark"></i>
+                        <div>
+                          <span class="info-label">Per visitare il monumento:</span>
+                          <span class="info-value">prenotazione OBBLIGATORIA</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-ticket"></i>
+                        <div>
+                          <span class="info-label">Acquista il tuo biglietto qui:</span>
+                          <span class="info-value"><a href="https://www.arapacis.it/it/informazioni_pratiche/biglietti_videoguide_e_audioguide" target="_blank">Prezzo soggetto a variazioni.</a></span>
+                        </div>
+                      </div>
+
+                      <div class="info-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                          <strong>Consiglio:</strong> La luce del pomeriggio esalta i rilievi marmorei, ideale per fotografie.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="itinerary-steps">
+                    <h5 class="section-subtitle-tappe"><i class="fas fa-map-marked-alt mr-2"></i>Esperienza</h5>
+                    <p>Prenotando il biglietto online, potrete accedere al museo dove guide esperte vi accompagneranno alla scoperta di questo importante monumento. L’Ara Pacis, comunque, è ben visibile anche dall’esterno grazie alle ampie vetrate che la circondano.</p>
+
+                    <div class="step-highlight">
+                      <i class="fas fa-binoculars"></i> <strong>Da non perdere:</strong> I pannelli con Enea e la Lupa Capitolina, e la straordinaria decorazione floreale che avvolge l'intero altare.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--        linea di connessione-->
+
+            <!-- Piazza di Spagna -->
+            <div class="expandable-step">
+              <div class="step-header" onclick="toggleStep(this)">
+                <div class="step-number">5</div>
+                <div class="step-title">
+                  <h5>Piazza di Spagna</h5>
+                  <p>Da secoli il salotto di Roma, dove storia, arte e nobiltà si incontrano ai piedi della scalinata 🏛️🌸.</p>
+                </div>
+                <div class="step-arrow">▼</div>
+              </div>
+
+              <div class="step-details">
+                <div class="detail-section">
+                  <!-- SEZIONE INFORMAZIONI -->
+                  <div class="info-box">
+                    <div class="info-box-header">
+                      <i class="fas fa-info-circle"></i>
+                      <h4>Informazioni</h4>
+                    </div>
+
+                    <div class="info-box-content">
+                      <div class="info-item">
+                        <i class="fas fa-cocktail"></i>
+                        <div>
+                          <span class="info-label">Aperitivo:</span>
+                          <span class="info-value">Terrazza del palazzetto che da scalinata Trinità dei Monti</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-euro-sign"></i>
+                        <div>
+                          <span class="info-label">Costo medio:</span>
+                          <span class="info-value">€15-30</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-book-open"></i>
+                        <div>
+                          <span class="info-label">Per il menù e costi:</span>
+                          <span class="info-value"><a href="https://www.hotelhasslerroma.com/uploads/documents/Il_Palazzetto_Wine__Cocktail_Bar_2638729642011209287.pdf" target="_blank">Clicca qui</a></span>
+                        </div>
+                      </div>
+
+                      <!-- linea di separazione -->
+                      <div class="info-separator"></div>
+                      <!-- fine linea di separazione -->
+
+                      <div class="info-item">
+                        <i class="fas fa-utensils"></i>
+                        <div>
+                          <span class="info-label">Pranzo:</span>
+                          <span class="info-value">Pastificio Guerra per primi piatti da asporto</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-euro-sign"></i>
+                        <div>
+                          <span class="info-label">Costo medio:</span>
+                          <span class="info-value">€5-6</span>
+                        </div>
+                      </div>
+
+                      <div class="info-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                          <strong>Consiglio:</strong> Salite fino in cima per una splendida foto con Roma ai vostri piedi 📸
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="itinerary-steps">
+                    <h5 class="section-subtitle-tappe"><i class="fas fa-map-marked-alt mr-2"></i>Esperienza</h5>
+                    <p>Qui potrete rinfrescarvi riempiendo la vostra borraccia con l'acqua potabile della Fontana della Barcaccia. Una volta dissetati, salite la scenografica scalinata di Trinità dei Monti per ammirare la piazza da una prospettiva davvero suggestiva.</p>
+
+                    <div class="step-highlight">
+                      <i class="fas fa-coffee"></i> <strong>Colazione:</strong> Presso l'Antico Forno Di Trevi per una tipica colazione romana con cornetti e cappuccino.
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!--        linea di connessione-->
+
+            <div class="itinerary-connection">
+              <div class="connection-line"></div>
+              <div class="connection-arrow">
+                <i class="fas fa-arrow-down"></i>
+              </div>
+              <div class="connection-info">
+                <i class="fas fa-walking"></i> Proseguimento: Via del Babuino anche se vale la pena fare una deviazione per Via Margutta, la strada degli artisti (10 min)
+
+              </div>
+            </div>
+
+            <!-- Piazza del Popolo -->
+            <div class="expandable-step">
+              <div class="step-header" onclick="toggleStep(this)">
+                <div class="step-number">6</div>
+                <div class="step-title">
+                  <h5>Piazza del Popolo</h5>
+                  <p>Dove la storia di Roma si svela in ogni angolo, un’antica porta d’ingresso che accoglieva viaggiatori da secoli 🏛️⚔️</p>
+                </div>
+                <div class="step-arrow">▼</div>
+              </div>
+
+              <div class="step-details">
+                <div class="detail-section">
+
+
+                  <div class="info-box">
+                    <div class="info-box-header">
+                      <i class="fas fa-info-circle"></i>
+                      <h4>Informazioni</h4>
+                    </div>
+
+                    <div class="info-box-content">
+                      <div class="info-item">
+                        <i class="fas fa-cocktail"></i>
+                        <div>
+                          <span class="info-label">Aperitivo:</span>
+                          <span class="info-value">Terrazza del palazzetto che da scalinata Trinità dei Monti</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-euro-sign"></i>
+                        <div>
+                          <span class="info-label">Costo medio:</span>
+                          <span class="info-value">€15-30</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-book-open"></i>
+                        <div>
+                          <span class="info-label">Per il menù e costi:</span>
+                          <span class="info-value"><a href="https://www.hotelhasslerroma.com/uploads/documents/Il_Palazzetto_Wine__Cocktail_Bar_2638729642011209287.pdf" target="_blank">Clicca qui</a></span>
+                        </div>
+                      </div>
+
+                      <!-- linea di separazione -->
+                      <div class="info-separator"></div>
+                      <!-- fine linea di separazione -->
+
+                      <div class="info-item">
+                        <i class="fas fa-utensils"></i>
+                        <div>
+                          <span class="info-label">Pranzo:</span>
+                          <span class="info-value">Pastificio Guerra per primi piatti da asporto</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-euro-sign"></i>
+                        <div>
+                          <span class="info-label">Costo medio:</span>
+                          <span class="info-value">€5-6</span>
+                        </div>
+                      </div>
+
+                      <div class="info-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                          <strong>Consiglio:</strong> Mentre siete a Piazza del Popolo, provate a parlare da una parte all’altra della piazza: la sua forma ellittica e la disposizione dei monumenti creano un'eccezionale acustica, che vi permetterà di sentire chiaramente anche una voce sussurrata da lontano. Un'esperienza divertente e sorprendente!
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- FINE SEZIONE INFORMAZIONI -->
+
+                  <!-- SEZIONE ESPERIENZA -->
+                  <div class="itinerary-steps">
+                    <h5 class="section-subtitle-tappe"><i class="fas fa-map-marked-alt mr-2"></i>Esperienza</h5>
+                    <p> Da Piazza del Popolo imboccate Viale Gabriele D’Annunzio: sulla curva troverete una scalinata che vi condurrà verso una delle vedute panoramiche più affascinanti di Roma, quella del Pincio. L’atmosfera romantica e il panorama mozzafiato vi conquisteranno.
+                      Siete ora nel cuore di Villa Borghese. Qui potrete concedervi un momento di relax sul prato o, per un’esperienza diversa, noleggiare una barchetta nel laghetto al costo di soli 3€ a persona.
+                    </p>
+
+                    <div class="step-highlight">
+                      <i class="fas fa-coffee"></i> <strong>Colazione:</strong> Presso l'Antico Forno Di Trevi per una tipica colazione romana con cornetti e cappuccino.
+                    </div>
+                  </div>
+                  <!-- FINE SEZIONE ESPERIENZA -->
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- MAPPA GENERALE -->
+        <div class="compact-map-container">
+          <h2 class="section-title text-center">Mappa</h2>
+          <div id="roma-discovery-mappa-generale"
+               data-tappe='{
+                 "Altare della Patria": [41.8965, 12.4823],
+                 "Fontana di Trevi": [41.9009, 12.4833],
+                 "Antico Forno Di Trevi": [41.9015, 12.4828],
+                 "Pantheon": [41.8986, 12.4769],
+                 "Pizzicheria Romana al Pantheon": [41.8982, 12.4775],
+                 "Ara Pacis": [41.9051, 12.4763],
+                 "Piazza di Spagna": [41.9058, 12.4822],
+                 "Terrazza del Palazzetto": [41.9060, 12.4820],
+                 "Pastificio Guerra": [41.9062, 12.4818],
+                 "Antico Caffè Greco": [41.9056, 12.4824],
+                 "Babingtons Tea Room": [41.9060, 12.4825],
+                 "Via Margutta": [41.9076, 12.4785],
+                 "Piazza del Popolo": [41.9106, 12.4764],
+                 "Terrazza Nainar": [41.9108, 12.4766],
+                 "Pincio": [41.9114, 12.4779]
+               }'
+               style="height: 350px; border-radius: 8px;"></div>
+
+          <div class="map-actions">
+            <a class="btn btn-sm btn-outline-secondary"
+               href="https://www.openstreetmap.org/#map=14/41.9025/12.4800"
+               target="_blank">
+              <i class="fas fa-external-link-alt mr-1"></i> Mappa completa
+            </a>
+            <button class="btn btn-sm btn-outline-secondary">
+              <i class="fas fa-download mr-1"></i> Scarica percorso
+            </button>
+          </div>
+        </div>
+        <!-- FINE MAPPA GENERALE -->
       </div>
+      <!-- fine itinerario lostInRome -->
+
 
 
       <!-- Itinerario Avventura -->
