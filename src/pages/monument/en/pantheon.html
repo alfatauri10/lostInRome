@@ -1,10 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+  <meta charset="utf-8">
+  <title>Lost in Rome | Pantheon</title>
+
+  <!-- Meta e stili -->
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="/src/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="/src/plugins/slick/slick.css" rel="stylesheet">
+  <link href="/src/plugins/themify-icons/themify-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="/src/css/style.css" rel="stylesheet">
+  <link href="/src/css/monument.css" rel="stylesheet">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
+          crossorigin="anonymous">
+  </script>
 </head>
+
 <body>
 
+<!-- preloader -->
+<div class="preloader">
+  <div class="loader">
+    <span class="dot"></span>
+    <div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+<!-- /preloader -->
+
+<!-- Header -->
+<div id="headerPlaceHolder"></div>
+
+
+<!-- Contenuto principale -->
+<div class="page-content">
+
+  <!-- nav bar con i link alle varie sezioni -->
+  <div class="container mb-5">
+    <div class="d-flex justify-content-center flex-wrap gap-4 py-3 align-items-center border-bottom">
+      <a class="text-decoration-none text-dark nav-link-custom px-2" href="#storia">History</a>    <!-- link alla sezione #History -->
+      <span class="menu-monumenti-barra-link">|</span>
+      <a class="text-decoration-none text-dark nav-link-custom px-2" href="#usato-oggi">Now</a>    <!-- link alla sezione #Now -->
+      <span class="menu-monumenti-barra-link">|</span>
+      <a class="text-decoration-none text-dark nav-link-custom px-2" href="#fatti-recenti">Recent facts</a>    <!-- link alla sezione #Recent Facrs -->
+      <span class="menu-monumenti-barra-link">|</span>
+      <a class="text-decoration-none text-dark nav-link-custom px-2" href="#curiosita">Fun</a>     <!-- link alla sezione #Fun facts -->
+      <span class="menu-monumenti-barra-link">|</span>
+      <a class="text-decoration-none text-dark nav-link-custom px-2" href="#mappa">Map</a>     <!-- link alla sezione #Map -->
+    </div>
+  </div>
+
+
+  <!-- Hero Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-4 mb-lg-0">
+          <!-- TODO (JAlfandari): inserisci qui il nome del monumento -->
+          <h1 class="titoli">Pantheon</h1>    <!-- Titolo(h1) -->
+          <!-- TODO (JAlfandari): inserisci qui una breve frase ad effetto sul monumento -->
+          <p class="lead">The Pantheon, timeless symbol of Rome and marvel of ancient Roman architecture</p>
+        </div>
+
+        <div class="col-lg-7">
+
+          <!-- Galleria immagini navigabile -->
+          <div class="monument-gallery">
+
+            <div class="gallery-item">
+              <a href="#storia">
+                <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
+                <img alt="Pantheon notturno" src="/src/images/monuments/pantheon/img1.jpg">
+              </a>
+            </div>
+
+            <div class="gallery-item">
+              <a href="#usato-oggi">
+                <!-- TODO (JAlfandari): Inserisci qui la tua img2. Modifica ALT con una breve descrizione e SRC con percorso -->
+                <img alt="Dettagli architettonici interni" src="/src/images/monuments/pantheon/img2.jpg"><!-- Percorso img2 -->
+              </a>
+            </div>
+
+            <div class="gallery-item">
+              <a href="#fatti-recenti">
+                <!-- TODO (JAlfandari): Inserisci qui la tua img3. Modifica ALT con una breve descrizione e SRC con percorso -->
+                <img alt="Pantheon di giorno" src="/src/images/monuments/pantheon/img3.jpg">    <!-- Percorso img3 -->
+              </a>
+            </div>
+
+            <div class="gallery-item">
+              <a href="#curiosita">
+                <!-- TODO (JAlfandari): Inserisci qui la tua img4. Modifica ALT con una breve descrizione e SRC con percorso -->
+                <img alt="Vista interna oculus" src="/src/images/monuments/pantheon/img4.jpg">       <!-- Percorso img4 -->
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione Storia -->
+  <section class="content-section" id="storia">
+    <span class="section-anchor"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="section-title-right text-right">History and construction</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
+              <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/images/monuments/pantheon/img1.jpg">
+            </div>
+            <div class="col-md-6 text-justify">
+              <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Storia" -->
+              <p>The first Pantheon was built in 27 BC by Marcus Vipsanius Agrippa, a Roman general and friend of Emperor Augustus. However, this first building was destroyed by fire. The current Pantheon was rebuilt by Emperor Hadrian around 118-125 AD.</p>
+              <p>It was initially built as a temple for all the Roman gods. Later, in 609 AD, it became a Christian church, which helped preserve it in good condition.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione "Come è usato oggi" -->
+  <section class="content-section" id="usato-oggi">
+    <span class="section-anchor"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="section-title-left">How it is used</h2>
+          <div class="row">
+            <div class="col-md-6 order-md-2 text-justify">
+              <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Usato oggi" -->
+              <p>The Pantheon has been used as a Catholic church called the Basilica of St. Mary and the Martyrs since 609 AD. Religious ceremonies are still held there today.</p>
+              <p> Millions of visitors come to see the Pantheon every year. People are amazed by its large dome and the oculus, which lets in natural light.</p>
+            </div>
+            <div class="col-md-6 order-md-1 ">
+              <!-- TODO (JAlfandari): Inserisci qui la tua img2. Modifica ALT con una breve descrizione e SRC con percorso -->
+              <img alt="Struttura architettonica" class="img-fluid rounded"
+                   src="/src/images/monuments/pantheon/img2.jpg"> <!-- img2 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione "Fatti recenti" -->
+  <section class="content-section" id="fatti-recenti">
+    <span class="section-anchor"></span>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="section-title-right text-right">Recent facts</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <!-- TODO (JAlfandari): Inserisci qui la tua img3. Modifica ALT con una breve descrizione e SRC con percorso -->
+              <img alt="Fatti recenti" class="img-fluid rounded"
+                   src="/src/images/monuments/pantheon/img3.jpg"> <!--img3 -->
+            </div>
+            <div class="col-md-6 text-justify">
+              <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "FATTI RECENTI" -->
+              <p>The Pantheon was included in the UNESCO World Heritage Site list in 1980 and later expanded in 1990. This highlights its historical, artistic, and cultural importance.</p>
+              <p>This recognition helps protect and preserve the monument, ensuring that future generations can continue to admire and study this extraordinary example of Roman engineering and architecture.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione "Leggende e fatti divertenti" -->
+  <section class="content-section" id="curiosita">
+    <span class="section-anchor"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="section-title-left">Legends and fun facts</h2>
+          <div class="row">
+            <div class="col-md-6 order-md-2">
+              <!-- TODO (JAlfandari): Inserisci qui testo della sezione "CURIOSITA" -->
+              <ul class="custom-star-list">
+                <li> The Pantheon has survived many earthquakes, but it has not been completely unscathed. The building has suffered some damage in the past, most notably in the 9th century</li>
+                <li> The Pantheon has appeared in many famous films. For example, in the 2009 movie Angels & Demons and in the 2015 film The Man from U.N.C.L.E</li>
+                <li> It is said that during certain times of the year, the sunlight shines through the oculus in a special way and highlights the statues or altars inside, making it look like the gods are blessing the temple</li>
+                <li> The floor of the Pantheon is made of colored marble from different parts of the Roman Empire</li>
+              </ul>
+            </div>
+            <div class="col-md-6 order-md-1">
+              <!-- TODO (JAlfandari): Inserisci qui la tua img4. Modifica ALT con una breve descrizione e SRC con percorso -->
+              <img alt="Leggende e fatti divertenti" class="img-fluid rounded"
+                   src="/src/images/monuments/pantheon/img4.jpg"> <!-- img4 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mappa -->
+  <section id="mappa">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-title-left text-center">Location</h2>
+
+          <!-- TODO (JAlfandari): Inserisci in src la posizione del tuo monumento su openstreatmaps-->
+          <iframe id="osm-iframe"
+                  width="100%"
+                  height="400"
+                  style="border:none; border-radius:8px;"
+                  data-default-pos="41.898591, 12.476849"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=12.439184188842775%2C41.879179343225694%2C12.514500617980957%2C41.91799020066553&amp;layer=mapnik&amp;marker=41.898587720337034%2C12.476842403411865">
+          </iframe>
+
+          <div class="text-center mt-4">
+            <!-- TODO (JAlfandari): Inserisci in href la posizione del tuo monumento -->
+            <a class="btn btn-outline-turchese d-inline-flex align-items-center"
+               href="https://www.google.com/maps/place/Pantheon/@41.8986108,12.4768729,752m/data=!3m2!1e3!4b1!4m6!3m5!1s0x132f604f678640a9:0xcad165fa2036ce2c!8m2!3d41.8986108!4d12.4768729!16zL20vMDF4emR6?entry=ttu&g_ep=EgoyMDI1MDQyOC4wIKXMDSoASAFQAw%3D%3D"
+               target="_blank">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              Show in Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Footer -->
+<div id="footerPlaceHolder"></div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script src="/src/js/osm-map.js"></script>
+<script src="/src/js/slider-card.js"></script>
+<script src="/src/js/gallery-monuments-scroll.js"></script> <!-- script per la galleria di immagini -->
+<script src="/src/js/language-switcher.js"></script> <!-- script per lo switch lingua -->
+<script src="/src/js/include.js"></script> <!-- script per l'inclusione di altre pagine  -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      includeHTML({
+          headerPlaceHolder: "../../include/header.html",
+          footerPlaceHolder: "../../include/footer.html"
+      });
+  });
+
+</script>
 </body>
 </html>
