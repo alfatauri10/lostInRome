@@ -649,3 +649,105 @@
         margin-right: 5 !important;
     box-sizing: border-box !important;
 }
+
+/* STILE OPZIONI RISTORAZIONE */
+.restaurant-option {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.option-header {
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-left: 4px solid #40e0d0;
+}
+
+.option-header h6 {
+    margin: 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge-price {
+    background: var(--turchese);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+
+.option-body {
+    padding: 15px;
+    background: var(--beige-scuro);
+}
+
+.option-detail {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+    font-size: 0.9rem;
+}
+
+.option-detail i {
+    color: var(--turchese-scuro);
+    margin-top: 3px;
+}
+
+/* STILE PARTE 3 */
+.bg-light-pink {
+    background-color: #fff0f5;
+}
+
+.info-box-header.bg-brown {
+    background-color: #6b522a !important;
+}
+
+.step-highlight.bg-light-pink i {
+    color: #e83e8c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .info-sublist div {
+        flex-wrap: wrap;
+    }
+}
+/* ICONE PERSONALIZZATE */
+.section-subtitle-tappe .fa-eye {
+    color: #6b522a;
+}
+
+.step-meta .fa-palette {
+    color: #e83e8c;
+}
+
+.step-meta .fa-fan {
+    color: #ff69b4;
+    transform: rotate(30deg);
+}
+
+.step-meta .fa-fish {
+    color: #068d9d;
+}
+
+/* STILE LINK PERCORSO */
+.info-sublist a {
+    color: var(--turchese-scuro);
+    text-decoration: underline;
+}
+
+.bg-light-pink {
+    background-color: #fff0f5;
+}
+
+
+
+
