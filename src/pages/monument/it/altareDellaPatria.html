@@ -310,6 +310,41 @@
   </section>
 
   <!-- Sezione "Leggende e fatti divertenti" -->
+  <style>
+    .button4 {
+    position : absolute;   /* Posizionamento assoluto */
+    left: 410px;           /* Distanza dal lato sinistro */
+    top: 2528px;            /* Distanza dall'alto */
+    z-index: 100;         /* In cima a altri elementi */
+    }
+
+    .button4 button {
+    background-color: var(--beige)  /* Colore di sfondo grigio */
+    color: black;               /* Colore del testo */
+    padding: 10px 20px;         /* Spaziatura interna */
+    border: none;               /* Nessun bordo */
+    border-radius: 5px;         /* Bordo arrotondato */
+    font-size: 16px;            /* Grandezza del font */
+    cursor: pointer;           /* Cambio cursore */
+    }
+
+    .button4 button .icon {
+    font-size: 20px;            /* Grandezza dell'icona */
+    margin-right: 8px;          /* Distanza tra icona e testo */
+    }
+  </style>
+
+
+  <div class ="button4">
+    <button onclick="playAudio4()">
+      <i id="audioIcon4" class="fas fa-volume-up icon"></i>
+    </button>
+
+    <audio id="myAudio4">
+      <source src="/src/audio/FattiDivertentiColosseoIT.m4a" type="audio/mpeg">
+    </audio>
+  </div>
+
   <section class="content-section" id="curiosita">
     <span class="section-anchor"></span>
     <div class="container">
