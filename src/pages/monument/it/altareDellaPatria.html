@@ -170,6 +170,41 @@
 
 
   <!-- Sezione "Come è usato oggi" -->
+  <style>
+    .button2 {
+        position: absolute;   /* Posizionamento assoluto */
+        left: 1160px;           /* Distanza dal lato sinistro */
+        top: 1825px;            /* Distanza dall'alto */
+        z-index: 100;         /* In cima a altri elementi */
+`   }
+
+    .button2 button {
+        background-color: #e1dcd3;  /* Colore di sfondo grigio */
+        color: black;               /* Colore del testo */
+        padding: 10px 20px;         /* Spaziatura interna */
+        border: none;               /* Nessun bordo */
+        border-radius: 5px;         /* Bordo arrotondato */
+        font-size: 16px;            /* Grandezza del font */
+        cursor: pointer;           /* Cambio cursore */
+    }
+
+    .button2 button .icon {
+      font-size: 20px;            /* Grandezza dell'icona */
+      margin-right: 8px;          /* Distanza tra icona e testo */
+    }
+  </style>
+
+
+  <div class ="button2">
+    <button onclick="playAudio2()">
+      <i id="audioIcon2" class="fas fa-volume-up icon"></i>
+    </button>
+
+    <audio id="myAudio2">
+      <source src="/src/audio/FattiRecentiColosseoIT.m4a" type="audio/mpeg">
+    </audio>
+  </div>
+
 
   <section class="content-section" id="usato-oggi">
     <span class="section-anchor"></span>
@@ -229,6 +264,19 @@
       margin-right: 8px;          /* Distanza tra icona e testo */
     }
   </style>
+
+
+  <div class ="button3">
+    <button onclick="playAudio3()">
+      <i id="audioIcon3" class="fas fa-volume-up icon"></i>
+    </button>
+
+    <audio id="myAudio3">
+      <source src="/src/audio/UsoOdiernoColosseoIT.m4a" type="audio/mpeg">
+    </audio>
+  </div>
+
+
   <section class="content-section" id="fatti-recenti">
     <span class="section-anchor"></span>
 
@@ -267,6 +315,42 @@
   </section>
 
   <!-- Sezione "Leggende e fatti divertenti" -->
+  <style>
+    .button4 {
+    position : absolute;   /* Posizionamento assoluto */
+    left: 410px;           /* Distanza dal lato sinistro */
+    top: 2360px;            /* Distanza dall'alto */
+    z-index: 100;         /* In cima a altri elementi */
+    }
+
+    .button4 button {
+    background-color: var(--beige)  /* Colore di sfondo grigio */
+    color: black;               /* Colore del testo */
+    padding: 10px 20px;         /* Spaziatura interna */
+    border: none;               /* Nessun bordo */
+    border-radius: 5px;         /* Bordo arrotondato */
+    font-size: 16px;            /* Grandezza del font */
+    cursor: pointer;           /* Cambio cursore */
+    }
+
+    .button4 button .icon {
+    font-size: 20px;            /* Grandezza dell'icona */
+    margin-right: 8px;          /* Distanza tra icona e testo */
+    }
+  </style>
+
+
+  <div class ="button4">
+    <button onclick="playAudio4()">
+      <i id="audioIcon4" class="fas fa-volume-up icon"></i>
+    </button>
+
+    <audio id="myAudio4">
+      <source src="/src/audio/FattiDivertentiColosseoIT.m4a" type="audio/mpeg">
+    </audio>
+  </div>
+
+
   <section class="content-section" id="curiosita">
     <span class="section-anchor"></span>
     <div class="container">
@@ -307,7 +391,7 @@
                   height="400"
                   style="border:none; border-radius:8px;"
                   data-default-pos="41.8902,12.4924"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=12.466821670532227%2C41.87307606720458%2C12.52346992492676%2C41.901765978963454&amp;layer=mapnik">
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=12.48000204563141%2C41.893340851840854%2C12.48502314090729%2C41.89606815920174&amp;layer=mapnik">
           </iframe>
 
           <div class="text-center mt-4">
@@ -332,6 +416,7 @@
 <div id="footerPlaceHolder"></div>
 
 <!-- Scripts -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script><!-- script per l'icona speaker -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
@@ -343,14 +428,76 @@
 <script src="/src/js/include.js"></script> <!-- script per l'inclusione di altre pagine  -->
 
 <script>
-          document.addEventListener("DOMContentLoaded", function() {
-              includeHTML({
-                  headerPlaceHolder: "../../include/header.html",
-                  footerPlaceHolder: "../../include/footer.html"
-              });
-          });
+  document.addEventListener("DOMContentLoaded", function() {
+      includeHTML({
+          headerPlaceHolder: "../../include/header.html",
+          footerPlaceHolder: "../../include/footer.html"
+      });
+  });
 
-    </script>
+</script>
+<script>
+  function playAudio() {
+    var audio = document.getElementById("myAudio");
+
+    if (audio.paused) {
+      audio.play();
+      icon.classList.remove("fa-volume-up");
+      icon.classList.add("fa-pause");
+    } else {
+      audio.pause();
+      icon.classList.remove("fa-pause");
+      icon.classList.add("fa-volume-up");
+    }
+  }
+</script>
+<script>
+  function playAudio2() {
+    var audio = document.getElementById("myAudio2");
+
+
+    if (audio.paused) {
+      audio.play();
+      icon.classList.remove("fa-volume-up");
+      icon.classList.add("fa-pause");
+    } else {
+      audio.pause();
+      icon.classList.remove("fa-pause");
+      icon.classList.add("fa-volume-up");
+    }
+  }
+</script>>
+<script>
+  function playAudio3() {
+    var audio = document.getElementById("myAudio3");
+
+
+    if (audio.paused) {
+      audio.play();
+      icon.classList.remove("fa-volume-up");
+      icon.classList.add("fa-pause");
+    } else {
+      audio.pause();
+      icon.classList.remove("fa-pause");
+      icon.classList.add("fa-volume-up");
+    }
+  }
+</script>
+<script>
+  function playAudio4() {
+    var audio = document.getElementById("myAudio4");
+
+    if (audio.paused) {
+      audio.play();
+      icon.classList.remove("fa-volume-up");
+      icon.classList.add("fa-pause");
+    } else {
+      audio.pause();
+      icon.classList.remove("fa-pause");
+      icon.classList.add("fa-volume-up");
+    }
+  }
+</script>
 </body>
 </html>
 
