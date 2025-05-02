@@ -1426,3 +1426,63 @@ main {
     display: none !important;
   }
 }
+
+/* Stile per le connessioni tra tappe */
+.itinerary-connection {
+  position: relative;
+  margin: 20px 0;
+  padding-left: 60px; /* Allinea con il numero della tappa */
+}
+
+.connection-line {
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--turchese);
+  border-radius: 2px;
+}
+
+.connection-arrow {
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 2px solid var(--turchese);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.connection-arrow i {
+  color: var(--turchese);
+  font-size: 10px;
+}
+
+.connection-info {
+  background: #f8f9fa;
+  padding: 8px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 14px;
+  color: var(--turchese-scuro);
+  border: 1px solid #e0e0e0;
+}
+
+.connection-info i {
+  margin-right: 5px;
+}
+
+.info-separator {
+  border-top: 1px solid var(--turchese-scuro);
+   opacity: 0.3;
+  margin: 10px 30px;
+  width: calc(100% - 60px);
+}
+
+

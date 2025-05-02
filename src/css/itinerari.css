@@ -1,353 +1,794 @@
 /* ITINERARI.CSS */
 /* Stili per la sezione itinerari */
 
-
-/* Sezione principale */
+/* ==================== SEZIONE PRINCIPALE ==================== */
 .section {
-   padding: 80px 0;
-   position: relative;
+    padding: 80px 0;
+    position: relative;
 }
-
 
 .bg-gray {
-   background-color: #FFFCF5;
+    background-color: #FFFCF5;
 }
-
 
 .bg-primary {
-   background-color: #FFFCF5;
+    background-color: #FFFCF5;
 }
 
-
-/* Titoli */
+/* ==================== TITOLI ==================== */
 .section-title {
-   font-size: 2.5rem;
-   font-weight: 600;
-   margin-bottom: 1.5rem;
-   position: relative;
-   font-family: 'Lexend', sans-serif;
-   color: #6b522a;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+    font-family: 'Lexend', sans-serif;
+    color: #6b522a;
 }
-
 
 .section-title:after {
-   content: '';
-   display: block;
-   width: 60px;
-   height: 3px;
-   background: #068d9d; /*3498db*/
-   margin: 15px auto 0;
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #068d9d; /*3498db*/
+    margin: 15px auto 0;
 }
 
-
-/* Nav tabs */
+/* ==================== NAV TABS ==================== */
 .nav-tabs {
-   border-bottom: 2px solid #e9ecef;
+    border-bottom: 2px solid #e9ecef;
 }
-
 
 .nav-tabs .nav-link {
-   border: none;
-   color: #495057;
-   font-weight: 500;
-   padding: 12px 25px;
-   font-size: 1.1rem;
-   transition: all 0.3s ease;
-   font-family: 'Lexend', sans-serif;
+    border: none;
+    color: #495057;
+    font-weight: 500;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    font-family: 'Lexend', sans-serif;
 }
-
 
 .nav-tabs .nav-link:hover {
-   border: none;
-   color: #6b522a;
+    border: none;
+    color: #6b522a;
 }
-
 
 .nav-tabs .nav-link.active {
-   color: #6b522a;
-   background-color: transparent;
-   border: none;
-   border-bottom: 3px solid #6b522a;
+    color: #6b522a;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid #6b522a;
 }
 
-
-/* Card itinerari */
+/* ==================== CARD ITINERARI ==================== */
 .card {
-   border: none;
-   transition: all 0.3s ease;
-   overflow: hidden;
+    border: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
-
 
 .card-img-container {
-   overflow: hidden;
-   height: 220px;
+    overflow: hidden;
+    height: 220px;
 }
-
 
 .card-img-top {
-   height: 100%;
-   width: 100%;
-   object-fit: cover;
-   transition: transform 0.5s ease;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
-
 
 .card:hover .card-img-top {
-   transform: scale(1.05);
+    transform: scale(1.05);
 }
-
 
 .card-badge-overlay {
-   position: absolute;
-   top: 15px;
-   right: 15px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
-
 
 .badge {
-   padding: 5px 10px;
-   font-weight: 500;
-   font-size: 0.75rem;
-   letter-spacing: 0.5px;
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
 }
-
 
 .card-body {
-   padding: 25px;
+    padding: 5px;
+    margin: 0 auto 0px auto;
+    width: 90%;
+    box-sizing: border-box; /* Include padding nel calcolo della width */
 }
-
 
 .card-title {
-   font-size: 1.4rem;
-   font-weight: 600;
-   margin-bottom: 0.75rem;
-   color: #2c3e50;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #2c3e50;
 }
-
 
 .card-text {
-   color: #6c757d;
-   margin-bottom: 1.5rem;
-   font-size: 0.95rem;
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
 }
 
-
-/* Dettagli itinerario */
+/* ==================== DETTAGLI ITINERARIO ==================== */
 .itinerary-details {
-   margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
 }
-
 
 .detail-item {
-   display: flex;
-   align-items: center;
-   margin-bottom: 0.5rem;
-   font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
 }
 
+.detail-item-itinerari {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+}
 
 .detail-item i {
-   font-size: 1.1rem;
+    font-size: 1.1rem;
 }
 
-
-/* Passaggi itinerario */
+/* ==================== PASSAGGI ITINERARIO ==================== */
 .itinerary-steps {
-   margin-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
 }
-
 
 .step {
-   display: flex;
-   margin-bottom: 1.5rem;
-   align-items: flex-start;
+    display: flex;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
 }
-
 
 .step-number {
-   width: 30px;
-   height: 30px;
-   border-radius: 50%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   color: white;
-   font-weight: 600;
-   margin-right: 15px;
-   flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    margin-right: 15px;
+    flex-shrink: 0;
 }
-
 
 .step-content {
-   flex: 1;
+    flex: 1;
 }
-
 
 .step-content h5 {
-   font-size: 1.1rem;
-   font-weight: 600;
-   margin-bottom: 0.3rem;
-   color: #2c3e50;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: #2c3e50;
 }
-
 
 .step-content p {
-   color: #6c757d;
-   font-size: 0.9rem;
-   margin-bottom: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0;
 }
 
+.step-content-flex-none {
+    display: none;
+    padding: 20px;
+    background: var(--beige);
+    border-top: 1px solid #f1f5f9;
+    animation: fadeIn 0.3s ease-out;
+}
 
-/* Testimonianze */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.step-content-flex-none p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    color: #4a5568;
+}
+
+/* ==================== TESTIMONIANZE ==================== */
 .testimonial-card {
-   background-color: rgba(255, 255, 255, 0.1);
-   border-radius: 8px;
-   height: 100%;
-   transition: all 0.3s ease;
-   border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    height: 100%;
+    transition: all 0.3s ease;
+    border: none;
 }
-
 
 .testimonial-card:hover {
-   transform: translateY(-5px);
-   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
-
 
 .testimonial-rating {
-   color: #f1c40f;
+    color: #f1c40f;
 }
-
 
 .testimonial-text {
-   font-style: italic;
-   margin-bottom: 1.5rem;
-   font-size: 0.95rem;
-   line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
-
 
 .testimonial-author h5 {
-   font-size: 1.1rem;
-   font-weight: 600;
-   margin-bottom: 0.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
 }
-
 
 .testimonial-author p {
-   font-size: 0.85rem;
-   opacity: 0.8;
-   margin-bottom: 0;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-bottom: 0;
 }
 
-
-/* Bottoni */
+/* ==================== BOTTONI ==================== */
 .btn {
-   padding: 10px 25px;
-   font-weight: 500;
-   border-radius: 30px;
-   transition: all 0.3s ease;
-   font-family: 'Lexend', sans-serif;
+    padding: 10px 25px;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-family: 'Lexend', sans-serif;
 }
-
 
 .btn-primary {
-   background-color: #3498db;
-   border-color: #3498db;
+    background-color: #3498db;
+    border-color: #3498db;
 }
-
 
 .btn-primary:hover {
-   background-color: #2980b9;
-   border-color: #2980b9;
-   transform: translateY(-2px);
+    background-color: #2980b9;
+    border-color: #2980b9;
+    transform: translateY(-2px);
 }
-
 
 .btn-dark {
-   background-color: #2c3e50;
-   border-color: #2c3e50;
+    background-color: #2c3e50;
+    border-color: #2c3e50;
 }
-
 
 .btn-dark:hover {
-   background-color: #1a252f;
-   border-color: #1a252f;
+    background-color: #1a252f;
+    border-color: #1a252f;
 }
-
 
 .app-buttons {
-   margin-top: 2rem;
+    margin-top: 2rem;
 }
 
-
-/* Ombre e effetti */
+/* ==================== OMBRE E EFFETTI ==================== */
 .shadow {
-   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
 }
-
 
 .hover-shadow {
-   transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
-
 
 .hover-shadow:hover {
-   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
 }
 
-
-/* Responsive */
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 992px) {
-   .section {
-       padding: 60px 0;
-   }
+    .section {
+        padding: 60px 0;
+    }
 
-
-   .card-img-container {
-       height: 180px;
-   }
+    .card-img-container {
+        height: 180px;
+    }
 }
-
 
 @media (max-width: 768px) {
-   .section-title {
-       font-size: 2rem;
-   }
+    .section-title {
+        font-size: 2rem;
+    }
 
+    .nav-tabs .nav-link {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
 
-   .nav-tabs .nav-link {
-       padding: 10px 15px;
-       font-size: 1rem;
-   }
+    .step {
+        flex-direction: column;
+    }
 
-
-   .step {
-       flex-direction: column;
-   }
-
-
-   .step-number {
-       margin-bottom: 10px;
-   }
+    .step-number {
+        margin-bottom: 10px;
+    }
 }
-
 
 @media (max-width: 576px) {
-   .section {
-       padding: 50px 0;
-   }
+    .section {
+        padding: 50px 0;
+    }
 
+    .app-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+    }
 
-   .app-buttons .btn {
-       display: block;
-       width: 100%;
-       margin-bottom: 15px;
-   }
-
-
-   .app-buttons .btn:last-child {
-       margin-bottom: 0;
-   }
+    .app-buttons .btn:last-child {
+        margin-bottom: 0;
+    }
 }
+
+/* ==================== SEZIONI ESPANDIBILI ==================== */
+
+/* ===== VARIABILI ===== */
+:root {
+  --turchese: #40e0d0;
+  --turchese-scuro: #2db8a8;
+  --beige: #f5f5dc;
+  --beige-scuro: #e6e6c3;
+  --ombra: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* ===== STRUTTURA BASE (RESPONSIVE) ===== */
+.expandable-step,
+.step-card {
+  font-family: 'Lexend', sans-serif;
+  border-radius: 8px;
+  background: white;
+  box-shadow: var(--ombra);
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 100%; /* Garantisce adattamento */
+  box-sizing: border-box; /* Include padding nel width */
+}
+
+/* ===== HEADER (CONSERVA STILE MA RESPONSIVE) ===== */
+.step-header {
+  display: flex;
+  align-items: center; /* Allineamento verticale mantenuto */
+  padding: 20px;
+  cursor: pointer;
+  background: var(--beige);
+  transition: all 0.3s;
+  position: relative;
+  min-height: 60px; /* Altezza minima per allineamento frecce */
+}
+
+.step-header:hover {
+  background: var(--beige-scuro);
+}
+
+/* ===== ELEMENTI HEADER (STILE ORIGINALE MA RESPONSIVE) ===== */
+.step-badge,
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  background: var(--turchese);
+  color: white;
+  font-weight: bold;
+}
+
+.step-badge.bordered {
+  background: transparent;
+  border: 2px solid var(--turchese-scuro);
+  color: var(--turchese-scuro);
+  width: 28px;
+  height: 28px;
+}
+
+/* ===== FRECCE (ALLINEAMENTO PERFETTO) ===== */
+.step-arrow {
+  margin-left: auto;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  padding-left: 10px;
+  display: flex;
+  align-items: center; /* Allineamento verticale */
+  height: 100%; /* Prende l'altezza completa dell'header */
+}
+
+/* Freccia Font Awesome */
+.step-arrow.fas {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0; /* Rimuove eventuali margini */
+}
+
+/* Freccia testuale (▼) */
+.step-arrow:not(.fas) {
+  font-size: 0.8rem;
+  color: #666;
+  width: 16px;
+  text-align: center;
+  line-height: 1; /* Evita spaziature indesiderate */
+}
+
+/* ===== CONTENUTI ESPANSI (RESPONSIVE MA STILE CONSERVATO) ===== */
+.step-content-flex-none,
+.step-details {
+  display: none;
+  padding: 15px 20px;
+  background: white;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  animation: fadeIn 0.3s ease-out;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden; /* Previene overflow */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== STATO ESPANSO (CON GESTIONE RESPONSIVE) ===== */
+.expanded {
+  border: 1px solid var(--turchese-scuro);
+}
+
+.expanded .step-arrow.fas {
+  transform: rotate(180deg);
+}
+
+.expanded .step-arrow:not(.fas) {
+  transform: rotate(180deg);
+}
+
+.expanded .step-content-flex-none,
+.expanded .step-details {
+  display: block;
+  max-height: 1000px; /* Limite per animazioni */
+  transition: max-height 0.5s ease;
+}
+
+/* ===== COMPONENTI INTERNI RESPONSIVE ===== */
+.step-title {
+  flex-grow: 1;
+  min-width: 0;
+  overflow: hidden; /* Per ellipsis */
+}
+
+.step-title h5 {
+  margin: 0 0 4px 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%; /* Adattamento mobile */
+}
+
+.step-title p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-break: break-word; /* Gestione testi lunghi */
+}
+
+/* ===== MEDIA QUERIES (OTTIMIZZAZIONE MOBILE) ===== */
+@media (max-width: 768px) {
+  .step-header {
+    padding: 15px;
+    flex-wrap: wrap; /* Permette wrap su mobile */
+  }
+
+  .step-title h5 {
+    white-space: normal; /* Permette multilinea */
+    font-size: 1rem;
+  }
+
+  .step-content-flex-none,
+  .step-details {
+    padding: 10px 15px;
+  }
+
+  .step-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+/* ===== FIX PER ELEMENTI SPECIFICI ===== */
+/* Assicura che le immagini siano responsive */
+.step-content-flex-none img,
+.step-details img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Gestione tabelle e contenuti complessi */
+.step-content-flex-none table {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+}
+
+/* Mantiene lo stile originale per altri elementi */
+.info-box,
+.step-highlight,
+.step-meta {
+  /* [Tutti gli altri stili originali rimangono invariati] */
+  max-width: 100%; /* Aggiunto per responsive */
+}
+/* ==================== ICONE ==================== */
+.icon-dettagli-turchese-scuro {
+    color: var(--turchese-scuro);
+}
+
+.icon-consigli-orari {
+    background: var(--turchese);
+    font-family: monospace; /* Allineamento perfetto */
+}
+
+/* ==================== SEZIONE ITINERARIO ==================== */
+.itinerario-section {
+    padding: 60px 0;
+    background: linear-gradient(to bottom, #FFFCF5 0%, #F5F0E6 100%);
+}
+
+.section-title {
+    font-family: 'Lexend', sans-serif;
+    font-size: 2.0rem;
+    color: #6b522a;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-subtitle {
+    font-family: 'Allison';
+    font-size: 3.5rem;
+    color: #6b522a;
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px rgba(107, 82, 42, 0.2);
+    text-align: right;
+}
+
+.section-subtitle-tappe {
+    font-family: 'Allison';
+    font-size: 2rem;
+    color: #6b522a;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(107, 82, 42, 0.2);
+    text-align: center;
+}
+
+.itinerario-section .section-title:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #d4cec7;
+}
+
+#itinerario-mappa {
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.tappa-card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.tappa-card:hover {
+    transform: translateY(-5px);
+}
+
+.tappa-card img {
+    height: 180px;
+    object-fit: cover;
+}
+
+.tappa-card .card-body {
+    background: white;
+    padding: 20px;
+}
+
+.tappa-card .card-title {
+    font-family: 'hanskendrick';
+    color: #056974;
+    font-size: 1.3rem;
+}
+
+.chicca-item {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+/* ==================== BOX INFO TAPPE ITINERARIO ==================== */
+.info-box {
+    background: var(--beige);
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    font-family: 'Lexend', sans-serif;
+    margin: 20px 0;
+    font-size: 1.0rem;
+}
+
+.info-box-header {
+    background: var(--turchese);
+    color: white !important;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-box-header i {
+    font-size: 1.0rem;
+    color: inherit;
+}
+
+.info-box-header h4 {
+    margin: 0;
+    font-size: 1.0rem;
+}
+
+.info-box-content {
+    padding: 15px;
+}
+
+.info-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+    font-size: 0.8rem;
+}
+
+.info-item i {
+    color: var(--turchese-scuro); /* Usa il tuo colore */
+    margin-top: 3px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #495057;
+    margin-right: 5px;
+}
+
+.info-value {
+    color: #212529;
+}
+
+.info-sublist {
+    margin-top: 5px;
+    padding-left: 5px;
+}
+
+.info-sublist div {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.info-sublist i {
+    color: #6c757d;
+    font-size: 0.8rem;
+}
+
+.price {
+    color: #28a745;
+    font-size: 0.8rem;
+}
+
+.info-tip {
+    background: #fff3cd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-left: 3px solid #ffc107;
+    font-size: 0.8rem;
+}
+
+.info-tip i {
+    color: #ffc107;
+    font-size: 1.1rem;
+}
+
+/* ==================== STILE MAPPA RIDOTTA ==================== */
+.compact-map-container {
+    position: relative;
+    margin: 15px 0;
+}
+
+#avventura-mappa-generale {
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.map-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+/* Ottimizzazione per mobile */
+@media (max-width: 576px) {
+    #avventura-mappa-generale {
+        height: 300px !important;
+    }
+
+    .map-actions .btn {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+/* ==================== STILE Vai alla Mappa RED ==================== */
+
+.btn-map-marker-red {
+  display: inline-flex;
+  align-items: center;
+  color: #8B0000; /* Rosso scuro */
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.btn-map-marker-red:hover {
+  transform: translateY(-2px);
+  color: #8B0000; /* Rosso scuro */
+  text-decoration: none;
+
+}
+
+.btn-map-marker-red i {
+  color: #8B0000; /* Rosso scuro */
+  font-size: 0.9em;
+  transition: transform 0.3s ease;
+}
+
+.btn-map-marker-red:hover i {
+  color: #8B0000; /* Rosso scuro */
+  transform: scale(1.1);
+}
+
+
