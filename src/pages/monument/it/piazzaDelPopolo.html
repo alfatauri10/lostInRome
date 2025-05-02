@@ -19,6 +19,7 @@
   <link href="/src/css/monument.css" rel="stylesheet">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
           crossorigin="anonymous">
+
   </script>
 
 
@@ -113,6 +114,43 @@
   </div>
 </section>
 <!-- Sezione Storia -->
+
+<style>
+    .button1 {
+        position: absolute;   /* Posizionamento assoluto */
+        left: 855px;           /* Distanza dal lato sinistro */
+        top: 798px;            /* Distanza dall'alto */
+        z-index: 100;         /* In cima a altri elementi */
+`   }
+
+    .button1 button {
+        background-color: #e1dcd3;  /* Colore di sfondo grigio */
+        color: black;               /* Colore del testo */
+        padding: 10px 20px;         /* Spaziatura interna */
+        border: none;               /* Nessun bordo */
+        border-radius: 5px;         /* Bordo arrotondato */
+        font-size: 16px;            /* Grandezza del font */
+        cursor: pointer;           /* Cambio cursore */
+    }
+
+    .button1 button .icon {
+      font-size: 20px;            /* Grandezza dell'icona */
+      margin-right: 8px;          /* Distanza tra icona e testo */
+    }
+</style>
+
+
+<div class = "button1">
+    <button onclick="playAudio()">
+        <i id="audioIcon1" class="fas fa-volume-up icon"></i>
+    </button>
+
+    <audio id="myAudio">
+        <source src="/src/audio/StoriaECostruzioneColosseoIT.m4a" type="audio/mpeg">
+    </audio>
+</div>
+
+
 <section class="content-section" id="storia">
   <span class="section-anchor"></span>
   <div class="container">
@@ -135,9 +173,45 @@
 </section>
 
 
-
-
 <!-- Sezione "Come è usato oggi" -->
+
+<style>
+    .button2 {
+        position: absolute;   /* Posizionamento assoluto */
+        left: 1160px;           /* Distanza dal lato sinistro */
+        top: 1280px;            /* Distanza dall'alto */
+        z-index: 100;         /* In cima a altri elementi */
+`   }
+
+    .button2 button {
+        background-color: #e1dcd3;  /* Colore di sfondo grigio */
+        color: black;               /* Colore del testo */
+        padding: 10px 20px;         /* Spaziatura interna */
+        border: none;               /* Nessun bordo */
+        border-radius: 5px;         /* Bordo arrotondato */
+        font-size: 16px;            /* Grandezza del font */
+        cursor: pointer;           /* Cambio cursore */
+    }
+
+    .button2 button .icon {
+      font-size: 20px;            /* Grandezza dell'icona */
+      margin-right: 8px;          /* Distanza tra icona e testo */
+    }
+</style>
+
+
+<div class ="button2">
+    <button onclick="playAudio2()">
+        <i id="audioIcon2" class="fas fa-volume-up icon"></i>
+    </button>
+
+    <audio id="myAudio2">
+        <source src="/src/audio/FattiRecentiColosseoIT.m4a" type="audio/mpeg">
+    </audio>
+</div>
+
+
+
 <section class="content-section" id="usato-oggi">
   <span class="section-anchor"></span>
   <div class="container">
@@ -161,6 +235,43 @@
 
 
 <!-- Sezione "Fatti recenti" -->
+
+<style>
+    .button3 {
+        position: absolute;   /* Posizionamento assoluto */
+        left: 300px;           /* Distanza dal lato sinistro */
+        top: 1830px;            /* Distanza dall'alto */
+        z-index: 100;         /* In cima a altri elementi */
+`   }
+
+    .button3 button {
+        background-color: var(--beige);  /* Colore di sfondo grigio */
+        color: black;               /* Colore del testo */
+        padding: 10px 20px;         /* Spaziatura interna */
+        border: none;               /* Nessun bordo */
+        border-radius: 5px;         /* Bordo arrotondato */
+        font-size: 16px;            /* Grandezza del font */
+        cursor: pointer;           /* Cambio cursore */
+    }
+
+    .button3 button .icon {
+      font-size: 20px;            /* Grandezza dell'icona */
+      margin-right: 8px;          /* Distanza tra icona e testo */
+    }
+</style>
+
+
+<div class ="button3">
+    <button onclick="playAudio3()">
+        <i id="audioIcon3" class="fas fa-volume-up icon"></i>
+    </button>
+
+    <audio id="myAudio3">
+        <source src="/src/audio/UsoOdiernoColosseoIT.m4a" type="audio/mpeg">
+    </audio>
+</div>
+
+
 <section class="content-section" id="fatti-recenti">
   <span class="section-anchor"></span>
 
@@ -186,6 +297,43 @@
 
 
 <!-- Sezione "Leggende e fatti divertenti" -->
+
+<style>
+    .button4 {
+    position : absolute;   /* Posizionamento assoluto */
+    left: 1160px;           /* Distanza dal lato sinistro */
+    top: 2275px;            /* Distanza dall'alto */
+    z-index: 100;         /* In cima a altri elementi */
+    }
+
+    .button4 button {
+    background-color: var(--beige)  /* Colore di sfondo grigio */
+    color: black;               /* Colore del testo */
+    padding: 10px 20px;         /* Spaziatura interna */
+    border: none;               /* Nessun bordo */
+    border-radius: 5px;         /* Bordo arrotondato */
+    font-size: 16px;            /* Grandezza del font */
+    cursor: pointer;           /* Cambio cursore */
+    }
+
+    .button4 button .icon {
+    font-size: 20px;            /* Grandezza dell'icona */
+    margin-right: 8px;          /* Distanza tra icona e testo */
+    }
+</style>
+
+
+<div class ="button4">
+    <button onclick="playAudio4()">
+        <i id="audioIcon4" class="fas fa-volume-up icon"></i>
+    </button>
+
+    <audio id="myAudio4">
+        <source src="/src/audio/FattiDivertentiColosseoIT.m4a" type="audio/mpeg">
+    </audio>
+</div>
+
+
 <section class="content-section" id="curiosita">
   <span class="section-anchor"></span>
   <div class="container">
@@ -213,7 +361,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="section-title-left text-center">Posizion</h2>
+        <h2 class="section-title-left text-center">Posizione</h2>
 
 
         <iframe id="osm-iframe"
