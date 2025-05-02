@@ -105,6 +105,41 @@
   </section>
 
   <!-- Sezione Storia -->
+  <style>
+    .button1 {
+        position: absolute;   /* Posizionamento assoluto */
+        left: 1050px;           /* Distanza dal lato sinistro */
+        top: 798px;            /* Distanza dall'alto */
+        z-index: 100;         /* In cima a altri elementi */
+`   }
+
+    .button1 button {
+        background-color: #e1dcd3;  /* Colore di sfondo grigio */
+        color: black;               /* Colore del testo */
+        padding: 10px 20px;         /* Spaziatura interna */
+        border: none;               /* Nessun bordo */
+        border-radius: 5px;         /* Bordo arrotondato */
+        font-size: 16px;            /* Grandezza del font */
+        cursor: pointer;           /* Cambio cursore */
+    }
+
+    .button1 button .icon {
+      font-size: 20px;            /* Grandezza dell'icona */
+      margin-right: 8px;          /* Distanza tra icona e testo */
+    }
+  </style>
+
+
+  <div class = "button1">
+    <button onclick="playAudio()">
+      <i id="audioIcon1" class="fas fa-volume-up icon"></i>
+    </button>
+
+    <audio id="myAudio">
+      <source src="/src/audio/StoriaECostruzioneColosseoIT.m4a" type="audio/mpeg">
+    </audio>
+  </div>
+
   <section class="content-section" id="storia">
     <span class="section-anchor"></span>
     <div class="container">
@@ -135,6 +170,7 @@
 
 
   <!-- Sezione "Come è usato oggi" -->
+
   <section class="content-section" id="usato-oggi">
     <span class="section-anchor"></span>
     <div class="container">
