@@ -170,6 +170,40 @@
 
 
   <!-- Sezione "Come è usato oggi" -->
+  <style>
+    .button2 {
+        position: absolute;   /* Posizionamento assoluto */
+        left: 1160px;           /* Distanza dal lato sinistro */
+        top: 1945px;            /* Distanza dall'alto */
+        z-index: 100;         /* In cima a altri elementi */
+`   }
+
+    .button2 button {
+        background-color: #e1dcd3;  /* Colore di sfondo grigio */
+        color: black;               /* Colore del testo */
+        padding: 10px 20px;         /* Spaziatura interna */
+        border: none;               /* Nessun bordo */
+        border-radius: 5px;         /* Bordo arrotondato */
+        font-size: 16px;            /* Grandezza del font */
+        cursor: pointer;           /* Cambio cursore */
+    }
+
+    .button2 button .icon {
+      font-size: 20px;            /* Grandezza dell'icona */
+      margin-right: 8px;          /* Distanza tra icona e testo */
+    }
+  </style>
+
+
+  <div class ="button2">
+    <button onclick="playAudio2()">
+      <i id="audioIcon2" class="fas fa-volume-up icon"></i>
+    </button>
+
+    <audio id="myAudio2">
+      <source src="/src/audio/FattiRecentiColosseoIT.m4a" type="audio/mpeg">
+    </audio>
+  </div>
 
   <section class="content-section" id="usato-oggi">
     <span class="section-anchor"></span>
