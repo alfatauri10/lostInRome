@@ -206,6 +206,29 @@
   </section>
 
   <!-- Sezione "Fatti recenti" -->
+  <style>
+    .button3 {
+        position: absolute;   /* Posizionamento assoluto */
+        left: 415px;           /* Distanza dal lato sinistro */
+        top: 1290px;            /* Distanza dall'alto */
+        z-index: 100;         /* In cima a altri elementi */
+`   }
+
+    .button3 button {
+        background-color: var(--beige);  /* Colore di sfondo grigio */
+        color: black;               /* Colore del testo */
+        padding: 10px 20px;         /* Spaziatura interna */
+        border: none;               /* Nessun bordo */
+        border-radius: 5px;         /* Bordo arrotondato */
+        font-size: 16px;            /* Grandezza del font */
+        cursor: pointer;           /* Cambio cursore */
+    }
+
+    .button3 button .icon {
+      font-size: 20px;            /* Grandezza dell'icona */
+      margin-right: 8px;          /* Distanza tra icona e testo */
+    }
+  </style>
   <section class="content-section" id="fatti-recenti">
     <span class="section-anchor"></span>
 
@@ -215,12 +238,12 @@
           <h2 class="section-title-right text-right">Fatti recenti</h2>
           <div class="row">
             <div class="col-md-6">
-              <!-- TODO (JAlfandari): Inserisci qui la tua img3. Modifica ALT con una breve descrizione e SRC con percorso -->
+
               <img alt="Fatti recenti" class="img-fluid rounded"
                    src="/src/images/monuments/altareDellaPatria/img3.jpg"> <!--img3 -->
             </div>
             <div class="col-md-6 text-justify">
-              <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "FATTI RECENTI" -->
+
               <p>25 aprile – Festa della Liberazione:
                 Si celebra la liberazione dell’Italia dal nazifascismo, avvenuta nel 1945.
                 È una data simbolica che ricorda l’insurrezione generale proclamata dal Comitato di Liberazione Nazionale,
@@ -284,7 +307,7 @@
                   height="400"
                   style="border:none; border-radius:8px;"
                   data-default-pos="41.8902,12.4924"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=12.4800,41.8800,12.5000,41.9000&layer=mapnik&marker=41.8902,12.4924">
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=12.466821670532227%2C41.87307606720458%2C12.52346992492676%2C41.901765978963454&amp;layer=mapnik">
           </iframe>
 
           <div class="text-center mt-4">
