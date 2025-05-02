@@ -105,6 +105,41 @@
   </section>
 
   <!-- Sezione Storia -->
+  <style>
+    .button1 {
+        position: absolute;   /* Posizionamento assoluto */
+        left: 1050px;           /* Distanza dal lato sinistro */
+        top: 798px;            /* Distanza dall'alto */
+        z-index: 100;         /* In cima a altri elementi */
+`   }
+
+    .button1 button {
+        background-color: #e1dcd3;  /* Colore di sfondo grigio */
+        color: black;               /* Colore del testo */
+        padding: 10px 20px;         /* Spaziatura interna */
+        border: none;               /* Nessun bordo */
+        border-radius: 5px;         /* Bordo arrotondato */
+        font-size: 16px;            /* Grandezza del font */
+        cursor: pointer;           /* Cambio cursore */
+    }
+
+    .button1 button .icon {
+      font-size: 20px;            /* Grandezza dell'icona */
+      margin-right: 8px;          /* Distanza tra icona e testo */
+    }
+  </style>
+
+
+  <div class = "button1">
+    <button onclick="playAudio()">
+      <i id="audioIcon1" class="fas fa-volume-up icon"></i>
+    </button>
+
+    <audio id="myAudio">
+      <source src="/src/audio/StoriaECostruzioneColosseoIT.m4a" type="audio/mpeg">
+    </audio>
+  </div>
+
   <section class="content-section" id="storia">
     <span class="section-anchor"></span>
     <div class="container">
@@ -113,7 +148,7 @@
           <h2 class="section-title-right text-right">Storia e costruzione</h2>
           <div class="row">
             <div class="col-md-6">
-              <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/images/monuments/altareDellaPatria/img2.jpg">
+              <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/images/monuments/altareDellaPatria/img1.jpg">
             </div>
             <div class="col-md-6 text-justify">
               <p>L'Altare della Patria è un simbolo dell'identità nazionale italiana. Fu costruito per ricordare il primo re d'Italia.
@@ -135,6 +170,7 @@
 
 
   <!-- Sezione "Come è usato oggi" -->
+
   <section class="content-section" id="usato-oggi">
     <span class="section-anchor"></span>
     <div class="container">
@@ -161,7 +197,7 @@
             </div>
             <div class="col-md-6 order-md-1">
               <img alt="Struttura architettonica" class="img-fluid rounded"
-                   src="/src/images/monuments/altareDellaPatria/img1.jpg">
+                   src="/src/images/monuments/altareDellaPatria/img2.jpg">
             </div>
           </div>
         </div>
@@ -170,6 +206,38 @@
   </section>
 
   <!-- Sezione "Fatti recenti" -->
+  <style>
+    .button3 {
+        position: absolute;   /* Posizionamento assoluto */
+        left: 415px;           /* Distanza dal lato sinistro */
+        top: 1290px;            /* Distanza dall'alto */
+        z-index: 100;         /* In cima a altri elementi */
+`   }
+
+    .button3 button {
+        background-color: var(--beige);  /* Colore di sfondo grigio */
+        color: black;               /* Colore del testo */
+        padding: 10px 20px;         /* Spaziatura interna */
+        border: none;               /* Nessun bordo */
+        border-radius: 5px;         /* Bordo arrotondato */
+        font-size: 16px;            /* Grandezza del font */
+        cursor: pointer;           /* Cambio cursore */
+    }
+
+    .button3 button .icon {
+      font-size: 20px;            /* Grandezza dell'icona */
+      margin-right: 8px;          /* Distanza tra icona e testo */
+    }
+  </style>
+  <div class ="button3">
+    <button onclick="playAudio3()">
+      <i id="audioIcon3" class="fas fa-volume-up icon"></i>
+    </button>
+
+    <audio id="myAudio3">
+      <source src="/src/audio/UsoOdiernoColosseoIT.m4a" type="audio/mpeg">
+    </audio>
+  </div>
   <section class="content-section" id="fatti-recenti">
     <span class="section-anchor"></span>
 
@@ -179,12 +247,12 @@
           <h2 class="section-title-right text-right">Fatti recenti</h2>
           <div class="row">
             <div class="col-md-6">
-              <!-- TODO (JAlfandari): Inserisci qui la tua img3. Modifica ALT con una breve descrizione e SRC con percorso -->
+
               <img alt="Fatti recenti" class="img-fluid rounded"
                    src="/src/images/monuments/altareDellaPatria/img3.jpg"> <!--img3 -->
             </div>
             <div class="col-md-6 text-justify">
-              <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "FATTI RECENTI" -->
+
               <p>25 aprile – Festa della Liberazione:
                 Si celebra la liberazione dell’Italia dal nazifascismo, avvenuta nel 1945.
                 È una data simbolica che ricorda l’insurrezione generale proclamata dal Comitato di Liberazione Nazionale,
@@ -248,13 +316,12 @@
                   height="400"
                   style="border:none; border-radius:8px;"
                   data-default-pos="41.8902,12.4924"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=12.4800,41.8800,12.5000,41.9000&layer=mapnik&marker=41.8902,12.4924">
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=12.466821670532227%2C41.87307606720458%2C12.52346992492676%2C41.901765978963454&amp;layer=mapnik">
           </iframe>
 
           <div class="text-center mt-4">
-            <!-- TODO (JAlfandari): Inserisci in href la posizione del tuo monumento -->
             <a class="btn btn-outline-turchese d-inline-flex align-items-center"
-               href="https://www.google.com/maps/place/Colosseo/@41.8902102,12.4922309,17z/data=!3m1!4b1!4m6!3m5!1s0x132f61b6532013ad:0x28f1c82e908503c4!8m2!3d41.8902102!4d12.4922309!16zL20vMDZjNjI?entry=ttu"
+               href="https://www.google.it/maps/place/Altare+della+Patria/@41.8949,12.4803638,17z/data=!4m6!3m5!1s0x132f604cc43c894d:0xc8f589780ea9feb5!8m2!3d41.894891!4d12.4829541!16s%2Fg%2F11kpdgv8kk?hl=it&entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D"
                target="_blank">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
