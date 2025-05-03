@@ -1428,6 +1428,7 @@ main {
 }
 
 /* Stile per le connessioni tra tappe */
+
 .itinerary-connection {
   position: relative;
   margin: 20px 0;
@@ -1472,6 +1473,8 @@ main {
   font-size: 14px;
   color: var(--turchese-scuro);
   border: 1px solid #e0e0e0;
+  margin-left: 0; /* Rimuovi l'inline style */
+  padding: 10px 15px;
 }
 
 .connection-info i {
