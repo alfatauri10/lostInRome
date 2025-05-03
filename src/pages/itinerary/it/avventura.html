@@ -1,322 +1,1077 @@
-
-<!-- Itinerario Avventura -->
-<div class="tab-pane fade" id="adventure" role="tabpanel">
-
+<!-- INIZIO ITINERARIO AVVENTURA -->
+<!-- <div id = "adventureItineraryPlaceHolder"></div>-->
     <div class="container">
         <div class="row">
 
             <!-- Descrizione -->
-            <div class="col-12 text-center mb-4">
-                <h3 class="section-title">Avventura Romana</h3>
-                <p>
+            <div class="col-12 mb-4">
+                <h3 class="section-subtitle text-left mb-3">Avventura</h3>
+                <p class="text-justify mb-2">
                     <i>
-                        Dai ciottoli dell'Appia Antica, dove la storia sfiora le ruote della tua bici, alle vertigini segrete del Buco della Serratura e ai profumi del Giardino degli Aranci. Poi vola tra i ciliegi del Giardino Giapponese, un haiku di petali e pace, prima di tuffarti nei ritmi tribali del Voodoo Bar, dove i cocktail bruciano come tramonti sul Colosseo e il DJ fa tremare i fantasmi degli imperatori.
+                        Dai ciottoli dell'Appia Antica, dove la storia sfiora le ruote della tua bici, alle vertigini segrete del Buco della Serratura e ai profumi del Giardino degli Aranci.
+                        Poi vola tra i ciliegi del Giardino Giapponese, un haiku di petali e pace, prima di tuffarti nei ritmi tribali del Voodoo Bar, dove i cocktail bruciano come tramonti sul Colosseo e il DJ fa tremare i fantasmi degli imperatori.
                     </i>
                 </p>
+                <p class="text-left mb-2 ml-5" style="color:#e83e8c"><i>Pedala. Esplora. Sorseggia. Balla. </i></p>
+                <div class="signature-font text-right mb-3">
+                    <i>by Jacopo</i>
+                </div>
             </div>
+            <!-- fine Descrizione -->
 
             <!-- Dettagli Generali -->
-            <div class="row mb-5 mx-auto" style="max-width: 800px;">
-                <div class="col-md-6">
-                    <h4 class="mb-3 text-center" style="color: var(--turchese-scuro);">Informazioni Generali</h4>
-                    <div class="itinerary-details text-md-left text-center">
-                        <div class="detail-item mb-2">
-                            <i class="fas fa-clock mr-2 icon-dettagli-turchese-scuro" ></i>
-                            <span><strong>Durata totale:</strong> 1 giorno intero</span>
-                        </div>
-                        <div class="detail-item mb-2">
-                            <i class="fas fa-route mr-2 icon-dettagli-turchese-scuro"></i>
-                            <span><strong>Distanza totale:</strong> ~25 km (in bici e a piedi)</span>
-                        </div>
-                        <div class="detail-item mb-2">
-                            <i class="fas fa-mountain mr-2 icon-dettagli-turchese-scuro" ></i>
-                            <span><strong>Difficoltà:</strong> Medio (qualche salita ripida)</span>
-                        </div>
-                        <div class="detail-item mb-2">
-                            <i class="fas fa-euro-sign mr-2 icon-dettagli-turchese-scuro"></i>
-                            <span><strong>Budget base:</strong> €50-70 (bici standard, pranzo veloce, solo aperitivo)</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-glass-cheers mr-2 icon-dettagli-turchese-scuro" ></i>
-                            <span><strong>Budget comfort:</strong> €80-100 (e-bike, pranzo seduto, cocktail premium)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <h4 class="mb-3 text-center" style="color: var(--turchese-scuro);">Orari Consigliati</h4>
-                    <div class="itinerary-schedule text-md-left text-center">
-                        <div class="schedule-item mb-2 ">
-                            <span class="badge badge-primary mr-2 icon-consigli-orari">09:00-12:00</span>
-                            <span>Appia Antica in bici</span>
-                        </div>
-                        <div class="schedule-item mb-2">
-                            <span class="badge badge-primary mr-2 icon-consigli-orari">12:30-14:00</span>
-                            <span>Aventino + Buco della Serratura</span>
-                        </div>
-                        <div class="schedule-item mb-2">
-                            <span class="badge badge-primary mr-2 icon-consigli-orari">14:30-16:00</span>
-                            <span>Giardino Giapponese</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="badge badge-primary mr-2 icon-consigli-orari">18:30+     </span>
-                            <span>Voodoo Bar</span>
+            <div class="col-md-6">
+                <div class="card testimonial-card">
+                    <div class="card-body">
+                        <h5 class="mb-3 text-center" style="color: var(--turchese-scuro);">Informazioni Generali</h5>
+                        <div class="itinerary-details text-md-left text-center">
+                            <div class="detail-item-itinerari mb-2">
+                                <i class="fas fa-clock mr-2 icon-dettagli-turchese-scuro" ></i>
+                                <span><strong>Durata totale:</strong> 1 giorno intero</span>
+                            </div>
+                            <div class="detail-item-itinerari mb-2">
+                                <i class="fas fa-route mr-2 icon-dettagli-turchese-scuro"></i>
+                                <span><strong>Distanza totale:</strong> ~25 km (in bici e a piedi)</span>
+                            </div>
+                            <div class="detail-item-itinerari mb-2">
+                                <i class="fas fa-mountain mr-2 icon-dettagli-turchese-scuro" ></i>
+                                <span><strong>Difficoltà:</strong> Medio (qualche salita ripida)</span>
+                            </div>
+                            <div class="detail-item-itinerari mb-2">
+                                <i class="fas fa-euro-sign mr-2 icon-dettagli-turchese-scuro"></i>
+                                <span><strong>Budget base:</strong> €50-70 (bici standard, pranzo veloce, solo aperitivo)</span>
+                            </div>
+                            <div class="detail-item-itinerari">
+                                <i class="fas fa-glass-cheers mr-2 icon-dettagli-turchese-scuro" ></i>
+                                <span><strong>Budget comfort:</strong> €80-100 (e-bike, pranzo seduto, cocktail premium)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- fine Dettagli Generali -->
 
+            <!-- Orari consigliati -->
+            <div class="col-md-6">
+                <div class="card testimonial-card">
+                    <div class="card-body">
+                        <h5 class="mb-3 text-center" style="color: var(--turchese-scuro);">Orari Consigliati</h5>
+                        <div class="itinerary-schedule text-md-left text-center">
+                            <div class="detail-item-itinerari mb-2 ">
+                                <span class="badge badge-primary mr-2 icon-consigli-orari">09:00-12:00</span>
+                                <span>Appia Antica in bici con brunch</span>
+                            </div>
+                            <div class="detail-item-itinerari mb-2">
+                                <span class="badge badge-primary mr-2 icon-consigli-orari">12:30-14:00</span>
+                                <span>Giardino degli Aranci + Buco della Serratura + pranzo</span>
+                            </div>
+                            <div class="detail-item-itinerari mb-2">
+                                <span class="badge badge-primary mr-2 icon-consigli-orari">14:30-16:00</span>
+                                <span>Giardino Giapponese</span>
+                            </div>
+                            <div class="detail-item-itinerari">
+                                <span class="badge badge-primary mr-2 icon-consigli-orari">18:30+</span>
+                                <span>Voodoo Bar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FINE ORARI CONSIGLIATI -->
         </div>
     </div>
-    <div class="row">
-        <!-- Mappa generale a sinistra -->
-        <div class="col-lg-6 mb-4">
-            <div class="map-container">
-                <div id="avventura-mappa-generale"
-                     data-tappe='{
-                          "Porta San Sebastiano": [41.8725, 12.5018], // Ingresso Appia Antica (esatto)
-                          "Catacombe di San Callisto": [41.8589, 12.5141], // Ingresso principale
-                          "Il Giardino di Lù": [41.8548, 12.5173], // Posizione precisa del bar (aggiustato)
-                          "Mausoleo di Cecilia Metella": [41.8522, 12.5194], // Coordinate esatte
-                          "Villa dei Quintili": [41.8403, 12.5494], // Ingresso monumentale (corretto)
-                          "Terme di Caracalla": [41.8792, 12.4924], // Ingresso principale
-                          "Circo Massimo": [41.8860, 12.4857], // Centro del circo
-                          "Giardino degli Aranci": [41.8831, 12.4800], // Punto panoramico migliore
-                          "Buco della Serratura": [41.8826, 12.4795], // Posizione precisa
-                          "Terrazza Aventino": [41.8819, 12.4791], // Terrazza del Priorato di Malta
-                          "Zodiaco": [41.8815, 12.4788], // Ristorante Zodiaco (aggiustato)
-                          "Giardino Giapponese": [41.8317, 12.4695], // Ingresso laghetto EUR
-                          "Voodoo Bar": [41.8917, 12.4903] // Posizione esatta (Monti)
-                       }'
-                     style="height: 600px; border-radius: 8px;"></div>
 
-                <div class="text-center mt-2">
-                    <a class="btn btn-primary"
-                       href="https://www.openstreetmap.org/#map=13/41.87/12.49"
-                       target="_blank">
-                        Visualizza mappa completa
-                    </a>
-                    <a href="#" class="btn btn-primary">Scarica mappa completa</a>
-                </div>
+    <div class="row mt-5">
 
-            </div>
-        </div>
-
-        <!-- Itinerari dettagliati a destra -->
-        <div class="col-lg-6">
-
-            <!-- Parte 1: Appia Antica -->
-            <div class="step-container">
-                <div class="step" onclick="toggleStepDetails('part1')">
-                    <div class="step-number bg-primary">1</div>
-                    <div class="step-content">
+        <!-- Itinerari dettagliati -->
+        <div>
+            <div class="expandable-step">
+                <div class="step-header" onclick="toggleStep(this)">
+                    <div class="step-number">1</div>
+                    <div class="step-title">
                         <h5>L'Appia Antica in bici</h5>
-                        <p>Dalle catacombe alle terme di Caracalla, tra storia, natura e archeologia. Dove ogni pietra racconta una storia.</p>
+                        <p>Dalle catacombe alle terme di Caracalla, tra storia, natura e archeologia. Dove ogni pietra racconta una storia 🚲</p>
                     </div>
-                </div>
-                <div id="part1" class="step-details" style="display: none;">
-                    <div class="p-3 bg-light rounded">
-                        <p><strong>Partenza:</strong> Porta San Sebastiano</p>
-                        <p><strong>Arrivo:</strong> Terme di Caracalla</p>
-                        <p><strong>Lunghezza totale:</strong> ~12 km</p>
-                        <p><strong>Durata totale:</strong> 3 ore (con soste e visite)</p>
-                        <p><strong>Difficoltà:</strong> Facile (terreno misto: asfalto e sampietrini).</p>
-                        <p><strong>Mezzi:</strong> bici</p>
-                        <p><strong>Noleggio bici:</strong></p>
-                        <ul>
-                            <li>Appia Antica Bike Rental (€15/giorno per MTB, €25 e-bike).</li>
-                            <li>Ecobike Roma (€10/giorno, vicino al Colosseo).</li>
-                        </ul>
-                        <p><strong>Consiglio:</strong> Parti alle 9:00 per evitare il sole estivo e goderti il brunch in pace! 🌿☕</p>
-
-                        <div class="mt-3">
-                            <h6>Tappe:</h6>
-                            <div class="step-detail">
-                                <p><strong>Tappa 1. Partenza: Porta di San Sebastiano e Catacombe di San Callisto</strong></p>
-                                <p>Inizia dalla maestosa Porta San Sebastiano (ingresso all'Appia Antica) e pedala per 1,5 km (5 min in bici) fino alle Catacombe di San Callisto, tra le più grandi di Roma.</p>
-                                <p><strong>Costo Visita interna:</strong> €8 (audioguida inclusa).</p>
-                                <p><strong>Durata visita:</strong> ~30 min.</p>
-                            </div>
-
-                            <div class="step-detail">
-                                <p><strong>Tappa 2. Sosta Brunch al Il Giardino di Lù</strong></p>
-                                <p><strong>Dove:</strong> Via Appia Antica, 42</p>
-                                <p><strong>Cosa offre:</strong> Brunch biologico con torte salate, smoothie e caffè artigianale, in un giardino nascosto con vista sull'Appia.</p>
-                                <p><strong>Costo medio:</strong> €12-20 a persona.</p>
-                                <p><strong>Orari:</strong> 9:00-16:00 (perfetto per una pausa mattutina).</p>
-                            </div>
-
-                            <div class="step-detail">
-                                <p><strong>Tappa 3. Mausoleo di Cecilia Metella e Castrum Caetani</strong></p>
-                                <p>Prosegui lungo la via lastricata fino al simbolo dell'Appia: il Mausoleo di Cecilia Metella (tomba del I sec. a.C.) e l'annesso Castrum Caetani (fortezza medievale).</p>
-                                <p><strong>Costo Visita interna:</strong> €6 (cumulativo con Villa dei Quintili).</p>
-                                <p><strong>Durata visita:</strong> ~20 min.</p>
-                                <p><strong>Km da Catacombe:</strong> 3 km (10 min in bici).</p>
-                            </div>
-
-                            <div class="step-detail">
-                                <p><strong>Tappa 4. Villa dei Quintili</strong></p>
-                                <p>Una deviazione di 1 km dall'Appia ti porta alla Villa dei Quintili, lussuosa residenza imperiale con mosaici e terme private.</p>
-                                <p><strong>Costo Visita interna:</strong> €5 (o €6 cumulativo con Mausoleo).</p>
-                                <p><strong>Durata visita:</strong> ~30 min.</p>
-                                <p><strong>Km da Mausoleo:</strong> 4 km (15 min in bici, incluso deviazione).</p>
-                            </div>
-
-                            <div class="step-detail">
-                                <p><strong>Tappa 5. Terme di Caracalla</strong></p>
-                                <p>Tornando verso Roma, chiudi il tour con le Terme di Caracalla, tra i più grandiosi complessi termali antichi.</p>
-                                <p><strong>Costo Visita interna:</strong> €8.</p>
-                                <p><strong>Durata visita:</strong> ~40 min.</p>
-                                <p><strong>Km da Villa dei Quintili:</strong> 5 km (20 min in bici).</p>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Parte 2: Aventino -->
-            <div class="step-container">
-                <div class="step" onclick="toggleStepDetails('part2')">
-                    <div class="step-number bg-primary">2</div>
-                    <div class="step-content">
-                        <h5>Dalle Terme di Caracalla al Buco della Serratura</h5>
-                        <p>Un mix perfetto di storia, panorami e curiosità, con flessibilità di movimento! 🌿🚲</p>
-                    </div>
-                </div>
-                <div id="part2" class="step-details" style="display: none;">
-                    <div class="p-3 bg-light rounded">
-                        <p><strong>Partenza:</strong> Terme di Caracalla</p>
-                        <p><strong>Arrivo:</strong> Buco della serratura</p>
-                        <p><strong>Lunghezza totale:</strong> ~5 km</p>
-                        <p><strong>Durata totale:</strong> 1,5 ore</p>
-                        <p><strong>Difficoltà:</strong> Medio (salita ripida).</p>
-
-                        <div class="mt-3">
-                            <h6>Tappe:</h6>
-                            <div class="step-detail">
-                                <p><strong>Tappa 1: Terme di Caracalla → Circo Massimo</strong></p>
-                                <p>Dopo la visita alle Terme, pedala per 5 minuti verso il Circo Massimo, l'antico stadio romano. Panorama suggestivo sul Palatino.</p>
-                                <p><strong>Visita:</strong> Gratuita (area esterna).</p>
-                                <p><strong>Distanza:</strong> 800 m (3 min in bici / 10 min a piedi).</p>
-                            </div>
-
-                            <div class="step-detail">
-                                <p><strong>Tappa 2: Giardino degli Aranci (Parco Savello)</strong></p>
-                                <p>Salita alla collina dell'Aventino per il Giardino degli Aranci, un'oasi tranquilla con vista mozzafiato su Roma.</p>
-                                <p><strong>Visita:</strong> Gratuita.</p>
-                                <p><strong>Durata:</strong> 20 min.</p>
-                                <p><strong>Distanza da Circo Massimo:</strong> 1,2 km (5 min in bici / 15 min a piedi, salita leggera).</p>
-                            </div>
-
-                            <div class="step-detail">
-                                <p><strong>Tappa 3: Buco della Serratura dell'Ordine di Malta</strong></p>
-                                <p>Pochi passi dal Giardino, la famosa serratura che incornicia la Cupola di San Pietro.</p>
-                                <p><strong>Visita:</strong> Gratuita.</p>
-                                <p><strong>Durata:</strong> 10 min (coda possibile).</p>
-                                <p><strong>Distanza da Giardino degli Aranci:</strong> 400 m (2 min in bici / 5 min a piedi).</p>
-                            </div>
-
-                            <div class="step-detail">
-                                <p><strong>Tappa 4: Spritz con vista e pranzo!</strong></p>
-                                <p><strong>Aperitivo alla Terrazza Aventino</strong></p>
-                                <p><strong>Dove:</strong> Via di Santa Prisca, 5</p>
-                                <p><strong>Cosa offre:</strong> Spritz con vista oppure, se vuoi qualcosa di più speciale, prova il "Cocktail del Giardino"</p>
-                                <p><strong>Costo:</strong> €8 (spritz) €12 (cocktail).</p>
-
-                                <p><strong>Pranzo allo Zodiaco</strong></p>
-                                <p><strong>Dove:</strong> Via di Santa Prisca, 11 (stesso edificio di Terrazza Aventino)</p>
-                                <p><strong>Cosa offre:</strong> Pasta fresca e vista sulla città.</p>
-                                <p><strong>Costo:</strong> €15-25 a persona.</p>
-
-                                <p><strong>(oppure) Pranzo veloce al Panificio Passi</strong></p>
-                                <p><strong>Dove:</strong> Via Marmorata, 41</p>
-                                <p><strong>Specialità:</strong> Pizza al taglio romana e supplì.</p>
-                                <p><strong>Costo:</strong> €5-10.</p>
-                            </div>
-                        </div>
-
-
-                    </div>
+                    <div class="step-arrow">▼</div>
                 </div>
 
-                <!-- Parte 3: Giardino Giapponese -->
-                <div class="step-container">
-                    <div class="step" onclick="toggleStepDetails('part3')">
-                        <div class="step-number bg-primary">3</div>
-                        <div class="step-content">
-                            <h5>Momento zen al Giardino Giapponese</h5>
-                            <p>Un'oasi di pace tra ciliegi e laghetti, dove il tempo sembra fermarsi.</p>
+                <div class="step-details">
+
+                    <div class="detail-section">
+
+                        <!-- BOX CON I DETTAGLI DELL'ITINERARIO -->
+                        <div class="info-box">
+                            <div class="info-box-header">
+                                <i class="fas fa-info-circle"></i>
+                                <h4>Informazioni</h4>
+                            </div>
+
+                            <div class="info-box-content">
+                                <div class="info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div>
+                                        <span class="info-label">Partenza:</span>
+                                        <span class="info-value">Porta San Sebastiano</span>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <i class="fas fa-flag-checkered"></i>
+                                    <div>
+                                        <span class="info-label">Arrivo:</span>
+                                        <span class="info-value">Terme di Caracalla</span>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <div>
+                                        <span class="info-label">Lunghezza:</span>
+                                        <span class="info-value">~12 km</span>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <i class="far fa-clock"></i>
+                                    <div>
+                                        <span class="info-label">Durata:</span>
+                                        <span class="info-value">3 ore (con soste)</span>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <i class="fas fa-signal"></i>
+                                    <div>
+                                        <span class="info-label">Difficoltà:</span>
+                                        <span class="info-value">Facile (terreno misto)</span>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <i class="fas fa-bicycle"></i>
+                                    <div>
+                                        <span class="info-label">Mezzi:</span>
+                                        <span class="info-value">Bici</span>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <i class="fas fa-hand-holding-usd"></i>
+                                    <div>
+                                        <span class="info-label">Noleggio bici:</span>
+                                        <div class="info-sublist">
+                                            <div><i class="fas fa-angle-right"></i> Appia Antica Bike Rental <span class="price">(€15/giorno MTB, €25 e-bike)</span></div>
+                                            <div><i class="fas fa-angle-right"></i> Ecobike Roma <span class="price">(€10/giorno)</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="info-tip">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <div>
+                                        <strong>Consiglio:</strong> Parti alle 9:00 per evitare il sole estivo e goderti il brunch in pace! 🌿☕
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- fine BOX DETTAGLI -->
+
+                        <div class="itinerary-steps">
+
+                            <h5 class="section-subtitle-tappe">
+                                <i class="fas fa-map-marked-alt mr-2"></i>Tappe
+                            </h5>
+
+                            <div class="step-accordion">
+                                <!-- TAPPA 1 -->
+                                <div class="step-card" >
+                                    <div class="step-header" onclick="toggleStep(this)">
+                                        <div class="step-badge bordered">1</div>
+                                        <div class="step-title-container">
+                                            <div class="step-title">
+                                                <h5>Porta di San Sebastiano e Catacombe di San Callisto</h5>
+                                            </div>
+                                            <div class="step-meta">
+                                                <span><i class="fas fa-clock"></i> 30 min</span>
+                                                <span><i class="fas fa-euro-sign"></i> 8</span>
+                                                <span><i class="fas fa-bicycle"></i> 1.5 km</span>
+                                                <a href="https://www.google.com/maps?q=41.8725,12.5018"
+                                                   class="btn-map-marker-red"
+                                                   target="_blank"
+                                                   rel="noopener noreferrer">
+                                                    <i class="fas fa-map-marker-alt"></i> Mostra sulla mappa
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <i class="fas fa-chevron-down step-arrow"></i>
+                                    </div>
+
+                                    <div class="step-content-flex-none">
+                                        <div class="step-content-inner"> <!-- Nuovo wrapper interno -->
+                                            <p>Inizia dalla maestosa Porta San Sebastiano (ingresso all'Appia Antica) e pedala per 1,5 km (5 min in bici) fino alle Catacombe di San Callisto, tra le più grandi di Roma.</p>
+                                            <div class="step-details">
+                                                <p><i class="fas fa-info-circle text-primary"></i> <strong>Audioguida inclusa</strong></p>
+                                                <p><i class="fas fa-history text-primary"></i> <strong>Orari:</strong> 9:00-12:00 / 14:00-17:00</p>
+                                                <p><i class="fas fa-exclamation-triangle text-warning"></i> <strong>Attenzione:</strong> Vietato fotografare</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FINE TAPPA 1 -->
+
+
+                            <!-- TAPPA 2 -->
+                            <div class="step-card" >
+                                <div class="step-header" onclick="toggleStep(this)">
+                                    <div class="step-badge bordered">2</div>
+                                    <div class="step-title-container">
+                                        <div class="step-title">
+                                            <h5>Brunch al Giardino di Lù</h5>
+                                        </div>
+                                        <div class="step-meta">
+                                            <span><i class="fas fa-utensils"></i> €12-20</span>
+                                            <span><i class="fas fa-calendar-alt"></i> 9:00-16:00</span>
+                                            <span><i class="fas fa-stopwatch"></i> 1h30</span>
+                                            <a href="https://www.google.com/maps?q=41.8550,12.5175"
+                                               class="btn-map-marker-red"
+                                               target="_blank"
+                                               rel="noopener noreferrer">
+                                                <i class="fas fa-map-marker-alt"></i> Mostra sulla mappa
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-chevron-down step-arrow"></i>
+                                </div>
+                                <div class="step-content-flex-none">
+                                    <div class="step-content-inner">
+                                        <p>Brunch biologico con torte salate, smoothie e caffè artigianale in un giardino nascosto con vista sull'Appia.</p>
+                                        <div class="step-details">
+                                            <p><i class="fas fa-lightbulb"></i> <strong>Da provare:</strong> Torta salata con zucchine e ricotta + smoothie alla menta</p>
+                                            <p><i class="fas fa-phone-alt text-primary"></i> <strong>Prenotazione:</strong> +39 06 1234567 (consigliata nei weekend)</p>
+                                            <p><i class="fas fa-paw text-primary"></i> <strong>Animali:</strong> Cani ammessi in giardino</p>
+                                            <p><i class="fas fa-map-marker-alt text-danger"></i> <strong>Indirizzo:</strong> Via Appia Antica, 42</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FINE TAPPA 2 -->
+
+                            <!-- TAPPA 3 -->
+                            <div class="step-card" >
+                                <div class="step-header" onclick="toggleStep(this)">
+                                    <div class="step-badge bordered">3</div>
+                                    <div class="step-title-container">
+                                        <div class="step-title">
+                                            <h5>Mausoleo di Cecilia Metella</h5>
+                                        </div>
+                                        <div class="step-meta">
+                                            <span><i class="fas fa-clock"></i> 20 min</span>
+                                            <span><i class="fas fa-euro-sign"></i> 6</span>
+                                            <span><i class="fas fa-bicycle"></i> 3 km</span>
+                                            <a href="https://www.google.com/maps?q=41.8522,12.5194"
+                                               class="btn-map-marker-red"
+                                               target="_blank"
+                                               rel="noopener noreferrer">
+                                                <i class="fas fa-map-marker-alt"></i> Mostra sulla mappa
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-chevron-down step-arrow"></i>
+                                </div>
+                                <div class="step-content-flex-none">
+                                    <div class="step-content-inner">
+                                        <p>Prosegui lungo la via lastricata fino al simbolo dell'Appia: il Mausoleo di Cecilia Metella (tomba del I sec. a.C.) e l'annesso Castrum Caetani (fortezza medievale).</p>
+                                        <div class="step-details">
+                                            <p><i class="fas fa-ticket-alt text-primary"></i> <strong>Biglietto cumulativo:</strong> €6 con Villa dei Quintili (valido 24h)</p>
+                                            <p><i class="fas fa-camera text-primary"></i> <strong>Fotografie:</strong> Permesse senza flash</p>
+                                            <div class="step-highlight bg-light-blue">
+                                                <i class="fas fa-binoculars"></i> <strong>Vista panoramica</strong> dalla terrazza del castrum
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FINE TAPPA 3 -->
+
+                            <!-- TAPPA 4 -->
+                            <div class="step-card" >
+                                <div class="step-header" onclick="toggleStep(this)">
+                                    <div class="step-badge bordered">4</div>
+                                    <div class="step-title-container">
+                                        <div class="step-title">
+                                            <h5>Villa dei Quintili</h5>
+                                        </div>
+                                        <div class="step-meta">
+                                            <span><i class="fas fa-clock"></i> 30 min</span>
+                                            <span><i class="fas fa-euro-sign"></i> 5</span>
+                                            <span><i class="fas fa-bicycle"></i> 4 km</span>
+                                            <a href="https://www.google.com/maps/search/?api=1&query=41.8406,12.5497"
+                                               class="btn-map-marker-red"
+                                               target="_blank"
+                                               rel="noopener noreferrer">
+                                                <i class="fas fa-map-marker-alt"></i> Mostra sulla mappa
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-chevron-down step-arrow"></i>
+                                </div>
+                                <div class="step-content-flex-none">
+                                    <div class="step-content-inner">
+                                        <p>Deviazione di 1 km dall'Appia per visitare questa lussuosa residenza imperiale con mosaici e terme private.</p>
+                                        <div class="step-details">
+                                            <p><i class="fas fa-umbrella-beach text-primary"></i> <strong>Area picnic:</strong> Disponibile nel giardino</p>
+                                            <p><i class="fas fa-sun text-warning"></i> <strong>Consiglio:</strong> Poco ombreggiato, portare cappello</p>
+                                            <p><i class="fas fa-expand-alt text-primary"></i> <strong>Superficie:</strong> 24 ettari (visita solo alle aree principali)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FINE TAPPA 4 -->
+
+
+                            <!-- TAPPA 5 -->
+                            <div class="step-card">
+                                <div class="step-header" onclick="toggleStep(this)">
+                                    <div class="step-badge bordered">5</div>
+                                    <div class="step-title-container">
+                                        <div class="step-title">
+                                            <h5>Terme di Caracalla</h5>
+                                        </div>
+                                        <div class="step-meta">
+                                            <span><i class="fas fa-clock"></i> 40 min</span>
+                                            <span><i class="fas fa-euro-sign"></i> 8</span>
+                                            <span><i class="fas fa-bicycle"></i> 5 km</span>
+                                            <a href="https://www.google.com/maps?q=41.8793,12.4925"
+                                               class="btn-map-marker-red"
+                                               target="_blank"
+                                               rel="noopener noreferrer">
+                                                <i class="fas fa-map-marker-alt"></i> Mostra sulla mappa
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-chevron-down step-arrow"></i>
+                                </div>
+                                <div class="step-content-flex-none">
+                                    <div class="step-content-inner">
+                                        <p>Chiudi il tour con uno dei più grandiosi complessi termali antichi, capolavoro di ingegneria romana.</p>
+                                        <div class="step-details">
+                                            <p><i class="fas fa-moon text-primary"></i> <strong>Visite serali:</strong> A luglio/agosto con illuminazione speciale</p>
+                                            <p><i class="fas fa-theater-masks text-primary"></i> <strong>Eventi:</strong> Opera lirica in estate (programma a parte)</p>
+                                            <div class="step-highlight">
+                                                <i class="fas fa-wheelchair"></i> <strong>Accessibilità:</strong> Percorsi per disabili disponibili
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div id="part3" class="step-details" style="display: none;">
-                        <div class="p-3 bg-light rounded">
-                            <p><strong>Dove:</strong> Viale America, 40 (nel parco del Laghetto dell'EUR)</p>
-                            <p><strong>Ingresso:</strong> Gratuito</p>
-                            <p><strong>Orari:</strong> 9:30-19:30 (orario estivo, chiuso il lunedì)</p>
 
-                            <p><strong>Mezzi (per arrivare dalla parte2):</strong></p>
-                            <ul>
-                                <li><strong>In bici (20-25 min, 5-6 km):</strong> Segui Viale Aventino > Viale Manzoni > Viale Oceano Pacifico > Viale America (piste ciclabili per gran parte del tragitto).</li>
-                                <li><strong>Con mezzi pubblici (15-20 min):</strong> Metro B (da "Circo Massimo" a "EUR Palasport") + 5 min a piedi verso il laghetto. Bus 30Express (da "Aventino/Albania" a "EUR Magliana") + 7 min a piedi.</li>
-                                <li><strong>In monopattino elettrico (Lime/Bird):</strong> Tempo simile alla bici, ma più comodo per le salite.</li>
-                            </ul>
-
-                            <p><strong>Cosa Vedere nel Giardino Giapponese:</strong></p>
-                            <ul>
-                                <li>Ponte rosso in stile asiatico e cascatelle.</li>
-                                <li>Ciliegi (spettacolari a marzo-aprile) e aceri.</li>
-                                <li>Lanternhe tradizionali e laghetto con carpe koi.</li>
-                            </ul>
-
-                            <p>Dopo il Giardino Giapponese, concediti una sosta rigenerante sulle rive del laghetto: l'area è dotata di spazi erbosi ideali per un picnic o un riposo con vista. Un telo da stendere sarà il tuo alleato per goderti il silenzio di quest'oasi!</p>
-
-                        </div>
-                    </div>
                 </div>
-
-                <!-- Parte 4: Voodoo Bar -->
-                <div class="step-container">
-                    <div class="step" onclick="toggleStepDetails('part4')">
-                        <div class="step-number bg-primary">4</div>
-                        <div class="step-content">
-                            <h5>Voodoo bar, dove i cocktail bruciano come tramonti sul Colosseo</h5>
-                            <p>Un locale che unisce l'anima underground di Roma alla maestosità dei Fori Imperiali. Qui, tra pareti dipinte con graffiti tribali e luci al neon, i cocktail prendono nomi da sortilegio e i DJ set spaziano dall'afrobeat all'elettronica.</p>
-                        </div>
-                    </div>
-                    <div id="part4" class="step-details" style="display: none;">
-                        <div class="p-3 bg-light rounded">
-                            <p><strong>Dove:</strong> Via delle Terme di Traiano, 4A (a 5 min dal Colosseo).</p>
-                            <p><strong>Ingresso:</strong> Gratuito</p>
-                            <p><strong>Orari:</strong> 18:30-2:30</p>
-
-                            <p><strong>Come arrivare dal Laghetto dell'EUR:</strong></p>
-                            <ul>
-                                <li><strong>In bici/monopattino:</strong> 25 min (7 km) – Percorso più panoramico: Viale America > Via Cristoforo Colombo > Circo Massimo > Via dei Fori Imperiali (attenzione ai sampietrini!).</li>
-                                <li><strong>Mezzi pubblici:</strong> Metro B da "EUR Fermi" a "Colosseo" (12 min) + 5 min a piedi salendo verso Monti.</li>
-                                <li><strong>Taxi:</strong> €15-20 (circa 15 min).</li>
-                            </ul>
-
-                            <p><strong>Consiglio:</strong> prendi un tavolo vista Colosseo!</p>
-                            <p><strong>Dress code:</strong> casual chic!</p>
-
-                            <p><strong>🍸 Happy Hour:</strong></p>
-                            <p><strong>Orario:</strong> 18:30 - 21:30 (durante la settimana), fino alle 22:00 (weekend).</p>
-                            <p><strong>Costo cocktail:</strong> €10-12 (incluso stuzzichini piccanti come nachos, bruschette e finger food caraibico).</p>
-
-                            <p><strong>🎧 DJ Set:</strong></p>
-                            <p>Da giovedì a domenica (dalle 22:00 all'1:30).</p>
-                            <p><strong>Ingresso dopo le 23:00:</strong> €5-10 (include un drink, dipende dall'evento).</p>
-
-
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
         </div>
+        <!-- FINE Itinerari dettagliati-->
+
+        <!-- Connessione tra Parte 1 e Parte 2 -->
+        <div class="itinerary-connection">
+            <div class="connection-visual">
+                <div class="connection-line"></div>
+                <div class="connection-arrow">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+            </div>
+            <div class="connection-info" style="margin-left: 50px">
+                Trasferimento <i class="fas fa-bicycle"></i>: 15 min in bici (o bus 118) verso l'Aventino
+            </div>
+        </div>
+
+
+        <!-- Parte 2: Aventino -->
+        <div class="expandable-step">
+            <div class="step-header" onclick="toggleStep(this)">
+                <div class="step-number">2</div>
+                <div class="step-title">
+                    <h5>Giardino degli Aranci e il Buco della Serratura</h5>
+                    <p>Un mix perfetto di storia, panorami e curiosità, con flessibilità di movimento! 🌿</p>
+                </div>
+                <div class="step-arrow">▼</div>
+            </div>
+
+            <div class="step-details">
+                <div class="detail-section">
+                    <!-- BOX INFORMAZIONI GENERALI -->
+                    <div class="info-box">
+                        <div class="info-box-header">
+                            <i class="fas fa-info-circle"></i>
+                            <h4>Informazioni</h4>
+                        </div>
+                        <div class="info-box-content">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span class="info-label">Partenza:</span>
+                                    <span class="info-value">Terme di Caracalla</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-flag-checkered"></i>
+                                <div>
+                                    <span class="info-label">Arrivo:</span>
+                                    <span class="info-value">Buco della Serratura</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <div>
+                                    <span class="info-label">Lunghezza:</span>
+                                    <span class="info-value">~5 km</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="far fa-clock"></i>
+                                <div>
+                                    <span class="info-label">Durata:</span>
+                                    <span class="info-value">1.5 ore</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-signal"></i>
+                                <div>
+                                    <span class="info-label">Difficoltà:</span>
+                                    <span class="info-value">Medio (salita ripida)</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-subway"></i>
+                                <div>
+                                    <span class="info-label">Mezzi pubblici:</span>
+                                    <div class="info-sublist">
+                                        <div><i class="fas fa-angle-right"></i> Bus 81 (da "Circo Massimo")</div>
+                                        <div><i class="fas fa-angle-right"></i> Metro B (fermata "Circo Massimo")</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-tip">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <strong>Consiglio:</strong> La salita all'Aventino è breve ma ripida - con la bici è meglio spingerla a mano!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAPPE ITINERARIO -->
+                    <div class="itinerary-steps">
+                        <h5 class="section-subtitle-tappe">
+                            <i class="fas fa-map-marked-alt mr-2"></i>Tappe
+                        </h5>
+
+                        <div class="step-accordion">
+                            <!-- TAPPA 1 -->
+                            <div class="step-card">
+                                <div class="step-header" onclick="toggleStep(this)">
+                                    <div class="step-badge bordered">1</div>
+                                    <div class="step-title-container">
+                                        <div class="step-title">
+                                            <h5>Terme di Caracalla → Circo Massimo</h5>
+                                        </div>
+                                        <div class="step-meta">
+                                            <span><i class="fas fa-clock"></i> 10 min</span>
+                                            <span><i class="fas fa-walking"></i> 800m</span>
+                                            <a href="https://www.google.com/maps?q=41.8793,12.4925(Circo+Massimo)"
+                                               class="btn-map-marker-red"
+                                               target="_blank"
+                                               rel="noopener noreferrer">
+                                                <i class="fas fa-map-marker-alt"></i> Mostra sulla mappa
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-chevron-down step-arrow"></i>
+                                </div>
+                                <div class="step-content-flex-none">
+                                    <div class="step-content-inner">
+                                        <p>Dopo la visita alle Terme, dirigiti verso il Circo Massimo, l'antico stadio romano con panorama sul Palatino.</p>
+                                        <div class="step-details">
+                                            <p><i class="fas fa-ticket-alt text-primary"></i> <strong>Ingresso:</strong> Gratuito (area esterna)</p>
+                                            <p><i class="fas fa-history text-primary"></i> <strong>Orari:</strong> Sempre accessibile</p>
+                                            <div class="step-highlight">
+                                                <i class="fas fa-binoculars"></i> <strong>Vista imperdibile:</strong> Tramonto sul Palatino
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TAPPA 2 -->
+                            <div class="step-card">
+                                <div class="step-header" onclick="toggleStep(this)">
+                                    <div class="step-badge bordered">2</div>
+                                    <div class="step-title-container">
+                                        <div class="step-title">
+                                            <h5>Giardino degli Aranci 🍊</h5>
+                                        </div>
+                                        <div class="step-meta">
+                                            <span><i class="fas fa-clock"></i> 20 min</span>
+                                            <span><i class="fas fa-mountain"></i> Salita</span>
+                                            <a href="https://www.google.com/maps?q=41.8830,12.4799(Giardino+degli+Aranci)"
+                                               class="btn-map-marker-red"
+                                               target="_blank"
+                                               rel="noopener noreferrer">
+                                                <i class="fas fa-map-marker-alt"></i> Mostra sulla mappa
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-chevron-down step-arrow"></i>
+                                </div>
+                                <div class="step-content-flex-none">
+                                    <div class="step-content-inner">
+                                        <p>Salita alla collina dell'Aventino per questo giardino segreto con vista mozzafiato su Roma.</p>
+                                        <div class="step-details">
+                                            <p><i class="fas fa-tree text-primary"></i> <strong>Orari:</strong> 7:00-18:00 (inverno), 7:00-21:00 (estate)</p>
+                                            <p><i class="fas fa-euro-sign text-primary"></i> <strong>Ingresso:</strong> Gratuito</p>
+                                            <div class="step-highlight bg-light-blue">
+                                                <i class="fas fa-camera"></i> <strong>Fotospot:</strong> La panchina più romantica di Roma
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TAPPA 3 -->
+                            <div class="step-card">
+                                <div class="step-header" onclick="toggleStep(this)">
+                                    <div class="step-badge bordered">3</div>
+                                    <div class="step-title-container">
+                                        <div class="step-title">
+                                            <h5>Buco della Serratura</h5>
+                                        </div>
+                                        <div class="step-meta">
+                                            <span><i class="fas fa-clock"></i> 10 min</span>
+                                            <span><i class="fas fa-user-friends"></i> Code</span>
+                                            <a href="https://www.google.com/maps?q=41.8826,12.4795(Buco+della+Serratura)"
+                                               class="btn-map-marker-red"
+                                               target="_blank"
+                                               rel="noopener noreferrer">
+                                                <i class="fas fa-map-marker-alt"></i> Mostra sulla mappa
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-chevron-down step-arrow"></i>
+                                </div>
+                                <div class="step-content-flex-none">
+                                    <div class="step-content-inner">
+                                        <p>La famosa serratura che incornicia perfettamente la Cupola di San Pietro.</p>
+                                        <div class="step-details">
+                                            <p><i class="fas fa-history text-primary"></i> <strong>Orari migliori:</strong> Mattina presto o tramonto</p>
+                                            <p><i class="fas fa-exclamation-circle text-warning"></i> <strong>Attenzione:</strong> Code nei weekend</p>
+                                            <div class="step-highlight">
+                                                <i class="fas fa-key"></i> <strong>Curiosità:</strong> Appartiene all'Ordine dei Cavalieri di Malta
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TAPPA 4 -->
+                            <div class="step-card">
+                                <div class="step-header" onclick="toggleStep(this)">
+                                    <div class="step-badge bordered">4</div>
+                                    <div class="step-title-container">
+                                        <div class="step-title">
+                                            <h5>Spritz con vista e pranzo</h5>
+                                        </div>
+                                        <div class="step-meta">
+                                            <span><i class="fas fa-wallet"></i> €5-25</span>
+                                            <span><i class="fas fa-clock"></i> 1h-1h30</span>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-chevron-down step-arrow"></i>
+                                </div>
+                                <div class="step-content-flex-none">
+                                    <div class="step-content-inner">
+                                        <!-- OPZIONE 1: TERRAZZA AVENTINO -->
+                                        <div class="restaurant-option">
+                                            <div class="option-header" >
+                                                <h6><i class="fas fa-cocktail"></i> Terrazza Aventino <span class="badge-price">€€</span>
+                                                    <a href="https://www.google.com/maps/place/Terrazza+Aventino/@41.8818,12.4790,18z/data=!4m6!3m5!1s0x132f61a1d8e3b3a7:0x7a1e8b3d3c3d3c3d!8m2!3d41.8818!4d12.4790!16s%2Fg%2F11b5y5y5y5?hl=it"
+                                                       class="btn-map-marker-red"
+                                                       target="_blank"
+                                                       rel="noopener noreferrer">
+                                                        <i class="fas fa-map-marker-alt"></i> Mostra sulla Mappa
+                                                    </a>
+                                                </h6>
+                                            </div>
+                                            <div class="option-body">
+                                                <div class="option-detail">
+                                                    <i class="fas fa-star"></i>
+                                                    <span><strong>Punto forte:</strong> Vista panoramica + "Cocktail del Giardino" (€12)</span>
+                                                </div>
+                                                <div class="option-detail">
+                                                    <i class="fas fa-clock"></i>
+                                                    <span><strong>Orario:</strong> 12:00-24:00 (happy hour 18-20)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- OPZIONE 2: RISTORANTE ZODIACO -->
+                                        <div class="restaurant-option mt-3">
+                                            <div class="option-header" style="background-color: #f8f9fa; border-left: 4px solid #ffc107;">
+                                                <h6><i class="fas fa-utensils"></i> Ristorante Zodiaco <span class="badge-price">€€€</span>
+                                                    <a href="https://www.google.com/maps/place/Ristorante+Lo+Zodiaco/@41.8818,12.4790,18z/data=!4m6!3m5!1s0x132f61a1d8e3b3a7:0x7a1e8b3d3c3d3c3d!8m2!3d41.8818!4d12.4790!16s%2Fg%2F11b5y5y5y5?hl=it"
+                                                       class="btn-map-marker-red"
+                                                       target="_blank"
+                                                       rel="noopener noreferrer">
+                                                        <i class="fas fa-map-marker-alt"></i> Mostra sulla Mappa
+                                                    </a>
+                                                </h6>
+                                            </div>
+                                            <div class="option-body">
+                                                <div class="option-detail">
+                                                    <i class="fas fa-star"></i>
+                                                    <span><strong>Specialità:</strong> Tonnarelli cacio e pepe (€18) + vista sul Circo Massimo</span>
+                                                </div>
+                                                <div class="option-detail">
+                                                    <i class="fas fa-euro-sign"></i>
+                                                    <span><strong>Budget:</strong> €25-40 a persona (primo+bevuta)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- OPZIONE 3: PANIFICIO PASSI -->
+                                        <div class="restaurant-option mt-3">
+                                            <div class="option-header" style="background-color: #f8f9fa; border-left: 4px solid #28a745;">
+                                                <h6><i class="fas fa-bread-slice"></i> Panificio Passi <span class="badge-price">€</span>
+                                                    <a href="https://www.google.com/maps/place/Panificio+Passi/@41.8834,12.4806,17z/data=!3m1!4b1!4m6!3m5!1s0x132f605f9393a8a5:0x7e33e5b2a3e4b0a8!8m2!3d41.8834!4d12.4806!16s%2Fg%2F11b5y5y5y5?hl=it&entry=ttu"
+                                                       class="btn-map-marker-red"
+                                                       target="_blank"
+                                                       rel="noopener noreferrer">
+                                                        <i class="fas fa-map-marker-alt"></i> Mostra sulla Mappa
+                                                    </a>
+                                                </h6>
+                                            </div>
+                                            <div class="option-body">
+                                                <div class="option-detail">
+                                                    <i class="fas fa-star"></i>
+                                                    <span><strong>Imperdibile:</strong> Pizza bianca con mortadella (€3.50) + supplì (€2)</span>
+                                                </div>
+                                                <div class="option-detail">
+                                                    <i class="fas fa-clock"></i>
+                                                    <span><strong>Orario:</strong> 7:00-20:00 (chiuso martedì pomeriggio)</span>
+                                                </div>
+                                                <div class="step-highlight mt-2" style="background-color: #fff3cd;">
+                                                    <i class="fas fa-lightbulb"></i> <strong>Segreto:</strong> Chiedi la "pizza riscaldata" per averla croccante!
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Connessione tra Parte 2 e Parte 3 -->
+        <div class="itinerary-connection">
+            <div class="connection-visual">
+                <div class="connection-line"></div>
+                <div class="connection-arrow">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+            </div>
+            <div class="connection-info" style="margin-left: 50px">
+                Trasferimento <i class="fas fa-subway"></i> 25 min con Metro B (direzione Laurentina) fino a EUR Palasport
+            </div>
+        </div>
+
+        <!-- Parte 3: Giardino Giapponese -->
+        <div class="expandable-step">
+            <div class="step-header" onclick="toggleStep(this)">
+                <div class="step-number">3</div>
+                <div class="step-title">
+                    <h5>Momento zen al Giardino Giapponese</h5>
+                    <p>Un'oasi di pace tra ciliegi e laghetti, dove il tempo sembra fermarsi. 🌸</p>
+                </div>
+                <div class="step-arrow">▼</div>
+            </div>
+
+            <div class="step-details">
+                <div class="detail-section">
+                    <!-- BOX INFORMAZIONI COMPLETE -->
+                    <div class="info-box">
+                        <div class="info-box-header">
+                            <i class="fas fa-info-circle"></i>
+                            <h4>Informazioni</h4>
+                        </div>
+                        <div class="info-box-content">
+                            <!-- INFO BASE -->
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span class="info-label">Posizione:</span>
+                                    <span class="info-value">Viale America, 40 (Laghetto EUR)</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-ticket-alt"></i>
+                                <div>
+                                    <span class="info-label">Ingresso:</span>
+                                    <span class="info-value">Gratuito</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="far fa-clock"></i>
+                                <div>
+                                    <span class="info-label">Orari:</span>
+                                    <span class="info-value">9:30-19:30 (chiuso lunedì)</span>
+                                </div>
+                            </div>
+
+                            <!-- COME ARRIVARE -->
+                            <div class="info-item">
+                                <i class="fas fa-location-arrow"></i>
+                                <div>
+                                    <span class="info-label">Come arrivare:</span>
+                                    <div class="info-sublist">
+                                        <div>
+                                            <i class="fas fa-bicycle"></i> <strong>Bici:</strong> 25 min da Aventino
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-subway"></i> <strong>Metro B:</strong> Scendere a "EUR Palasport"
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-bus"></i> <strong>Bus:</strong> Linea 30Express o 714
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PERIODO MIGLIORE -->
+                            <div class="info-item">
+                                <i class="fas fa-calendar-check"></i>
+                                <div>
+                                    <span class="info-label">Periodo ideale:</span>
+                                    <span class="info-value">Marzo-aprile (fioritura ciliegi)</span>
+                                </div>
+                            </div>
+
+                            <!-- CONSIGLIO -->
+                            <div class="info-tip">
+                                <i class="fas fa-umbrella-beach"></i>
+                                <div>
+                                    <strong>Porta con te:</strong> Telo da picnic e macchina fotografica!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SEZIONE COSA VEDERE  -->
+                    <div class="itinerary-steps mt-4">
+                        <h5 class="section-subtitle-tappe">
+                            <i class="fas fa-eye mr-2"></i>Punti d'interesse
+                        </h5>
+
+                        <div class="step-accordion">
+                            <!-- PONTE ROSSO -->
+                            <div class="step-card">
+                                <div class="step-header" onclick="toggleStep(this)">
+                                    <div class="step-badge bordered">1</div>
+                                    <div class="step-title-container">
+                                        <div class="step-title">
+                                            <h5>Ponte Rosso Tradizionale</h5>
+                                        </div>
+                                        <div class="step-meta">
+                                            <span><i class="fas fa-palette"></i> Architettura</span>
+                                            <a href="https://www.google.com/maps/place/Ponte+Rosso/@41.8325,12.4690,17z/data=!3m1!4b1!4m6!3m5!1s0x132f61a1d8e3b3a7:0x7a1e8b3d3c3d3c3d!8m2!3d41.8325!4d12.4690!16s%2Fg%2F11b5y5y5y5?hl=it"
+                                               class="btn-map-marker-red"
+                                               target="_blank"
+                                               rel="noopener noreferrer">
+                                                <i class="fas fa-map-marker-alt"></i> Mostra sulla mappa
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-chevron-down step-arrow"></i>
+                                </div>
+                                <div class="step-content-flex-none">
+                                    <div class="step-content-inner">
+                                        <p>Riproduzione fedele di un ponte giapponese in legno laccato di rosso, con cascatelle artificiali.</p>
+                                        <div class="step-details">
+                                            <p><i class="fas fa-sun"></i> <strong>Luce migliore:</strong> Pomeriggio tardi</p>
+                                            <div class="step-highlight">
+                                                <i class="fas fa-camera-retro"></i> <strong>Angolo fotografico:</strong> Dal lato sud-ovest
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CILIEGI -->
+                            <div class="step-card">
+                                <div class="step-header" onclick="toggleStep(this)">
+                                    <div class="step-badge bordered">2</div>
+                                    <div class="step-title-container">
+                                        <div class="step-title">
+                                            <h5>Sentiero dei Ciliegi</h5>
+                                        </div>
+                                        <div class="step-meta">
+                                            <span><i class="fas fa-fan"></i> Sakura</span>
+                                            <a href="https://www.google.com/maps/place/Sentiero+dei+Ciliegi/@41.8337,12.4678,18z/data=!4m6!3m5!1s0x132f61b6c3a8e5e5:0x7a1e8b3d3c3d3c3d!8m2!3d41.8337!4d12.4678!16s%2Fg%2F11b5y5y5y5?hl=it"
+                                               class="btn-map-marker-red"
+                                               target="_blank"
+                                               rel="noopener noreferrer">
+                                                <i class="fas fa-map-marker-alt"></i> Mostra sulla mappa
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-chevron-down step-arrow"></i>
+                                </div>
+                                <div class="step-content-flex-none">
+                                    <div class="step-content-inner">
+                                        <p>Oltre 100 alberi di sakura che fioriscono in primavera, donati dal governo giapponese.</p>
+                                        <div class="step-details">
+                                            <p><i class="fas fa-calendar-day"></i> <strong>Fioritura:</strong> Fine marzo-inizio aprile</p>
+                                            <div class="step-highlight bg-light-pink">
+                                                <i class="fas fa-magic"></i> <strong>Evento:</strong> Hanami (festa dei fiori) il 1° aprile
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- LAGHETTO -->
+                            <div class="step-card">
+                                <div class="step-header" onclick="toggleStep(this)">
+                                    <div class="step-badge bordered">3</div>
+                                    <div class="step-title-container">
+                                        <div class="step-title">
+                                            <h5>Laghetto delle Carpe Koi</h5>
+                                        </div>
+                                        <div class="step-meta">
+                                            <span><i class="fas fa-fish"></i> Natura</span>
+                                            <a href="https://www.google.com/maps/place/Laghetto+delle+Carpe+Koi/@41.8332,12.4665,18z/data=!4m6!3m5!1s0x132f61b6c3a8e5e5:0x7a1e8b3d3c3d3c3d!8m2!3d41.8332!4d12.4665!16s%2Fg%2F11b5y5y5y5?hl=it"
+                                               class="btn-map-marker-red"
+                                               target="_blank"
+                                               rel="noopener noreferrer">
+                                                <i class="fas fa-map-marker-alt"></i> Mostra sulla mappa
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-chevron-down step-arrow"></i>
+                                </div>
+                                <div class="step-content-flex-none">
+                                    <div class="step-content-inner">
+                                        <p>Zona relax con panchine e possibilità di noleggiare barchette (€3/30 min).</p>
+                                        <div class="step-details">
+                                            <p><i class="fas fa-utensils"></i> <strong>Picnic:</strong> Area attrezzata a 50m</p>
+                                            <p><i class="fas fa-store"></i> <strong>Chiosco:</strong> Bevande e gelati</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Connessione tra Parte 3 e Parte 4 -->
+        <div class="itinerary-connection">
+            <div class="connection-visual">
+                <div class="connection-line"></div>
+                <div class="connection-arrow">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+            </div>
+            <div class="connection-info" style="margin-left: 50px">
+                Trasferimento <i class="fas fa-subway"></i> 30 min con Metro B (direzione Rebibbia) fino al Colosseo
+            </div>
+        </div>
+
+        <!-- Parte 4: Voodoo Bar -->
+        <div class="expandable-step">
+            <style>
+              /* Stile tropicale discreto solo per questa tappa */
+              .step-details[data-step="voodoo"] {
+                  background-color: #F8F5F0;
+                  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><path fill="%237BA982" fill-opacity="0.03" d="M60 15c15 10 20 30 10 40-10 10-30 5-40-10C15 30 20 10 35 5c15-5 30 5 25 10z"/></svg>');
+                  background-repeat: repeat;
+              }
+           </style>
+
+            <div class="step-header" onclick="toggleStep(this)">
+                <div class="step-number">4</div>
+                <div class="step-title">
+                    <h5>Voodoo Bar</h5>
+                    <p>Un locale che unisce l’anima underground di Roma alla maestosità dei Fori Imperiali. Dove i cocktail bruciano come tramonti sul Colosseo. 🎵🍸</p>
+                </div>
+                <div class="step-arrow">▼</div>
+            </div>
+
+            <div class="step-details" data-step="voodoo">
+                <div class="detail-section">
+                    <!-- BOX INFORMAZIONI UNIFICATO -->
+                    <div class="info-box">
+                        <div class="info-box-header">
+                            <i class="fas fa-cocktail"></i>
+                            <h4>Informazioni</h4>
+                        </div>
+                        <div class="info-box-content">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span class="info-label">Dove:</span>
+                                    <span class="info-value">Via delle Terme di Traiano, 4A</span>
+                                    <a href="https://www.google.com/maps/place/Via+delle+Terme+di+Traiano,+4A,+00184+Roma+RM/@41.8917,12.4886,17z/data=!3m1!4b1!4m6!3m5!1s0x132f61b6c3a8e5e5:0x7a1e8b3d3c3d3c3d!8m2!3d41.8917!4d12.4886!16s%2Fg%2F11b5y5y5y5?hl=it&entry=ttu"
+                                       class="btn-map-marker-red"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        <i class="fas fa-map-marker-alt"></i> Mostra sulla mappa
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- SEZIONE ARRIVO INTEGRATA -->
+                            <div class="info-item">
+                                <i class="fas fa-route"></i>
+                                <div>
+                                    <span class="info-label">Come arrivare:</span>
+                                    <span class="info-value">
+                                <div class="transport-option">
+                                    <i class="fas fa-subway"></i> <strong>Metro B</strong>: Fermata "Colosseo" (5min a piedi)
+                                </div>
+                                <div class="transport-option">
+                                    <i class="fas fa-bus"></i> <strong>Bus</strong>: Linee 75, 81, 673
+                                </div>
+                                <div class="transport-option">
+                                    <i class="fas fa-car"></i> <strong>Auto</strong>: Parcheggio in Via Labicana
+                                </div>
+                            </span>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <i class="far fa-clock"></i>
+                                <div>
+                                    <span class="info-label">Orari:</span>
+                                    <span class="info-value">18:30-02:30 (chiuso lunedì)</span>
+                                </div>
+                            </div>
+
+                            <div class="info-tip">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <strong>Consiglio:</strong> Prenota un tavolo vista Colosseo!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EVENTI (stile invariato) -->
+                    <div class="itinerary-steps mt-4">
+                        <h5 class="section-subtitle-tappe">
+                            <i class="fas fa-calendar-alt mr-2"></i>Eventi
+                        </h5>
+
+                        <div class="step-accordion">
+                            <!-- HAPPY HOUR -->
+                            <div class="step-card">
+                                <div class="step-header" onclick="toggleStep(this)">
+                                    <div class="step-badge bordered">1</div>
+                                    <div class="step-title-container">
+                                        <div class="step-title">
+                                            <h5>Happy Hour</h5>
+                                        </div>
+                                        <div class="step-meta">
+                                            <span><i class="fas fa-clock"></i> 18:30-21:30</span>
+                                            <span><i class="fas fa-euro-sign"></i> 10-12</span>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-chevron-down step-arrow"></i>
+                                </div>
+                                <div class="step-content-flex-none">
+                                    <div class="step-content-inner">
+                                        <p>Cocktail premium accompagnati da stuzzichini piccanti:</p>
+                                        <ul class="step-details">
+                                            <li>Nachos con salsa "Voodoo Fire"</li>
+                                            <li>Bruschette stregate</li>
+                                            <li>Ti' Punch caraibico</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- DJ SET -->
+                            <div class="step-card">
+                                <div class="step-header" onclick="toggleStep(this)">
+                                    <div class="step-badge bordered">2</div>
+                                    <div class="step-title-container">
+                                        <div class="step-title">
+                                            <h5>DJ Set</h5>
+                                        </div>
+                                        <div class="step-meta">
+                                            <span><i class="fas fa-clock"></i> 22:00-01:30</span>
+                                            <span><i class="fas fa-euro-sign"></i> 5-10</span>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-chevron-down step-arrow"></i>
+                                </div>
+                                <div class="step-content-flex-none">
+                                    <div class="step-content-inner">
+                                        <p>Musica dal vivo con i migliori DJ della scena underground:</p>
+                                        <div class="step-details">
+                                            <p><i class="fas fa-music"></i> <strong>Generi:</strong> Afrobeat, Electro Voodoo, Tribal House</p>
+                                            <p><i class="fas fa-tshirt"></i> <strong>Dress code:</strong> Casual</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- fine parte 4 -->
+
+
     </div>
+    <!-- MAPPA GENERALE -->
+    <div class="compact-map-container">
+        <h2 class="section-title text-center">Mappa</h2>
+        <div id="avventura-mappa-generale"
+             data-tappe='{
+         "Porta San Sebastiano": [41.8725, 12.5018],
+         "Catacombe di San Callisto": [41.8589, 12.5141],
+         "Il Giardino di Lù": [41.8550, 12.5175],
+         "Mausoleo di Cecilia Metella": [41.8522, 12.5194],
+         "Villa dei Quintili": [41.8406, 12.5497],
+         "Terme di Caracalla": [41.8793, 12.4925],
+         "Circo Massimo": [41.8860, 12.4857],
+         "Giardino degli Aranci": [41.8830, 12.4799],
+         "Buco della Serratura": [41.8826, 12.4795],
+         "Terrazza Aventino": [41.8818, 12.4790],
+         "Zodiaco": [41.8818, 12.4790],
+         "Giardino Giapponese": [41.8319, 12.4692],
+         "Voodoo Bar": [41.8918, 12.4902]
+       }'
+             style="height: 350px; border-radius: 8px;">
+        </div>
+
+        <div class="map-actions">
+            <a class="btn btn-sm btn-outline-secondary"
+               href="https://www.openstreetmap.org/#map=13/41.87/12.49"
+               target="_blank">
+                <i class="fas fa-external-link-alt mr-1"></i> Mappa completa
+            </a>
+            <button class="btn btn-sm btn-outline-secondary">
+                <i class="fas fa-download mr-1"></i> Scarica percorso
+            </button>
+        </div>
+    </div>
+    <!-- FINE MAPPA GENERALE -->
+</div>
+</div>
 </div>
 
-
+<!-- FINE ITINERARIO AVVENTURA -->

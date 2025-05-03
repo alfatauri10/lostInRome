@@ -1,4 +1,5 @@
-// osm-persist.js
+//usato nelle pagine dei monumenti
+// osm-map.js
 document.addEventListener('DOMContentLoaded', () => {
   const iframe = document.getElementById('osm-iframe');
   const link = document.getElementById('osm-link');
