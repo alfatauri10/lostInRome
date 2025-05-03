@@ -1,3 +1,5 @@
+
+
 function toggleStep(header) {
   const container = header.closest('.expandable-step, .step-card');
   if (!container) return;

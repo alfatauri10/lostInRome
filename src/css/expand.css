@@ -1,0 +1,258 @@
+/* ===== VARIABILI ===== */
+:root {
+  --turchese: #40e0d0;
+  --turchese-scuro: #2db8a8;
+  --beige: #f5f5dc;
+  --beige-scuro: #e6e6c3;
+  --ombra: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* ===== STRUTTURA BASE - MODIFICATO PER DEFAULT CHIUSO ===== */
+.expandable-step,
+.step-card {
+  font-family: 'Lexend', sans-serif;
+  border-radius: 8px;
+  background: var(--beige);
+  box-shadow: var(--ombra);
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 0 5px 0 !important;
+  transform: none !important;
+}
+
+/* ===== HEADER ===== */
+.step-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  background: var(--beige);
+  transition: all 0.3s;
+  position: relative;
+  min-height: 60px;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.step-accordion {
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* TUTTO IL RESTO DEL CSS RIMANE IDENTICO... */
+.step-badge,
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  background: var(--turchese);
+  color: white;
+  font-weight: bold;
+}
+
+.step-badge.bordered {
+  background: transparent;
+  border: 2px solid var(--turchese-scuro);
+  color: var(--turchese-scuro);
+  width: 28px;
+  height: 28px;
+}
+
+.step-arrow {
+  margin-left: auto;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.step-arrow.fas {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0;
+}
+
+.step-arrow:not(.fas) {
+  font-size: 0.8rem;
+  color: #666;
+  width: 16px;
+  text-align: center;
+  line-height: 1;
+}
+
+.step-content-flex-none,
+.step-details {
+  display: none;
+  padding: 15px 20px;
+  background: var(--beige);
+  border-top: 1px solid rgba(0,0,0,0.1);
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.expanded .step-content-flex-none,
+.expanded .step-details {
+  animation: fadeIn 0.3s ease-out;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.expanded {
+  border: 1px solid var(--beige-scuro);
+  background: var(--beige);
+}
+
+.expanded .step-arrow.fas {
+  transform: rotate(180deg);
+}
+
+.expanded .step-arrow:not(.fas) {
+  transform: rotate(180deg);
+}
+
+.expanded .step-content-flex-none,
+.expanded .step-details {
+  display: block;
+  max-height: 1000px;
+}
+
+.step-title {
+  flex-grow: 1;
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow: hidden;
+}
+
+.step-title h5 {
+  margin: 0 0 4px 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100% !important;
+}
+
+.step-title p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-break: break-word;
+  width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .step-header {
+    padding: 15px;
+    flex-wrap: wrap;
+  }
+
+  .step-title h5 {
+    white-space: normal;
+    font-size: 1rem;
+    width:100% !important;
+  }
+
+  .step-content-flex-none,
+  .step-details {
+    padding: 10px 15px;
+  }
+
+  .step-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+.step-content-flex-none img,
+.step-details img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.step-content-flex-none table {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+}
+
+.info-box,
+.step-highlight,
+.step-meta {
+  max-width: 100%;
+}
+
+
+.step-card:not(.expanded) .step-content-flex-none {
+  display: none !important;
+}
+
+/* AGGIUNGI QUESTE REGOLE IN FONDO AL TUO CSS */
+.step-card,
+.expandable-step {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  transform: none !important;
+}
+
+.step-header {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+/* Forza il contenitore padre ad adattarsi */
+.step-accordion {
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+    /* questo mi adatta tutto al massimo della finestra */
+.row.mt-5 {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.row.mt-5 > div {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* ===== MODIFICHE PER LARGHEZZA COMPLETA ===== */

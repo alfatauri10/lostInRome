@@ -144,9 +144,14 @@
 .itinerary-steps {
     margin-bottom: 2rem;
     border-radius: 10px;
-    padding: 25px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     margin-bottom: 30px;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .step {
@@ -336,207 +341,7 @@
 
 /* ==================== SEZIONI ESPANDIBILI ==================== */
 
-/* ===== VARIABILI ===== */
-:root {
-  --turchese: #40e0d0;
-  --turchese-scuro: #2db8a8;
-  --beige: #f5f5dc;
-  --beige-scuro: #e6e6c3;
-  --ombra: 0 2px 10px rgba(0,0,0,0.05);
-}
 
-/* ===== STRUTTURA BASE (RESPONSIVE) ===== */
-.expandable-step,
-.step-card {
-  font-family: 'Lexend', sans-serif;
-  border-radius: 8px;
-  background: white;
-  box-shadow: var(--ombra);
-  margin-bottom: 15px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  width: 100%; /* Garantisce adattamento */
-  box-sizing: border-box; /* Include padding nel width */
-}
-
-/* ===== HEADER (CONSERVA STILE MA RESPONSIVE) ===== */
-.step-header {
-  display: flex;
-  align-items: center; /* Allineamento verticale mantenuto */
-  padding: 20px;
-  cursor: pointer;
-  background: var(--beige);
-  transition: all 0.3s;
-  position: relative;
-  min-height: 60px; /* Altezza minima per allineamento frecce */
-}
-
-.step-header:hover {
-  background: var(--beige-scuro);
-}
-
-/* ===== ELEMENTI HEADER (STILE ORIGINALE MA RESPONSIVE) ===== */
-.step-badge,
-.step-number {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 15px;
-  font-size: 0.9rem;
-  flex-shrink: 0;
-  background: var(--turchese);
-  color: white;
-  font-weight: bold;
-}
-
-.step-badge.bordered {
-  background: transparent;
-  border: 2px solid var(--turchese-scuro);
-  color: var(--turchese-scuro);
-  width: 28px;
-  height: 28px;
-}
-
-/* ===== FRECCE (ALLINEAMENTO PERFETTO) ===== */
-.step-arrow {
-  margin-left: auto;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  flex-shrink: 0;
-  padding-left: 10px;
-  display: flex;
-  align-items: center; /* Allineamento verticale */
-  height: 100%; /* Prende l'altezza completa dell'header */
-}
-
-/* Freccia Font Awesome */
-.step-arrow.fas {
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 0; /* Rimuove eventuali margini */
-}
-
-/* Freccia testuale (▼) */
-.step-arrow:not(.fas) {
-  font-size: 0.8rem;
-  color: #666;
-  width: 16px;
-  text-align: center;
-  line-height: 1; /* Evita spaziature indesiderate */
-}
-
-/* ===== CONTENUTI ESPANSI (RESPONSIVE MA STILE CONSERVATO) ===== */
-.step-content-flex-none,
-.step-details {
-  display: none;
-  padding: 15px 20px;
-  background: white;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  animation: fadeIn 0.3s ease-out;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden; /* Previene overflow */
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== STATO ESPANSO (CON GESTIONE RESPONSIVE) ===== */
-.expanded {
-  border: 1px solid var(--turchese-scuro);
-}
-
-.expanded .step-arrow.fas {
-  transform: rotate(180deg);
-}
-
-.expanded .step-arrow:not(.fas) {
-  transform: rotate(180deg);
-}
-
-.expanded .step-content-flex-none,
-.expanded .step-details {
-  display: block;
-  max-height: 1000px; /* Limite per animazioni */
-  transition: max-height 0.5s ease;
-}
-
-/* ===== COMPONENTI INTERNI RESPONSIVE ===== */
-.step-title {
-  flex-grow: 1;
-  min-width: 0;
-  overflow: hidden; /* Per ellipsis */
-}
-
-.step-title h5 {
-  margin: 0 0 4px 0;
-  color: #2c3e50;
-  font-size: 1.1rem;
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%; /* Adattamento mobile */
-}
-
-.step-title p {
-  margin: 0;
-  color: #666;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  word-break: break-word; /* Gestione testi lunghi */
-}
-
-/* ===== MEDIA QUERIES (OTTIMIZZAZIONE MOBILE) ===== */
-@media (max-width: 768px) {
-  .step-header {
-    padding: 15px;
-    flex-wrap: wrap; /* Permette wrap su mobile */
-  }
-
-  .step-title h5 {
-    white-space: normal; /* Permette multilinea */
-    font-size: 1rem;
-  }
-
-  .step-content-flex-none,
-  .step-details {
-    padding: 10px 15px;
-  }
-
-  .step-meta {
-    flex-direction: column;
-    gap: 5px;
-  }
-}
-
-/* ===== FIX PER ELEMENTI SPECIFICI ===== */
-/* Assicura che le immagini siano responsive */
-.step-content-flex-none img,
-.step-details img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Gestione tabelle e contenuti complessi */
-.step-content-flex-none table {
-  width: 100%;
-  display: block;
-  overflow-x: auto;
-}
-
-/* Mantiene lo stile originale per altri elementi */
-.info-box,
-.step-highlight,
-.step-meta {
-  /* [Tutti gli altri stili originali rimangono invariati] */
-  max-width: 100%; /* Aggiunto per responsive */
-}
 /* ==================== ICONE ==================== */
 .icon-dettagli-turchese-scuro {
     color: var(--turchese-scuro);
@@ -577,6 +382,13 @@
     line-height: 1.5;
     text-shadow: 1px 1px 2px rgba(107, 82, 42, 0.2);
     text-align: center;
+    display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 10px 5% !important;
+        box-sizing: border-box !important;
+
 }
 
 .itinerario-section .section-title:after {
@@ -634,6 +446,7 @@
 }
 
 /* ==================== BOX INFO TAPPE ITINERARIO ==================== */
+
 .info-box {
     background: var(--beige);
     border: 1px solid #e9ecef;
@@ -799,3 +612,142 @@
     color: #555;
     font-size: 1.2rem;
   }
+
+
+
+/* OVERRIDE PER LARGHEZZA COMPLETA */
+.itinerary-steps {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+    position: relative;
+    left: 0;
+    right: 0;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+.step-details,
+.detail-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 5 !important;
+    padding-right: 5 !important;
+    margin-left: 5 !important;
+    margin-right: 5 !important;
+}
+
+/* Fix per il contenuto interno */
+.itinerary-steps .section-subtitle-tappe,
+.itinerary-steps .step-card {
+    width: 100% !important;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+    margin-left: 5 !important;
+        margin-right: 5 !important;
+    box-sizing: border-box !important;
+}
+
+/* STILE OPZIONI RISTORAZIONE */
+.restaurant-option {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.option-header {
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-left: 4px solid #40e0d0;
+}
+
+.option-header h6 {
+    margin: 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge-price {
+    background: var(--turchese);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+
+.option-body {
+    padding: 15px;
+    background: var(--beige-scuro);
+}
+
+.option-detail {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+    font-size: 0.9rem;
+}
+
+.option-detail i {
+    color: var(--turchese-scuro);
+    margin-top: 3px;
+}
+
+/* STILE PARTE 3 */
+.bg-light-pink {
+    background-color: #fff0f5;
+}
+
+.info-box-header.bg-brown {
+    background-color: #6b522a !important;
+}
+
+.step-highlight.bg-light-pink i {
+    color: #e83e8c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .info-sublist div {
+        flex-wrap: wrap;
+    }
+}
+/* ICONE PERSONALIZZATE */
+.section-subtitle-tappe .fa-eye {
+    color: #6b522a;
+}
+
+.step-meta .fa-palette {
+    color: #e83e8c;
+}
+
+.step-meta .fa-fan {
+    color: #ff69b4;
+    transform: rotate(30deg);
+}
+
+.step-meta .fa-fish {
+    color: #068d9d;
+}
+
+/* STILE LINK PERCORSO */
+.info-sublist a {
+    color: var(--turchese-scuro);
+    text-decoration: underline;
+}
+
+.bg-light-pink {
+    background-color: #fff0f5;
+}
+
+
+
+
