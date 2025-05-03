@@ -33,6 +33,18 @@ window.LanguageSwitcher = {
                 window.location.href = '/lostInRome/indexEN.html';
             }else if(window.location.pathname.includes('/it/colosseo.html')) {
                 window.location.href = window.location.pathname.replace('src/pages/monument/it/colosseo.html', 'src/pages/monument/en/colosseo.html');
+            }else if(window.location.pathname.includes('/it/altareDellaPatria.html')) {
+                window.location.href = window.location.pathname.replace('src/pages/menu/it/altareDellaPatria.html', 'src/pages/menu/en/altareDellaPatria.html');
+            }else if(window.location.pathname.includes('/it/araPacis.html')) {//arapacis
+                window.location.href = window.location.pathname.replace('src/pages/menu/it/araPacis.html', 'src/pages/menu/en/araPacis.html');
+            }else if(window.location.pathname.includes('/it/fontanaDiTrevi.html')) {//fontana
+                 window.location.href = window.location.pathname.replace('src/pages/menu/it/fontanaDiTrevi.html', 'src/pages/menu/en/fontanaDiTrevi.html');
+            }else if(window.location.pathname.includes('/it/pantheon.html')) {//pantheon
+                 window.location.href = window.location.pathname.replace('src/pages/menu/it/pantheon.html', 'src/pages/menu/en/pantheon.html');
+            }else if(window.location.pathname.includes('/it/piazzaDelPopolo.html')) {//piazzaDelPopolo
+                window.location.href = window.location.pathname.replace('src/pages/menu/it/piazzaDelPopolo.html', 'src/pages/menu/en/piazzaDelPopolo.html');
+            }else if(window.location.pathname.includes('/it/piazzaDiSpagna.html')) { //piazzaDiSpagna
+                window.location.href = window.location.pathname.replace('src/pages/menu/it/piazzaDiSpagna.html', 'src/pages/menu/en/piazzaDiSpagna.html');
             }
 
         } else {
