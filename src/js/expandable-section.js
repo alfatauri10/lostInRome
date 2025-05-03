@@ -1,4 +1,4 @@
-
+//usato nelle homepage IT/EN, sezione itinerari, per i menù espandibili
 
 function toggleStep(header) {
   const container = header.closest('.expandable-step, .step-card');
