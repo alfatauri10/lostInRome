@@ -751,3 +751,9 @@
 
 
 
+/* Box Itinerari - Informazioni Generali/Orari consigliati - garantisce che nel mobile il testo sia allinato a sx */
+@media (max-width: 767.98px) {
+  .mobile-text-left {
+    text-align: left !important;
+  }
+}
