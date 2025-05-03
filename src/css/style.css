@@ -13,10 +13,12 @@ VERSION:    Version Number
 /* Definizione font personalizzato */
 @font-face {
   font-family: "hanskendrick";
-  src: url("../plugins/fonts/hanskendrick-regular-webfont.woff") format("woff");
+  src: url("/src/plugins/fonts/hanskendrick-regular-webfont.woff2") format("woff2"),
+  src: url("/src/plugins/fonts/hanskendrick-regular-webfont.woff") format("woff");
   font-style: normal;
   font-display: swap; /* Ottimizzazione caricamento font */
 }
+
 
 /* Stili base per il body */
 body {

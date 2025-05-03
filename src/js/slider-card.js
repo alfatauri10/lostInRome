@@ -14,7 +14,7 @@
   });
 
   // headroom js
-  $('.navigation').headroom();
+  //$('.navigation').headroom();
 
   // Background-images
   $('[data-background]').each(function () {
