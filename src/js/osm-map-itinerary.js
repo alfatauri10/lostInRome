@@ -52,6 +52,7 @@ function initItineraryMaps() {
     }
   ];
 
+
   mapsConfig.forEach(config => {
     const mapElement = document.getElementById(config.id);
 
@@ -107,3 +108,57 @@ if (document.readyState !== 'loading') {
 } else {
   document.addEventListener('DOMContentLoaded', initAllMapFeatures);
 }
+
+
+
+// Attende che il contenuto dinamico sia caricato
+function checkMapsLoaded() {
+  // Controlla ogni 200ms se i placeholder sono stati popolati
+  const checkInterval = setInterval(() => {
+    if (document.getElementById('lostInRomePlaceHolder').innerHTML &&
+        document.getElementById('adventureItineraryPlaceHolder').innerHTML) {
+      clearInterval(checkInterval);
+      initializeMaps();
+    }
+  }, 200);
+}
+
+// Inizializza le mappe
+function initializeMaps() {
+  // Forza l'inizializzazione delle mappe
+  if (window.initItineraryMaps) {
+    initItineraryMaps();
+
+    // Ridimensiona le mappe dopo un breve ritardo
+    setTimeout(() => {
+      const maps = [
+        document.getElementById('avventura-mappa-generale'),
+        document.getElementById('lostInRome-mappa-generale')
+      ];
+
+      maps.forEach(map => {
+        if (map && map._map) {
+          map._map.invalidateSize();
+        }
+      });
+    }, 300);
+  }
+}
+
+// Avvia il controllo quando la pagina è caricata
+if (document.readyState !== 'loading') {
+  checkMapsLoaded();
+} else {
+  document.addEventListener('DOMContentLoaded', checkMapsLoaded);
+}
+
+// Gestione cambio tab
+document.querySelectorAll('[data-toggle="tab"]').forEach(tab => {
+  tab.addEventListener('shown.bs.tab', function() {
+    setTimeout(() => {
+      if (window.initItineraryMaps) {
+        initItineraryMaps();
+      }
+    }, 300);
+  });
+});

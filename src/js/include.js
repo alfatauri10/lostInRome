@@ -4,7 +4,8 @@
 const APP_COMPONENTS = {
     headerPlaceHolder: "/src/pages/include/header.html",
     footerPlaceHolder: "/src/pages/include/footer.html",
-    lostInRomePlaceHolder: "/src/pages/include/lostInRomeIT.html"
+    lostInRomePlaceHolder: "/src/pages/itinerary/it/lostInRome.html",
+    adventureItineraryPlaceHolder: "/src/pages/itinerary/it/avventura.html"
 };
 
 //includeHTML riceve i path dei placeholder in ingresso

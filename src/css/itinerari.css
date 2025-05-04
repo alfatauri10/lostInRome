@@ -757,3 +757,18 @@
     text-align: left !important;
   }
 }
+
+.tab-content .tab-pane {
+  display: none;
+}
+.tab-content .tab-pane.active {
+  display: block;
+}
+
+<style>
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  min-height: 300px;
+}
+</style>
