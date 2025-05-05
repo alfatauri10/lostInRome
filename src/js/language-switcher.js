@@ -33,7 +33,19 @@ window.LanguageSwitcher = {
                 window.location.href = '/lostInRome/indexEN.html';
             }else if(window.location.pathname.includes('/it/colosseo.html')) {
                 window.location.href = window.location.pathname.replace('src/pages/monument/it/colosseo.html', 'src/pages/monument/en/colosseo.html');
-            }
+            }else if(window.location.pathname.includes('/it/altareDellaPatria.html')) {
+                             window.location.href = window.location.pathname.replace('src/pages/monument/it/altareDellaPatria.html', 'src/pages/monument/en/altareDellaPatria.html');
+                         }else if(window.location.pathname.includes('/it/araPacis.html')) {//arapacis
+                             window.location.href = window.location.pathname.replace('src/pages/monument/it/araPacis.html', 'src/pages/monument/en/araPacis.html');
+                         }else if(window.location.pathname.includes('/it/fontanaDiTrevi.html')) {//fontana
+                              window.location.href = window.location.pathname.replace('src/pages/monument/it/fontanaDiTrevi.html', 'src/pages/monument/en/fontanaDiTrevi.html');
+                         }else if(window.location.pathname.includes('/it/pantheon.html')) {//pantheon
+                              window.location.href = window.location.pathname.replace('src/pages/monument/it/pantheon.html', 'src/pages/monument/en/pantheon.html');
+                         }else if(window.location.pathname.includes('/it/piazzaDelPopolo.html')) {//piazzaDelPopolo
+                             window.location.href = window.location.pathname.replace('src/pages/monument/it/piazzaDelPopolo.html', 'src/pages/monument/en/piazzaDelPopolo.html');
+                         }else if(window.location.pathname.includes('/it/piazzaDiSpagna.html')) { //piazzaDiSpagna
+                             window.location.href = window.location.pathname.replace('src/pages/monument/it/piazzaDiSpagna.html', 'src/pages/monument/en/piazzaDiSpagna.html');
+                         }
 
         } else {
             flag.className = 'flag-icon flag-it';
@@ -58,7 +70,19 @@ window.LanguageSwitcher = {
                 window.location.href = window.location.pathname.replace('/lostInRome/indexEN.html', '/lostInRome/index.html');
             }else if(window.location.pathname.includes('/en/colosseo.html')) {
                 window.location.href = window.location.pathname.replace('src/pages/monument/en/colosseo.html', 'src/pages/monument/it/colosseo.html');
-            }
+            }else if(window.location.pathname.includes('/en/altareDellaPatria.html')) {
+              window.location.href = window.location.pathname.replace('src/pages/monument/en/altareDellaPatria.html', 'src/pages/monument/it/altareDellaPatria.html');
+          }else if(window.location.pathname.includes('/en/araPacis.html')) {//arapacis
+              window.location.href = window.location.pathname.replace('src/pages/monument/en/araPacis.html', 'src/pages/monument/it/araPacis.html');
+          }else if(window.location.pathname.includes('/en/fontanaDiTrevi.html')) {//fontana
+               window.location.href = window.location.pathname.replace('src/pages/monument/en/fontanaDiTrevi.html', 'src/pages/monument/it/fontanaDiTrevi.html');
+          }else if(window.location.pathname.includes('/en/pantheon.html')) {//pantheon
+               window.location.href = window.location.pathname.replace('src/pages/monument/en/pantheon.html', 'src/pages/monument/it/pantheon.html');
+          }else if(window.location.pathname.includes('/en/piazzaDelPopolo.html')) {//piazzaDelPopolo
+              window.location.href = window.location.pathname.replace('src/pages/monument/en/piazzaDelPopolo.html', 'src/pages/monument/it/piazzaDelPopolo.html');
+          }else if(window.location.pathname.includes('/en/piazzaDiSpagna.html')) { //piazzaDiSpagna
+              window.location.href = window.location.pathname.replace('src/pages/monument/en/piazzaDiSpagna.html', 'src/pages/monument/it/piazzaDiSpagna.html');
+          }
         }
 
         document.documentElement.lang = newLang;
