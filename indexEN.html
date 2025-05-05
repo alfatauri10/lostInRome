@@ -4,10 +4,11 @@
 <head>
   <meta charset="utf-8">
   <title>Lost in Rome | Discover Monuments</title>
+  <link rel="icon" type="image-png" href="/src/images/loghi/logoLostInRome_icona.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/src/plugins/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="/src/plugins/slick/slick.css">
-  <link rel="stylesheet" href="/src/plugins/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -108,7 +109,6 @@
           <article class="card bg-dark text-center text-white border-0 rounded-0">
             <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/pantheon.jpg" alt="post-thumb">
             <div class="card-content">
-
               <a class="btn btn-outline-light" href="src/pages/monument/en/pantheon.html">Visit the monument</a>
             </div>
           </article>
@@ -123,17 +123,20 @@
           <article class="card bg-dark text-center text-white border-0 rounded-0">
             <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/piazzaDelPopolo.jpg" alt="post-thumb">
             <div class="card-content">
-              <p class="text-uppercase">Piazza Del Popolo</p>
               <a class="btn btn-outline-light" href="src/pages/monument/en/piazzaDelPopolo.html">Visit the monument</a>
             </div>
           </article>
+          <div class="card-body text-center p-2">
+            <p class="card-titolo-monumento mb-2">
+              Piazza del Popolo
+            </p>
+          </div>
         </div>
 
         <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
           <article class="card bg-dark text-center text-white border-0 rounded-0">
             <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/piazzaDiSpagna2.jpg" alt="post-thumb">
             <div class="card-content">
-
               <a class="btn btn-outline-light" href="src/pages/monument/en/piazzaDiSpagna.html">Visit the monument</a>
             </div>
           </article>
@@ -207,7 +210,7 @@
               <div class="card testimonial-card">
                 <div class="card-body">
                   <h5 class="mb-3 text-center" style="color: var(--turchese-scuro);">General Information</h5>
-                  <div class="itinerary-details text-md-left text-center">
+                  <div class="itinerary-details text-md-left text-center mobile-text-left">
                     <div class="detail-item-itinerari mb-2">
                       <i class="fas fa-clock mr-2 icon-dettagli-turchese-scuro"></i>
                       <span><strong>Total duration:</strong> 1 full day</span>
@@ -239,7 +242,7 @@
               <div class="card testimonial-card">
                 <div class="card-body">
                   <h5 class="mb-3 text-center" style="color: var(--turchese-scuro);">Recommended Schedule</h5>
-                  <div class="itinerary-schedule text-md-left text-center">
+                  <div class="itinerary-schedule text-md-left text-center mobile-text-left">
                     <div class="detail-item-itinerari mb-2">
                       <span class="badge badge-primary mr-2 icon-consigli-orari">08:30-10:00</span>
                       <span>Altare della Patria</span>
@@ -825,7 +828,7 @@
               <div class="card testimonial-card">
                 <div class="card-body">
                   <h5 class="mb-3 text-center" style="color: var(--turchese-scuro);">General Information</h5>
-                  <div class="itinerary-details text-md-left text-center">
+                  <div class="itinerary-details text-md-left text-center mobile-text-left">
                     <div class="detail-item-itinerari mb-2">
                       <i class="fas fa-clock mr-2 icon-dettagli-turchese-scuro" ></i>
                       <span><strong>Total duration:</strong> 1 full day</span>
@@ -857,7 +860,7 @@
               <div class="card testimonial-card">
                 <div class="card-body">
                   <h5 class="mb-3 text-center" style="color: var(--turchese-scuro);">Recommended Schedule</h5>
-                  <div class="itinerary-schedule text-md-left text-center">
+                  <div class="itinerary-schedule text-md-left text-center mobile-text-left">
                     <div class="detail-item-itinerari mb-2 ">
                       <span class="badge badge-primary mr-2 icon-consigli-orari">09:00-12:00</span>
                       <span>Via Appia by bike with brunch</span>
@@ -1397,14 +1400,7 @@
                           <!-- OPTION 1: AVENTINO TERRACE -->
                           <div class="restaurant-option">
                             <div class="option-header" >
-                              <h6><i class="fas fa-cocktail"></i> Terrazza Aventino <span class="badge-price">€€</span>
-                                <a href="https://www.google.com/maps/place/Terrazza+Aventino/@41.8818,12.4790,18z/data=!4m6!3m5!1s0x132f61a1d8e3b3a7:0x7a1e8b3d3c3d3c3d!8m2!3d41.8818!4d12.4790!16s%2Fg%2F11b5y5y5y5?hl=it"
-                                   class="btn-map-marker-red"
-                                   target="_blank"
-                                   rel="noopener noreferrer">
-                                  <i class="fas fa-map-marker-alt"></i> Mostra sulla Mappa
-                                </a>
-                              </h6>
+                              <h6><i class="fas fa-cocktail"></i> Terrazza Aventino <span class="badge-price">€€</span></h6>
                             </div>
                             <div class="option-body">
                               <div class="option-detail">
@@ -1415,20 +1411,24 @@
                                 <i class="fas fa-clock"></i>
                                 <span><strong>Hours:</strong> 12:00-24:00 (happy hour 18-20)</span>
                               </div>
+                              <div class="option-detail">
+                                <i class="fas fa-map-marker-alt" style="color: #8B0000;"></i>
+                                <span>
+                                    <a href="https://www.google.com/maps/place/Terrazza+Aventino/@41.8818,12.4790,18z/data=!4m6!3m5!1s0x132f61a1d8e3b3a7:0x7a1e8b3d3c3d3c3d!8m2!3d41.8818!4d12.4790!16s%2Fg%2F11b5y5y5y5?hl=it"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       style="color: #8B0000; text-decoration: none;">
+                                      <strong>Show on Map</strong>
+                                    </a>
+                                  </span>
+                              </div>
                             </div>
                           </div>
 
                           <!-- OPTION 2: ZODIACO RESTAURANT -->
                           <div class="restaurant-option mt-3">
                             <div class="option-header" style="background-color: #f8f9fa; border-left: 4px solid #ffc107;">
-                              <h6><i class="fas fa-utensils"></i> Zodiaco Restaurant <span class="badge-price">€€€</span>
-                                <a href="https://www.google.com/maps/place/Ristorante+Lo+Zodiaco/@41.8818,12.4790,18z/data=!4m6!3m5!1s0x132f61a1d8e3b3a7:0x7a1e8b3d3c3d3c3d!8m2!3d41.8818!4d12.4790!16s%2Fg%2F11b5y5y5y5?hl=it"
-                                   class="btn-map-marker-red"
-                                   target="_blank"
-                                   rel="noopener noreferrer">
-                                  <i class="fas fa-map-marker-alt"></i> Show on map
-                                </a>
-                              </h6>
+                              <h6><i class="fas fa-utensils"></i> Zodiaco Restaurant <span class="badge-price">€€€</span></h6>
                             </div>
                             <div class="option-body">
                               <div class="option-detail">
@@ -1439,20 +1439,24 @@
                                 <i class="fas fa-euro-sign"></i>
                                 <span><strong>Budget:</strong> €25-40 per person (pasta+drink)</span>
                               </div>
+                              <div class="option-detail">
+                                <i class="fas fa-map-marker-alt" style="color: #8B0000;"></i>
+                                <span>
+                                    <a href="https://www.google.com/maps/place/Ristorante+Lo+Zodiaco/@41.8818,12.4790,18z/data=!4m6!3m5!1s0x132f61a1d8e3b3a7:0x7a1e8b3d3c3d3c3d!8m2!3d41.8818!4d12.4790!16s%2Fg%2F11b5y5y5y5?hl=it"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       style="color: #8B0000; text-decoration: none;">
+                                      <strong>Show on Map</strong>
+                                    </a>
+                                  </span>
+                              </div>
                             </div>
                           </div>
 
                           <!-- OPTION 3: PASSI BAKERY -->
                           <div class="restaurant-option mt-3">
                             <div class="option-header" style="background-color: #f8f9fa; border-left: 4px solid #28a745;">
-                              <h6><i class="fas fa-bread-slice"></i> Panificio Passi  <span class="badge-price">€</span>
-                                <a href="https://www.google.com/maps/place/Panificio+Passi/@41.8834,12.4806,17z/data=!3m1!4b1!4m6!3m5!1s0x132f605f9393a8a5:0x7e33e5b2a3e4b0a8!8m2!3d41.8834!4d12.4806!16s%2Fg%2F11b5y5y5y5?hl=it&entry=ttu"
-                                   class="btn-map-marker-red"
-                                   target="_blank"
-                                   rel="noopener noreferrer">
-                                  <i class="fas fa-map-marker-alt"></i> Show on map
-                                </a>
-                              </h6>
+                              <h6><i class="fas fa-bread-slice"></i> Panificio Passi  <span class="badge-price">€</span></h6>
                             </div>
                             <div class="option-body">
                               <div class="option-detail">
@@ -1462,6 +1466,17 @@
                               <div class="option-detail">
                                 <i class="fas fa-clock"></i>
                                 <span><strong>Hours:</strong> 7:00-20:00 (closed Tuesday afternoon)</span>
+                              </div>
+                              <div class="option-detail">
+                                <i class="fas fa-map-marker-alt" style="color: #8B0000;"></i>
+                                <span>
+                                       <a href="https://www.google.com/maps/place/Panificio+Passi/@41.8834,12.4806,17z/data=!3m1!4b1!4m6!3m5!1s0x132f605f9393a8a5:0x7e33e5b2a3e4b0a8!8m2!3d41.8834!4d12.4806!16s%2Fg%2F11b5y5y5y5?hl=it&entry=ttu"
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          style="color: #8B0000; text-decoration: none;">
+                                      <strong>Show on Map</strong>
+                                    </a>
+                                  </span>
                               </div>
                               <div class="step-highlight mt-2" style="background-color: #fff3cd;">
                                 <i class="fas fa-lightbulb"></i> <strong>Secret:</strong> Ask for "pizza riscaldata" to have it crispy!
@@ -1727,7 +1742,7 @@
                       <div>
                         <span class="info-label">Where:</span>
                         <span class="info-value">Via delle Terme di Traiano, 4A</span>
-                        <a href="https://www.google.com/maps/place/Via+delle+Terme+di+Traiano,+4A,+00184+Roma+RM/@41.8917,12.4886,17z/data=!3m1!4b1!4m6!3m5!1s0x132f61b6c3a8e5e5:0x7a1e8b3d3c3d3c3d!8m2!3d41.8917!4d12.4886!16s%2Fg%2F11b5y5y5y5?hl=it&entry=ttu"
+                        <a href="https://www.google.com/maps/place/Voodoo+Bar/@41.891814,12.488585,17z/data=!3m1!4b1!4m6!3m5!1s0x132f61b6c3a8e5e5:0x7a1e8b3d3c3d3c3d!8m2!3d41.891814!4d12.488585!16s%2Fg%2F11gdxv1n0k?entry=ttu"
                            class="btn-map-marker-red"
                            target="_blank"
                            rel="noopener noreferrer">
@@ -1982,7 +1997,7 @@
 <script src="/src/js/language-switcher.js"></script>
 <script src="/src/js/include.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="/src/js/itinerario-osm.js"></script>
+<script src="/src/js/osm-map-itinerary.js"></script> <!-- qsto è da modificare per ogni itinerario -->
 <script src="/src/js/expandable-section.js"></script>
 
 <script>
@@ -1993,79 +2008,6 @@
           adventureItineraryPlaceHolder: "src/pages/itinerary/it/avventura.html"
       });
   });
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Gestione click sui pulsanti "Mostra sulla mappa"
-  document.querySelectorAll('.btn-map-marker').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      const lat = this.getAttribute('data-lat');
-      const lon = this.getAttribute('data-lon');
-      const url = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=17/${lat}/${lon}`;
-      window.open(url, '_blank');
-    });
-  });
-});
-</script>
-
-<script>
-// Inizializza le mappe delle parti quando la pagina è caricata
-document.addEventListener('DOMContentLoaded', function() {
-  // Mappa generale
-  initAdventureMap();
-
-  // Aggiungi gestori di eventi per i pulsanti "Mostra sulla mappa"
-  document.querySelectorAll('.btn-map-marker').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      const lat = this.getAttribute('data-lat');
-      const lon = this.getAttribute('data-lon');
-      const url = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=17/${lat}/${lon}`;
-      window.open(url, '_blank');
-    });
-  });
-});
-
-// Funzione per inizializzare la mappa generale
-// Funzione per inizializzare tutte le mappe degli itinerari
-function initItineraryMaps() {
-  // Mappa Avventura
-  if (document.getElementById('avventura-mappa-generale')) {
-    const adventureMap = L.map('avventura-mappa-generale').setView([41.87, 12.49], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(adventureMap);
-
-    const adventureStops = JSON.parse(document.getElementById('avventura-mappa-generale').getAttribute('data-tappe'));
-    Object.keys(adventureStops).forEach((stop, index) => {
-      L.marker(adventureStops[stop]).addTo(adventureMap)
-        .bindPopup(`<b>${index+1}. ${stop}</b>`);
-    });
-  }
-
-  // Mappa Roma Discovery
-  if (document.getElementById('roma-discovery-mappa-generale')) {
-    const romeMap = L.map('roma-discovery-mappa-generale').setView([41.9025, 12.4800], 14);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(romeMap);
-
-    const romeStops = JSON.parse(document.getElementById('roma-discovery-mappa-generale').getAttribute('data-tappe'));
-    Object.keys(romeStops).forEach((stop, index) => {
-      L.marker(romeStops[stop]).addTo(romeMap)
-        .bindPopup(`<b>${index+1}. ${stop}</b>`);
-    });
-  }
-}
-
-// Chiamata alla funzione al caricamento del DOM
-document.addEventListener('DOMContentLoaded', function() {
-  initItineraryMaps();
-});
-
-
 </script>
 
 </body>
