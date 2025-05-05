@@ -7,9 +7,10 @@
 
   <!-- Meta e stili -->
   <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link rel="icon" type="image-png" href="/src/images/loghi/logoLostInRome_icona.png">
   <link href="/src/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
   <link href="/src/plugins/slick/slick.css" rel="stylesheet">
-  <link href="/src/plugins/themify-icons/themify-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -65,9 +66,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-5 mb-4 mb-lg-0">
-          <!-- TODO (JAlfandari): inserisci qui il nome del monumento -->
           <h1 class="titoli">Altare della Patria</h1>
-          <!-- TODO (JAlfandari): inserisci qui una breve frase ad effetto sul monumento -->
           <p class="lead">L' Altare della Patria, custode eterno dell'orgoglio italiano</p>
         </div>
 
@@ -78,13 +77,13 @@
 
             <div class="gallery-item">
               <a href="#storia">
-                <img alt="alatre della patria vista panoramica" src="/src/images/monuments/altareDellaPatria/img2.jpg">
+                <img alt="altare della patria vista panoramica" src="/src/images/monuments/altareDellaPatria/img1.jpg">
               </a>
             </div>
 
             <div class="gallery-item">
               <a href="#usato-oggi">
-                <img alt="Dettagli architettonici" src="/src/images/monuments/altareDellaPatria/img1.jpg">
+                <img alt="Dettagli architettonici" src="/src/images/monuments/altareDellaPatria/img2.jpg">
               </a>
             </div>
 
@@ -107,6 +106,41 @@
   </section>
 
   <!-- Sezione Storia -->
+  <style>
+    .button1 {
+        position: absolute;   /* Posizionamento assoluto */
+        left: 1040px;           /* Distanza dal lato sinistro */
+        top: 798px;            /* Distanza dall'alto */
+        z-index: 100;         /* In cima a altri elementi */
+`   }
+
+    .button1 button {
+        background-color: #e1dcd3;  /* Colore di sfondo grigio */
+        color: black;               /* Colore del testo */
+        padding: 10px 20px;         /* Spaziatura interna */
+        border: none;               /* Nessun bordo */
+        border-radius: 5px;         /* Bordo arrotondato */
+        font-size: 16px;            /* Grandezza del font */
+        cursor: pointer;           /* Cambio cursore */
+    }
+
+    .button1 button .icon {
+      font-size: 20px;            /* Grandezza dell'icona */
+      margin-right: 8px;          /* Distanza tra icona e testo */
+    }
+  </style>
+
+
+  <div class = "button1">
+    <button onclick="playAudio()">
+      <i id="audioIcon1" class="fas fa-volume-up icon"></i>
+    </button>
+
+    <audio id="myAudio">
+      <source src="/src/audio/StoriaECostruzioneColosseoIT.m4a" type="audio/mpeg">
+    </audio>
+  </div>
+
   <section class="content-section" id="storia">
     <span class="section-anchor"></span>
     <div class="container">
@@ -115,18 +149,19 @@
           <h2 class="section-title-right text-right">Storia e costruzione</h2>
           <div class="row">
             <div class="col-md-6">
-              <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
-              <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/images/monuments/colosseo/img1.jpg">
+              <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/images/monuments/altareDellaPatria/img1.jpg">
             </div>
             <div class="col-md-6 text-justify">
-              <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Storia" -->
-              <p>La costruzione del Colosseo iniziò sotto l'imperatore Vespasiano nel 72 d.C. e fu
-                completata nell'80 d.C. sotto Tito. Fu edificato sul sito del lago artificiale della
-                Domus Aurea di Nerone, come simbolo del ritorno al popolo romano degli spazi
-                pubblici.</p>
-              <p>L'anfiteatro poteva ospitare tra i 50.000 e gli 87.000 spettatori ed era utilizzato per
-                spettacoli pubblici, combattimenti tra gladiatori e rievocazioni di battaglie
-                famose.</p>
+              <p>L'Altare della Patria è un simbolo dell'identità nazionale italiana. Fu costruito per ricordare il primo re d'Italia.
+                Chiamato anche Vittoriano, questo straordinario edificio si trova in Piazza Venezia, proprio nel centro di Roma.
+                La sua grande struttura bianca è diventata un noto simbolo della storia italiana.</p>
+              <p>1885:
+                  La costruzione iniziò durante il regno di Umberto I e il progetto fu affidato all'architetto Giuseppe Sacconi.</p>
+              <p>1900-1910:
+                  La maggior parte dell'edificio fu completato e molti artisti italiani contribuirono alle decorazioni.</p>
+              <p>1911:
+                  Il monumento fu ufficialmente inaugurato durante una cerimonia per celebrare il 50° anniversario dell'Unità d'Italia.</p>
+                </p>
             </div>
           </div>
         </div>
@@ -136,6 +171,41 @@
 
 
   <!-- Sezione "Come è usato oggi" -->
+  <style>
+    .button2 {
+        position: absolute;   /* Posizionamento assoluto */
+        left: 420px;           /* Distanza dal lato sinistro */
+        top: 1370px;            /* Distanza dall'alto */
+        z-index: 100;         /* In cima a altri elementi */
+`   }
+
+    .button2 button {
+        background-color: var(--beige);  /* Colore di sfondo grigio */
+        color: black;               /* Colore del testo */
+        padding: 10px 20px;         /* Spaziatura interna */
+        border: none;               /* Nessun bordo */
+        border-radius: 5px;         /* Bordo arrotondato */
+        font-size: 16px;            /* Grandezza del font */
+        cursor: pointer;           /* Cambio cursore */
+    }
+
+    .button2 button .icon {
+      font-size: 20px;            /* Grandezza dell'icona */
+      margin-right: 8px;          /* Distanza tra icona e testo */
+    }
+  </style>
+
+
+  <div class ="button2">
+    <button onclick="playAudio2()">
+      <i id="audioIcon2" class="fas fa-volume-up icon"></i>
+    </button>
+
+    <audio id="myAudio2">
+      <source src="/src/audio/FattiRecentiColosseoIT.m4a" type="audio/mpeg">
+    </audio>
+  </div>
+
   <section class="content-section" id="usato-oggi">
     <span class="section-anchor"></span>
     <div class="container">
@@ -144,18 +214,25 @@
           <h2 class="section-title-left">Come è usato oggi</h2>
           <div class="row">
             <div class="col-md-6 order-md-2 text-justify">
-              <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Usato oggi" -->
-              <p>Oggi il Colosseo è una delle attrazioni turistiche più visitate al mondo e un simbolo
-                iconico di Roma. Oltre ad essere un museo a cielo aperto, occasionalmente ospita eventi
-                culturali e concerti. Nel 2007 è stato inserito tra le Nuove sette meraviglie del mondo
-                moderno.</p>
-              <p>I lavori di restauro continuano per preservare questo monumento storico per le
-                generazioni future.</p>
+              <p>Museo dell'Unità:
+                All'interno si trova il Museo del Risorgimento, dove i visitatori possono
+                esaminare i documenti storici originali.
+              </p>
+              <p>
+                Terrazza panoramica:
+                Nel 2007 è stato aggiunto un ascensore panoramico, che offre una vista spettacolare sulla Città Eterna.
+              </p>
+              <p>
+              Cerimonie ufficiali: Il monumento è utilizzato anche per celebrazioni nazionali e vi si tengono regolarmente eventi importanti.
+              </p>
+              <p>
+                Restauro 2023:
+                A marzo è iniziato un importante progetto. Hanno iniziato a pulire la facciata dai danni causati dall'inquinamento.
+              </p>
             </div>
             <div class="col-md-6 order-md-1">
-              <!-- TODO (JAlfandari): Inserisci qui la tua img2. Modifica ALT con una breve descrizione e SRC con percorso -->
               <img alt="Struttura architettonica" class="img-fluid rounded"
-                   src="/src/images/monuments/colosseo/img2.jpg"> <!-- img2 -->
+                   src="/src/images/monuments/altareDellaPatria/img2.jpg">
             </div>
           </div>
         </div>
@@ -164,6 +241,38 @@
   </section>
 
   <!-- Sezione "Fatti recenti" -->
+  <style>
+    .button3 {
+        position: absolute;   /* Posizionamento assoluto */
+        left: 1160px;           /* Distanza dal lato sinistro */
+        top: 1945px;            /* Distanza dall'alto */
+        z-index: 100;         /* In cima a altri elementi */
+`   }
+
+    .button3 button {
+        background-color: #e1dcd3;  /* Colore di sfondo grigio */
+        color: black;               /* Colore del testo */
+        padding: 10px 20px;         /* Spaziatura interna */
+        border: none;               /* Nessun bordo */
+        border-radius: 5px;         /* Bordo arrotondato */
+        font-size: 16px;            /* Grandezza del font */
+        cursor: pointer;           /* Cambio cursore */
+    }
+
+    .button3 button .icon {
+      font-size: 20px;            /* Grandezza dell'icona */
+      margin-right: 8px;          /* Distanza tra icona e testo */
+    }
+  </style>
+  <div class ="button3">
+    <button onclick="playAudio3()">
+      <i id="audioIcon3" class="fas fa-volume-up icon"></i>
+    </button>
+
+    <audio id="myAudio3">
+      <source src="/src/audio/UsoOdiernoColosseoIT.m4a" type="audio/mpeg">
+    </audio>
+  </div>
   <section class="content-section" id="fatti-recenti">
     <span class="section-anchor"></span>
 
@@ -173,17 +282,27 @@
           <h2 class="section-title-right text-right">Fatti recenti</h2>
           <div class="row">
             <div class="col-md-6">
-              <!-- TODO (JAlfandari): Inserisci qui la tua img3. Modifica ALT con una breve descrizione e SRC con percorso -->
+
               <img alt="Fatti recenti" class="img-fluid rounded"
-                   src="/src/images/monuments/colosseo/img3.jpeg"> <!--img3 -->
+                   src="/src/images/monuments/altareDellaPatria/img3.jpg"> <!--img3 -->
             </div>
             <div class="col-md-6 text-justify">
-              <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "FATTI RECENTI" -->
-              <p>Nel 2021 sono stati completati importanti lavori di restauro della facciata nord del
-                Colosseo, finanziati dalla casa di moda Tod's. Nel 2023 è stato aperto al pubblico il
-                nuovo percorso sotterraneo che permette ai visitatori di esplorare l'ipogeo.</p>
-              <p>Recenti studi archeologici hanno anche rivelato nuovi dettagli sul sistema di
-                sollevamento utilizzato per portare gli animali e le scenografie nell'arena.</p>
+
+              <p>25 aprile – Festa della Liberazione:
+                Si celebra la liberazione dell’Italia dal nazifascismo, avvenuta nel 1945.
+                È una data simbolica che ricorda l’insurrezione generale proclamata dal Comitato di Liberazione Nazionale,
+                che portò alla fine dell’occupazione tedesca e alla caduta del regime fascista.
+              </p>
+              <p>
+                2 giugno – Festa della Repubblica:
+                Si celebra la nascita della Repubblica Italiana, dopo il referendum istituzionale del 1946 in cui gli italiani scelsero di abolire la monarchia.
+                È una delle ricorrenze civili più importanti, con celebrazioni ufficiali a Roma, tra cui la parata militare ai Fori Imperiali.
+              </p>
+              </p>
+                Frecce Tricolori:
+                Durante entrambe le ricorrenze, le Frecce Tricolori (Pattuglia Acrobatica Nazionale) offrono spettacolari sorvoli con le scie di fumo verde,
+                bianco e rosso.</p>
+              </p>
             </div>
           </div>
         </div>
@@ -192,6 +311,41 @@
   </section>
 
   <!-- Sezione "Leggende e fatti divertenti" -->
+  <style>
+    .button4 {
+    position : absolute;   /* Posizionamento assoluto */
+    left: 410px;           /* Distanza dal lato sinistro */
+    top: 2528px;            /* Distanza dall'alto */
+    z-index: 100;         /* In cima a altri elementi */
+    }
+
+    .button4 button {
+    background-color: var(--beige)  /* Colore di sfondo grigio */
+    color: black;               /* Colore del testo */
+    padding: 10px 20px;         /* Spaziatura interna */
+    border: none;               /* Nessun bordo */
+    border-radius: 5px;         /* Bordo arrotondato */
+    font-size: 16px;            /* Grandezza del font */
+    cursor: pointer;           /* Cambio cursore */
+    }
+
+    .button4 button .icon {
+    font-size: 20px;            /* Grandezza dell'icona */
+    margin-right: 8px;          /* Distanza tra icona e testo */
+    }
+  </style>
+
+
+  <div class ="button4">
+    <button onclick="playAudio4()">
+      <i id="audioIcon4" class="fas fa-volume-up icon"></i>
+    </button>
+
+    <audio id="myAudio4">
+      <source src="/src/audio/FattiDivertentiColosseoIT.m4a" type="audio/mpeg">
+    </audio>
+  </div>
+
   <section class="content-section" id="curiosita">
     <span class="section-anchor"></span>
     <div class="container">
@@ -200,18 +354,18 @@
           <h2 class="section-title-left">Leggende e fatti divertenti</h2>
           <div class="row">
             <div class="col-md-6 order-md-2 text-justify">
-              <!-- TODO (JAlfandari): Inserisci qui testo della sezione "CURIOSITA" -->
               <ul class="custom-star-list">
-                <li>Si dice che i sacerdoti cristiani usassero il Colosseo per determinare se qualcuno  fosse un vampiro</li>
-                <li>Il Colosseo aveva un enorme velario che poteva essere spiegato per proteggere gli spettatori dal sole</li>
-                <li>Durante i giochi inaugurali nel 80 d.C., gli spettacoli durarono 100 giorni</li>
-                <li>Si stima che solo un terzo dell'originale Colosseo sia sopravvissuto fino ai giorni nostri</li>
+                "La macchina da scrivere"
+                <li>I romani gli diedero questo soprannome ironico. Le colonne sembrano i tasti di una macchina da scrivere.</li>
+                Nozze proibite
+                <li>Le cerimonie nuziali erano state vietate. Il monumento è considerato troppo serio per i matrimoni.</li>
+                Incomprensione storica
+                <li>Il monumento è stato erroneamente associato al fascismo. Era stato completato prima dell'ascesa di Mussolini.</li>
               </ul>
             </div>
             <div class="col-md-6 order-md-1">
-              <!-- TODO (JAlfandari): Inserisci qui la tua img4. Modifica ALT con una breve descrizione e SRC con percorso -->
               <img alt="Leggende e fatti divertenti" class="img-fluid rounded"
-                   src="/src/images/monuments/colosseo/img4.jpg"> <!-- img4 -->
+                   src="/src/images/monuments/altareDellaPatria/img4.jpg">
             </div>
           </div>
         </div>
@@ -226,19 +380,17 @@
         <div class="col-12">
           <h2 class="section-title-left text-center">Posizione</h2>
 
-          <!-- TODO (JAlfandari): Inserisci in src la posizione del tuo monumento su openstreatmaps-->
           <iframe id="osm-iframe"
                   width="100%"
                   height="400"
                   style="border:none; border-radius:8px;"
-                  data-default-pos="41.8902,12.4924"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=12.4800,41.8800,12.5000,41.9000&layer=mapnik&marker=41.8902,12.4924">
+                  data-default-pos="41.89440,12.48322"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=12.444634437561037%2C41.87901957903128%2C12.521796226501467%2C41.90978279285019&amp;layer=mapnik&amp;marker=41.89440303809971%2C12.48321533203125">
           </iframe>
 
           <div class="text-center mt-4">
-            <!-- TODO (JAlfandari): Inserisci in href la posizione del tuo monumento -->
             <a class="btn btn-outline-turchese d-inline-flex align-items-center"
-               href="https://www.google.com/maps/place/Colosseo/@41.8902102,12.4922309,17z/data=!3m1!4b1!4m6!3m5!1s0x132f61b6532013ad:0x28f1c82e908503c4!8m2!3d41.8902102!4d12.4922309!16zL20vMDZjNjI?entry=ttu"
+               href="https://www.google.it/maps/place/Altare+della+Patria/@41.8949,12.4803638,17z/data=!4m6!3m5!1s0x132f604cc43c894d:0xc8f589780ea9feb5!8m2!3d41.894891!4d12.4829541!16s%2Fg%2F11kpdgv8kk?hl=it&entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D"
                target="_blank">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
@@ -258,25 +410,92 @@
 <div id="footerPlaceHolder"></div>
 
 <!-- Scripts -->
+<script src="/src/plugins/jQuery/jquery.min.js"></script>
+<script src="/src/plugins/bootstrap/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/src/plugins/masonry/masonry.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-<script src="/src/js/osm-map.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script><!-- script per l'icona speaker -->
+
+<script src="/src/js/osm-map-monument.js"></script>
 <script src="/src/js/slider-card.js"></script>
 <script src="/src/js/gallery-monuments-scroll.js"></script> <!-- script per la galleria di immagini -->
 <script src="/src/js/language-switcher.js"></script> <!-- script per lo switch lingua -->
 <script src="/src/js/include.js"></script> <!-- script per l'inclusione di altre pagine  -->
 
 <script>
-          document.addEventListener("DOMContentLoaded", function() {
-              includeHTML({
-                  headerPlaceHolder: "../../include/header.html",
-                  footerPlaceHolder: "../../include/footer.html"
-              });
-          });
+  document.addEventListener("DOMContentLoaded", function() {
+      includeHTML({
+          headerPlaceHolder: "../../include/header.html",
+          footerPlaceHolder: "../../include/footer.html"
+      });
+  });
 
-    </script>
+</script>
+<script>
+  function playAudio() {
+    var audio = document.getElementById("myAudio");
+
+    if (audio.paused) {
+      audio.play();
+      icon.classList.remove("fa-volume-up");
+      icon.classList.add("fa-pause");
+    } else {
+      audio.pause();
+      icon.classList.remove("fa-pause");
+      icon.classList.add("fa-volume-up");
+    }
+  }
+</script>
+<script>
+  function playAudio2() {
+    var audio = document.getElementById("myAudio2");
+
+
+    if (audio.paused) {
+      audio.play();
+      icon.classList.remove("fa-volume-up");
+      icon.classList.add("fa-pause");
+    } else {
+      audio.pause();
+      icon.classList.remove("fa-pause");
+      icon.classList.add("fa-volume-up");
+    }
+  }
+</script>
+<script>
+  function playAudio3() {
+    var audio = document.getElementById("myAudio3");
+
+
+    if (audio.paused) {
+      audio.play();
+      icon.classList.remove("fa-volume-up");
+      icon.classList.add("fa-pause");
+    } else {
+      audio.pause();
+      icon.classList.remove("fa-pause");
+      icon.classList.add("fa-volume-up");
+    }
+  }
+</script>
+<script>
+  function playAudio4() {
+    var audio = document.getElementById("myAudio4");
+
+    if (audio.paused) {
+      audio.play();
+      icon.classList.remove("fa-volume-up");
+      icon.classList.add("fa-pause");
+    } else {
+      audio.pause();
+      icon.classList.remove("fa-pause");
+      icon.classList.add("fa-volume-up");
+    }
+  }
+</script>
 </body>
 </html>
 

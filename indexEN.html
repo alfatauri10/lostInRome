@@ -3,636 +3,2012 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Lost in Rome | Scopri i Monumenti</title>
+  <title>Lost in Rome | Discover Monuments</title>
+  <link rel="icon" type="image-png" href="/src/images/loghi/logoLostInRome_icona.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="src/plugins/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="src/plugins/slick/slick.css">
-  <link rel="stylesheet" href="src/plugins/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="/src/plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="/src/plugins/slick/slick.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="/src/css/itinerari.css" rel="stylesheet">
+  <link href="/src/css/expand.css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
         crossorigin=""/>
 
-
-
   <!-- Main Stylesheet -->
-  <link href="/src/css/style.css" rel="stylesheet">
-
+  <link href="src/css/style.css" rel="stylesheet">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
           crossorigin="anonymous">
   </script>
-
-
 </head>
 
 <body>
 
-  <!-- preloader -->
-  <div class="preloader">
-    <div class="loader">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+<!-- preloader -->
+<div class="preloader">
+  <div class="loader">
+    <span class="dot"></span>
+    <div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </div>
-  <!-- /preloader -->
+</div>
+<!-- /preloader -->
 
-  <!-- Header -->
-  <div id = "headerPlaceHolder"></div>
+<!-- Header -->
+<div id = "headerPlaceHolder"></div>
 
-  <!-- Main Content -->
+<!-- Main Content -->
 
 
-  <div class="page-content">
+<div class="page-content">
 
-    <section>
-      <a class="navbar-brand" href="/lostInRome/indexEN.html">
-        <span class="motto-text-body">For lovers lost in Rome</span>
-      </a>
-    </section>
-    <!-- Featured Posts -->
-    <section class="galleria-monumenti">
-      <div class="container-fluid px-0">
-        <div class="row featured-post-slider">
-          <!-- Ripeti per ogni immagine (1-6) -->
-          <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
-            <article class="card bg-dark text-center text-white border-0 rounded-0">
-              <img class="card-img rounded-0 img-fluid w-100" src="/src/images/copertineMonuments/altareDellaPatria.jpg" alt="post-thumb">
-              <div class="card-content">
+  <section>
+    <a class="navbar-brand" href="/lostInRome/indexEN.html">
+      <span class="motto-text-body">For lovers lost in Rome</span>
+    </a>
+  </section>
+  <!-- Featured Posts -->
+  <section class="galleria-monumenti">
+    <div class="container-fluid px-0">
+      <div class="row featured-post-slider">
+        <!-- Ripeti per ogni immagine (1-6) -->
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="/src/images/copertineMonuments/altareDellaPatria.jpg" alt="post-thumb">
+            <div class="card-content">
 
-                <a class="btn btn-outline-light" href="src/pages/monument/en/altareDellaPatria.html">Visit the monument</a>
-              </div>
-            </article>
-            <div class="card-body text-center p-2">
-              <p class="card-titolo-monumento mb-2">
-                Altare Della Patria
-              </p>
+              <a class="btn btn-outline-light" href="src/pages/monument/en/altareDellaPatria.html">Visit the monument</a>
             </div>
+          </article>
+          <div class="card-body text-center p-2">
+            <p class="card-titolo-monumento mb-2">
+              Altare Della Patria
+            </p>
           </div>
-
-          <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
-            <article class="card bg-dark text-center text-white border-0 rounded-0">
-              <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/Ara-Pacis.jpg" alt="post-thumb">
-              <div class="card-content">
-
-                <a class="btn btn-outline-light" href="src/pages/monument/en/araPacis.html">Visit the monument</a>
-              </div>
-            </article>
-            <div class="card-body text-center p-2">
-              <p class="card-titolo-monumento mb-2">
-                Ara Pacis
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
-            <article class="card bg-dark text-center text-white border-0 rounded-0">
-              <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/fontanaDiTrevi.jpg" alt="post-thumb">
-              <div class="card-content">
-
-                <a class="btn btn-outline-light" href="src/pages/monument/en/fontanaDiTrevi.html">Visit the monument</a>
-              </div>
-            </article>
-            <div class="card-body text-center p-2">
-              <p class="card-titolo-monumento mb-2">
-                Fontana Di Trevi
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
-            <article class="card bg-dark text-center text-white border-0 rounded-0">
-              <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/pantheon.jpg" alt="post-thumb">
-              <div class="card-content">
-
-                <a class="btn btn-outline-light" href="src/pages/monument/en/pantheon.html">Visit the monument</a>
-              </div>
-            </article>
-            <div class="card-body text-center p-2">
-              <p class="card-titolo-monumento mb-2">
-                Pantheon
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
-            <article class="card bg-dark text-center text-white border-0 rounded-0">
-              <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/piazzaDelPopolo.jpg" alt="post-thumb">
-              <div class="card-content">
-                <p class="text-uppercase">Piazza Del Popolo</p>
-                <a class="btn btn-outline-light" href="src/pages/monument/en/piazzaDelPopolo.html">Visit the monument</a>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
-            <article class="card bg-dark text-center text-white border-0 rounded-0">
-              <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/piazzaDiSpagna2.jpg" alt="post-thumb">
-              <div class="card-content">
-
-                <a class="btn btn-outline-light" href="src/pages/monument/en/piazzaDiSpagna.html">Visit the monument</a>
-              </div>
-            </article>
-            <div class="card-body text-center p-2">
-              <p class="card-titolo-monumento mb-2">
-                Piazza Di Spagna
-              </p>
-            </div>
-          </div>
-
         </div>
+
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/Ara-Pacis.jpg" alt="post-thumb">
+            <div class="card-content">
+
+              <a class="btn btn-outline-light" href="src/pages/monument/en/araPacis.html">Visit the monument</a>
+            </div>
+          </article>
+          <div class="card-body text-center p-2">
+            <p class="card-titolo-monumento mb-2">
+              Ara Pacis
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/fontanaDiTrevi.jpg" alt="post-thumb">
+            <div class="card-content">
+
+              <a class="btn btn-outline-light" href="src/pages/monument/en/fontanaDiTrevi.html">Visit the monument</a>
+            </div>
+          </article>
+          <div class="card-body text-center p-2">
+            <p class="card-titolo-monumento mb-2">
+              Fontana Di Trevi
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/pantheon.jpg" alt="post-thumb">
+            <div class="card-content">
+              <a class="btn btn-outline-light" href="src/pages/monument/en/pantheon.html">Visit the monument</a>
+            </div>
+          </article>
+          <div class="card-body text-center p-2">
+            <p class="card-titolo-monumento mb-2">
+              Pantheon
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/piazzaDelPopolo.jpg" alt="post-thumb">
+            <div class="card-content">
+              <a class="btn btn-outline-light" href="src/pages/monument/en/piazzaDelPopolo.html">Visit the monument</a>
+            </div>
+          </article>
+          <div class="card-body text-center p-2">
+            <p class="card-titolo-monumento mb-2">
+              Piazza del Popolo
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
+          <article class="card bg-dark text-center text-white border-0 rounded-0">
+            <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/piazzaDiSpagna2.jpg" alt="post-thumb">
+            <div class="card-content">
+              <a class="btn btn-outline-light" href="src/pages/monument/en/piazzaDiSpagna.html">Visit the monument</a>
+            </div>
+          </article>
+          <div class="card-body text-center p-2">
+            <p class="card-titolo-monumento mb-2">
+              Piazza Di Spagna
+            </p>
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-  </div>
+</div>
 
-  <!-- Sezione Itinerari -->
-  <section class="section bg-gray">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center mb-5">
-          <h2 class="section-title">Scopri Roma con i nostri itinerari</h2>
-          <p class="lead">Percorsi tematici studiati per ottimizzare il tuo tempo e vivere esperienze uniche</p>
-        </div>
+<!-- Sezione Itinerari -->
+
+<!-- Itineraries Section -->
+<section class="section bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="section-title">Discover Rome with Our Itineraries</h2>
+        <p class="lead" style="color:var(--turchese);">
+          Thematic routes designed to optimize your time and offer unique experiences
+        </p>
       </div>
+    </div>
 
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs justify-content-center" id="itineraryTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="LostInRome-tab" data-toggle="tab" href="#LostInRome" role="tab">LostInRome</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="adventure-tab" data-toggle="tab" href="#adventure" role="tab">Adventure</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="baroque-tab" data-toggle="tab" href="#castelli" role="tab">Roman Castles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="food-tab" data-toggle="tab" href="#food" role="tab">Food & Wine</a>
+      </li>
+    </ul>
 
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs justify-content-center" id="itineraryTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="classic-tab" data-toggle="tab" href="#classic" role="tab">Classica</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="baroque-tab" data-toggle="tab" href="#baroque" role="tab">Barocca</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="secret-tab" data-toggle="tab" href="#secret" role="tab">Segreta</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="food-tab" data-toggle="tab" href="#food" role="tab">Gastronomica</a>
-        </li>
-      </ul>
+    <!-- Tab panes -->
+    <div class="tab-content pt-5" id="itineraryTabContent">
+      <!-- START LostInRome ITINERARY -->
+      <div class="tab-pane fade show active" id="LostInRome" role="tabpanel">
+        <div class="container">
+          <div class="row">
 
+            <!-- Description -->
+            <div class="col-12 mb-4">
+              <h3 class="section-subtitle text-left mb-3">LostInRome</h3>
+              <p class="text-justify mb-2">
+                <i>
+                  Our itinerary was born as part of a school project aimed at discovering and showcasing Rome's historical heritage in our own way.
+                  We've selected six of the Eternal City's most significant monuments, each representing a different era and aspect of its millennia-old history.
+                </i>
+              </p>
+              <div class="signature-font text-right mb-3">
+                <i>by Jacopo</i>
+              </div>
+            </div>
+            <!-- end Description -->
 
-      <!-- Tab panes -->
-      <div class="tab-content pt-5" id="itineraryTabContent">
-        <!-- Itinerario Classico -->
-        <div class="tab-pane fade show active" id="classic" role="tabpanel">
-          <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-              <div class="map-container">
-                <div id="itinerario-mappa"
-                     data-monumenti='{
-                    "Colosseo": [41.8902, 12.4924],
-                    "Foro Romano": [41.8925, 12.4857],
-                    "Pantheon": [41.8986, 12.4768]
-                  }'
-                     style="height: 400px; border-radius: 8px;"></div>
-                <div class="text-center mt-2">
-                  <a class="btn btn-outline-primary btn-sm"
-                     href="https://www.openstreetmap.org/#map=15/41.8902/12.4924"
-                     target="_blank">
-                    Visualizza mappa completa
-                  </a>
+            <!-- General Details -->
+            <div class="col-md-6">
+              <div class="card testimonial-card">
+                <div class="card-body">
+                  <h5 class="mb-3 text-center" style="color: var(--turchese-scuro);">General Information</h5>
+                  <div class="itinerary-details text-md-left text-center mobile-text-left">
+                    <div class="detail-item-itinerari mb-2">
+                      <i class="fas fa-clock mr-2 icon-dettagli-turchese-scuro"></i>
+                      <span><strong>Total duration:</strong> 1 full day</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <i class="fas fa-route mr-2 icon-dettagli-turchese-scuro"></i>
+                      <span><strong>Total distance:</strong> ~6 km (on foot)</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <i class="fas fa-mountain mr-2 icon-dettagli-turchese-scuro"></i>
+                      <span><strong>Difficulty:</strong> Easy (urban route)</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <i class="fas fa-euro-sign mr-2 icon-dettagli-turchese-scuro"></i>
+                      <span><strong>Base budget:</strong> €30-50 (entrances and snacks)</span>
+                    </div>
+                    <div class="detail-item-itinerari">
+                      <i class="fas fa-glass-cheers mr-2 icon-dettagli-turchese-scuro"></i>
+                      <span><strong>Comfort budget:</strong> €60-80 (entrances, sit-down meals, aperitifs)</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-6">
-              <h3 class="mb-4">Roma Classica in un giorno</h3>
-              <p>L'itinerario perfetto per chi visita Roma per la prima volta. Un percorso cronologico che ti porterà dalle origini della città al suo massimo splendore.</p>
+            <!-- end General Details -->
 
-
-              <div class="itinerary-details mt-4">
-                <div class="detail-item">
-                  <i class="ti-time text-primary mr-2"></i>
-                  <span><strong>Durata:</strong> 6-8 ore</span>
-                </div>
-                <div class="detail-item">
-                  <i class="ti-map-alt text-primary mr-2"></i>
-                  <span><strong>Distanza:</strong> 5 km</span>
-                </div>
-                <div class="detail-item">
-                  <i class="ti-star text-primary mr-2"></i>
-                  <span><strong>Difficoltà:</strong> Media</span>
-                </div>
-              </div>
-
-
-              <div class="itinerary-steps mt-4">
-                <div class="step">
-                  <div class="step-number bg-primary">1</div>
-                  <div class="step-content">
-                    <h5>Colosseo</h5>
-                    <p>Inizia la giornata con il simbolo di Roma. Visita l'arena e l'ipogeo.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8902" data-lon="12.4924">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="step-number bg-primary">2</div>
-                  <div class="step-content">
-                    <h5>Foro Romano</h5>
-                    <p>Passeggia tra le rovine dell'antico centro politico e religioso.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8925" data-lon="12.4857">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="step-number bg-primary">3</div>
-                  <div class="step-content">
-                    <h5>Pantheon</h5>
-                    <p>Ammira la perfetta geometria di questo tempio millenario.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8986" data-lon="12.4768">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
+            <!-- Recommended Times -->
+            <div class="col-md-6">
+              <div class="card testimonial-card">
+                <div class="card-body">
+                  <h5 class="mb-3 text-center" style="color: var(--turchese-scuro);">Recommended Schedule</h5>
+                  <div class="itinerary-schedule text-md-left text-center mobile-text-left">
+                    <div class="detail-item-itinerari mb-2">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">08:30-10:00</span>
+                      <span>Altare della Patria</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">10:00-11:00</span>
+                      <span>Trevi Fountain + breakfast</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">11:30-13:00</span>
+                      <span>Pantheon + lunch</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">13:30-14:30</span>
+                      <span>Ara Pacis</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">15:00-17:00</span>
+                      <span>Spanish Steps + aperitif</span>
+                    </div>
+                    <div class="detail-item-itinerari">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">17:30-19:00</span>
+                      <span>Piazza del Popolo + sunset</span>
+                    </div>
                   </div>
                 </div>
               </div>
-
-
-              <a href="#" class="btn btn-primary mt-4">Scarica mappa dettagliata</a>
             </div>
+            <!-- END RECOMMENDED TIMES -->
           </div>
         </div>
 
+        <div class="row mt-5">
+          <!-- Detailed Itineraries -->
+          <div>
+            <!-- Stop 1: Altare della Patria -->
+            <div class="expandable-step">
+              <div class="step-header" onclick="toggleStep(this)">
+                <div class="step-number">1</div>
+                <div class="step-title">
+                  <h5>Altare della Patria (Piazza Venezia)</h5>
+                  <p>The monument symbolizing united Italy, with a breathtaking panoramic terrace.</p>
+                </div>
+                <div class="step-arrow">▼</div>
+              </div>
 
-        <!-- Itinerario Barocco -->
-        <div class="tab-pane fade" id="baroque" role="tabpanel">
-          <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-              <div class="map-container">
-                <div id="itinerario-mappa-baroque"
-                     data-monumenti='{
-                    "Piazza Navona": [41.8994, 12.4731],
-                    "Fontana di Trevi": [41.9009, 12.4833],
-                    "Chiesa di Sant Ivo": [41.8986, 12.4768]
+              <div class="step-details">
+                <div class="detail-section">
+                  <div class="info-box">
+                    <div class="info-box-header">
+                      <i class="fas fa-info-circle"></i>
+                      <h4>Information</h4>
+                    </div>
+
+                    <div class="info-box-content">
+                      <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                          <span class="info-label">Location:</span>
+                          <span class="info-value">Piazza Venezia</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-euro-sign"></i>
+                        <div>
+                          <span class="info-label"><a href="https://vive.cultura.gov.it/it/terrazza-panoramica" target="_blank">Panoramic terrace</a></span>
+                          <span class="info-value">5/18€ (elevator included)</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="far fa-clock"></i>
+                        <div>
+                          <span class="info-label">Hours:</span>
+                          <span class="info-value">9:30-19:30 (last entry 18:45)</span>
+                        </div>
+                      </div>
+
+                      <div class="info-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                          <strong>Tip:</strong> Arrive early to avoid lines and enjoy the view in the morning with perfect light for photos!
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="itinerary-steps">
+                    <h5 class="section-subtitle-tappe"><i class="fas fa-map-marked-alt mr-2"></i>Experience</h5>
+                    <p>We recommend starting your visit by going up to the stunning panoramic terrace of the Altare della Patria: from here you can enjoy a breathtaking view over the rooftops of the city. A truly unmissable spectacle!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- connection line to indicate the route -->
+            <div class="itinerary-connection">
+              <div class="connection-line"></div>
+              <div class="connection-arrow">
+                <i class="fas fa-arrow-down"></i>
+              </div>
+              <div class="connection-info">
+                <i class="fas fa-walking"></i> Next: Via del Corso (10 min)
+              </div>
+            </div>
+
+            <!-- Stop 2: Trevi Fountain -->
+            <div class="expandable-step">
+              <div class="step-header" onclick="toggleStep(this)">
+                <div class="step-number">2</div>
+                <div class="step-title">
+                  <h5>Trevi Fountain and breakfast</h5>
+                  <p>Rome's most famous fountain and a delicious Roman breakfast.</p>
+                </div>
+                <div class="step-arrow">▼</div>
+              </div>
+
+              <div class="step-details">
+                <div class="detail-section">
+                  <div class="info-box">
+                    <div class="info-box-header">
+                      <i class="fas fa-info-circle"></i>
+                      <h4>Information</h4>
+                    </div>
+
+                    <div class="info-box-content">
+                      <div class="info-item">
+                        <i class="fas fa-utensils"></i>
+                        <div>
+                          <span class="info-label">Breakfast:</span>
+                          <span class="info-value">Antico Forno Di Trevi</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-euro-sign"></i>
+                        <div>
+                          <span class="info-label">Average cost:</span>
+                          <span class="info-value">€4-8 for breakfast</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-ticket"></i>
+                        <div>
+                          <span class="info-label">Underground tour:</span>
+                          <span class="info-value">€15-20 (recommended)</span>
+                        </div>
+                      </div>
+
+                      <div class="info-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                          <strong>Tip:</strong> If you still have some energy at the end of the day, we recommend visiting the Trevi Fountain late at night: you'll find it completely deserted, illuminated by soft lights creating a magical atmosphere, truly unmissable.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="itinerary-steps">
+                    <h5 class="section-subtitle-tappe"><i class="fas fa-map-marked-alt mr-2"></i>Experience</h5>
+                    <p>Continuing along Via del Corso, you'll reach the famous Trevi Fountain, perfect for taking a nice photo and, of course, for making a wish. If you have time, we highly recommend taking a fascinating underground tour that will take you to discover the ancient aqueduct that still feeds the fountain today.</p>
+
+                    <div class="step-highlight">
+                      <i class="fas fa-coffee"></i> <strong>Breakfast:</strong> At <a href="https://maps.app.goo.gl/ufU6JF6z6X2JpBHw9" target="_blank">Antico Forno Di Trevi</a> for a typical Roman breakfast with cornetti and cappuccino.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- connection line -->
+            <div class="itinerary-connection">
+              <div class="connection-line"></div>
+              <div class="connection-arrow">
+                <i class="fas fa-arrow-down"></i>
+              </div>
+              <div class="connection-info">
+                <i class="fas fa-walking"></i> Next: Via delle Muratte and Via del Seminario (8 min)
+              </div>
+            </div>
+
+            <!-- Stop 3: Pantheon -->
+            <div class="expandable-step">
+              <div class="step-header" onclick="toggleStep(this)">
+                <div class="step-number">3</div>
+                <div class="step-title">
+                  <h5>Pantheon</h5>
+                  <p>The temple of the gods and a leap into Roman eternity.</p>
+                </div>
+                <div class="step-arrow">▼</div>
+              </div>
+
+              <div class="step-details">
+                <div class="detail-section">
+                  <div class="info-box">
+                    <div class="info-box-header">
+                      <i class="fas fa-info-circle"></i>
+                      <h4>Information</h4>
+                    </div>
+
+                    <div class="info-box-content">
+                      <div class="info-item">
+                        <i class="fas fa-utensils"></i>
+                        <div>
+                          <span class="info-label">Snack:</span>
+                          <span class="info-value">Roman deli</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-euro-sign"></i>
+                        <div>
+                          <span class="info-label">Average cost:</span>
+                          <span class="info-value">€5</span>
+                        </div>
+                      </div>
+
+                      <div class="info-separator"></div>
+
+                      <div class="info-item">
+                        <i class="fas fa-church"></i>
+                        <div>
+                          <span class="info-label">To visit the monument:</span>
+                          <span class="info-value">RESERVATION REQUIRED</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-ticket"></i>
+                        <div>
+                          <span class="info-label">buy your ticket here:</span>
+                          <span class="info-value"> <a href="https://cultura.gov.it/luogo/pantheon" target="_blank">€2-5</a></span>
+                        </div>
+                      </div>
+
+                      <div class="info-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                          <strong>Tip:</strong> A few minutes' walk away, don't miss the Church of San Luigi dei Francesi, which houses three magnificent paintings by Caravaggio
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="itinerary-steps">
+                    <h5 class="section-subtitle-tappe"><i class="fas fa-map-marked-alt mr-2"></i>Experience</h5>
+                    <p>Continuing along Via del Corso, you'll reach the famous Trevi Fountain, perfect for taking a nice photo and, of course, for making a wish. If you have time, we highly recommend taking a fascinating underground tour that will take you to discover the ancient aqueduct that still feeds the fountain today.</p>
+
+                    <div class="step-highlight">
+                      <i class="fas fa-pizza-slice"></i> <strong>Quick lunch:</strong> Roman deli: focaccia with porchetta, truffle and other delights — only 10€.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- connection line -->
+            <div class="itinerary-connection">
+              <div class="connection-line"></div>
+              <div class="connection-arrow">
+                <i class="fas fa-arrow-down"></i>
+              </div>
+              <div class="connection-info">
+                <i class="fas fa-walking"></i> Next: Via di Ripetta (9 min)
+              </div>
+            </div>
+
+            <!-- Stop 4: Ara Pacis -->
+            <div class="expandable-step">
+              <div class="step-header" onclick="toggleStep(this)">
+                <div class="step-number">4</div>
+                <div class="step-title">
+                  <h5>Ara Pacis</h5>
+                  <p>The marble that tells of peace more powerful than war</p>
+                </div>
+                <div class="step-arrow">▼</div>
+              </div>
+
+              <div class="step-details">
+                <div class="detail-section">
+                  <div class="info-box">
+                    <div class="info-box-header">
+                      <i class="fas fa-info-circle"></i>
+                      <h4>Information</h4>
+                    </div>
+
+                    <div class="info-box-content">
+                      <div class="info-item">
+                        <i class="fas fa-landmark"></i>
+                        <div>
+                          <span class="info-label">To visit the monument:</span>
+                          <span class="info-value">RESERVATION REQUIRED</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-ticket"></i>
+                        <div>
+                          <span class="info-label">Buy your ticket here:</span>
+                          <span class="info-value"><a href="https://www.arapacis.it/it/informazioni_pratiche/biglietti_videoguide_e_audioguide" target="_blank">Price subject to change.</a></span>
+                        </div>
+                      </div>
+
+                      <div class="info-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                          <strong>Tip:</strong> The afternoon light enhances the marble reliefs, ideal for photographs.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="itinerary-steps">
+                    <h5 class="section-subtitle-tappe"><i class="fas fa-map-marked-alt mr-2"></i>Experience</h5>
+                    <p>By booking your ticket online, you can access the museum where expert guides will take you to discover this important monument. The Ara Pacis, however, is also clearly visible from the outside thanks to the large windows that surround it.</p>
+
+                    <div class="step-highlight">
+                      <i class="fas fa-binoculars"></i> <strong>Don't miss:</strong> The panels with Aeneas and the Capitoline Wolf, and the extraordinary floral decoration that envelops the entire altar.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- connection line -->
+            <div class="itinerary-connection">
+              <div class="connection-line"></div>
+              <div class="connection-arrow">
+                <i class="fas fa-arrow-down"></i>
+              </div>
+              <div class="connection-info">
+                <i class="fas fa-walking"></i> Next: 15 min walk
+              </div>
+            </div>
+
+            <!-- Stop 5: Spanish Steps -->
+            <div class="expandable-step">
+              <div class="step-header" onclick="toggleStep(this)">
+                <div class="step-number">5</div>
+                <div class="step-title">
+                  <h5>Spanish Steps</h5>
+                  <p>For centuries Rome's drawing room, where history, art and nobility meet at the foot of the staircase 🏛️🌸.</p>
+                </div>
+                <div class="step-arrow">▼</div>
+              </div>
+
+              <div class="step-details">
+                <div class="detail-section">
+                  <div class="info-box">
+                    <div class="info-box-header">
+                      <i class="fas fa-info-circle"></i>
+                      <h4>Information</h4>
+                    </div>
+
+                    <div class="info-box-content">
+                      <div class="info-item">
+                        <i class="fas fa-cocktail"></i>
+                        <div>
+                          <span class="info-label">Aperitif:</span>
+                          <span class="info-value">Terrazza del palazzetto overlooking the Trinità dei Monti staircase</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-euro-sign"></i>
+                        <div>
+                          <span class="info-label">Average cost:</span>
+                          <span class="info-value">€15-30</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-book-open"></i>
+                        <div>
+                          <span class="info-label">For menu and prices:</span>
+                          <span class="info-value"><a href="https://www.hotelhasslerroma.com/uploads/documents/Il_Palazzetto_Wine__Cocktail_Bar_2638729642011209287.pdf" target="_blank">Click here</a></span>
+                        </div>
+                      </div>
+
+                      <div class="info-separator"></div>
+
+                      <div class="info-item">
+                        <i class="fas fa-utensils"></i>
+                        <div>
+                          <span class="info-label">Lunch:</span>
+                          <span class="info-value">Pastificio Guerra for takeaway pasta dishes</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-euro-sign"></i>
+                        <div>
+                          <span class="info-label">Average cost:</span>
+                          <span class="info-value">€5-6</span>
+                        </div>
+                      </div>
+
+                      <div class="info-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                          <strong>Tip:</strong> Climb to the top for a splendid photo with Rome at your feet 📸
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="itinerary-steps">
+                    <h5 class="section-subtitle-tappe"><i class="fas fa-map-marked-alt mr-2"></i>Experience</h5>
+                    <p>Here you can refresh yourself by filling your water bottle with drinking water from the Barcaccia Fountain. Once refreshed, climb the scenic Trinità dei Monti staircase to admire the square from a truly suggestive perspective.</p>
+
+                    <div class="step-highlight">
+                      <i class="fas fa-coffee"></i> <strong>Breakfast:</strong> At Antico Forno Di Trevi for a typical Roman breakfast with cornetti and cappuccino.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- connection line -->
+            <div class="itinerary-connection">
+              <div class="connection-line"></div>
+              <div class="connection-arrow">
+                <i class="fas fa-arrow-down"></i>
+              </div>
+              <div class="connection-info">
+                <i class="fas fa-walking"></i> Next: Via del Babuino though it's worth making a detour to Via Margutta, the street of artists (10 min)
+              </div>
+            </div>
+
+            <!-- Stop 6: Piazza del Popolo -->
+            <div class="expandable-step">
+              <div class="step-header" onclick="toggleStep(this)">
+                <div class="step-number">6</div>
+                <div class="step-title">
+                  <h5>Piazza del Popolo</h5>
+                  <p>Where Rome's history reveals itself in every corner, an ancient gateway that welcomed travelers for centuries 🏛️⚔️</p>
+                </div>
+                <div class="step-arrow">▼</div>
+              </div>
+
+              <div class="step-details">
+                <div class="detail-section">
+                  <div class="info-box">
+                    <div class="info-box-header">
+                      <i class="fas fa-info-circle"></i>
+                      <h4>Information</h4>
+                    </div>
+
+                    <div class="info-box-content">
+                      <div class="info-item">
+                        <i class="fas fa-cocktail"></i>
+                        <div>
+                          <span class="info-label">Aperitif:</span>
+                          <span class="info-value">Terrazza del Palazzetto overlooking the Trinità dei Monti staircase</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-euro-sign"></i>
+                        <div>
+                          <span class="info-label">Average cost:</span>
+                          <span class="info-value">€15-30</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-book-open"></i>
+                        <div>
+                          <span class="info-label">For menu and prices:</span>
+                          <span class="info-value"><a href="https://www.hotelhasslerroma.com/uploads/documents/Il_Palazzetto_Wine__Cocktail_Bar_2638729642011209287.pdf" target="_blank">Click here</a></span>
+                        </div>
+                      </div>
+
+                      <div class="info-separator"></div>
+
+                      <div class="info-item">
+                        <i class="fas fa-utensils"></i>
+                        <div>
+                          <span class="info-label">Lunch:</span>
+                          <span class="info-value">Pastificio Guerra for takeaway pasta dishes</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-euro-sign"></i>
+                        <div>
+                          <span class="info-label">Average cost:</span>
+                          <span class="info-value">€5-6</span>
+                        </div>
+                      </div>
+
+                      <div class="info-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                          <strong>Tip:</strong> While at Piazza del Popolo, try speaking from one side of the square to the other: its elliptical shape and the arrangement of the monuments create exceptional acoustics that will allow you to clearly hear even a whisper from afar. A fun and surprising experience!
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="itinerary-steps">
+                    <h5 class="section-subtitle-tappe"><i class="fas fa-map-marked-alt mr-2"></i>Experience</h5>
+                    <p>From Piazza del Popolo take Viale Gabriele D'Annunzio: on the curve you'll find a staircase that will lead you to one of the most fascinating panoramic views of Rome, that of the Pincio. The romantic atmosphere and breathtaking view will captivate you.
+                      You are now in the heart of Villa Borghese. Here you can relax on the grass or, for a different experience, rent a small boat on the lake for just €3 per person.
+                    </p>
+
+                    <div class="step-highlight">
+                      <i class="fas fa-coffee"></i> <strong>Breakfast:</strong> At Antico Forno Di Trevi for a typical Roman breakfast with cornetti and cappuccino.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- GENERAL MAP -->
+            <div class="compact-map-container">
+              <h2 class="section-title text-center">Map</h2>
+              <div id="roma-discovery-mappa-generale"
+                   data-tappe='{
+                 "Altare della Patria": [41.8965, 12.4823],
+                 "Fontana di Trevi": [41.9009, 12.4833],
+                 "Antico Forno Di Trevi": [41.9015, 12.4828],
+                 "Pantheon": [41.8986, 12.4769],
+                 "Pizzicheria Romana al Pantheon": [41.8982, 12.4775],
+                 "Ara Pacis": [41.9051, 12.4763],
+                 "Piazza di Spagna": [41.9058, 12.4822],
+                 "Terrazza del Palazzetto": [41.9060, 12.4820],
+                 "Pastificio Guerra": [41.9062, 12.4818],
+                 "Antico Caffè Greco": [41.9056, 12.4824],
+                 "Babingtons Tea Room": [41.9060, 12.4825],
+                 "Via Margutta": [41.9076, 12.4785],
+                 "Piazza del Popolo": [41.9106, 12.4764],
+                 "Terrazza Nainar": [41.9108, 12.4766],
+                 "Pincio": [41.9114, 12.4779]
                }'
-                     style="height: 400px; border-radius: 8px;"></div>
-                <div class="text-center mt-2">
-                  <a class="btn btn-outline-primary btn-sm"
-                     href="https://www.openstreetmap.org/#map=15/41.9000/12.4730"
-                     target="_blank">
-                    Visualizza mappa completa
-                  </a>
-                </div>
+                   style="height: 350px; border-radius: 8px;">
+              </div>
+
+              <div class="map-actions">
+                <a class="btn btn-sm btn-outline-secondary"
+                   href="https://www.openstreetmap.org/#map=14/41.9025/12.4800"
+                   target="_blank">
+                  <i class="fas fa-external-link-alt mr-1"></i> Full map
+                </a>
+                <button class="btn btn-sm btn-outline-secondary">
+                  <i class="fas fa-download mr-1"></i> Download route
+                </button>
               </div>
             </div>
-            <div class="col-lg-6">
-              <h3 class="mb-4">Roma Barocca</h3>
-              <p>Un viaggio tra le meraviglie del Seicento romano, tra chiese spettacolari, fontane monumentali e piazze teatrali.</p>
-
-
-              <div class="itinerary-details mt-4">
-                <div class="detail-item">
-                  <i class="ti-time text-primary mr-2"></i>
-                  <span><strong>Durata:</strong> 4-5 ore</span>
-                </div>
-                <div class="detail-item">
-                  <i class="ti-map-alt text-primary mr-2"></i>
-                  <span><strong>Distanza:</strong> 3 km</span>
-                </div>
-                <div class="detail-item">
-                  <i class="ti-star text-primary mr-2"></i>
-                  <span><strong>Difficoltà:</strong> Facile</span>
-                </div>
-              </div>
-
-
-              <div class="itinerary-steps mt-4">
-                <div class="step">
-                  <div class="step-number bg-primary">1</div>
-                  <div class="step-content">
-                    <h5>Piazza Navona</h5>
-                    <p>Cuore del barocco romano con la Fontana dei Quattro Fiumi del Bernini.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8994" data-lon="12.4731">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="step-number bg-primary">2</div>
-                  <div class="step-content">
-                    <h5>Fontana di Trevi</h5>
-                    <p>La più scenografica fontana di Roma, capolavoro di Nicola Salvi.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.9009" data-lon="12.4833">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="step-number bg-primary">3</div>
-                  <div class="step-content">
-                    <h5>Chiesa di Sant'Ivo</h5>
-                    <p>Gioiello architettonico di Borromini con la sua originale spirale.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8986" data-lon="12.4768">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-
-              <a href="#" class="btn btn-primary mt-4">Scarica mappa dettagliata</a>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- Itinerario Segreto -->
-        <div class="tab-pane fade" id="secret" role="tabpanel">
-          <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-              <div class="map-container">
-                <div id="itinerario-mappa-secret"
-                     data-monumenti='{
-                    "Aventino": [41.8830, 12.4800],
-                    "Buco della serratura": [41.8816, 12.4665],
-                    "Quartiere Coppedè": [41.9186, 12.5015]
-                  }'
-                     style="height: 400px; border-radius: 8px;"></div>
-                <div class="text-center mt-2">
-                  <a class="btn btn-outline-primary btn-sm"
-                     href="https://www.openstreetmap.org/#map=15/41.8830/12.4800"
-                     target="_blank">
-                    Visualizza mappa completa
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <h3 class="mb-4">Roma Segreta</h3>
-              <p>Scopri angoli nascosti e storie insolite della città eterna, lontano dai percorsi turistici tradizionali.</p>
-
-
-              <div class="itinerary-details mt-4">
-                <div class="detail-item">
-                  <i class="ti-time text-primary mr-2"></i>
-                  <span><strong>Durata:</strong> 3-4 ore</span>
-                </div>
-                <div class="detail-item">
-                  <i class="ti-map-alt text-primary mr-2"></i>
-                  <span><strong>Distanza:</strong> 2.5 km</span>
-                </div>
-                <div class="detail-item">
-                  <i class="ti-star text-primary mr-2"></i>
-                  <span><strong>Difficoltà:</strong> Facile</span>
-                </div>
-              </div>
-
-
-              <div class="itinerary-steps mt-4">
-                <div class="step">
-                  <div class="step-number bg-primary">1</div>
-                  <div class="step-content">
-                    <h5>Aventino</h5>
-                    <p>Il colle più tranquillo con giardini segreti e viste mozzafiato.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8830" data-lon="12.4800">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="step-number bg-primary">2</div>
-                  <div class="step-content">
-                    <h5>Buco della serratura</h5>
-                    <p>Uno scorcio unico sulla cupola di San Pietro attraverso una porta.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8816" data-lon="12.4665">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="step-number bg-primary">3</div>
-                  <div class="step-content">
-                    <h5>Quartiere Coppedè</h5>
-                    <p>Un angolo fiabesco con architetture eclettiche e misteriose.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.9186" data-lon="12.5015">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-
-              <a href="#" class="btn btn-primary mt-4">Scarica mappa dettagliata</a>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- Itinerario Gastronomico -->
-        <div class="tab-pane fade" id="food" role="tabpanel">
-          <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-              <div class="map-container">
-                <div id="itinerario-mappa-food"
-                     data-monumenti='{
-                    "Campo de Fiori": [41.8956, 12.4715],
-             "Trastevere": [41.8897, 12.4696],
-             "Gelaterie artigianali": [41.8915, 12.4900]
-             }'
-                     style="height: 400px; border-radius: 8px;"></div>
-                <div class="text-center mt-2">
-                  <a class="btn btn-outline-primary btn-sm"
-                     href="https://www.openstreetmap.org/#map=15/41.8950/12.4700"
-                     target="_blank">
-                    Visualizza mappa completa
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <h3 class="mb-4">Roma a Tavola</h3>
-              <p>Un tour tra i sapori autentici della cucina romana, dalle trattorie storiche alle migliori gelaterie.</p>
-
-
-              <div class="itinerary-details mt-4">
-                <div class="detail-item">
-                  <i class="ti-time text-primary mr-2"></i>
-                  <span><strong>Durata:</strong> 5-6 ore</span>
-                </div>
-                <div class="detail-item">
-                  <i class="ti-map-alt text-primary mr-2"></i>
-                  <span><strong>Distanza:</strong> 4 km</span>
-                </div>
-                <div class="detail-item">
-                  <i class="ti-star text-primary mr-2"></i>
-                  <span><strong>Difficoltà:</strong> Facile</span>
-                </div>
-              </div>
-
-
-              <div class="itinerary-steps mt-4">
-                <div class="step">
-                  <div class="step-number bg-primary">1</div>
-                  <div class="step-content">
-                    <h5>Campo de' Fiori</h5>
-                    <p>Mercato mattutino e caffè storici per iniziare la giornata.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8956" data-lon="12.4715">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="step-number bg-primary">2</div>
-                  <div class="step-content">
-                    <h5>Trastevere</h5>
-                    <p>Pranzo in trattorie autentiche con cucina romana tradizionale.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8897" data-lon="12.4696">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="step-number bg-primary">3</div>
-                  <div class="step-content">
-                    <h5>Gelaterie artigianali</h5>
-                    <p>Degustazione dei migliori gelati della città.</p>
-                    <a href="#" class="btn-map-marker" data-lat="41.8915" data-lon="12.4900">
-                      <i class="fas fa-map-marker-alt mr-1"></i> Mostra sulla mappa
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-
-              <a href="#" class="btn btn-primary mt-4">Scarica mappa dettagliata</a>
-            </div>
+            <!-- END GENERAL MAP -->
           </div>
         </div>
       </div>
-    </div>
-  </section>
+      <!-- END LostInRome ITINERARY -->
 
+      <!-- START ADVENTURE ITINERARY -->
+      <!-- <div id = "adventureItineraryPlaceHolder"></div>-->
+      <div class="tab-pane fade" id="adventure" role="tabpanel">
 
+        <div class="container">
+          <div class="row">
 
-
-  <!-- Sezione Testimonianze -->
-  <section class="section bg-primary text-white">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center mb-5">
-          <h2 class="text-white">Cosa dicono i nostri visitatori</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-          <div class="card testimonial-card">
-            <div class="card-body">
-              <div class="testimonial-rating mb-3">
-                <i class="ti-star"></i>
-                <i class="ti-star"></i>
-                <i class="ti-star"></i>
-                <i class="ti-star"></i>
-                <i class="ti-star"></i>
+            <!-- Description -->
+            <div class="col-12 mb-4">
+              <h3 class="section-subtitle text-left mb-3">Adventure</h3>
+              <p class="text-justify mb-2">
+                <i>
+                  From the cobblestones of the Appia Antica, where history grazes your bike wheels, to the secret vertigo of the Buco della serratura and the scents of the Orange Garden.
+                  Then fly among the cherry blossoms of the Japanese Garden, a haiku of petals and peace, before diving into the tribal rhythms of the Voodoo Bar, where cocktails burn like sunsets over the Colosseum and the DJ makes emperors' ghosts tremble.
+                </i>
+              </p>
+              <p class="text-left mb-2 ml-5" style="color:#e83e8c"><i>Pedal. Explore. Sip. Dance. </i></p>
+              <div class="signature-font text-right mb-3">
+                <i>by Jacopo</i>
               </div>
-              <p class="testimonial-text">"L'itinerario classico è stato perfetto per la nostra prima visita a Roma. Abbiamo visto tutto l'essenziale senza sentirci affaticati."</p>
-              <div class="testimonial-author">
-                <h5>Marco e Laura</h5>
-                <p>Milano</p>
+            </div>
+            <!-- end Description -->
+
+            <!-- General Details -->
+            <div class="col-md-6">
+              <div class="card testimonial-card">
+                <div class="card-body">
+                  <h5 class="mb-3 text-center" style="color: var(--turchese-scuro);">General Information</h5>
+                  <div class="itinerary-details text-md-left text-center mobile-text-left">
+                    <div class="detail-item-itinerari mb-2">
+                      <i class="fas fa-clock mr-2 icon-dettagli-turchese-scuro" ></i>
+                      <span><strong>Total duration:</strong> 1 full day</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <i class="fas fa-route mr-2 icon-dettagli-turchese-scuro"></i>
+                      <span><strong>Total distance:</strong> ~25 km (by bike and on foot)</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <i class="fas fa-mountain mr-2 icon-dettagli-turchese-scuro" ></i>
+                      <span><strong>Difficulty:</strong> Medium (some steep climbs)</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <i class="fas fa-euro-sign mr-2 icon-dettagli-turchese-scuro"></i>
+                      <span><strong>Base budget:</strong> €50-70 (standard bike, quick lunch, only aperitif)</span>
+                    </div>
+                    <div class="detail-item-itinerari">
+                      <i class="fas fa-glass-cheers mr-2 icon-dettagli-turchese-scuro" ></i>
+                      <span><strong>Comfort budget:</strong> €80-100 (e-bike, sit-down meal, premium cocktail)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end General Details -->
+
+            <!-- Recommended Times -->
+            <div class="col-md-6">
+              <div class="card testimonial-card">
+                <div class="card-body">
+                  <h5 class="mb-3 text-center" style="color: var(--turchese-scuro);">Recommended Schedule</h5>
+                  <div class="itinerary-schedule text-md-left text-center mobile-text-left">
+                    <div class="detail-item-itinerari mb-2 ">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">09:00-12:00</span>
+                      <span>Via Appia by bike with brunch</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">12:30-14:00</span>
+                      <span>Giardino degli Aranci + Buco della Serratura + lunch</span>
+                    </div>
+                    <div class="detail-item-itinerari mb-2">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">14:30-16:00</span>
+                      <span>Japanese Garden</span>
+                    </div>
+                    <div class="detail-item-itinerari">
+                      <span class="badge badge-primary mr-2 icon-consigli-orari">18:30+</span>
+                      <span>Voodoo Bar</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END RECOMMENDED TIMES -->
+          </div>
+        </div>
+
+        <div class="row mt-5">
+
+          <!-- Detailed Itineraries -->
+          <div>
+            <div class="expandable-step">
+              <div class="step-header" onclick="toggleStep(this)">
+                <div class="step-number">1</div>
+                <div class="step-title">
+                  <h5>Appia Antica by bike</h5>
+                  <p>From catacombs to Terme di Caracalla, between history, nature and archaeology. Where every stone tells a story 🚲</p>
+                </div>
+                <div class="step-arrow">▼</div>
+              </div>
+
+              <div class="step-details">
+
+                <div class="detail-section">
+
+                  <!-- BOX WITH ITINERARY DETAILS -->
+                  <div class="info-box">
+                    <div class="info-box-header">
+                      <i class="fas fa-info-circle"></i>
+                      <h4>Information</h4>
+                    </div>
+
+                    <div class="info-box-content">
+                      <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                          <span class="info-label">Start:</span>
+                          <span class="info-value">Porta San Sebastiano</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-flag-checkered"></i>
+                        <div>
+                          <span class="info-label">End:</span>
+                          <span class="info-value">Terme di Caracalla</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-ruler-combined"></i>
+                        <div>
+                          <span class="info-label">Length:</span>
+                          <span class="info-value">~12 km</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="far fa-clock"></i>
+                        <div>
+                          <span class="info-label">Duration:</span>
+                          <span class="info-value">3 hours (with stops)</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-signal"></i>
+                        <div>
+                          <span class="info-label">Difficulty:</span>
+                          <span class="info-value">Easy (mixed terrain)</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-bicycle"></i>
+                        <div>
+                          <span class="info-label">Transport:</span>
+                          <span class="info-value">Bike</span>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <div>
+                          <span class="info-label">Bike rental:</span>
+                          <div class="info-sublist">
+                            <div><i class="fas fa-angle-right"></i> Appia Antica Bike Rental <span class="price">(€15/day MTB, €25 e-bike)</span></div>
+                            <div><i class="fas fa-angle-right"></i> Ecobike Roma <span class="price">(€10/day)</span></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="info-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                          <strong>Tip:</strong> Start at 9:00 to avoid the summer sun and enjoy brunch in peace! 🌿☕
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end DETAILS BOX -->
+
+                  <div class="itinerary-steps">
+
+                    <h5 class="section-subtitle-tappe">
+                      <i class="fas fa-map-marked-alt mr-2"></i>Itinerary Stops
+                    </h5>
+
+                    <div class="step-accordion">
+                      <!-- STOP 1 -->
+                      <div class="step-card" >
+                        <div class="step-header" onclick="toggleStep(this)">
+                          <div class="step-badge bordered">1</div>
+                          <div class="step-title-container"> <!-- New wrapper -->
+                            <div class="step-title">
+                              <h5>Porta di San Sebastiano and Catacombs of San Callisto</h5>
+                            </div>
+                            <div class="step-meta">
+                              <span><i class="fas fa-clock"></i> 30 min</span>
+                              <span><i class="fas fa-euro-sign"></i> 8</span>
+                              <span><i class="fas fa-bicycle"></i> 1.5 km</span>
+                              <a href="https://www.google.com/maps?q=41.8725,12.5018"
+                                 class="btn-map-marker-red"
+                                 target="_blank"
+                                 rel="noopener noreferrer">
+                                <i class="fas fa-map-marker-alt"></i> Show on map
+                              </a>
+                            </div>
+                          </div>
+                          <i class="fas fa-chevron-down step-arrow"></i>
+                        </div>
+
+                        <div class="step-content-flex-none">
+                          <div class="step-content-inner"> <!-- New inner wrapper -->
+                            <p>Start from the majestic Porta San Sebastiano (entrance to the Appia Antica) and bike 1.5 km (5 min by bike) to the Catacombs of San Callisto, among the largest in Rome.</p>
+                            <div class="step-details">
+                              <p><i class="fas fa-info-circle text-primary"></i> <strong>Audioguide included</strong></p>
+                              <p><i class="fas fa-history text-primary"></i> <strong>Hours:</strong> 9:00-12:00 / 14:00-17:00</p>
+                              <p><i class="fas fa-exclamation-triangle text-warning"></i> <strong>Attention:</strong> No photography allowed</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- END STOP 1 -->
+
+
+                    <!-- STOP 2 -->
+                    <div class="step-card" >
+                      <div class="step-header" onclick="toggleStep(this)">
+                        <div class="step-badge bordered">2</div>
+                        <div class="step-title-container"> <!-- New wrapper -->
+                          <div class="step-title">
+                            <h5>Brunch at Giardino di Lù</h5>
+                          </div>
+                          <div class="step-meta">
+                            <span><i class="fas fa-utensils"></i> €12-20</span>
+                            <span><i class="fas fa-calendar-alt"></i> 9:00-16:00</span>
+                            <span><i class="fas fa-stopwatch"></i> 1h30</span>
+                            <a href="https://www.google.com/maps?q=41.8550,12.5175"
+                               class="btn-map-marker-red"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                              <i class="fas fa-map-marker-alt"></i> Show on map
+                            </a>
+                          </div>
+                        </div>
+                        <i class="fas fa-chevron-down step-arrow"></i>
+                      </div>
+                      <div class="step-content-flex-none">
+                        <div class="step-content-inner"> <!-- New inner wrapper -->
+                          <p>Organic brunch with savory pies, smoothies and artisanal coffee in a hidden garden with a view of the Appia antica.</p>
+                          <div class="step-details">
+                            <p><i class="fas fa-lightbulb"></i> <strong>Must try:</strong> Zucchini and ricotta savory pie + mint smoothie</p>
+                            <p><i class="fas fa-phone-alt text-primary"></i> <strong>Reservation:</strong> +39 06 1234567 (recommended on weekends)</p>
+                            <p><i class="fas fa-paw text-primary"></i> <strong>Pets:</strong> Dogs allowed in garden</p>
+                            <p><i class="fas fa-map-marker-alt text-danger"></i> <strong>Address:</strong> Via Appia Antica, 42</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- END STOP 2 -->
+
+                    <!-- STOP 3 -->
+                    <div class="step-card" >
+                      <div class="step-header" onclick="toggleStep(this)">
+                        <div class="step-badge bordered">3</div>
+                        <div class="step-title-container">
+                          <div class="step-title">
+                            <h5>Mausoleum of Cecilia Metella</h5>
+                          </div>
+                          <div class="step-meta">
+                            <span><i class="fas fa-clock"></i> 20 min</span>
+                            <span><i class="fas fa-euro-sign"></i> 6</span>
+                            <span><i class="fas fa-bicycle"></i> 3 km</span>
+                            <a href="https://www.google.com/maps?q=41.8522,12.5194"
+                               class="btn-map-marker-red"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                              <i class="fas fa-map-marker-alt"></i> Show on map
+                            </a>
+                          </div>
+                        </div>
+                        <i class="fas fa-chevron-down step-arrow"></i>
+                      </div>
+                      <div class="step-content-flex-none">
+                        <div class="step-content-inner">
+                          <p>Continue along the paved road to the symbol of the Appia Antica: the Mausoleum of Cecilia Metella (1st century BC tomb) and the attached Castrum Caetani (medieval fortress).</p>
+                          <div class="step-details">
+                            <p><i class="fas fa-ticket-alt text-primary"></i> <strong>Combined ticket:</strong> €6 with Villa dei Quintili (valid 24h)</p>
+                            <p><i class="fas fa-camera text-primary"></i> <strong>Photography:</strong> Allowed without flash</p>
+                            <div class="step-highlight bg-light-blue">
+                              <i class="fas fa-binoculars"></i> <strong>Panoramic view</strong> from the fortress terrace
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- END STOP 3 -->
+
+                    <!-- STOP 4 -->
+                    <div class="step-card" >
+                      <div class="step-header" onclick="toggleStep(this)">
+                        <div class="step-badge bordered">4</div>
+                        <div class="step-title-container">
+                          <div class="step-title">
+                            <h5>Villa dei Quintili</h5>
+                          </div>
+                          <div class="step-meta">
+                            <span><i class="fas fa-clock"></i> 30 min</span>
+                            <span><i class="fas fa-euro-sign"></i> 5</span>
+                            <span><i class="fas fa-bicycle"></i> 4 km</span>
+                            <a href="https://www.google.com/maps/search/?api=1&query=41.8406,12.5497"
+                               class="btn-map-marker-red"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                              <i class="fas fa-map-marker-alt"></i> Show on map
+                            </a>
+                          </div>
+                        </div>
+                        <i class="fas fa-chevron-down step-arrow"></i>
+                      </div>
+                      <div class="step-content-flex-none">
+                        <div class="step-content-inner">
+                          <p>1 km detour from the via Appia Antica to visit this luxurious imperial residence with mosaics and private baths.</p>
+                          <div class="step-details">
+                            <p><i class="fas fa-umbrella-beach text-primary"></i> <strong>Picnic area:</strong> Available in the garden</p>
+                            <p><i class="fas fa-sun text-warning"></i> <strong>Tip:</strong> Little shade, bring a hat</p>
+                            <p><i class="fas fa-expand-alt text-primary"></i> <strong>Surface:</strong> 24 hectares (visit only main areas)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- END STOP 4 -->
+
+
+                    <!-- STOP 5 -->
+                    <div class="step-card">
+                      <div class="step-header" onclick="toggleStep(this)">
+                        <div class="step-badge bordered">5</div>
+                        <div class="step-title-container">
+                          <div class="step-title">
+                            <h5>Terme di Caracalla</h5>
+                          </div>
+                          <div class="step-meta">
+                            <span><i class="fas fa-clock"></i> 40 min</span>
+                            <span><i class="fas fa-euro-sign"></i> 8</span>
+                            <span><i class="fas fa-bicycle"></i> 5 km</span>
+                            <a href="https://www.google.com/maps?q=41.8793,12.4925"
+                               class="btn-map-marker-red"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                              <i class="fas fa-map-marker-alt"></i> Show on map
+                            </a>
+                          </div>
+                        </div>
+                        <i class="fas fa-chevron-down step-arrow"></i>
+                      </div>
+                      <div class="step-content-flex-none">
+                        <div class="step-content-inner">
+                          <p>End the tour with one of the most grandiose ancient bath complexes, a masterpiece of Roman engineering.</p>
+                          <div class="step-details">
+                            <p><i class="fas fa-moon text-primary"></i> <strong>Evening visits:</strong> July/August with special lighting</p>
+                            <p><i class="fas fa-theater-masks text-primary"></i> <strong>Events:</strong> Opera in summer (separate program)</p>
+                            <div class="step-highlight">
+                              <i class="fas fa-wheelchair"></i> <strong>Accessibility:</strong> Disabled paths available
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-          <div class="card testimonial-card">
-            <div class="card-body">
-              <div class="testimonial-rating mb-3">
-                <i class="ti-star"></i>
-                <i class="ti-star"></i>
-                <i class="ti-star"></i>
-                <i class="ti-star"></i>
-                <i class="ti-star"></i>
+          <!-- END Detailed Itineraries-->
+
+          <!-- Connection between Part 1 and Part 2 -->
+          <div class="itinerary-connection">
+            <div class="connection-visual">
+              <div class="connection-line"></div>
+              <div class="connection-arrow">
+                <i class="fas fa-arrow-down"></i>
               </div>
-              <p class="testimonial-text">"La Roma segreta ci ha regalato scorci e storie che non avremmo mai scoperto da soli. Un'esperienza autentica e memorabile."</p>
-              <div class="testimonial-author">
-                <h5>Giulia</h5>
-                <p>Torino</p>
+            </div>
+            <div class="connection-info" style="margin-left: 50px">
+              Transfer <i class="fas fa-bicycle"></i>: 15 min by bike (or bus 118) to Aventino
+            </div>
+          </div>
+
+
+          <!-- Part 2: Aventino -->
+          <div class="expandable-step">
+            <div class="step-header" onclick="toggleStep(this)">
+              <div class="step-number">2</div>
+              <div class="step-title">
+                <h5>Giardino degli Aranci and the Buco della serratura</h5>
+                <p>A perfect mix of history, views and curiosities, with flexibility of movement! 🌿</p>
+              </div>
+              <div class="step-arrow">▼</div>
+            </div>
+
+            <div class="step-details">
+              <div class="detail-section">
+                <!-- GENERAL INFORMATION BOX -->
+                <div class="info-box">
+                  <div class="info-box-header">
+                    <i class="fas fa-info-circle"></i>
+                    <h4>Information</h4>
+                  </div>
+                  <div class="info-box-content">
+                    <div class="info-item">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <div>
+                        <span class="info-label">Start:</span>
+                        <span class="info-value">Terme di Caracalla</span>
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="fas fa-flag-checkered"></i>
+                      <div>
+                        <span class="info-label">End:</span>
+                        <span class="info-value">Buco della serratura</span>
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="fas fa-ruler-combined"></i>
+                      <div>
+                        <span class="info-label">Length:</span>
+                        <span class="info-value">~5 km</span>
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="far fa-clock"></i>
+                      <div>
+                        <span class="info-label">Duration:</span>
+                        <span class="info-value">1.5 hours</span>
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="fas fa-signal"></i>
+                      <div>
+                        <span class="info-label">Difficulty:</span>
+                        <span class="info-value">Medium (steep climb)</span>
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="fas fa-subway"></i>
+                      <div>
+                        <span class="info-label">Public transport:</span>
+                        <div class="info-sublist">
+                          <div><i class="fas fa-angle-right"></i> Bus 81 (from "Circo Massimo")</div>
+                          <div><i class="fas fa-angle-right"></i> Metro B (stop "Circo Massimo")</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="info-tip">
+                      <i class="fas fa-lightbulb"></i>
+                      <div>
+                        <strong>Tip:</strong> The climb to the Aventine is short but steep - with the bike it's better to push it by hand!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ITINERARY STOPS -->
+                <div class="itinerary-steps">
+                  <h5 class="section-subtitle-tappe">
+                    <i class="fas fa-map-marked-alt mr-2"></i>Stops
+                  </h5>
+
+                  <div class="step-accordion">
+                    <!-- STOP 1 -->
+                    <div class="step-card">
+                      <div class="step-header" onclick="toggleStep(this)">
+                        <div class="step-badge bordered">1</div>
+                        <div class="step-title-container">
+                          <div class="step-title">
+                            <h5>Terme di Caracalla → Circo Massimo</h5>
+                          </div>
+                          <div class="step-meta">
+                            <span><i class="fas fa-clock"></i> 10 min</span>
+                            <span><i class="fas fa-walking"></i> 800m</span>
+                            <a href="https://www.google.com/maps?q=41.8793,12.4925(Circo+Massimo)"
+                               class="btn-map-marker-red"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                              <i class="fas fa-map-marker-alt"></i> Show on map
+                            </a>
+                          </div>
+                        </div>
+                        <i class="fas fa-chevron-down step-arrow"></i>
+                      </div>
+                      <div class="step-content-flex-none">
+                        <div class="step-content-inner">
+                          <p>After visiting the Baths, head towards the Circo Massimo, the ancient Roman stadium with a view of the Palatino.</p>
+                          <div class="step-details">
+                            <p><i class="fas fa-ticket-alt text-primary"></i> <strong>Entrance:</strong> Free (external area)</p>
+                            <p><i class="fas fa-history text-primary"></i> <strong>Hours:</strong> Always accessible</p>
+                            <div class="step-highlight">
+                              <i class="fas fa-binoculars"></i> <strong>Unmissable view:</strong> Sunset over the Palatino
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- STOP 2 -->
+                    <div class="step-card">
+                      <div class="step-header" onclick="toggleStep(this)">
+                        <div class="step-badge bordered">2</div>
+                        <div class="step-title-container">
+                          <div class="step-title">
+                            <h5>Guardino degli Aranci 🍊</h5>
+                          </div>
+                          <div class="step-meta">
+                            <span><i class="fas fa-clock"></i> 20 min</span>
+                            <span><i class="fas fa-mountain"></i> Climb</span>
+                            <a href="https://www.google.com/maps?q=41.8830,12.4799(Giardino+degli+Aranci)"
+                               class="btn-map-marker-red"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                              <i class="fas fa-map-marker-alt"></i> Show on map
+                            </a>
+                          </div>
+                        </div>
+                        <i class="fas fa-chevron-down step-arrow"></i>
+                      </div>
+                      <div class="step-content-flex-none">
+                        <div class="step-content-inner">
+                          <p>Climb to the Aventine hill for this secret garden with a breathtaking view of Rome.</p>
+                          <div class="step-details">
+                            <p><i class="fas fa-tree text-primary"></i> <strong>Hours:</strong> 7:00-18:00 (winter), 7:00-21:00 (summer)</p>
+                            <p><i class="fas fa-euro-sign text-primary"></i> <strong>Entrance:</strong> Free</p>
+                            <div class="step-highlight bg-light-blue">
+                              <i class="fas fa-camera"></i> <strong>Photospot:</strong> Rome's most romantic bench
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- STOP 3 -->
+                    <div class="step-card">
+                      <div class="step-header" onclick="toggleStep(this)">
+                        <div class="step-badge bordered">3</div>
+                        <div class="step-title-container">
+                          <div class="step-title">
+                            <h5>Buco della serratura</h5>
+                          </div>
+                          <div class="step-meta">
+                            <span><i class="fas fa-clock"></i> 10 min</span>
+                            <span><i class="fas fa-user-friends"></i> Lines</span>
+                            <a href="https://www.google.com/maps?q=41.8826,12.4795(Buco+della+Serratura)"
+                               class="btn-map-marker-red"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                              <i class="fas fa-map-marker-alt"></i> Show on map
+                            </a>
+                          </div>
+                        </div>
+                        <i class="fas fa-chevron-down step-arrow"></i>
+                      </div>
+                      <div class="step-content-flex-none">
+                        <div class="step-content-inner">
+                          <p>The famous buco della serratura that perfectly frames St. Peter's Dome.</p>
+                          <div class="step-details">
+                            <p><i class="fas fa-history text-primary"></i> <strong>Best times:</strong> Early morning or sunset</p>
+                            <p><i class="fas fa-exclamation-circle text-warning"></i> <strong>Attention:</strong> Lines on weekends</p>
+                            <div class="step-highlight">
+                              <i class="fas fa-key"></i> <strong>Curiosity:</strong> Belongs to the Order of the Knights of Malta
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- STOP 4 -->
+                    <div class="step-card">
+                      <div class="step-header" onclick="toggleStep(this)">
+                        <div class="step-badge bordered">4</div>
+                        <div class="step-title-container">
+                          <div class="step-title">
+                            <h5>Spritz with a view and lunch</h5>
+                          </div>
+                          <div class="step-meta">
+                            <span><i class="fas fa-wallet"></i> €5-25</span>
+                            <span><i class="fas fa-clock"></i> 1h-1h30</span>
+                            <a href="#" class="btn-map-marker-red" data-lat="41.8818" data-lon="12.4790">
+                              <i class="fas fa-map-marker-alt"></i> Map
+                            </a>
+                          </div>
+                        </div>
+                        <i class="fas fa-chevron-down step-arrow"></i>
+                      </div>
+                      <div class="step-content-flex-none">
+                        <div class="step-content-inner">
+                          <!-- OPTION 1: AVENTINO TERRACE -->
+                          <div class="restaurant-option">
+                            <div class="option-header" >
+                              <h6><i class="fas fa-cocktail"></i> Terrazza Aventino <span class="badge-price">€€</span></h6>
+                            </div>
+                            <div class="option-body">
+                              <div class="option-detail">
+                                <i class="fas fa-star"></i>
+                                <span><strong>Highlight:</strong> Panoramic view + "Garden Cocktail" (€12)</span>
+                              </div>
+                              <div class="option-detail">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Hours:</strong> 12:00-24:00 (happy hour 18-20)</span>
+                              </div>
+                              <div class="option-detail">
+                                <i class="fas fa-map-marker-alt" style="color: #8B0000;"></i>
+                                <span>
+                                    <a href="https://www.google.com/maps/place/Terrazza+Aventino/@41.8818,12.4790,18z/data=!4m6!3m5!1s0x132f61a1d8e3b3a7:0x7a1e8b3d3c3d3c3d!8m2!3d41.8818!4d12.4790!16s%2Fg%2F11b5y5y5y5?hl=it"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       style="color: #8B0000; text-decoration: none;">
+                                      <strong>Show on Map</strong>
+                                    </a>
+                                  </span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- OPTION 2: ZODIACO RESTAURANT -->
+                          <div class="restaurant-option mt-3">
+                            <div class="option-header" style="background-color: #f8f9fa; border-left: 4px solid #ffc107;">
+                              <h6><i class="fas fa-utensils"></i> Zodiaco Restaurant <span class="badge-price">€€€</span></h6>
+                            </div>
+                            <div class="option-body">
+                              <div class="option-detail">
+                                <i class="fas fa-star"></i>
+                                <span><strong>Specialty:</strong> Tonnarelli cacio e pepe (€18) + view of Circo Massimo</span>
+                              </div>
+                              <div class="option-detail">
+                                <i class="fas fa-euro-sign"></i>
+                                <span><strong>Budget:</strong> €25-40 per person (pasta+drink)</span>
+                              </div>
+                              <div class="option-detail">
+                                <i class="fas fa-map-marker-alt" style="color: #8B0000;"></i>
+                                <span>
+                                    <a href="https://www.google.com/maps/place/Ristorante+Lo+Zodiaco/@41.8818,12.4790,18z/data=!4m6!3m5!1s0x132f61a1d8e3b3a7:0x7a1e8b3d3c3d3c3d!8m2!3d41.8818!4d12.4790!16s%2Fg%2F11b5y5y5y5?hl=it"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       style="color: #8B0000; text-decoration: none;">
+                                      <strong>Show on Map</strong>
+                                    </a>
+                                  </span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- OPTION 3: PASSI BAKERY -->
+                          <div class="restaurant-option mt-3">
+                            <div class="option-header" style="background-color: #f8f9fa; border-left: 4px solid #28a745;">
+                              <h6><i class="fas fa-bread-slice"></i> Panificio Passi  <span class="badge-price">€</span></h6>
+                            </div>
+                            <div class="option-body">
+                              <div class="option-detail">
+                                <i class="fas fa-star"></i>
+                                <span><strong>Must try:</strong> White pizza with mortadella (€3.50) + supplì (€2)</span>
+                              </div>
+                              <div class="option-detail">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Hours:</strong> 7:00-20:00 (closed Tuesday afternoon)</span>
+                              </div>
+                              <div class="option-detail">
+                                <i class="fas fa-map-marker-alt" style="color: #8B0000;"></i>
+                                <span>
+                                       <a href="https://www.google.com/maps/place/Panificio+Passi/@41.8834,12.4806,17z/data=!3m1!4b1!4m6!3m5!1s0x132f605f9393a8a5:0x7e33e5b2a3e4b0a8!8m2!3d41.8834!4d12.4806!16s%2Fg%2F11b5y5y5y5?hl=it&entry=ttu"
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          style="color: #8B0000; text-decoration: none;">
+                                      <strong>Show on Map</strong>
+                                    </a>
+                                  </span>
+                              </div>
+                              <div class="step-highlight mt-2" style="background-color: #fff3cd;">
+                                <i class="fas fa-lightbulb"></i> <strong>Secret:</strong> Ask for "pizza riscaldata" to have it crispy!
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card testimonial-card">
-            <div class="card-body">
-              <div class="testimonial-rating mb-3">
-                <i class="ti-star"></i>
-                <i class="ti-star"></i>
-                <i class="ti-star"></i>
-                <i class="ti-star"></i>
-                <i class="ti-star"></i>
+
+          <!-- Connection between Part 2 and Part 3 -->
+          <div class="itinerary-connection">
+            <div class="connection-visual">
+              <div class="connection-line"></div>
+              <div class="connection-arrow">
+                <i class="fas fa-arrow-down"></i>
               </div>
-              <p class="testimonial-text">"Il tour gastronomico è stata la scelta migliore! Abbiamo assaggiato piatti incredibili in posti che solo i locali conoscono."</p>
-              <div class="testimonial-author">
-                <h5>Paolo e famiglia</h5>
-                <p>Napoli</p>
+            </div>
+            <div class="connection-info" style="margin-left: 50px">
+              Transfer <i class="fas fa-subway"></i> 25 min with Metro B (direction Laurentina) to EUR Palasport
+            </div>
+          </div>
+
+          <!-- Part 3: Japanese Garden -->
+          <div class="expandable-step">
+            <div class="step-header" onclick="toggleStep(this)">
+              <div class="step-number">3</div>
+              <div class="step-title">
+                <h5>Zen moment at the Japanese Garden</h5>
+                <p>An oasis of peace among cherry blossoms and ponds, where time seems to stand still. 🌸</p>
+              </div>
+              <div class="step-arrow">▼</div>
+            </div>
+
+            <div class="step-details">
+              <div class="detail-section">
+                <!-- COMPLETE INFORMATION BOX -->
+                <div class="info-box">
+                  <div class="info-box-header">
+                    <i class="fas fa-info-circle"></i>
+                    <h4>Information</h4>
+                  </div>
+                  <div class="info-box-content">
+                    <!-- BASIC INFO -->
+                    <div class="info-item">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <div>
+                        <span class="info-label">Location:</span>
+                        <span class="info-value">Viale America, 40 (EUR Lake)</span>
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="fas fa-ticket-alt"></i>
+                      <div>
+                        <span class="info-label">Entrance:</span>
+                        <span class="info-value">Free</span>
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="far fa-clock"></i>
+                      <div>
+                        <span class="info-label">Hours:</span>
+                        <span class="info-value">9:30-19:30 (closed Monday)</span>
+                      </div>
+                    </div>
+
+                    <!-- HOW TO GET THERE -->
+                    <div class="info-item">
+                      <i class="fas fa-location-arrow"></i>
+                      <div>
+                        <span class="info-label">How to get there:</span>
+                        <div class="info-sublist">
+                          <div>
+                            <i class="fas fa-bicycle"></i> <strong>Bike:</strong> 25 min from Aventino
+                          </div>
+                          <div>
+                            <i class="fas fa-subway"></i> <strong>Metro B:</strong> Get off at "EUR Palasport"
+                          </div>
+                          <div>
+                            <i class="fas fa-bus"></i> <strong>Bus:</strong> Line 30Express or 714
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- BEST PERIOD -->
+                    <div class="info-item">
+                      <i class="fas fa-calendar-check"></i>
+                      <div>
+                        <span class="info-label">Ideal period:</span>
+                        <span class="info-value">March-April (cherry blossom season)</span>
+                      </div>
+                    </div>
+
+                    <!-- TIP -->
+                    <div class="info-tip">
+                      <i class="fas fa-umbrella-beach"></i>
+                      <div>
+                        <strong>Bring with you:</strong> Picnic blanket and camera!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- WHAT TO SEE SECTION -->
+                <div class="itinerary-steps mt-4">
+                  <h5 class="section-subtitle-tappe">
+                    <i class="fas fa-eye mr-2"></i>Points of Interest
+                  </h5>
+
+                  <div class="step-accordion">
+                    <!-- RED BRIDGE -->
+                    <div class="step-card">
+                      <div class="step-header" onclick="toggleStep(this)">
+                        <div class="step-badge bordered">1</div>
+                        <div class="step-title-container">
+                          <div class="step-title">
+                            <h5>Traditional Red Bridge</h5>
+                          </div>
+                          <div class="step-meta">
+                            <span><i class="fas fa-palette"></i> Architecture</span>
+                            <a href="https://www.google.com/maps/place/Ponte+Rosso/@41.8325,12.4690,17z/data=!3m1!4b1!4m6!3m5!1s0x132f61a1d8e3b3a7:0x7a1e8b3d3c3d3c3d!8m2!3d41.8325!4d12.4690!16s%2Fg%2F11b5y5y5y5?hl=it"
+                               class="btn-map-marker-red"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                              <i class="fas fa-map-marker-alt"></i> Show on map
+                            </a>
+                          </div>
+                        </div>
+                        <i class="fas fa-chevron-down step-arrow"></i>
+                      </div>
+                      <div class="step-content-flex-none">
+                        <div class="step-content-inner">
+                          <p>Faithful reproduction of a Japanese bridge in red lacquered wood, with artificial waterfalls.</p>
+                          <div class="step-details">
+                            <p><i class="fas fa-sun"></i> <strong>Best light:</strong> Late afternoon</p>
+                            <div class="step-highlight">
+                              <i class="fas fa-camera-retro"></i> <strong>Photo angle:</strong> From the southwest side
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- CHERRY TREES -->
+                    <div class="step-card">
+                      <div class="step-header" onclick="toggleStep(this)">
+                        <div class="step-badge bordered">2</div>
+                        <div class="step-title-container">
+                          <div class="step-title">
+                            <h5>Cherry Blossom Path</h5>
+                          </div>
+                          <div class="step-meta">
+                            <span><i class="fas fa-fan"></i> Sakura</span>
+                            <a href="https://www.google.com/maps/place/Sentiero+dei+Ciliegi/@41.8337,12.4678,18z/data=!4m6!3m5!1s0x132f61b6c3a8e5e5:0x7a1e8b3d3c3d3c3d!8m2!3d41.8337!4d12.4678!16s%2Fg%2F11b5y5y5y5?hl=it"
+                               class="btn-map-marker-red"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                              <i class="fas fa-map-marker-alt"></i> Show on map
+                            </a>
+                          </div>
+                        </div>
+                        <i class="fas fa-chevron-down step-arrow"></i>
+                      </div>
+                      <div class="step-content-flex-none">
+                        <div class="step-content-inner">
+                          <p>Over 100 sakura trees that bloom in spring, donated by the Japanese government.</p>
+                          <div class="step-details">
+                            <p><i class="fas fa-calendar-day"></i> <strong>Bloom:</strong> Late March-early April</p>
+                            <div class="step-highlight bg-light-pink">
+                              <i class="fas fa-magic"></i> <strong>Event:</strong> Hanami (flower festival) on April 1st
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- POND -->
+                    <div class="step-card">
+                      <div class="step-header" onclick="toggleStep(this)">
+                        <div class="step-badge bordered">3</div>
+                        <div class="step-title-container">
+                          <div class="step-title">
+                            <h5>Koi Carp Pond</h5>
+                          </div>
+                          <div class="step-meta">
+                            <span><i class="fas fa-fish"></i> Nature</span>
+                            <a href="https://www.google.com/maps/place/Laghetto+delle+Carpe+Koi/@41.8332,12.4665,18z/data=!4m6!3m5!1s0x132f61b6c3a8e5e5:0x7a1e8b3d3c3d3c3d!8m2!3d41.8332!4d12.4665!16s%2Fg%2F11b5y5y5y5?hl=it"
+                               class="btn-map-marker-red"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                              <i class="fas fa-map-marker-alt"></i> Show on map
+                            </a>
+                          </div>
+                        </div>
+                        <i class="fas fa-chevron-down step-arrow"></i>
+                      </div>
+                      <div class="step-content-flex-none">
+                        <div class="step-content-inner">
+                          <p>Relaxation area with benches and possibility to rent small boats (€3/30 min).</p>
+                          <div class="step-details">
+                            <p><i class="fas fa-utensils"></i> <strong>Picnic:</strong> Equipped area 50m away</p>
+                            <p><i class="fas fa-store"></i> <strong>Kiosk:</strong> Drinks and ice cream</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
+          <!-- Connection between Part 3 and Part 4 -->
+          <div class="itinerary-connection">
+            <div class="connection-visual">
+              <div class="connection-line"></div>
+              <div class="connection-arrow">
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+            <div class="connection-info" style="margin-left: 50px">
+              Transfer <i class="fas fa-subway"></i> 30 min with Metro B (direction Rebibbia) to Colosseum
+            </div>
+          </div>
+
+          <!-- Part 4: Voodoo Bar -->
+          <div class="expandable-step">
+            <style>
+              /* Discreet tropical style just for this stop */
+              .step-details[data-step="voodoo"] {
+                  background-color: #F8F5F0;
+                  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><path fill="%237BA982" fill-opacity="0.03" d="M60 15c15 10 20 30 10 40-10 10-30 5-40-10C15 30 20 10 35 5c15-5 30 5 25 10z"/></svg>');
+                  background-repeat: repeat;
+              }
+           </style>
+
+            <div class="step-header" onclick="toggleStep(this)">
+              <div class="step-number">4</div>
+              <div class="step-title">
+                <h5>Voodoo Bar</h5>
+                <p>A venue that combines Rome's underground soul with the majesty of the Imperial Forums. Where cocktails burn like sunsets over the Colosseum. 🎵🍸</p>
+              </div>
+              <div class="step-arrow">▼</div>
+            </div>
+
+            <div class="step-details" data-step="voodoo">
+              <div class="detail-section">
+                <!-- UNIFIED INFORMATION BOX -->
+                <div class="info-box">
+                  <div class="info-box-header">
+                    <i class="fas fa-cocktail"></i>
+                    <h4>Information</h4>
+                  </div>
+                  <div class="info-box-content">
+                    <div class="info-item">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <div>
+                        <span class="info-label">Where:</span>
+                        <span class="info-value">Via delle Terme di Traiano, 4A</span>
+                        <a href="https://www.google.com/maps/place/Voodoo+Bar/@41.891814,12.488585,17z/data=!3m1!4b1!4m6!3m5!1s0x132f61b6c3a8e5e5:0x7a1e8b3d3c3d3c3d!8m2!3d41.891814!4d12.488585!16s%2Fg%2F11gdxv1n0k?entry=ttu"
+                           class="btn-map-marker-red"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                          <i class="fas fa-map-marker-alt"></i> Show on map
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- INTEGRATED ARRIVAL SECTION -->
+                    <div class="info-item">
+                      <i class="fas fa-route"></i>
+                      <div>
+                        <span class="info-label">How to get there:</span>
+                        <span class="info-value">
+                                <div class="transport-option">
+                                    <i class="fas fa-subway"></i> <strong>Metro B</strong>: Stop "Colosseo" (5min walk)
+                                </div>
+                                <div class="transport-option">
+                                    <i class="fas fa-bus"></i> <strong>Bus</strong>: Lines 75, 81, 673
+                                </div>
+                                <div class="transport-option">
+                                    <i class="fas fa-car"></i> <strong>Car</strong>: Parking in Via Labicana
+                                </div>
+                            </span>
+                      </div>
+                    </div>
+
+                    <div class="info-item">
+                      <i class="far fa-clock"></i>
+                      <div>
+                        <span class="info-label">Hours:</span>
+                        <span class="info-value">18:30-02:30 (closed Monday)</span>
+                      </div>
+                    </div>
+
+                    <div class="info-tip">
+                      <i class="fas fa-lightbulb"></i>
+                      <div>
+                        <strong>Tip:</strong> Book a table with a Colosseum view!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- EVENTS (unchanged style) -->
+                <div class="itinerary-steps mt-4">
+                  <h5 class="section-subtitle-tappe">
+                    <i class="fas fa-calendar-alt mr-2"></i>Events
+                  </h5>
+
+                  <div class="step-accordion">
+                    <!-- HAPPY HOUR -->
+                    <div class="step-card">
+                      <div class="step-header" onclick="toggleStep(this)">
+                        <div class="step-badge bordered">1</div>
+                        <div class="step-title-container">
+                          <div class="step-title">
+                            <h5>Happy Hour</h5>
+                          </div>
+                          <div class="step-meta">
+                            <span><i class="fas fa-clock"></i> 18:30-21:30</span>
+                            <span><i class="fas fa-euro-sign"></i> 10-12</span>
+                          </div>
+                        </div>
+                        <i class="fas fa-chevron-down step-arrow"></i>
+                      </div>
+                      <div class="step-content-flex-none">
+                        <div class="step-content-inner">
+                          <p>Premium cocktails accompanied by spicy snacks:</p>
+                          <ul class="step-details">
+                            <li>Nachos with "Voodoo Fire" sauce</li>
+                            <li>Bewitched bruschetta</li>
+                            <li>Caribbean Ti' Punch</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- DJ SET -->
+                    <div class="step-card">
+                      <div class="step-header" onclick="toggleStep(this)">
+                        <div class="step-badge bordered">2</div>
+                        <div class="step-title-container">
+                          <div class="step-title">
+                            <h5>DJ Set</h5>
+                          </div>
+                          <div class="step-meta">
+                            <span><i class="fas fa-clock"></i> 22:00-01:30</span>
+                            <span><i class="fas fa-euro-sign"></i> 5-10</span>
+                          </div>
+                        </div>
+                        <i class="fas fa-chevron-down step-arrow"></i>
+                      </div>
+                      <div class="step-content-flex-none">
+                        <div class="step-content-inner">
+                          <p>Live music with the best DJs from the underground scene:</p>
+                          <div class="step-details">
+                            <p><i class="fas fa-music"></i> <strong>Genres:</strong> Afrobeat, Electro Voodoo, Tribal House</p>
+                            <p><i class="fas fa-tshirt"></i> <strong>Dress code:</strong> Casual </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end part 4 -->
+
+
         </div>
-      </div>
-    </div>
-  </section>
+        <!-- GENERAL MAP -->
+        <div class="compact-map-container">
+          <h2 class="section-title text-center">Map</h2>
+          <div id="avventura-mappa-generale"
+               data-tappe='{
+         "Porta San Sebastiano": [41.8725, 12.5018],
+         "Catacombe di San Callisto": [41.8589, 12.5141],
+         "Il Giardino di Lù": [41.8550, 12.5175],
+         "Mausoleo di Cecilia Metella": [41.8522, 12.5194],
+         "Villa dei Quintili": [41.8406, 12.5497],
+         "Terme di Caracalla": [41.8793, 12.4925],
+         "Circo Massimo": [41.8860, 12.4857],
+         "Giardino degli Aranci": [41.8830, 12.4799],
+         "Buco della Serratura": [41.8826, 12.4795],
+         "Terrazza Aventino": [41.8818, 12.4790],
+         "Zodiaco": [41.8818, 12.4790],
+         "Giardino Giapponese": [41.8319, 12.4692],
+         "Voodoo Bar": [41.8918, 12.4902]
+       }'
+               style="height: 350px; border-radius: 8px;">
+          </div>
 
-
-  <!-- Sezione CTA -->
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h2 class="mb-4">Pronto a esplorare Roma?</h2>
-          <p class="mb-4">Scarica la nostra app per avere tutti gli itinerari sempre con te</p>
-          <div class="app-buttons">
-            <a href="#" class="btn btn-dark mr-3">
-              <i class="fab fa-apple mr-2"></i> App Store
+          <div class="map-actions">
+            <a class="btn btn-sm btn-outline-secondary"
+               href="https://www.openstreetmap.org/#map=13/41.87/12.49"
+               target="_blank">
+              <i class="fas fa-external-link-alt mr-1"></i> Full map
             </a>
-            <a href="#" class="btn btn-dark">
-              <i class="fab fa-google-play mr-2"></i> Google Play
-            </a>
+            <button class="btn btn-sm btn-outline-secondary">
+              <i class="fas fa-download mr-1"></i> Download route
+            </button>
+          </div>
+        </div>
+        <!-- END GENERAL MAP -->
+      </div>
+    </div>
+  </div>
+  <!-- END ADVENTURE ITINERARY -->
+
+  <!-- START ROMAN CASTLES ITINERARY -->
+  <div class="tab-pane fade" id="castelli" role="tabpanel">
+    <!-- Roman castles itinerary content -->
+  </div>
+  <!-- END ROMAN CASTLES ITINERARY -->
+
+  <!-- START FOOD & WINE ITINERARY -->
+  <div class="tab-pane fade" id="food" role="tabpanel">
+    <!-- Food & wine itinerary content -->
+  </div>
+  <!-- END FOOD & WINE ITINERARY -->
+  </div>
+  </div>
+</section>
+<!-- End Itineraries Section -->
+<!-- Fine Sezione Itinerari -->
+
+<!-- Sezione Testimonianze -->
+<section class="section bg-primary text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="text-white">Cosa dicono i nostri visitatori</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+        <div class="card testimonial-card">
+          <div class="card-body">
+            <div class="testimonial-rating mb-3">
+              <i class="ti-star"></i>
+              <i class="ti-star"></i>
+              <i class="ti-star"></i>
+              <i class="ti-star"></i>
+              <i class="ti-star"></i>
+            </div>
+            <p class="testimonial-text">"L'itinerario classico è stato perfetto per la nostra prima visita a Roma. Abbiamo visto tutto l'essenziale senza sentirci affaticati."</p>
+            <div class="testimonial-author">
+              <h5>Marco e Laura</h5>
+              <p>Milano</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+        <div class="card testimonial-card">
+          <div class="card-body">
+            <div class="testimonial-rating mb-3">
+              <i class="ti-star"></i>
+              <i class="ti-star"></i>
+              <i class="ti-star"></i>
+              <i class="ti-star"></i>
+              <i class="ti-star"></i>
+            </div>
+            <p class="testimonial-text">"La Roma segreta ci ha regalato scorci e storie che non avremmo mai scoperto da soli. Un'esperienza autentica e memorabile."</p>
+            <div class="testimonial-author">
+              <h5>Giulia</h5>
+              <p>Torino</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card testimonial-card">
+          <div class="card-body">
+            <div class="testimonial-rating mb-3">
+              <i class="ti-star"></i>
+              <i class="ti-star"></i>
+              <i class="ti-star"></i>
+              <i class="ti-star"></i>
+              <i class="ti-star"></i>
+            </div>
+            <p class="testimonial-text">"Il tour gastronomico è stata la scelta migliore! Abbiamo assaggiato piatti incredibili in posti che solo i locali conoscono."</p>
+            <div class="testimonial-author">
+              <h5>Paolo e famiglia</h5>
+              <p>Napoli</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 
-  <!-- footer -->
-  <div id = "footerPlaceHolder"></div>
+<!-- footer -->
+<div id="footerPlaceHolder"></div>
 
-  <!-- Scripts esterni-->
-  <script src="/src/plugins/jQuery/jquery.min.js"></script>
-  <script src="/src/plugins/bootstrap/bootstrap.min.js"></script>
-  <script src="/src/plugins/slick/slick.min.js"></script>
-  <script src="/src/plugins/masonry/masonry.js"></script>
-  <script src="/src/plugins/instafeed/instafeed.min.js"></script>
-  <script src="/src/plugins/smooth-scroll/smooth-scroll.js"></script>
-  <script src="/src/plugins/headroom/headroom.js"></script>
-  <script src="/src/plugins/reading-time/readingTime.min.js"></script>
+<!-- Scripts esterni-->
+<script src="/src/plugins/jQuery/jquery.min.js"></script>
+<script src="/src/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="/src/plugins/slick/slick.min.js"></script>
+<script src="/src/plugins/masonry/masonry.js"></script>
+<script src="/src/plugins/instafeed/instafeed.min.js"></script>
+<script src="/src/plugins/smooth-scroll/smooth-scroll.js"></script>
+<script src="/src/plugins/headroom/headroom.js"></script>
+<script src="/src/plugins/reading-time/readingTime.min.js"></script>
 
-  <!-- Scripts di progetto-->
-  <script src="/src/js/slider-card.js"></script> <!-- per scorrimento immagini -->
-  <script src="/src/js/language-switcher.js"></script> <!-- per lo switch lingua. Va inserito prima di include.js -->
-  <script src="/src/js/include.js"></script> <!-- per inclusione pagine al posto dei placeHolder -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="/src/js/itinerario-osm.js"></script>
-  <!-- passa il percoso di header e footer relativo alla funzione includeHTML-->
-  <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          includeHTML({
-              headerPlaceHolder: "src/pages/include/header.html",
-              footerPlaceHolder: "src/pages/include/footer.html"
-          });
+<!-- Scripts di progetto-->
+<script src="/src/js/slider-card.js"></script>
+<script src="/src/js/language-switcher.js"></script>
+<script src="/src/js/include.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/src/js/osm-map-itinerary.js"></script> <!-- qsto è da modificare per ogni itinerario -->
+<script src="/src/js/expandable-section.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      includeHTML({
+          headerPlaceHolder: "src/pages/include/header.html",
+          footerPlaceHolder: "src/pages/include/footer.html",
+          adventureItineraryPlaceHolder: "src/pages/itinerary/it/avventura.html"
       });
-  </script>
+  });
+</script>
 
 </body>
 </html>
