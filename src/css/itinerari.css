@@ -367,8 +367,8 @@
 }
 
 .section-subtitle {
-    font-family: 'Allison';
-    font-size: 3.1rem;
+    font-family: 'Verdana';
+    font-size: 1.5rem;
     color: #6b522a;
     line-height: 1.2;
     text-shadow: 1px 1px 2px rgba(107, 82, 42, 0.2);
@@ -376,8 +376,8 @@
 }
 
 .section-subtitle-tappe {
-    font-family: 'Allison';
-    font-size: 2rem;
+    font-family: 'Verdana';
+    font-size: 1rem;
     color: #6b522a;
     line-height: 1.5;
     text-shadow: 1px 1px 2px rgba(107, 82, 42, 0.2);
@@ -610,7 +610,7 @@
     font-family: 'Brush Script MT', 'Segoe Script', cursive;
     letter-spacing: 0.3px;
     color: #555;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
 
@@ -757,3 +757,18 @@
     text-align: left !important;
   }
 }
+
+.tab-content .tab-pane {
+  display: none;
+}
+.tab-content .tab-pane.active {
+  display: block;
+}
+
+<style>
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  min-height: 300px;
+}
+</style>

@@ -7,6 +7,7 @@
 
     <!-- Meta e stili -->
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="icon" type="image-png" href="/src/images/loghi/logoLostInRome_icona.png">
     <link href="/src/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="/src/plugins/slick/slick.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
@@ -15,6 +16,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="/src/css/style.css" rel="stylesheet">
     <link href="/src/css/monument.css" rel="stylesheet">
+    <link href="/src/css/audio.css" rel="stylesheet">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
             crossorigin="anonymous">
     </script>
@@ -111,105 +113,47 @@
 
         <!-- Sezione Storia -->
 
-        <style>
-            .button1 {
-                position: absolute;   /* Posizionamento assoluto */
-                left: 1050px;           /* Distanza dal lato sinistro */
-                top: 798px;            /* Distanza dall'alto */
-                z-index: 100;         /* In cima a altri elementi */
-        `   }
 
-            .button1 button {
-                background-color: #e1dcd3;  /* Colore di sfondo grigio */
-                color: black;               /* Colore del testo */
-                padding: 10px 20px;         /* Spaziatura interna */
-                border: none;               /* Nessun bordo */
-                border-radius: 5px;         /* Bordo arrotondato */
-                font-size: 16px;            /* Grandezza del font */
-                cursor: pointer;           /* Cambio cursore */
-            }
-
-            .button1 button .icon {
-              font-size: 20px;            /* Grandezza dell'icona */
-              margin-right: 8px;          /* Distanza tra icona e testo */
-            }
-        </style>
-
-
-    <div class = "button1">
-    <button onclick="playAudio()">
-            <i id="audioIcon1" class="fas fa-volume-up icon"></i>
-        </button>
-
-            <audio id="myAudio">
-                <source src="/src/audio/StoriaECostruzioneColosseoIT.m4a" type="audio/mpeg">
-            </audio>
-        </div>
 
         <section class="content-section" id="storia">
             <span class="section-anchor"></span>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 mx-auto">
-                        <h2 class="section-title-right text-right">Storia e costruzione</h2>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
-                                <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/images/monuments/colosseo/img1.jpg">
-                            </div>
-                            <div class="col-md-6 text-justify">
-                                <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Storia" -->
-                                <p>La costruzione del Colosseo iniziò sotto l'imperatore Vespasiano nel 72 d.C. e fu
-                                    completata nell'80 d.C. sotto Tito. Fu edificato sul sito del lago artificiale della
-                                    Domus Aurea di Nerone, come simbolo del ritorno al popolo romano degli spazi
-                                    pubblici.</p>
-                                <p>L'anfiteatro poteva ospitare tra i 50.000 e gli 87.000 spettatori ed era utilizzato per
-                                    spettacoli pubblici, combattimenti tra gladiatori e rievocazioni di battaglie
-                                    famose.</p>
+                        <div class="d-flex align-items-center justify-content-start">
+                            <h2 class="section-title-right text-right mb-0">Storia e costruzione</h2>
+                            <button  class="audio-btn" id="historyAudioBtn" aria-label="Play history audio">
+                                <i class="fas fa-volume-up"></i>   <!-- icona-->
+                            </button>
+                            <audio id="myAudio">
+                                <source src="/src/audio/StoriaECostruzioneColosseoIT.m4a" type="audio/mpeg">
+                            </audio>
+                        </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
+                                    <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/images/monuments/colosseo/img1.jpg">
+                                </div>
+                                <div class="col-md-6 text-justify">
+                                    <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Storia" -->
+                                    <p>La costruzione del Colosseo iniziò sotto l'imperatore Vespasiano nel 72 d.C. e fu
+                                        completata nell'80 d.C. sotto Tito. Fu edificato sul sito del lago artificiale della
+                                        Domus Aurea di Nerone, come simbolo del ritorno al popolo romano degli spazi
+                                        pubblici.</p>
+                                    <p>L'anfiteatro poteva ospitare tra i 50.000 e gli 87.000 spettatori ed era utilizzato per
+                                        spettacoli pubblici, combattimenti tra gladiatori e rievocazioni di battaglie
+                                        famose.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
 
         <!-- Sezione "Come è usato oggi" -->
 
-        <style>
-            .button2 {
-                position: absolute;   /* Posizionamento assoluto */
-                left: 1160px;           /* Distanza dal lato sinistro */
-                top: 1825px;            /* Distanza dall'alto */
-                z-index: 100;         /* In cima a altri elementi */
-        `   }
 
-            .button2 button {
-                background-color: #e1dcd3;  /* Colore di sfondo grigio */
-                color: black;               /* Colore del testo */
-                padding: 10px 20px;         /* Spaziatura interna */
-                border: none;               /* Nessun bordo */
-                border-radius: 5px;         /* Bordo arrotondato */
-                font-size: 16px;            /* Grandezza del font */
-                cursor: pointer;           /* Cambio cursore */
-            }
-
-            .button2 button .icon {
-              font-size: 20px;            /* Grandezza dell'icona */
-              margin-right: 8px;          /* Distanza tra icona e testo */
-            }
-        </style>
-
-
-        <div class ="button2">
-            <button onclick="playAudio2()">
-                <i id="audioIcon2" class="fas fa-volume-up icon"></i>
-            </button>
-
-            <audio id="myAudio2">
-                <source src="/src/audio/FattiRecentiColosseoIT.m4a" type="audio/mpeg">
-            </audio>
-        </div>
 
 
 
@@ -242,40 +186,7 @@
 
         <!-- Sezione "Fatti recenti" -->
 
-        <style>
-            .button3 {
-                position: absolute;   /* Posizionamento assoluto */
-                left: 415px;           /* Distanza dal lato sinistro */
-                top: 1290px;            /* Distanza dall'alto */
-                z-index: 100;         /* In cima a altri elementi */
-        `   }
 
-            .button3 button {
-                background-color: var(--beige);  /* Colore di sfondo grigio */
-                color: black;               /* Colore del testo */
-                padding: 10px 20px;         /* Spaziatura interna */
-                border: none;               /* Nessun bordo */
-                border-radius: 5px;         /* Bordo arrotondato */
-                font-size: 16px;            /* Grandezza del font */
-                cursor: pointer;           /* Cambio cursore */
-            }
-
-            .button3 button .icon {
-              font-size: 20px;            /* Grandezza dell'icona */
-              margin-right: 8px;          /* Distanza tra icona e testo */
-            }
-        </style>
-
-
-        <div class ="button3">
-            <button onclick="playAudio3()">
-                <i id="audioIcon3" class="fas fa-volume-up icon"></i>
-            </button>
-
-            <audio id="myAudio3">
-                <source src="/src/audio/UsoOdiernoColosseoIT.m4a" type="audio/mpeg">
-            </audio>
-        </div>
 
 
         <section class="content-section" id="fatti-recenti">
@@ -307,40 +218,7 @@
 
         <!-- Sezione "Leggende e fatti divertenti" -->
 
-        <style>
-            .button4 {
-            position : absolute;   /* Posizionamento assoluto */
-            left: 410px;           /* Distanza dal lato sinistro */
-            top: 2360px;            /* Distanza dall'alto */
-            z-index: 100;         /* In cima a altri elementi */
-            }
 
-            .button4 button {
-            background-color: var(--beige)  /* Colore di sfondo grigio */
-            color: black;               /* Colore del testo */
-            padding: 10px 20px;         /* Spaziatura interna */
-            border: none;               /* Nessun bordo */
-            border-radius: 5px;         /* Bordo arrotondato */
-            font-size: 16px;            /* Grandezza del font */
-            cursor: pointer;           /* Cambio cursore */
-            }
-
-            .button4 button .icon {
-            font-size: 20px;            /* Grandezza dell'icona */
-            margin-right: 8px;          /* Distanza tra icona e testo */
-            }
-        </style>
-
-
-        <div class ="button4">
-            <button onclick="playAudio4()">
-                <i id="audioIcon4" class="fas fa-volume-up icon"></i>
-            </button>
-
-            <audio id="myAudio4">
-                <source src="/src/audio/FattiDivertentiColosseoIT.m4a" type="audio/mpeg">
-            </audio>
-        </div>
 
         <section class="content-section" id="curiosita">
             <span class="section-anchor"></span>
@@ -382,7 +260,7 @@
                                 height="400"
                                 style="border:none; border-radius:8px;"
                                 data-default-pos="41.8902,12.4924"
-                                src="https://www.openstreetmap.org/export/embed.html?bbox=12.4800,41.8800,12.5000,41.9000&layer=mapnik&marker=41.8902,12.4924">
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=12.4864,41.8882,12.4984,41.8922&layer=mapnik&marker=41.8902,12.4924">
                         </iframe>
 
                         <div class="text-center mt-4">
@@ -432,67 +310,7 @@
           });
 
     </script>
-    <script>
-        function playAudio() {
-          var audio = document.getElementById("myAudio");
+    <script src="/src/js/audio-player.js"></script>
 
-          if (audio.paused) {
-            audio.play();
-            icon.classList.remove("fa-volume-up");
-            icon.classList.add("fa-pause");
-          } else {
-            audio.pause();
-            icon.classList.remove("fa-pause");
-            icon.classList.add("fa-volume-up");
-          }
-        }
-    </script>
-    <script>
-        function playAudio2() {
-          var audio = document.getElementById("myAudio2");
-
-
-          if (audio.paused) {
-            audio.play();
-            icon.classList.remove("fa-volume-up");
-            icon.classList.add("fa-pause");
-          } else {
-            audio.pause();
-            icon.classList.remove("fa-pause");
-            icon.classList.add("fa-volume-up");
-          }
-        }
-    </script>
-    <script>
-        function playAudio3() {
-          var audio = document.getElementById("myAudio3");
-
-
-          if (audio.paused) {
-            audio.play();
-            icon.classList.remove("fa-volume-up");
-            icon.classList.add("fa-pause");
-          } else {
-            audio.pause();
-            icon.classList.remove("fa-pause");
-            icon.classList.add("fa-volume-up");
-          }
-        }
-    </script>
-    <script>
-        function playAudio4() {
-          var audio = document.getElementById("myAudio4");
-
-          if (audio.paused) {
-            audio.play();
-            icon.classList.remove("fa-volume-up");
-            icon.classList.add("fa-pause");
-          } else {
-            audio.pause();
-            icon.classList.remove("fa-pause");
-            icon.classList.add("fa-volume-up");
-          }
-        }
-    </script>
 </body>
 </html>
