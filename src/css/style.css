@@ -13,7 +13,7 @@ VERSION:    Version Number
 /* Definizione font personalizzato */
 @font-face {
   font-family: "hanskendrick";
-  src: url("/src/plugins/fonts/hanskendrick-regular-webfont.woff2") format("woff2"),
+  src: url("/src/plugins/fonts/hanskendrick-regular-webfont.woff2") format("woff2");
   src: url("/src/plugins/fonts/hanskendrick-regular-webfont.woff") format("woff");
   font-style: normal;
   font-display: swap; /* Ottimizzazione caricamento font */
@@ -85,6 +85,16 @@ h6, .h6 { font-size: 16px; }
   transition: 0.2s ease; /* Transizione fluida */
 }
 
+.en {
+  margin: -48PX;
+  top: 14px;
+}
+
+.it {
+  margin: 15px;
+  bottom: 14px;
+}
+
 /* Rimuove outline al focus per accessibilità */
 .btn:focus {
   outline: 0;
@@ -121,7 +131,7 @@ h6, .h6 { font-size: 16px; }
     color: #056974 !important;
   }
 
-}
+
 .btn-outline-light.active,
 .btn-outline-light:focus {
   background-color: rgba(245, 240, 230, 0.9) !important; /* Beige trasparente */
