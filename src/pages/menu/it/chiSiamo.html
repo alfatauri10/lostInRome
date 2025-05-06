@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title>Lost in Rome | Scopri i Monumenti</title>
+  <title>Lost in Rome | Chi Siamo</title>
+
+  <!-- Meta e stili -->
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="/src/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
   <link href="/src/plugins/slick/slick.css" rel="stylesheet">
@@ -12,17 +14,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
-  <!-- Main Stylesheet -->
   <link href="/src/css/style.css" rel="stylesheet">
+  <link href="/src/css/monument.css" rel="stylesheet">
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
           crossorigin="anonymous">
   </script>
-
 </head>
 
 <body>
+
 <!-- preloader -->
 <div class="preloader">
   <div class="loader">
@@ -36,87 +37,148 @@
 </div>
 <!-- /preloader -->
 
-<div id = "headerPlaceHolder"></div>
+<!-- Header -->
+<div id="headerPlaceHolder"></div>
 
-<section class="section">
-  <div class="container">
-    <div class="row">
 
-      <div  class="col-lg-12" >
-        <h2 class="titoli">Chi siamo</h2>
-        <img alt="author" class="img-fluid w-10 mb-4" src="/src/images/shared/copertina.jpg"
-             style="width:50%; heitgh:auto; margin: auto ; display: block">
-        <h6 class="startParagrafo">Ciao, siamo <span class="startParagrafo">...</span></h6>
-        <p> Il 2 aprile la classe 4H dell’Istituto Galileo Galilei ha pensato ad una strabiliante idea per mettere alla prova le loro competenze
-          ed allo stesso tempo creare qualcosa di funzionale e originale.Con grande entusiasmo questa classe, composta da 18 ragazzi, presenta LostInRome,
-          un sito web nato dall’unione tra passione per la nostra città e voglia di sperimentare. Siamo dei ragazzi in gamba che si impegnano giornalmente
-          per la creazione di questo sito e lo facciamo in modo simpatico e giocoso, per rendere il tutto più bello e divertente.
-
-          <br><br>
-          Il progetto è una vera e propria guida turistica interattiva pensata per chi visita Roma: ogni pagina è dedicata a un monumento iconico della capitale,
-          accompagnato da immagini, video, descrizioni dettagliate, e curiosità. Il tutto è disponibile sia in italiano che in inglese, per permettere anche ai
-          turisti stranieri di immergersi nella storia e nella cultura di Roma.
-          Le informazioni che troverete nel sito non si limitano alla semplice descrizione:
-          ogni monumento è raccontato attraverso diversi punti di vista: fatti storici, eventi recenti, usi attuali, e aneddoti particolari,
-          per offrire un'esperienza completa e coinvolgente.
-          L’idea è nata durante una gita scolastica nel centro di Roma:
-          ogni gruppo di studenti si era preparato per spiegare un monumento in inglese ai turisti, proprio come se fossero delle vere guide turistiche.
-          Da lì, l’intuizione: perché non rendere questo lavoro utile anche per chi visita la città senza una vera e propria guida?
-          (o dei volontari come noi 😀) Così è nato LostInRome.
-
-          <br><br>
-          Il progetto è stato interamente realizzato dalla classe, suddivisa in gruppi, ma sotto il nome di Unreal Team,
-          la nostra azienda interna. Ogni gruppo ha lavorato su uno o più monumenti, occupandosi della ricerca, della traduzione,
-          della scrittura dei testi e dello sviluppo del sito. Abbiamo scritto il codice in HTML e utilizzato IntelliJ come ambiente di sviluppo,
-          imparando a collaborare in modo tecnico e creativo.
-          Questo lavoro ci ha permesso di mettere in pratica competenze digitali, linguistiche e organizzative,
-          ma soprattutto ci ha fatto riscoprire il valore di Roma attraverso i nostri occhi e quelli dei visitatori.
-          <br><br>
-          Ringraziamo i nostri docenti per il supporto, e invitiamo tutti a visitare il nostro sito LostInRome,
-          perfetto da consultare proprio mentre si passeggia tra le meraviglie della città eterna.
+<!-- Contenuto principale -->
+<div class="page-content">
 
 
 
 
-        </p>
+  <!-- Hero Section -->
+  <section class="content-section" id="Chi Siamo">
+    <span class="section-anchor"></span>
+    <div class="container">
+      <div class="row align-items-center"> <!-- allineamento verticale -->
+        <!-- Colonna sinistra: Titolo + Testo -->
+        <div class="col-md-6 order-md-2 text-justify fs-5">
+          <h1 class="titoli">Chi Siamo</h1> <!-- Titolo dentro colonna -->
+          <p style="font-size: 20px">
+            "LostInRome: quando la passione per Roma incontra il talento degli studenti,
+            nasce una guida turistica digitale che fa parlare i monumenti, in due lingue e con il cuore."
+          </p>
+        </div>
+
+        <!-- Colonna destra: Immagine -->
+        <div class="col-md-6 order-md-1">
+          <img
+                  alt="Struttura architettonica"
+                  class="img-fluid rounded"
+                  style="max-width: 90%; height: auto;"
+                  src="/src/images/shared/copertina.jpg"
+          >
+        </div>
       </div>
-
-
     </div>
-  </div>
-</section>
+  </section>
+
+
+  <!-- obbiettivo -->
+  <section class="content-section" id="Obbiettiv0">
+    <span class="section-anchor"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="section-title-right text-right">Il nostro grande obbiettivo</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
+              <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/images/monuments/colosseo/img1.jpg">
+            </div>
+            <div class="col-md-6 text-justify">
+              <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Storia" -->
+              <p>
+              </p>
+              <p>il nostro obbiettivo é quello di fornire una guida turistica interattiva pensata per chi visita Roma:
+                ogni pagina è dedicata a un monumento iconico della capitale, accompagnato da immagini, video, descrizioni dettagliate, e curiosità.
+                Il tutto è disponibile sia in italiano che in inglese,
+                per permettere anche ai turisti stranieri di immergersi nella storia e nella cultura di Roma.
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione "La nostra storia" -->
+  <section class="content-section" id="la nostra storia ">
+    <span class="section-anchor"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="section-title-left">La nostra storia</h2>
+          <div class="row">
+            <div class="col-md-6 order-md-2 text-justify">
+
+              <p>Con grande entusiasmo questa classe, composta da 18 ragazzi, presenta LostInRome, un sito web nato dall’unione tra passione per la nostra città e voglia di sperimentare. Siamo dei ragazzi in gamba che si impegnano giornalmente per la creazione di questo sito e lo facciamo in modo simpatico e giocoso, per rendere il tutto più bello e divertente.
+
+              </p>
+            </div>
+            <div class="col-md-6 order-md-1 ">
+              <!-- TODO (JAlfandari): Inserisci qui la tua img2. Modifica ALT con una breve descrizione e SRC con percorso -->
+              <img alt="Struttura architettonica" class="img-fluid rounded"
+                   src="/src/images/monuments/colosseo/img2.jpg"> <!-- img2 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- La nostra stroia " -->
+  <section class="content-section" id="La svolta">
+    <span class="section-anchor"></span>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="section-title-right text-right">La svolta</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <!-- TODO (JAlfandari): Inserisci qui la tua img3. Modifica ALT con una breve descrizione e SRC con percorso -->
+              <img alt="Fatti recenti" class="img-fluid rounded"
+                   src="/src/images/monuments/colosseo/img3.jpeg"> <!--img3 -->
+            </div>
+            <div class="col-md-6 text-justify">
+
+              <p>L’idea è nata durante una gita scolastica nel centro di Roma: ogni gruppo di studenti si era preparato per spiegare un monumento in inglese ai turisti,
+                proprio come se fossero delle vere guide turistiche.</p>
+              <p>Il progetto è stato interamente realizzato dalla classe, suddivisa in gruppi, ma sotto il nome di Unreal Team, la nostra azienda interna. Ogni gruppo ha lavorato su uno o più monumenti,
+                occupandosi della ricerca, della traduzione, della scrittura dei testi e dello sviluppo del sito. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
 <!-- Footer -->
-<div id = "footerPlaceHolder"></div>
-
-
+<div id="footerPlaceHolder"></div>
 
 <!-- Scripts -->
-<script src="/src/plugins/jQuery/jquery.min.js"></script>
-<script src="/src/plugins/bootstrap/bootstrap.min.js"></script>
-<script src="/src/plugins/slick/slick.min.js"></script>
-<script src="/src/plugins/masonry/masonry.js"></script>
-<script src="/src/plugins/instafeed/instafeed.min.js"></script>
-<script src="/src/plugins/smooth-scroll/smooth-scroll.js"></script>
-<script src="/src/plugins/headroom/headroom.js"></script>
-<script src="/src/plugins/reading-time/readingTime.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script src="/src/js/osm-map.js"></script>
 <script src="/src/js/slider-card.js"></script>
+<script src="/src/js/gallery-monuments-scroll.js"></script> <!-- script per la galleria di immagini -->
+<script src="/src/js/language-switcher.js"></script> <!-- script per lo switch lingua -->
+<script src="/src/js/include.js"></script> <!-- script per l'inclusione di altre pagine  -->
 
-
-<script src="/src/js/language-switcher.js"></script> <!-- per lo switch lingua. Va inserito prima di include.js -->
-<script src="/src/js/include.js"></script> <!-- per inclusione pagine al posto dei placeHolder -->
-<!-- passa il percoso di header e footer relativo alla funzione includeHTML -->
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        includeHTML({
-            headerPlaceHolder: "../../include/header.html",
-            footerPlaceHolder: "../../include/footer.html"
-        });
-    });
+  document.addEventListener("DOMContentLoaded", function() {
+      includeHTML({
+          headerPlaceHolder: "../../include/header.html",
+          footerPlaceHolder: "../../include/footer.html"
+      });
+  });
+
 </script>
-
-
 </body>
 </html>
