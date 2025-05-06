@@ -1,5 +1,5 @@
-function toggleAudio(audioId) {
-   const audio = document.getElementById(audioId);
+function toggleAudio("myAudio") {
+   const audio = document.getElementById("myAudio");
    const icon = document.getElementById(`audioIcon${audioId.slice(-1)}`);
 
 
