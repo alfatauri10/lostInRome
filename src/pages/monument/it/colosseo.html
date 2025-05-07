@@ -122,8 +122,8 @@
                     <div class="col-lg-10 mx-auto">
                         <div class="d-flex align-items-center justify-content-start">
                             <h2 class="section-title-right text-right mb-0">Storia e costruzione</h2>
-                            <button  class="audio-btn" id="historyAudioBtn" aria-label="Play history audio">
-                                <i class="fas fa-volume-up"></i>   <!-- icona-->
+                            <button  onclick = "toggleAudio('myAudio1')" class="audio-btn" id="historyAudioBtn" aria-label="Play history audio">
+                                <i class="fas fa-volume-up" id = "audioIcon1"></i>   <!-- icona-->
                             </button>
                             <audio id="myAudio">
                                 <source src="/src/audio/StoriaECostruzioneColosseoIT.m4a" type="audio/mpeg">
@@ -145,10 +145,10 @@
                                         famose.</p>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
 
         <!-- Sezione "Come è usato oggi" -->
@@ -310,7 +310,7 @@
           });
 
     </script>
-    <script src="/src/js/audio-player.js"></script>
+    <script src="/src/js/audioPlayer.js"></script>
 
 </body>
 </html>

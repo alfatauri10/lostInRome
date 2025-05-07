@@ -1,11 +1,12 @@
-function toggleAudio("myAudio") {
-   const audio = document.getElementById("myAudio");
-   const icon = document.getElementById(`audioIcon${audioId.slice(-1)}`);
+function toggleAudio(myAudio) {
+   const audio = document.getElementById(myAudio);
+   const iconId = `audioIcon${myAudioId.slice(-1)}`
+   const icon = document.getElementById(IconId);
 
 
    // Pausa tutti gli altri audio
-   document.querySelectorAll('myAudio').forEach(a => {
-       if (a.id !== audioId && !a.paused) {
+   document.querySelectorAll('audio').forEach(a => {
+       if (a.id !== myAudio && !a.paused) {
            a.pause();
            a.currentTime = 0;
            const otherIcon = document.getElementById(`audioIcon${a.id.slice(-1)}`);
