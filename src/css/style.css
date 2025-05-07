@@ -913,8 +913,8 @@ body {
 
 /* Bandiere */
 .flag-icon {
-  width: 24px;
-  height: 16px;
+  width: 34px;
+  height: 18px;
   background-size: cover;
   border-radius: 2px;
   box-shadow: 0 0 2px rgba(0,0,0,0.2);
