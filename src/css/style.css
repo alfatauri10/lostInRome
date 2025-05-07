@@ -86,11 +86,13 @@ h6, .h6 { font-size: 16px; }
 }
 
 .en {
+  position: relative;
   margin: -48PX;
   top: 14px;
 }
 
 .it {
+  position: relative;
   margin: 15px;
   bottom: 14px;
 }
