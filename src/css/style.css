@@ -13,7 +13,7 @@ VERSION:    Version Number
 /* Definizione font personalizzato */
 @font-face {
   font-family: "hanskendrick";
-  src: url("/src/plugins/fonts/hanskendrick-regular-webfont.woff2") format("woff2"),
+  src: url("/src/plugins/fonts/hanskendrick-regular-webfont.woff2") format("woff2");
   src: url("/src/plugins/fonts/hanskendrick-regular-webfont.woff") format("woff");
   font-style: normal;
   font-display: swap; /* Ottimizzazione caricamento font */
@@ -85,6 +85,18 @@ h6, .h6 { font-size: 16px; }
   transition: 0.2s ease; /* Transizione fluida */
 }
 
+.en {
+  position: relative;
+  margin: -48PX;
+  top: 14px;
+}
+
+.it {
+  position: relative;
+  margin: 15px;
+  bottom: 14px;
+}
+
 /* Rimuove outline al focus per accessibilità */
 .btn:focus {
   outline: 0;
@@ -121,7 +133,7 @@ h6, .h6 { font-size: 16px; }
     color: #056974 !important;
   }
 
-}
+
 .btn-outline-light.active,
 .btn-outline-light:focus {
   background-color: rgba(245, 240, 230, 0.9) !important; /* Beige trasparente */
@@ -901,8 +913,8 @@ body {
 
 /* Bandiere */
 .flag-icon {
-  width: 24px;
-  height: 16px;
+  width: 34px;
+  height: 18px;
   background-size: cover;
   border-radius: 2px;
   box-shadow: 0 0 2px rgba(0,0,0,0.2);
@@ -1344,6 +1356,14 @@ main {
   }
 }
 
+@media (max-width: 820px) {
+  .motto-text-body {
+    display: block;
+    padding: 0 1rem; /* Padding ridotto e uniforme */
+    margin: 0.5rem 0; /* Aggiungi margine verticale */
+  }
+}
+
 /* Regolazioni per mobile piccolo */
 @media (max-width: 480px) {
   .motto-text-body {
@@ -1428,6 +1448,16 @@ main {
     display: none !important;
   }
 }
+
+@media (max-width: 820px) {
+  .navbar-brand {
+    padding-right: 0 !important;
+  }
+  .motto-text {
+    display: none !important;
+  }
+}
+
 
 /* Stile per le connessioni tra tappe */
 
