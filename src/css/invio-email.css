@@ -1,0 +1,10 @@
+#spinner {
+  margin-left: 8px;
+}
+.alert {
+    transition: all 0.3s ease;
+}
+[required]::after {
+    content: ' *';
+    color: #dc3545;
+}

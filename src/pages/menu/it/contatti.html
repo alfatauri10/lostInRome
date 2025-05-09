@@ -15,6 +15,8 @@
 
   <!-- Main Stylesheet -->
   <link href="/src/css/style.css" rel="stylesheet">
+  <link href="/src/css/invio-email.css" rel="stylesheet">
+
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
           crossorigin="anonymous">
   </script>
@@ -44,19 +46,29 @@
         <h2 class="titoli">Contatti</h2>
         <img src="/src/images/shared/contact.jpg" alt="author"  STYLE="height:300px;" class="img-fluid w-100 mb-4">
         <p class="mb-5">Strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream and, as I lie close to the earth, a thousand unknown plants are noticed by me.<br><br>When I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath of that universal love which bears and sustains.</p>
-        <form action="#" class="row">
+
+        <!-- form invio email -->
+        <!-- nella action c'è quella presa dal sito formspree: manoberq -->
+        <form action="https://formspree.io/f/manoberq" method="POST" id="contactForm" class="row">
           <div class="col-lg-6">
-            <input type="text" class="form-control mb-4" name="name" id="name" placeholder="Name">
+            <input type="text" class="form-control mb-4" name="name" id="name" placeholder="Nome *" required>
           </div>
           <div class="col-lg-6">
-            <input type="email" class="form-control mb-4" name="email" id="email" placeholder="Email">
+            <input type="email" class="form-control mb-4" name="email" id="email" placeholder="Email *" required>
+
           </div>
           <div class="col-12">
-            <textarea name="message" id="message" class="form-control mb-4" placeholder="Message..."></textarea>
+            <textarea name="message" id="message" class="form-control mb-4" placeholder="Il tuo messaggio *" rows="5" required></textarea>
           </div>
           <div class="col-12">
-            <button class="btn btn-primary">Invia</button>
+            <button type="submit" class="btn btn-primary" id="submitBtn">
+              <span id="submitText">Invia</span>
+              <div id="spinner" class="spinner-border spinner-border-sm d-none" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </button>
           </div>
+          <div id="formAlert" class="mt-3"></div>
         </form>
       </div>
     </div>
@@ -82,6 +94,7 @@
 
 <script src="/src/js/language-switcher.js"></script> <!-- per lo switch lingua. Va inserito prima di include.js -->
 <script src="/src/js/include.js"></script> <!-- per inclusione pagine al posto dei placeHolder -->
+<script src="/src/js/invio-email.js"></script>
 <!-- passa il percoso di header e footer relativo alla funzione includeHTML -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -91,6 +104,7 @@
         });
     });
 </script>
+
 
 </body>
 </html>
