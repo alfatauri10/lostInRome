@@ -1,0 +1,27 @@
+/* Stile per il pulsante audio */
+.audio-btn {
+    background: none;  /* Rimuove lo sfondo grigio predefinito */
+    border: none; /* Elimina il bordo predefinito */
+    color: #333;
+    font-size: 1.5rem; /* Dimensione responsive (relativa alla root) */
+    cursor: pointer; /* Trasforma il cursore in manina al hover (facoltativo decidi tu) */
+    transition: all 0.3s ease; /* Animazione */
+    margin-left: 10px; /* Distanza dal titolo */
+    padding: 0;
+    vertical-align: middle;
+    line-height: 1;/* Allineamento verticale con il testo */
+}
+/* Effetto al passaggio (hover) del mouse */
+
+.audio-btn:hover {
+    color: #007bff;
+    transform: scale(1.1);  /* ingrandimento del 10%  */
+}
+
+/* Responsive per il pulsante  quando lo schermo è minore di 768 px quindi telefoni etc..*/
+@media (max-width: 768px) {
+    .audio-btn {
+        font-size: 1.2rem;  /* Riduce la dimensione dell'icona */
+        margin-left: 5px; /* Riduce lo spazio dal titolo */
+    }
+}
