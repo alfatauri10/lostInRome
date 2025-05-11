@@ -13,7 +13,7 @@ VERSION:    Version Number
 /* Definizione font personalizzato */
 @font-face {
   font-family: "hanskendrick";
-  src: url("/src/plugins/fonts/hanskendrick-regular-webfont.woff2") format("woff2"),
+  src: url("/src/plugins/fonts/hanskendrick-regular-webfont.woff2") format("woff2");
   src: url("/src/plugins/fonts/hanskendrick-regular-webfont.woff") format("woff");
   font-style: normal;
   font-display: swap; /* Ottimizzazione caricamento font */
@@ -74,7 +74,7 @@ h6, .h6 { font-size: 16px; }
 /* ==================== STILE BOTTONI GALLERIA HOMEPAGE ==================== */
 .btn {
   position: relative;
-  bottom: -50px;
+  bottom: 15px;
   font-size: 10px;
   font-family: "Open Sans", sans-serif;
   text-transform: capitalize;
@@ -83,6 +83,18 @@ h6, .h6 { font-size: 16px; }
   font-weight: 600;
   border: 2px solid;
   transition: 0.2s ease; /* Transizione fluida */
+}
+
+.en {
+  position: relative;
+  margin: -48PX;
+  top: 14px;
+}
+
+.it {
+  position: relative;
+  margin: 15px;
+  bottom: 14px;
 }
 
 /* Rimuove outline al focus per accessibilità */
@@ -121,7 +133,7 @@ h6, .h6 { font-size: 16px; }
     color: #056974 !important;
   }
 
-}
+
 .btn-outline-light.active,
 .btn-outline-light:focus {
   background-color: rgba(245, 240, 230, 0.9) !important; /* Beige trasparente */
@@ -901,8 +913,8 @@ body {
 
 /* Bandiere */
 .flag-icon {
-  width: 24px;
-  height: 16px;
+  width: 34px;
+  height: 18px;
   background-size: cover;
   border-radius: 2px;
   box-shadow: 0 0 2px rgba(0,0,0,0.2);
@@ -1250,9 +1262,11 @@ main {
 .galleria-monumenti .col-lg-3:nth-child(2) {
   animation-delay: 0.5s;
 }
+
 .galleria-monumenti .col-lg-3:nth-child(3) {
   animation-delay: 1s;
 }
+
 .galleria-monumenti .col-lg-3:nth-child(4) {
   animation-delay: 1.5s;
 }
@@ -1356,7 +1370,7 @@ main {
 @media (max-width: 480px) {
   .motto-text-body {
     padding: 0 0.5rem; /* Padding ancora più stretto */
-    font-size: clamp(2.5rem, 5vw, 2.2rem); /* Dimensione più piccola */
+    font-size: clamp(2.0rem, 5vw, 2.2rem); /* Dimensione più piccola */
   }
 }
 
