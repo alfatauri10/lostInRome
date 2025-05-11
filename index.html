@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Lost in Rome | Scopri i Monumenti</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image-png" href="/src/images/loghi/logoLostInRome_icona.png">
+  <link rel="icon" type="image-png" href="/src/resources/images/loghi/logoLostInRome_icona.png">
   <link rel="stylesheet" href="/src/plugins/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="/src/plugins/slick/slick.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
@@ -61,7 +61,7 @@
         <!-- Ripeti per ogni immagine (1-6) -->
         <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
           <article class="card bg-dark text-center text-white border-0 rounded-0">
-            <img class="card-img rounded-0 img-fluid w-100" src="/src/images/copertineMonuments/altareDellaPatria.jpg" alt="post-thumb">
+            <img class="card-img rounded-0 img-fluid w-100" src="src/resources/images/copertineMonuments/altareDellaPatria.jpg" alt="post-thumb">
             <div class="card-content">
               <a class="btn btn-outline-light" href="/lostInRome/src/pages/monument/it/altareDellaPatria.html">vai al monumento</a>
             </div>
@@ -75,7 +75,7 @@
 
         <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
           <article class="card bg-dark text-center text-white border-0 rounded-0">
-            <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/Ara-Pacis.jpg" alt="post-thumb">
+            <img class="card-img rounded-0 img-fluid w-100" src="/src/resources/images/copertineMonuments/Ara-Pacis.jpg" alt="post-thumb">
             <div class="card-content">
               <a class="btn btn-outline-light" href="/lostInRome/src/pages/monument/it/araPacis.html">vai al monumento</a>
             </div>
@@ -89,7 +89,7 @@
 
         <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
           <article class="card bg-dark text-center text-white border-0 rounded-0">
-            <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/fontanaDiTrevi.jpg" alt="post-thumb">
+            <img class="card-img rounded-0 img-fluid w-100" src="/src/resources/images/copertineMonuments/fontanaDiTrevi.jpg" alt="post-thumb">
             <div class="card-content">
               <a class="btn btn-outline-light" href="/lostInRome/src/pages/monument/it/fontanaDiTrevi.html">vai al monumento</a>
             </div>
@@ -103,7 +103,7 @@
 
         <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
           <article class="card bg-dark text-center text-white border-0 rounded-0">
-            <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/pantheon.jpg" alt="post-thumb">
+            <img class="card-img rounded-0 img-fluid w-100" src="/src/resources/images/copertineMonuments/pantheon.jpg" alt="post-thumb">
             <div class="card-content">
               <a class="btn btn-outline-light" href="/lostInRome/src/pages/monument/it/pantheon.html">vai al monumento</a>
             </div>
@@ -117,7 +117,7 @@
 
         <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
           <article class="card bg-dark text-center text-white border-0 rounded-0">
-            <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/piazzaDelPopolo.jpg" alt="post-thumb">
+            <img class="card-img rounded-0 img-fluid w-100" src="/src/resources/images/copertineMonuments/piazzaDelPopolo.jpg" alt="post-thumb">
             <div class="card-content">
               <a class="btn btn-outline-light" href="/lostInRome/src/pages/monument/it/piazzaDelPopolo.html">vai al monumento</a>
             </div>
@@ -131,7 +131,7 @@
 
         <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
           <article class="card bg-dark text-center text-white border-0 rounded-0">
-            <img class="card-img rounded-0 img-fluid w-100" src="src/images/copertineMonuments/piazzaDiSpagna2.jpg" alt="post-thumb">
+            <img class="card-img rounded-0 img-fluid w-100" src="/src/resources/images/copertineMonuments/piazzaDiSpagna2.jpg" alt="post-thumb">
             <div class="card-content">
               <a class="btn btn-outline-light" href="/lostInRome/src/pages/monument/it/piazzaDiSpagna.html">vai al monumento</a>
             </div>
@@ -271,6 +271,8 @@
 <!-- footer -->
 <div id="footerPlaceHolder"></div>
 
+
+
 <!-- Scripts esterni-->
 <script src="/src/plugins/jQuery/jquery.min.js"></script>
 <script src="/src/plugins/bootstrap/bootstrap.min.js"></script>
@@ -285,9 +287,12 @@
 <script src="/src/js/slider-card.js"></script>
 <script src="/src/js/language-switcher.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 <script src="/src/js/include.js"></script>
 <script src="/src/js/osm-map-itinerary.js"></script> <!-- qsto è da modificare per ogni itinerario -->
 <script src="/src/js/expandable-section.js"></script>
+<script src="/src/js/virtual-tour.js" defer></script>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
