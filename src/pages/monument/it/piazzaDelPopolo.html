@@ -18,17 +18,17 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="/src/css/style.css" rel="stylesheet">
   <link href="/src/css/monument.css" rel="stylesheet">
+  <link href="/src/css/audio-player.css" rel="stylesheet">
+
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
           crossorigin="anonymous">
 
   </script>
 
-
 </head>
 
 
 <body>
-
 
 <!-- preloader -->
 <div class="preloader">
@@ -76,7 +76,6 @@
 
       <div class="col-lg-7">
 
-
         <!-- Galleria immagini navigabile -->
         <div class="monument-gallery">
 
@@ -87,13 +86,11 @@
             </a>
           </div>
 
-
           <div class="gallery-item">
             <a href="#usato-oggi">
               <img alt="Visuale su piazza del popolo" src="/src/resources/images/monuments/piazzaDelPopolo/img2.jpg">
             </a>
           </div>
-
 
           <div class="gallery-item">
             <a href="#fatti-recenti">
@@ -101,13 +98,11 @@
             </a>
           </div>
 
-
           <div class="gallery-item">
             <a href="#curiosita">
               <img alt="intera piazza piena di persone" src="/src/resources/images/monuments/piazzaDelPopolo/img4.jpg">
             </a>
           </div>
-
 
         </div>
       </div>
@@ -115,49 +110,18 @@
   </div>
 </section>
 <!-- Sezione Storia -->
-
-<style>
-    .button1 {
-        position: absolute;   /* Posizionamento assoluto */
-        left: 855px;           /* Distanza dal lato sinistro */
-        top: 798px;            /* Distanza dall'alto */
-        z-index: 100;         /* In cima a altri elementi */
-`   }
-
-    .button1 button {
-        background-color: #e1dcd3;  /* Colore di sfondo grigio */
-        color: black;               /* Colore del testo */
-        padding: 10px 20px;         /* Spaziatura interna */
-        border: none;               /* Nessun bordo */
-        border-radius: 5px;         /* Bordo arrotondato */
-        font-size: 16px;            /* Grandezza del font */
-        cursor: pointer;           /* Cambio cursore */
-    }
-
-    .button1 button .icon {
-      font-size: 20px;            /* Grandezza dell'icona */
-      margin-right: 8px;          /* Distanza tra icona e testo */
-    }
-</style>
-
-
-<div class = "button1">
-    <button onclick="playAudio()">
-        <i id="audioIcon1" class="fas fa-volume-up icon"></i>
-    </button>
-
-    <audio id="myAudio">
-        <source src="/src/audio/StoriaECostruzioneColosseoIT.m4a" type="audio/mpeg">
-    </audio>
-</div>
-
-
 <section class="content-section" id="storia">
   <span class="section-anchor"></span>
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h2 class="section-title-right text-right">Storia e costruzione</h2>
+        <h2 class="section-title-right text-right">
+          <button class="audio-button" onclick="toggleAudio('audio1')">
+            <i id="audioIcon1" class="fas fa-volume-up icon"></i>
+          </button>
+          Storia e costruzione
+        </h2>
+        <audio id="audio1" src="/src/resources/audio/monument/piazzaDelPopolo/it/audio1.m4a"></audio>
         <div class="row">
           <div class="col-md-6 my-3">
             <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/resources/images/monuments/piazzaDelPopolo/img1.jpg" style= "width: 450px; height: 300px">
@@ -175,50 +139,18 @@
 
 
 <!-- Sezione "Come è usato oggi" -->
-
-<style>
-    .button2 {
-        position: absolute;   /* Posizionamento assoluto */
-        left: 1160px;           /* Distanza dal lato sinistro */
-        top: 1280px;            /* Distanza dall'alto */
-        z-index: 100;         /* In cima a altri elementi */
-`   }
-
-    .button2 button {
-        background-color: #e1dcd3;  /* Colore di sfondo grigio */
-        color: black;               /* Colore del testo */
-        padding: 10px 20px;         /* Spaziatura interna */
-        border: none;               /* Nessun bordo */
-        border-radius: 5px;         /* Bordo arrotondato */
-        font-size: 16px;            /* Grandezza del font */
-        cursor: pointer;           /* Cambio cursore */
-    }
-
-    .button2 button .icon {
-      font-size: 20px;            /* Grandezza dell'icona */
-      margin-right: 8px;          /* Distanza tra icona e testo */
-    }
-</style>
-
-
-<div class ="button2">
-    <button onclick="playAudio2()">
-        <i id="audioIcon2" class="fas fa-volume-up icon"></i>
-    </button>
-
-    <audio id="myAudio2">
-        <source src="/src/audio/FattiRecentiColosseoIT.m4a" type="audio/mpeg">
-    </audio>
-</div>
-
-
-
 <section class="content-section" id="usato-oggi">
   <span class="section-anchor"></span>
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h2 class="section-title-left">Come è usato oggi</h2>
+        <h2 class="section-title-left">
+          Come è usato oggi
+          <button class="audio-button" onclick="toggleAudio('audio2')">
+            <i id="audioIcon2" class="fas fa-volume-up icon"></i>
+          </button>
+        </h2>
+        <audio id="audio2" src="/src/resources/audio/monument/piazzaDelPopolo/it/audio2.m4a"></audio>
         <div class="row">
           <div class="col-md-6 order-md-2 text-justify my-3">
             <p>Oggi Piazza del Popolo è uno spazio pubblico vivace e popolato sia di turisti che di locali. Ospita eventi, concerti e celebrazioni.</p>
@@ -236,51 +168,18 @@
 
 
 <!-- Sezione "Fatti recenti" -->
-
-<style>
-    .button3 {
-        position: absolute;   /* Posizionamento assoluto */
-        left: 300px;           /* Distanza dal lato sinistro */
-        top: 1830px;            /* Distanza dall'alto */
-        z-index: 100;         /* In cima a altri elementi */
-`   }
-
-    .button3 button {
-        background-color: var(--beige);  /* Colore di sfondo grigio */
-        color: black;               /* Colore del testo */
-        padding: 10px 20px;         /* Spaziatura interna */
-        border: none;               /* Nessun bordo */
-        border-radius: 5px;         /* Bordo arrotondato */
-        font-size: 16px;            /* Grandezza del font */
-        cursor: pointer;           /* Cambio cursore */
-    }
-
-    .button3 button .icon {
-      font-size: 20px;            /* Grandezza dell'icona */
-      margin-right: 8px;          /* Distanza tra icona e testo */
-    }
-</style>
-
-
-<div class ="button3">
-    <button onclick="playAudio3()">
-        <i id="audioIcon3" class="fas fa-volume-up icon"></i>
-    </button>
-
-    <audio id="myAudio3">
-        <source src="/src/audio/UsoOdiernoColosseoIT.m4a" type="audio/mpeg">
-    </audio>
-</div>
-
-
 <section class="content-section" id="fatti-recenti">
   <span class="section-anchor"></span>
-
-
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h2 class="section-title-right text-right">Fatti recenti</h2>
+        <h2 class="section-title-right text-right">
+          <button class="audio-button" onclick="toggleAudio('audio3')">
+            <i id="audioIcon3" class="fas fa-volume-up icon"></i>
+          </button>
+          Fatti recenti
+        </h2>
+        <audio id="audio3" src="/src/resources/audio/monument/piazzaDelPopolo/it/audio3.m4a"></audio>
         <div class="row">
           <div class="col-md-6 my-3">
             <img alt="Fatti recenti" class="img-fluid rounded"
@@ -298,49 +197,18 @@
 
 
 <!-- Sezione "Leggende e fatti divertenti" -->
-
-<style>
-    .button4 {
-    position : absolute;   /* Posizionamento assoluto */
-    left: 1160px;           /* Distanza dal lato sinistro */
-    top: 2275px;            /* Distanza dall'alto */
-    z-index: 100;         /* In cima a altri elementi */
-    }
-
-    .button4 button {
-    background-color: var(--beige)  /* Colore di sfondo grigio */
-    color: black;               /* Colore del testo */
-    padding: 10px 20px;         /* Spaziatura interna */
-    border: none;               /* Nessun bordo */
-    border-radius: 5px;         /* Bordo arrotondato */
-    font-size: 16px;            /* Grandezza del font */
-    cursor: pointer;           /* Cambio cursore */
-    }
-
-    .button4 button .icon {
-    font-size: 20px;            /* Grandezza dell'icona */
-    margin-right: 8px;          /* Distanza tra icona e testo */
-    }
-</style>
-
-
-<div class ="button4">
-    <button onclick="playAudio4()">
-        <i id="audioIcon4" class="fas fa-volume-up icon"></i>
-    </button>
-
-    <audio id="myAudio4">
-        <source src="/src/audio/FattiDivertentiColosseoIT.m4a" type="audio/mpeg">
-    </audio>
-</div>
-
-
 <section class="content-section" id="curiosita">
   <span class="section-anchor"></span>
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h2 class="section-title-left">Leggende e fatti divertenti</h2>
+        <h2 class="section-title-left">
+          Leggende e fatti divertenti
+          <button class="audio-button" onclick="toggleAudio('audio4')">
+            <i id="audioIcon4" class="fas fa-volume-up icon"></i>
+          </button>
+        </h2>
+        <audio id="audio4" src="/src/resources/audio/monument/piazzaDelPopolo/it/audio4.m4a"></audio>
         <div class="row">
           <div class="col-md-6 order-md-2 text-justify my-3">
             <ul class="custom-star-list">
@@ -357,13 +225,14 @@
     </div>
   </div>
 </section>
+
+
 <!-- Mappa -->
 <section id="mappa">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <h2 class="section-title-left text-center">Posizione</h2>
-
 
         <iframe id="osm-iframe"
                 width="100%"
@@ -372,7 +241,6 @@
                 data-default-pos="41.91061,12.47622"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=12.45830297470093%2C41.90350676713863%2C12.494137287139894%2C41.917718766310124&amp;layer=mapnik&amp;marker=41.910613162247955%2C12.47622013092041">
         </iframe>
-
 
         <div class="text-center mt-4">
 
@@ -405,13 +273,15 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script><!-- script per l'icona speaker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- sostituisce quello deprecato -->
 
 <script src="/src/js/osm-map-monument.js"></script>
 <script src="/src/js/slider-card.js"></script>
 <script src="/src/js/gallery-monuments-scroll.js"></script> <!-- script per la galleria di immagini -->
 <script src="/src/js/language-switcher.js"></script> <!-- script per lo switch lingua -->
+<script src="/src/js/audio-player.js"></script> <!-- script per l'audio lingua -->
 <script src="/src/js/include.js"></script> <!-- script per l'inclusione di altre pagine  -->
+
 <script>
   document.addEventListener("DOMContentLoaded", function() {
       includeHTML({

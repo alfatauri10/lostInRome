@@ -16,6 +16,8 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="/src/css/style.css" rel="stylesheet">
   <link href="/src/css/monument.css" rel="stylesheet">
+  <link href="/src/css/audio-player.css" rel="stylesheet">
+
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
           crossorigin="anonymous">
   </script>
@@ -66,11 +68,9 @@
       <div class="row align-items-center">
         <div class="col-lg-5 mb-4 mb-lg-0">
 
-
           <h1 class="titoli">Altare della Patria</h1>
           <p class="lead">Altare della Patria, eternal guardian of Italian pride</p>
         </div>
-
 
 
         <div class="col-lg-7">
@@ -109,56 +109,24 @@
   </section>
 
   <!-- Sezione Storia -->
-  <style>
-    .button1 {
-        position: absolute;   /* Posizionamento assoluto */
-        left: 980px;           /* Distanza dal lato sinistro */
-        top: 798px;            /* Distanza dall'alto */
-        z-index: 100;         /* In cima a altri elementi */
-`   }
-
-    .button1 button {
-        background-color: #e1dcd3;  /* Colore di sfondo grigio */
-        color: black;               /* Colore del testo */
-        padding: 10px 20px;         /* Spaziatura interna */
-        border: none;               /* Nessun bordo */
-        border-radius: 5px;         /* Bordo arrotondato */
-        font-size: 16px;            /* Grandezza del font */
-        cursor: pointer;           /* Cambio cursore */
-    }
-
-    .button1 button .icon {
-      font-size: 20px;            /* Grandezza dell'icona */
-      margin-right: 8px;          /* Distanza tra icona e testo */
-    }
-  </style>
-
-
-  <div class = "button1">
-    <button onclick="playAudio()">
-      <i id="audioIcon1" class="fas fa-volume-up icon"></i>
-    </button>
-
-    <audio id="myAudio">
-      <source src="/src/audio/StoriaECostruzioneColosseoIT.m4a" type="audio/mpeg">
-    </audio>
-  </div>
-
   <section class="content-section" id="storia">
     <span class="section-anchor"></span>
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2 class="section-title-right text-right">History and construction</h2>
+          <h2 class="section-title-right text-right">
+            <button class="audio-button" onclick="toggleAudio('audio1')">
+              <i id="audioIcon1" class="fas fa-volume-up icon"></i>
+            </button>
+            History and construction
+          </h2>
+          <audio id="audio1" src="/src/resources/audio/monument/altareDellaPatria/en/audio1.m4a"></audio>
           <div class="row">
             <div class="col-md-6 my-3">
               <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/resources/images/monuments/altareDellaPatria/img1.jpg"  style= "width: 450px; height: 300px;">
             </div>
             <div class="col-md-6 text-justify my-3">
-
-
               <p>Altare della Patria is a really important symbol of Italy's national identity. It was built to remember the first King of Italy.
-
                 Also known as the Vittoriano, this amazing building is located in Piazza Venezia, right in the center of Rome.
                 It's big white structure has become a well-known symbol of Italy's history.</p>
               <p>1885:
@@ -176,47 +144,18 @@
 
 
   <!-- Sezione "Come è usato oggi" -->
-  <style>
-    .button2 {
-        position: absolute;   /* Posizionamento assoluto */
-        left: 420px;           /* Distanza dal lato sinistro */
-        top: 1395px;            /* Distanza dall'alto */
-        z-index: 100;         /* In cima a altri elementi */
-`   }
-
-    .button2 button {
-        background-color: var(--beige);  /* Colore di sfondo grigio */
-        color: black;               /* Colore del testo */
-        padding: 10px 20px;         /* Spaziatura interna */
-        border: none;               /* Nessun bordo */
-        border-radius: 5px;         /* Bordo arrotondato */
-        font-size: 16px;            /* Grandezza del font */
-        cursor: pointer;           /* Cambio cursore */
-    }
-
-    .button2 button .icon {
-      font-size: 20px;            /* Grandezza dell'icona */
-      margin-right: 8px;          /* Distanza tra icona e testo */
-    }
-  </style>
-
-
-  <div class ="button2">
-    <button onclick="playAudio2()">
-      <i id="audioIcon2" class="fas fa-volume-up icon"></i>
-    </button>
-
-    <audio id="myAudio2">
-      <source src="/src/audio/FattiRecentiColosseoIT.m4a" type="audio/mpeg">
-    </audio>
-  </div>
-
   <section class="content-section" id="usato-oggi">
     <span class="section-anchor"></span>
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2 class="section-title-left">How it is used</h2>
+          <h2 class="section-title-left">
+            How it is used
+            <button class="audio-button" onclick="toggleAudio('audio2')">
+              <i id="audioIcon2" class="fas fa-volume-up icon"></i>
+            </button>
+          </h2>
+          <audio id="audio2" src="/src/resources/audio/monument/altareDellaPatria/en/audio2.m4a"></audio>
           <div class="row">
             <div class="col-md-6 order-md-2 text-justify my-3">
               <p>Unification Museum:
@@ -231,9 +170,6 @@
               <p>2023 Restoration:
                 An important project started in March. They had begun cleaning the facade from pollution damage.
               </p>
-
-
-
             </div>
             <div class="col-md-6 order-md-1 my-3">
               <img alt="Struttura architettonica" class="img-fluid rounded" src="/src/resources/images/monuments/altareDellaPatria/img2.jpg"  style= "width: 450px; height: 300px;">
@@ -245,48 +181,21 @@
   </section>
 
   <!-- Sezione "Fatti recenti" -->
-  <style>
-    .button3 {
-        position: absolute;   /* Posizionamento assoluto */
-        left: 1160px;           /* Distanza dal lato sinistro */
-        top: 1935px;            /* Distanza dall'alto */
-        z-index: 100;         /* In cima a altri elementi */
-`   }
-
-    .button3 button {
-        background-color: #e1dcd3;  /* Colore di sfondo grigio */
-        color: black;               /* Colore del testo */
-        padding: 10px 20px;         /* Spaziatura interna */
-        border: none;               /* Nessun bordo */
-        border-radius: 5px;         /* Bordo arrotondato */
-        font-size: 16px;            /* Grandezza del font */
-        cursor: pointer;           /* Cambio cursore */
-    }
-
-    .button3 button .icon {
-      font-size: 20px;            /* Grandezza dell'icona */
-      margin-right: 8px;          /* Distanza tra icona e testo */
-    }
-  </style>
-  <div class ="button3">
-    <button onclick="playAudio3()">
-      <i id="audioIcon3" class="fas fa-volume-up icon"></i>
-    </button>
-
-    <audio id="myAudio3">
-      <source src="/src/audio/UsoOdiernoColosseoIT.m4a" type="audio/mpeg">
-    </audio>
-  </div>
   <section class="content-section" id="fatti-recenti">
     <span class="section-anchor"></span>
-
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2 class="section-title-right text-right">Recent facts</h2>
+          <h2 class="section-title-right text-right">
+            <button class="audio-button" onclick="toggleAudio('audio3')">
+              <i id="audioIcon3" class="fas fa-volume-up icon"></i>
+            </button>
+            Recent facts
+          </h2>
+          <audio id="audio3" src="/src/resources/audio/monument/altareDellaPatria/en/audio3.m4a"></audio>
           <div class="row">
             <div class="col-md-6 my-3">
-              <img alt="Fatti recenti" class="img-fluid rounded" src="/src/resources/images/monuments/altareDellaPatria/img3.jpg" style= "width: 450px; height: 300px;"> <!--img3 -->
+              <img alt="Recent fact" class="img-fluid rounded" src="/src/resources/images/monuments/altareDellaPatria/img3.jpg" style= "width: 450px; height: 300px;"> <!--img3 -->
             </div>
             <div class="col-md-6 text-justify my-3">
               <p>April 25 – Liberation Day:
@@ -300,9 +209,6 @@
               <p>Frecce Tricolori:
                 During both celebrations, the "Frecce Tricolori" (Italy’s aerobatic team) perform spectacular flyovers, leaving trails of green, white, and red smoke.
               </p>
-
-
-
               </p>
             </div>
           </div>
@@ -312,47 +218,18 @@
   </section>
 
   <!-- Sezione "Leggende e fatti divertenti" -->
-  <style>
-    .button4 {
-    position : absolute;   /* Posizionamento assoluto */
-    left: 410px;           /* Distanza dal lato sinistro */
-    top: 2535px;            /* Distanza dall'alto */
-    z-index: 100;         /* In cima a altri elementi */
-    }
-
-    .button4 button {
-    background-color: var(--beige)  /* Colore di sfondo grigio */
-    color: black;               /* Colore del testo */
-    padding: 10px 20px;         /* Spaziatura interna */
-    border: none;               /* Nessun bordo */
-    border-radius: 5px;         /* Bordo arrotondato */
-    font-size: 16px;            /* Grandezza del font */
-    cursor: pointer;           /* Cambio cursore */
-    }
-
-    .button4 button .icon {
-    font-size: 20px;            /* Grandezza dell'icona */
-    margin-right: 8px;          /* Distanza tra icona e testo */
-    }
-  </style>
-
-
-  <div class ="button4">
-    <button onclick="playAudio4()">
-      <i id="audioIcon4" class="fas fa-volume-up icon"></i>
-    </button>
-
-    <audio id="myAudio4">
-      <source src="/src/audio/FattiDivertentiColosseoIT.m4a" type="audio/mpeg">
-    </audio>
-  </div>
-
   <section class="content-section" id="curiosita">
     <span class="section-anchor"></span>
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2 class="section-title-left">Legends and fun facts</h2>
+          <h2 class="section-title-left">
+            Legends and fun facts
+            <button class="audio-button" onclick="toggleAudio('audio4')">
+              <i id="audioIcon4" class="fas fa-volume-up icon"></i>
+            </button>
+          </h2>
+          <audio id="audio4" src="/src/resources/audio/monument/altareDellaPatria/en/audio4.m4a"></audio>
           <div class="row">
             <div class="col-md-6 order-md-2 text-justify my-3">
               <ul class="custom-star-list">
@@ -420,12 +297,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script><!-- script per l'icona speaker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- sostituisce quello deprecato -->
 
 <script src="/src/js/osm-map-monument.js"></script>
 <script src="/src/js/slider-card.js"></script>
 <script src="/src/js/gallery-monuments-scroll.js"></script> <!-- script per la galleria di immagini -->
 <script src="/src/js/language-switcher.js"></script> <!-- script per lo switch lingua -->
+<script src="/src/js/audio-player.js"></script> <!-- script per l'audio lingua -->
 <script src="/src/js/include.js"></script> <!-- script per l'inclusione di altre pagine  -->
 
 <script>
@@ -435,69 +313,7 @@
           footerPlaceHolder: "../../include/footer.html"
       });
   });
-
 </script>
-<script>
-  function playAudio() {
-    var audio = document.getElementById("myAudio");
 
-    if (audio.paused) {
-      audio.play();
-      icon.classList.remove("fa-volume-up");
-      icon.classList.add("fa-pause");
-    } else {
-      audio.pause();
-      icon.classList.remove("fa-pause");
-      icon.classList.add("fa-volume-up");
-    }
-  }
-</script>
-<script>
-  function playAudio2() {
-    var audio = document.getElementById("myAudio2");
-
-
-    if (audio.paused) {
-      audio.play();
-      icon.classList.remove("fa-volume-up");
-      icon.classList.add("fa-pause");
-    } else {
-      audio.pause();
-      icon.classList.remove("fa-pause");
-      icon.classList.add("fa-volume-up");
-    }
-  }
-</script>>
-<script>
-  function playAudio3() {
-    var audio = document.getElementById("myAudio3");
-
-
-    if (audio.paused) {
-      audio.play();
-      icon.classList.remove("fa-volume-up");
-      icon.classList.add("fa-pause");
-    } else {
-      audio.pause();
-      icon.classList.remove("fa-pause");
-      icon.classList.add("fa-volume-up");
-    }
-  }
-</script>
-<script>
-  function playAudio4() {
-    var audio = document.getElementById("myAudio4");
-
-    if (audio.paused) {
-      audio.play();
-      icon.classList.remove("fa-volume-up");
-      icon.classList.add("fa-pause");
-    } else {
-      audio.pause();
-      icon.classList.remove("fa-pause");
-      icon.classList.add("fa-volume-up");
-    }
-  }
-</script>
 </body>
 </html>

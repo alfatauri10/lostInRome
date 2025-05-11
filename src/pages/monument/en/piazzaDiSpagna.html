@@ -15,6 +15,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="/src/css/style.css" rel="stylesheet">
   <link href="/src/css/monument.css" rel="stylesheet">
+  <link href="/src/css/audio-player.css" rel="stylesheet">
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
           crossorigin="anonymous">
@@ -114,7 +115,13 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2 class="section-title-right text-right">History and construction</h2>
+          <h2 class="section-title-right text-right">
+            <button class="audio-button" onclick="toggleAudio('audio1')">
+              <i id="audioIcon1" class="fas fa-volume-up icon"></i>
+            </button>
+            History and construction
+          </h2>
+          <audio id="audio1" src="/src/resources/audio/monument/piazzaDiSpagna/en/audio1.m4a"></audio>
           <div class="row">
             <div class="col-md-6 my-3">
               <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
@@ -137,7 +144,13 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2 class="section-title-left">How it is used</h2>
+          <h2 class="section-title-left">
+            How it is used
+            <button class="audio-button" onclick="toggleAudio('audio2')">
+              <i id="audioIcon2" class="fas fa-volume-up icon"></i>
+            </button>
+          </h2>
+          <audio id="audio2" src="/src/resources/audio/monument/piazzaDiSpagna/en/audio2.m4a"></audio>
           <div class="row">
             <div class="col-md-6 order-md-2 text-justify my-3">
               <p>Today, the fountain is mainly used as a tourist attraction and as a source of fresh water. However, it has also been the site of protests and football clashes.</p>
@@ -160,7 +173,13 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2 class="section-title-right text-right">Recent facts</h2>
+          <h2 class="section-title-right text-right">
+            <button class="audio-button" onclick="toggleAudio('audio3')">
+              <i id="audioIcon3" class="fas fa-volume-up icon"></i>
+            </button>
+            Recent facts
+          </h2>
+          <audio id="audio3" src="/src/resources/audio/monument/piazzaDiSpagna/en/audio3.m4a"></audio>
           <div class="row">
             <div class="col-md-6 my-3">
               <!-- TODO (JAlfandari): Inserisci qui la tua img3. Modifica ALT con una breve descrizione e SRC con percorso -->
@@ -183,7 +202,13 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2 class="section-title-left">Legends and fun facts</h2>
+          <h2 class="section-title-left">
+            Legends and fun facts
+            <button class="audio-button" onclick="toggleAudio('audio4')">
+              <i id="audioIcon4" class="fas fa-volume-up icon"></i>
+            </button>
+          </h2>
+          <audio id="audio4" src="/src/resources/audio/monument/piazzaDiSpagna/en/audio4.m4a"></audio>
           <div class="row">
             <div class="col-md-6 order-md-2 my-3">
               <!-- TODO (JAlfandari): Inserisci qui testo della sezione "CURIOSITA" -->
@@ -248,12 +273,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script><!-- script per l'icona speaker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- sostituisce quello deprecato -->
 
 <script src="/src/js/osm-map-monument.js"></script>
 <script src="/src/js/slider-card.js"></script>
 <script src="/src/js/gallery-monuments-scroll.js"></script> <!-- script per la galleria di immagini -->
 <script src="/src/js/language-switcher.js"></script> <!-- script per lo switch lingua -->
+<script src="/src/js/audio-player.js"></script> <!-- script per l'audio lingua -->
 <script src="/src/js/include.js"></script> <!-- script per l'inclusione di altre pagine  -->
 
 <script>
