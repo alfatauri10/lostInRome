@@ -16,7 +16,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="/src/css/style.css" rel="stylesheet">
     <link href="/src/css/monument.css" rel="stylesheet">
-    <link href="/src/css/audio.css" rel="stylesheet">
+    <link href="/src/css/audio-player.css" rel="stylesheet">
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
             crossorigin="anonymous">
     </script>
@@ -112,39 +113,33 @@
         </section>
 
         <!-- Sezione Storia -->
-
-
-
-        <section class="content-section" id="storia">
+        <section class="content-section" id="storia" style="width: 100%;">
             <span class="section-anchor"></span>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 mx-auto">
-                        <div class="d-flex align-items-center justify-content-start">
-                            <h2 class="section-title-right text-right mb-0">Storia e costruzione</h2>
-                            <button  onclick = "toggleAudio('myAudio1')" class="audio-btn" id="historyAudioBtn" aria-label="Play history audio">
-                                <i class="fas fa-volume-up" id = "audioIcon1"></i>   <!-- icona-->
+                        <h2 class="section-title-right text-right">
+                            <button class="audio-button" onclick="toggleAudio('audio1')">
+                                <i id="audioIcon1" class="fas fa-volume-up icon"></i>
                             </button>
-                            <audio id="myAudio">
-                                <source src="/src/audio/StoriaECostruzioneColosseoIT.m4a" type="audio/mpeg">
-                            </audio>
+                            Storia e costruzione
+                        </h2>
+                        <!-- TODO AUDIO (JAlfandari): da sostituire con file audio in EN -->
+                        <audio id="audio1" src="/src/audio/StoriaECostruzioneColosseoIT.m4a"></audio>
+                        <div class="col-md-6 my-3">
+                            <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
+                            <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/images/monuments/colosseo/img1.jpg">
                         </div>
-                            <div class="row">
-                                <div class="col-md-6 my-3">
-                                    <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
-                                    <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/images/monuments/colosseo/img1.jpg">
-                                </div>
-                                <div class="col-md-6 text-justify my-3">
-                                    <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Storia" -->
-                                    <p>La costruzione del Colosseo iniziò sotto l'imperatore Vespasiano nel 72 d.C. e fu
-                                        completata nell'80 d.C. sotto Tito. Fu edificato sul sito del lago artificiale della
-                                        Domus Aurea di Nerone, come simbolo del ritorno al popolo romano degli spazi
-                                        pubblici.</p>
-                                    <p>L'anfiteatro poteva ospitare tra i 50.000 e gli 87.000 spettatori ed era utilizzato per
-                                        spettacoli pubblici, combattimenti tra gladiatori e rievocazioni di battaglie
-                                        famose.</p>
-                                </div>
+                        <div class="col-md-6 text-justify my-3">
+                                <p>La costruzione del Colosseo iniziò sotto l'imperatore Vespasiano nel 72 d.C. e fu
+                                    completata nell'80 d.C. sotto Tito. Fu edificato sul sito del lago artificiale della
+                                    Domus Aurea di Nerone, come simbolo del ritorno al popolo romano degli spazi
+                                    pubblici.</p>
+                                <p>L'anfiteatro poteva ospitare tra i 50.000 e gli 87.000 spettatori ed era utilizzato per
+                                    spettacoli pubblici, combattimenti tra gladiatori e rievocazioni di battaglie
+                                    famose.</p>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -152,17 +147,18 @@
 
 
         <!-- Sezione "Come è usato oggi" -->
-
-
-
-
-
         <section class="content-section" id="usato-oggi">
             <span class="section-anchor"></span>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 mx-auto">
-                        <h2 class="section-title-left">Come è usato oggi</h2>
+                        <h2 class="section-title-left">
+                            Come è usato oggi
+                            <button class="audio-button" onclick="toggleAudio('audio2')">
+                                <i id="audioIcon2" class="fas fa-volume-up icon"></i>
+                            </button>
+                        </h2>
+                        <audio id="audio2" src="/src/audio/UsoOdiernoColosseoIT.m4a"></audio>
                         <div class="row">
                             <div class="col-md-6 order-md-2 text-justify my-3">
                                 <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Usato oggi" -->
@@ -185,17 +181,18 @@
         </section>
 
         <!-- Sezione "Fatti recenti" -->
-
-
-
-
         <section class="content-section" id="fatti-recenti">
             <span class="section-anchor"></span>
-
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 mx-auto">
-                        <h2 class="section-title-right text-right">Fatti recenti</h2>
+                        <h2 class="section-title-right text-right">
+                            <button class="audio-button" onclick="toggleAudio('audio3')">
+                                <i id="audioIcon3" class="fas fa-volume-up icon"></i>
+                            </button>
+                            Fatti recenti
+                        </h2>
+                        <audio id="audio3" src="/src/audio/FattiRecentiColosseoIT.m4a"></audio>
                         <div class="row">
                             <div class="col-md-6 my-3">
                                 <!-- TODO (JAlfandari): Inserisci qui la tua img3. Modifica ALT con una breve descrizione e SRC con percorso -->
@@ -217,15 +214,18 @@
         </section>
 
         <!-- Sezione "Leggende e fatti divertenti" -->
-
-
-
         <section class="content-section" id="curiosita">
             <span class="section-anchor"></span>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 mx-auto">
-                        <h2 class="section-title-left">Leggende e fatti divertenti</h2>
+                        <h2 class="section-title-left">
+                            Leggende e fatti divertenti
+                            <button class="audio-button" onclick="toggleAudio('audio4')">
+                                <i id="audioIcon4" class="fas fa-volume-up icon"></i>
+                            </button>
+                        </h2>
+                        <audio id="audio4" src="/src/audio/FattiDivertentiColosseoIT.m4a"></audio>
                         <div class="row">
                             <div class="col-md-6 order-md-2 text-justify my-3">
                                 <!-- TODO (JAlfandari): Inserisci qui testo della sezione "CURIOSITA" -->
@@ -293,12 +293,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script><!-- script per l'icona speaker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- sostituisce quello deprecato -->
 
     <script src="/src/js/osm-map-monument.js"></script>
     <script src="/src/js/slider-card.js"></script>
     <script src="/src/js/gallery-monuments-scroll.js"></script> <!-- script per la galleria di immagini -->
     <script src="/src/js/language-switcher.js"></script> <!-- script per lo switch lingua -->
+    <script src="/src/js/audio-player.js"></script> <!-- script per l'audio lingua -->
     <script src="/src/js/include.js"></script> <!-- script per l'inclusione di altre pagine  -->
 
     <script>
@@ -310,7 +311,6 @@
           });
 
     </script>
-    <script src="/src/js/audioPlayer.js"></script>
 
 </body>
 </html>
