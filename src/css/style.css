@@ -1243,12 +1243,10 @@ main {
 
 .slick-prev {
   left: -20px;
-  align-items: center;
 }
 
 .slick-next {
   right: -20px;
-  align-items: center;
 }
 
 /*Animazione galleria*/
