@@ -1368,7 +1368,7 @@ main {
 @media (max-width: 480px) {
   .motto-text-body {
     padding: 0 0.5rem; /* Padding ancora più stretto */
-    font-size: clamp(2.5rem, 5vw, 2.2rem); /* Dimensione più piccola */
+    font-size: clamp(2.0rem, 5vw, 2.2rem); /* Dimensione più piccola */
   }
 }
 
