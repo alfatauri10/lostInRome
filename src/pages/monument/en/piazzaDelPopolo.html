@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Lost in Rome | Piazza del Popolo and The Twin Churches</title>
+  <title>Lost in Rome | Piazza del Popolo and Basiliche Gemelle</title>
 
 
   <!--styles -->
   <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link rel="icon" type="image-png" href="/src/resources/images/loghi/logoLostInRome_icona.png">
   <link href="/src/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
   <link href="/src/plugins/slick/slick.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
@@ -15,10 +16,11 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="/src/css/style.css" rel="stylesheet">
   <link href="/src/css/monument.css" rel="stylesheet">
+  <link href="/src/css/audio-player.css" rel="stylesheet">
+
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
           crossorigin="anonymous">
   </script>
-
 
 </head>
 
@@ -65,7 +67,7 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-5 mb-4 mb-lg-0">
-        <h1 class="titoli">Piazza del Popolo and The Twin Churches</h1>    <!-- Titolo(h1) -->
+        <h1 class="titoli">Piazza del Popolo and Basiliche Gemelle</h1>    <!-- Titolo(h1) -->
         <!-- TODO (JAlfandari): inserisci qui una breve frase ad effetto sul monumento -->
         <p class="lead">Piazza del Popolo, where the twin basilicas dance in harmony under the sky of Rome</p>
       </div>
@@ -79,28 +81,28 @@
 
           <div class="gallery-item">
             <a href="#storia">
-              <img alt="Piazza del Popolo and the twin churces from the pincio" src="/src/images/monuments/piazzaDelPopolo/img1.jpg">
+              <img alt="Piazza del Popolo and Basiliche Gemelle from the pincio" src="/src/resources/images/monuments/piazzaDelPopolo/img1.jpg">
             </a>
           </div>
 
 
           <div class="gallery-item">
             <a href="#usato-oggi">
-              <img alt="view at piazza del popolo" src="/src/images/monuments/piazzaDelPopolo/img2.jpg">
+              <img alt="view at piazza del popolo" src="/src/resources/images/monuments/piazzaDelPopolo/img2.jpg">
             </a>
           </div>
 
 
           <div class="gallery-item">
             <a href="#fatti-recenti">
-              <img alt="twin churces but not twin" src="/src/images/monuments/piazzaDelPopolo/img3.jpg">
+              <img alt="Basiliche Gemelle but not twin" src="/src/resources/images/monuments/piazzaDelPopolo/img3.jpg">
             </a>
           </div>
 
 
           <div class="gallery-item">
             <a href="#curiosita">
-              <img alt="piazza del popolo during a concert" src="/src/images/monuments/piazzaDelPopolo/img4.jpg">
+              <img alt="piazza del popolo during a concert" src="/src/resources/images/monuments/piazzaDelPopolo/img4.jpg">
             </a>
           </div>
 
@@ -116,17 +118,23 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h2 class="section-title-right text-right">History and construction</h2>
+        <h2 class="section-title-right text-right">
+          <button class="audio-button" onclick="toggleAudio('audio1')">
+            <i id="audioIcon1" class="fas fa-volume-up icon"></i>
+          </button>
+          History and construction
+        </h2>
+        <audio id="audio1" src="/src/resources/audio/monument/piazzaDelPopolo/en/audio1.m4a"></audio>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6 my-3">
             <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
-            <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/images/monuments/piazzaDelPopolo/img1.jpg">
+            <img alt="Ricostruzione storica" class="img-fluid rounded shadow-lg" src="/src/resources/images/monuments/piazzaDelPopolo/img1.jpg">
           </div>
-          <div class="col-md-6 text-justify">
+          <div class="col-md-6 text-justify my-3">
             <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Storia" -->
             <p>Piazza del Popolo was initially established during Roman times as the starting point of Via Flaminia, the important road connecting Rome to northern Italy, built around 220 AD.
             </p>
-            <p>During the reign of Pope Paschal II, around the year 1100, the square gained significance as a key entrance to the city, then known as Porta Flaminia. Its current name derives from the Basilica of Santa Maria del Popolo, constructed with funds donated by the people of Rome (through indulgences).
+            <p>During the reign of Pope Paschal II around the year 1100, the square gained significance as a key entrance to the city, then known as Porta Flaminia. Its current name derives from the Basilica of Santa Maria del Popolo, constructed with funds donated by the people of Rome (through indulgences).
             </p>
           </div>
         </div>
@@ -141,17 +149,23 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h2 class="section-title-left">How it is used</h2>
+        <h2 class="section-title-left">
+          How it is used
+          <button class="audio-button" onclick="toggleAudio('audio2')">
+            <i id="audioIcon2" class="fas fa-volume-up icon"></i>
+          </button>
+        </h2>
+        <audio id="audio2" src="/src/resources/audio/monument/piazzaDelPopolo/en/audio2.m4a"></audio>
         <div class="row">
-          <div class="col-md-6 order-md-2 text-justify">
+          <div class="col-md-6 order-md-2 text-justify my-3">
             <p>Today, Piazza del Popolo is a vibrant public space, popular with tourists and locals alike. It hosts events, concerts, and celebrations. </p>
             <p> Its strategic location makes it an ideal meeting point and a gateway to shopping streets like Via del Corso, drawing visitors to its bars and restaurants.
             </p>
           </div>
-          <div class="col-md-6 order-md-1 ">
+          <div class="col-md-6 order-md-1 my-3 ">
             <!-- TODO (JAlfandari): Inserisci qui la tua img2. Modifica ALT con una breve descrizione e SRC con percorso -->
-            <img alt="Struttura architettonica" class="img-fluid rounded"
-                 src="/src/images/monuments/piazzaDelPopolo/img2.jpg"> <!-- img2 -->
+            <img alt="Struttura architettonica" class="img-fluid rounded shadow-lg"
+                 src="/src/resources/images/monuments/piazzaDelPopolo/img2.jpg"> <!-- img2 -->
           </div>
         </div>
       </div>
@@ -166,13 +180,19 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h2 class="section-title-right text-right">Recent facts</h2>
+        <h2 class="section-title-right text-right">
+          <button class="audio-button" onclick="toggleAudio('audio3')">
+            <i id="audioIcon3" class="fas fa-volume-up icon"></i>
+          </button>
+          Recent facts
+        </h2>
+        <audio id="audio3" src="/src/resources/audio/monument/piazzaDelPopolo/en/audio3.m4a"></audio>
         <div class="row">
-          <div class="col-md-6">
-            <img alt="Fatti recenti" class="img-fluid rounded"
-                 src="/src/images/monuments/piazzaDelPopolo/img3.jpg"> <!--img3 -->
+          <div class="col-md-6 my-3">
+            <img alt="Fatti recenti" class="img-fluid rounded shadow-lg"
+                 src="/src/resources/images/monuments/piazzaDelPopolo/img3.jpg"> <!--img3 -->
           </div>
-          <div class="col-md-6 text-justify">
+          <div class="col-md-6 text-justify my-3">
             <p>However, there are no specific details about recent maintenance work on the two twin churches. It is known that over the centuries, both churches have undergone restorations and modifications to preserve their structure and aesthetics.</p>
             <p>For example, Santa Maria del Popolo was restored by Gian Lorenzo Bernini between 1655 and 1660, giving it its current Baroque appearance.
             </p>
@@ -189,20 +209,26 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h2 class="section-title-left">Legends and fun facts</h2>
+        <h2 class="section-title-left">
+          Legends and fun facts
+          <button class="audio-button" onclick="toggleAudio('audio4')">
+            <i id="audioIcon4" class="fas fa-volume-up icon"></i>
+          </button>
+        </h2>
+        <audio id="audio4" src="/src/resources/audio/monument/piazzaDelPopolo/en/audio4.m4a"></audio>
         <div class="row">
-          <div class="col-md-6 order-md-2">
+          <div class="col-md-6 order-md-2 my-3">
             <!-- TODO (JAlfandari): Inserisci qui testo della sezione "CURIOSITA" -->
             <ul class="custom-star-list">
-              <li>Not quite twins: Santa Maria dei Miracoli (1681) and Santa Maria in Montesanto (1679) are called “twin churches” due to their similar Baroque style, though they are not identical.
+              <li> They are not quite twins: Santa Maria dei Miracoli (1681) and Santa Maria in Montesanto (1679) are called “twin churches” due to their similar Baroque style, though they are not identical.
               </li>
-              <li> The Trident: As mentioned, the square is the starting point of Rome’s “Trident”—three roads (Via del Corso, Via del Babuino, and Via di Ripetta) that fan out like a trident, designed to guide travelers into the heart of the city.
+              <li> Trident: As mentioned, the square is the starting point of Rome’s “Trident”—three roads (Via del Corso, Via del Babuino, and Via di Ripetta) that fan out like a trident, designed to guide travelers into the heart of the city.
               </li>
             </ul>
           </div>
-          <div class="col-md-6 order-md-1">
-            <img alt="Leggende e fatti divertenti" class="img-fluid rounded"
-                 src="/src/images/monuments/piazzaDelPopolo/img4.jpg"> <!-- img4 -->
+          <div class="col-md-6 order-md-1 my-3">
+            <img alt="Leggende e fatti divertenti" class="img-fluid rounded shadow-lg"
+                 src="/src/resources/images/monuments/piazzaDelPopolo/img4.jpg"> <!-- img4 -->
           </div>
         </div>
       </div>
@@ -221,13 +247,15 @@
                 width="100%"
                 height="400"
                 style="border:none; border-radius:8px;"
-                data-default-pos="41.8902,12.4924"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=12.47129559516907%2C41.90861307147966%2C12.480254173278809%2C41.91216608371762&amp;layer=mapnik">
+                data-default-pos="41.91061,12.47622"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=12.4817817%2C41.9056091%2C12.4827817%2C41.9059091&layer=mapnik&marker=41.9057591%2C12.4822817">
         </iframe>
 
+        <!--sistemazione posizione bottone -->
         <div class="text-center mt-4">
           <!-- TODO (JAlfandari): Inserisci in href la posizione del tuo monumento -->
           <a class="btn btn-outline-turchese d-inline-flex align-items-center"
+             style="bottom: 10px"
              href="https://www.google.com/maps/place/Piazza+del+Popolo,+Roma+RM/@41.9110163,12.4736344,17z/data=!3m1!4b1!4m6!3m5!1s0x132f60f8e5fa32d1:0xc87b8749f3592a6a!8m2!3d41.9110163!4d12.4762093!16s%2Fg%2F1w02gwt1?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D"
              target="_blank">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
@@ -253,12 +281,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script><!-- script per l'icona speaker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- sostituisce quello deprecato -->
 
 <script src="/src/js/osm-map-monument.js"></script>
 <script src="/src/js/slider-card.js"></script>
 <script src="/src/js/gallery-monuments-scroll.js"></script> <!-- script per la galleria di immagini -->
 <script src="/src/js/language-switcher.js"></script> <!-- script per lo switch lingua -->
+<script src="/src/js/audio-player.js"></script> <!-- script per l'audio lingua -->
 <script src="/src/js/include.js"></script> <!-- script per l'inclusione di altre pagine  -->
 
 <script>

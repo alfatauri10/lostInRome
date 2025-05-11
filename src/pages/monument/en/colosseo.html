@@ -7,6 +7,7 @@
 
     <!-- Meta e stili -->
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="icon" type="image-png" href="/src/resources/imagesloghi/logoLostInRome_icona.png">
     <link href="/src/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="/src/plugins/slick/slick.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
@@ -15,6 +16,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="/src/css/style.css" rel="stylesheet">
     <link href="/src/css/monument.css" rel="stylesheet">
+    <link href="/src/css/audio-player.css" rel="stylesheet">
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
             crossorigin="anonymous">
@@ -78,28 +80,28 @@
                         <div class="gallery-item">
                             <a href="#storia">
                                 <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
-                                <img alt="Colosseo vista panoramica" src="/src/images/monuments/colosseo/img1.jpg">
+                                <img alt="Colosseo vista panoramica" src="/src/resources/images/monuments/colosseo/img1.jpg">
                             </a>
                         </div>
 
                         <div class="gallery-item">
                             <a href="#usato-oggi">
                                 <!-- TODO (JAlfandari): Inserisci qui la tua img2. Modifica ALT con una breve descrizione e SRC con percorso -->
-                                <img alt="Dettagli architettonici" src="/src/images/monuments/colosseo/img2.jpg"><!-- Percorso img2 -->
+                                <img alt="Dettagli architettonici" src="/src/resources/images/monuments/colosseo/img2.jpg"><!-- Percorso img2 -->
                             </a>
                         </div>
 
                         <div class="gallery-item">
                             <a href="#fatti-recenti">
                                 <!-- TODO (JAlfandari): Inserisci qui la tua img3. Modifica ALT con una breve descrizione e SRC con percorso -->
-                                <img alt="Colosseo oggi" src="/src/images/monuments/colosseo/img3.jpeg">    <!-- Percorso img3 -->
+                                <img alt="Colosseo oggi" src="/src/resources/images/monuments/colosseo/img3.jpeg">    <!-- Percorso img3 -->
                             </a>
                         </div>
 
                         <div class="gallery-item">
                             <a href="#curiosita">
                                 <!-- TODO (JAlfandari): Inserisci qui la tua img4. Modifica ALT con una breve descrizione e SRC con percorso -->
-                                <img alt="Particolari curiosi" src="/src/images/monuments/colosseo/img4.jpg">       <!-- Percorso img4 -->
+                                <img alt="Particolari curiosi" src="/src/resources/images/monuments/colosseo/img4.jpg">       <!-- Percorso img4 -->
                             </a>
                         </div>
 
@@ -115,13 +117,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-                    <h2 class="section-title-right text-right">History and construction</h2>
+                    <h2 class="section-title-right text-right">
+                        <button class="audio-button" onclick="toggleAudio('audio1')">
+                            <i id="audioIcon1" class="fas fa-volume-up icon"></i>
+                        </button>
+                        History and construction
+                    </h2>
+                    <audio id="audio1" src="/src/resources/audio/monument/colosseo/en/audio1.m4a"></audio>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 my-3">
                             <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
-                            <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/images/monuments/colosseo/img1.jpg">
+                            <img alt="Ricostruzione storica" class="img-fluid rounded shadow-lg" src="/src/resources/images/monuments/colosseo/img1.jpg">
                         </div>
-                        <div class="col-md-6 text-justify">
+                        <div class="col-md-6 text-justify my-3">
                             <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Storia" -->
                             <p>The construction of the Colosseum began under Emperor Vespasian in 72 AD and was completed in 80 AD under Titus. It was built on the site of the artificial lake of Nero's Domus Aurea, as a symbol of returning public spaces to the Roman people.</p>
                             <p>The amphitheater could hold between 50,000 and 87,000 spectators and was used for public spectacles, gladiator fights, and reenactments of famous battles.</p>
@@ -138,17 +146,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-                    <h2 class="section-title-left">How it is used</h2>
+                    <h2 class="section-title-left">
+                        How it is used
+                        <button class="audio-button" onclick="toggleAudio('audio2')">
+                            <i id="audioIcon2" class="fas fa-volume-up icon"></i>
+                        </button>
+                    </h2>
+                    <!-- TODO AUDIO (JAlfandari): da sostituire con file audio in EN -->
+                    <audio id="audio2" src="/src/resources/audio/monument/colosseo/en/audio2.m4a"></audio>
                     <div class="row">
-                        <div class="col-md-6 order-md-2 text-justify">
+                        <div class="col-md-6 order-md-2 text-justify my-3">
                             <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Usato oggi" -->
                             <p>Today the Colosseum is one of the most visited tourist attractions in the world and an iconic symbol of Rome. In addition to being an open-air museum, it occasionally hosts cultural events and concerts. In 2007, it was included among the New Seven Wonders of the Modern World.</p>
                             <p>Restoration work continues to preserve this historic monument for future generations.</p>
                         </div>
-                        <div class="col-md-6 order-md-1 ">
+                        <div class="col-md-6 order-md-1 my-3">
                             <!-- TODO (JAlfandari): Inserisci qui la tua img2. Modifica ALT con una breve descrizione e SRC con percorso -->
-                            <img alt="Struttura architettonica" class="img-fluid rounded"
-                                 src="/src/images/monuments/colosseo/img2.jpg"> <!-- img2 -->
+                            <img alt="Struttura architettonica" class="img-fluid rounded shadow-lg"
+                                 src="/src/resources/images/monuments/colosseo/img2.jpg"> <!-- img2 -->
                         </div>
                     </div>
                 </div>
@@ -163,14 +178,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-                    <h2 class="section-title-right text-right">Recent facts</h2>
+                    <h2 class="section-title-right text-right">
+                        <button class="audio-button" onclick="toggleAudio('audio3')">
+                            <i id="audioIcon3" class="fas fa-volume-up icon"></i>
+                        </button>
+                        Recent facts
+                    </h2>
+                    <audio id="audio3" src="/src/resources/audio/monument/colosseo/en/audio3.m4a"></audio>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 my-3">
                             <!-- TODO (JAlfandari): Inserisci qui la tua img3. Modifica ALT con una breve descrizione e SRC con percorso -->
-                            <img alt="Fatti recenti" class="img-fluid rounded"
-                                 src="/src/images/monuments/colosseo/img3.jpeg"> <!--img3 -->
+                            <img alt="Fatti recenti" class="img-fluid rounded shadow-lg"
+                                 src="/src/resources/images/monuments/colosseo/img3.jpeg"> <!--img3 -->
                         </div>
-                        <div class="col-md-6 text-justify">
+                        <div class="col-md-6 text-justify my-3">
                             <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "FATTI RECENTI" -->
                             <p>In 2021, major restoration works on the Colosseum's northern facade were completed, funded by the fashion house Tod's. In 2023, the new underground route opened to the public, allowing visitors to explore the hypogeum.</p>
                             <p>Recent archaeological studies have also revealed new details about the lifting system used to bring animals and scenery into the arena.</p>
@@ -187,9 +208,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-                    <h2 class="section-title-left">Legends and fun facts</h2>
+                    <h2 class="section-title-left">
+                        Legends and fun facts
+                        <button class="audio-button" onclick="toggleAudio('audio4')">
+                            <i id="audioIcon4" class="fas fa-volume-up icon"></i>
+                        </button>
+                    </h2>
+                    <audio id="audio4" src="/src/resources/audio/monument/colosseo/en/audio4.m4a"></audio>
                     <div class="row">
-                        <div class="col-md-6 order-md-2">
+                        <div class="col-md-6 order-md-2 my-3">
                             <!-- TODO (JAlfandari): Inserisci qui testo della sezione "CURIOSITA" -->
                             <ul class="custom-star-list">
                                 <li> It is said that Christian priests used the Colosseum to determine if someone was a vampire</li>
@@ -198,10 +225,10 @@
                                 <li> Only about one-third of the original Colosseum is estimated to have survived to the present day</li>
                             </ul>
                         </div>
-                        <div class="col-md-6 order-md-1">
+                        <div class="col-md-6 order-md-1 my-3">
                             <!-- TODO (JAlfandari): Inserisci qui la tua img4. Modifica ALT con una breve descrizione e SRC con percorso -->
-                            <img alt="Leggende e fatti divertenti" class="img-fluid rounded"
-                                 src="/src/images/monuments/colosseo/img4.jpg"> <!-- img4 -->
+                            <img alt="Leggende e fatti divertenti" class="img-fluid rounded shadow-lg"
+                                 src="/src/resources/images/monuments/colosseo/img4.jpg"> <!-- img4 -->
                         </div>
                     </div>
                 </div>
@@ -227,7 +254,7 @@
 
                     <div class="text-center mt-4">
                         <!-- TODO (JAlfandari): Inserisci in href la posizione del tuo monumento -->
-                        <a class="btn btn-outline-turchese d-inline-flex align-items-center"
+                        <a class="en btn btn-outline-turchese d-inline-flex align-items-center"
                            href="https://www.google.com/maps/place/Colosseo/@41.8902102,12.4922309,17z/data=!3m1!4b1!4m6!3m5!1s0x132f61b6532013ad:0x28f1c82e908503c4!8m2!3d41.8902102!4d12.4922309!16zL20vMDZjNjI?entry=ttu"
                            target="_blank">
                             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
@@ -253,12 +280,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script><!-- script per l'icona speaker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- sostituisce quello deprecato -->
 
 <script src="/src/js/osm-map-monument.js"></script>
 <script src="/src/js/slider-card.js"></script>
 <script src="/src/js/gallery-monuments-scroll.js"></script> <!-- script per la galleria di immagini -->
 <script src="/src/js/language-switcher.js"></script> <!-- script per lo switch lingua -->
+<script src="/src/js/audio-player.js"></script> <!-- script per l'audio lingua -->
 <script src="/src/js/include.js"></script> <!-- script per l'inclusione di altre pagine  -->
 
 <script>

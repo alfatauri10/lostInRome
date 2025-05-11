@@ -9,6 +9,7 @@
 
   <!--stili -->
   <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link rel="icon" type="image-png" href="/src/resources/images/loghi/logoLostInRome_icona.png">
   <link href="/src/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
   <link href="/src/plugins/slick/slick.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
@@ -17,17 +18,17 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="/src/css/style.css" rel="stylesheet">
   <link href="/src/css/monument.css" rel="stylesheet">
+  <link href="/src/css/audio-player.css" rel="stylesheet">
+
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
           crossorigin="anonymous">
 
   </script>
 
-
 </head>
 
 
 <body>
-
 
 <!-- preloader -->
 <div class="preloader">
@@ -75,38 +76,33 @@
 
       <div class="col-lg-7">
 
-
         <!-- Galleria immagini navigabile -->
         <div class="monument-gallery">
 
 
           <div class="gallery-item">
             <a href="#storia">
-              <img alt="Piazza del Popolo e le basiliche dal pincio" src="/src/images/monuments/piazzaDelPopolo/img1.jpg">
+              <img alt="Piazza del Popolo e le basiliche dal pincio" src="/src/resources/images/monuments/piazzaDelPopolo/img1.jpg">
             </a>
           </div>
-
 
           <div class="gallery-item">
             <a href="#usato-oggi">
-              <img alt="Visuale su piazza del popolo" src="/src/images/monuments/piazzaDelPopolo/img2.jpg">
+              <img alt="Visuale su piazza del popolo" src="/src/resources/images/monuments/piazzaDelPopolo/img2.jpg">
             </a>
           </div>
-
 
           <div class="gallery-item">
             <a href="#fatti-recenti">
-              <img alt="basiliche gemelle ma non gemelle!!" src="/src/images/monuments/piazzaDelPopolo/img3.jpg">
+              <img alt="basiliche gemelle ma non gemelle!!" src="/src/resources/images/monuments/piazzaDelPopolo/img3.jpg">
             </a>
           </div>
-
 
           <div class="gallery-item">
             <a href="#curiosita">
-              <img alt="intera piazza piena di persone" src="/src/images/monuments/piazzaDelPopolo/img4.jpg">
+              <img alt="intera piazza piena di persone" src="/src/resources/images/monuments/piazzaDelPopolo/img4.jpg">
             </a>
           </div>
-
 
         </div>
       </div>
@@ -114,57 +110,26 @@
   </div>
 </section>
 <!-- Sezione Storia -->
-
-<style>
-    .button1 {
-        position: absolute;   /* Posizionamento assoluto */
-        left: 855px;           /* Distanza dal lato sinistro */
-        top: 798px;            /* Distanza dall'alto */
-        z-index: 100;         /* In cima a altri elementi */
-`   }
-
-    .button1 button {
-        background-color: #e1dcd3;  /* Colore di sfondo grigio */
-        color: black;               /* Colore del testo */
-        padding: 10px 20px;         /* Spaziatura interna */
-        border: none;               /* Nessun bordo */
-        border-radius: 5px;         /* Bordo arrotondato */
-        font-size: 16px;            /* Grandezza del font */
-        cursor: pointer;           /* Cambio cursore */
-    }
-
-    .button1 button .icon {
-      font-size: 20px;            /* Grandezza dell'icona */
-      margin-right: 8px;          /* Distanza tra icona e testo */
-    }
-</style>
-
-
-<div class = "button1">
-    <button onclick="playAudio()">
-        <i id="audioIcon1" class="fas fa-volume-up icon"></i>
-    </button>
-
-    <audio id="myAudio">
-        <source src="/src/audio/StoriaECostruzioneColosseoIT.m4a" type="audio/mpeg">
-    </audio>
-</div>
-
-
 <section class="content-section" id="storia">
   <span class="section-anchor"></span>
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h2 class="section-title-right text-right">Storia e costruzione</h2>
+        <h2 class="section-title-right text-right">
+          <button class="audio-button" onclick="toggleAudio('audio1')">
+            <i id="audioIcon1" class="fas fa-volume-up icon"></i>
+          </button>
+          Storia e costruzione
+        </h2>
+        <audio id="audio1" src="/src/resources/audio/monument/piazzaDelPopolo/it/audio1.m4a"></audio>
         <div class="row">
-          <div class="col-md-6">
-            <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/images/monuments/piazzaDelPopolo/img1.jpg">
+          <div class="col-md-6 my-3">
+            <img alt="Ricostruzione storica" class="img-fluid rounded shadow-lg" src="/src/resources/images/monuments/piazzaDelPopolo/img1.jpg" style= "width: 450px; height: 300px">
           </div>
-          <div class="col-md-6 text-justify">
-            <p>Piazza del Popolo è stata inizialmente fondata durante l’epoca romana, come punto di partenza di Via Flaminia, l'importante strada che collega Roma con l'Italia settentrionale, costruita intorno al 220 D.C
+          <div class="col-md-6 text-justify my-3">
+            <p>Piazza del Popolo è stata inizialmente fondata durante l’epoca romana,come punto di partenza di Via Flaminia, l'importante strada che collega Roma con l'Italia settentrionale, costruita intorno al 220 D.C
             </p>
-            <p>Durante il regno di Papa Pasquale II, intorno all'anno 1100, la piazza divenne importante perché garantiva un accesso sicuro alla città, al tempo conosciuta come Porta Flaminia. Il suo attuale nome deriva dalla Basilica di Santa Maria del Popolo, costruita con i soldi donati dai cittadini romani(indulgenze).</p>
+            <p>Durante il regno di Papa Pasquale II, intorno all'anno 1100 la piazza divenne importante perché garantiva un accesso sicuro alla città, al tempo conosciuta come Porta Flaminia. Il suo attuale nome deriva dalla Basilica di Santa Maria del Popolo costruita con i soldi donati dai cittadini romani(indulgenze).</p>
           </div>
         </div>
       </div>
@@ -174,58 +139,26 @@
 
 
 <!-- Sezione "Come è usato oggi" -->
-
-<style>
-    .button2 {
-        position: absolute;   /* Posizionamento assoluto */
-        left: 1160px;           /* Distanza dal lato sinistro */
-        top: 1280px;            /* Distanza dall'alto */
-        z-index: 100;         /* In cima a altri elementi */
-`   }
-
-    .button2 button {
-        background-color: #e1dcd3;  /* Colore di sfondo grigio */
-        color: black;               /* Colore del testo */
-        padding: 10px 20px;         /* Spaziatura interna */
-        border: none;               /* Nessun bordo */
-        border-radius: 5px;         /* Bordo arrotondato */
-        font-size: 16px;            /* Grandezza del font */
-        cursor: pointer;           /* Cambio cursore */
-    }
-
-    .button2 button .icon {
-      font-size: 20px;            /* Grandezza dell'icona */
-      margin-right: 8px;          /* Distanza tra icona e testo */
-    }
-</style>
-
-
-<div class ="button2">
-    <button onclick="playAudio2()">
-        <i id="audioIcon2" class="fas fa-volume-up icon"></i>
-    </button>
-
-    <audio id="myAudio2">
-        <source src="/src/audio/FattiRecentiColosseoIT.m4a" type="audio/mpeg">
-    </audio>
-</div>
-
-
-
 <section class="content-section" id="usato-oggi">
   <span class="section-anchor"></span>
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h2 class="section-title-left">Come è usato oggi</h2>
+        <h2 class="section-title-left">
+          Come è usato oggi
+          <button class="audio-button" onclick="toggleAudio('audio2')">
+            <i id="audioIcon2" class="fas fa-volume-up icon"></i>
+          </button>
+        </h2>
+        <audio id="audio2" src="/src/resources/audio/monument/piazzaDelPopolo/it/audio2.m4a"></audio>
         <div class="row">
-          <div class="col-md-6 order-md-2 text-justify">
+          <div class="col-md-6 order-md-2 text-justify my-3">
             <p>Oggi Piazza del Popolo è uno spazio pubblico vivace e popolato sia di turisti che di locali. Ospita eventi, concerti e celebrazioni.</p>
             <p>  La sua posizione strategica ne fa un punto d'incontro ideale e una porta di accesso alle vie dello shopping come via del Corso, che attira visitatori a bar e ristoranti.</p>
           </div>
-          <div class="col-md-6 order-md-1">
-            <img alt="Struttura architettonica" class="img-fluid rounded"
-                 src="/src/images/monuments/piazzaDelPopolo/img2.jpg"> <!-- img2 -->
+          <div class="col-md-6 order-md-1 my-3">
+            <img alt="Struttura architettonica" class="img-fluid rounded shadow-lg"
+                 src="/src/resources/images/monuments/piazzaDelPopolo/img2.jpg" style= "width: 450px; height: 300px"> <!-- img2 -->
           </div>
         </div>
       </div>
@@ -235,57 +168,24 @@
 
 
 <!-- Sezione "Fatti recenti" -->
-
-<style>
-    .button3 {
-        position: absolute;   /* Posizionamento assoluto */
-        left: 300px;           /* Distanza dal lato sinistro */
-        top: 1830px;            /* Distanza dall'alto */
-        z-index: 100;         /* In cima a altri elementi */
-`   }
-
-    .button3 button {
-        background-color: var(--beige);  /* Colore di sfondo grigio */
-        color: black;               /* Colore del testo */
-        padding: 10px 20px;         /* Spaziatura interna */
-        border: none;               /* Nessun bordo */
-        border-radius: 5px;         /* Bordo arrotondato */
-        font-size: 16px;            /* Grandezza del font */
-        cursor: pointer;           /* Cambio cursore */
-    }
-
-    .button3 button .icon {
-      font-size: 20px;            /* Grandezza dell'icona */
-      margin-right: 8px;          /* Distanza tra icona e testo */
-    }
-</style>
-
-
-<div class ="button3">
-    <button onclick="playAudio3()">
-        <i id="audioIcon3" class="fas fa-volume-up icon"></i>
-    </button>
-
-    <audio id="myAudio3">
-        <source src="/src/audio/UsoOdiernoColosseoIT.m4a" type="audio/mpeg">
-    </audio>
-</div>
-
-
 <section class="content-section" id="fatti-recenti">
   <span class="section-anchor"></span>
-
-
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h2 class="section-title-right text-right">Fatti recenti</h2>
+        <h2 class="section-title-right text-right">
+          <button class="audio-button" onclick="toggleAudio('audio3')">
+            <i id="audioIcon3" class="fas fa-volume-up icon"></i>
+          </button>
+          Fatti recenti
+        </h2>
+        <audio id="audio3" src="/src/resources/audio/monument/piazzaDelPopolo/it/audio3.m4a"></audio>
         <div class="row">
-          <div class="col-md-6">
-            <img alt="Fatti recenti" class="img-fluid rounded"
-                 src="/src/images/monuments/piazzaDelPopolo/img3.jpg"> <!--img3 -->
+          <div class="col-md-6 my-3">
+            <img alt="Fatti recenti" class="img-fluid rounded shadow-lg"
+                 src="/src/resources/images/monuments/piazzaDelPopolo/img3.jpg" style= "width: 450px; height: 300px"> <!--img3 -->
           </div>
-          <div class="col-md-6 text-justify">
+          <div class="col-md-6 text-justify my-3">
             <p>Tuttavia, non ci sono informazioni specifiche sui recenti lavori di manutenzione delle due chiese gemelle. È noto che, nel corso dei secoli, entrambe le chiese hanno subito restauri e modifiche per preservare la loro struttura ed estetica.</p>
             <p> Ad esempio, Santa Maria del Popolo, fu restaurata da Gian Lorenzo Bernini tra il 1655 e il 1660, conferendole l'attuale aspetto barocco.</p>
           </div>
@@ -297,65 +197,36 @@
 
 
 <!-- Sezione "Leggende e fatti divertenti" -->
-
-<style>
-    .button4 {
-    position : absolute;   /* Posizionamento assoluto */
-    left: 1160px;           /* Distanza dal lato sinistro */
-    top: 2275px;            /* Distanza dall'alto */
-    z-index: 100;         /* In cima a altri elementi */
-    }
-
-    .button4 button {
-    background-color: var(--beige)  /* Colore di sfondo grigio */
-    color: black;               /* Colore del testo */
-    padding: 10px 20px;         /* Spaziatura interna */
-    border: none;               /* Nessun bordo */
-    border-radius: 5px;         /* Bordo arrotondato */
-    font-size: 16px;            /* Grandezza del font */
-    cursor: pointer;           /* Cambio cursore */
-    }
-
-    .button4 button .icon {
-    font-size: 20px;            /* Grandezza dell'icona */
-    margin-right: 8px;          /* Distanza tra icona e testo */
-    }
-</style>
-
-
-<div class ="button4">
-    <button onclick="playAudio4()">
-        <i id="audioIcon4" class="fas fa-volume-up icon"></i>
-    </button>
-
-    <audio id="myAudio4">
-        <source src="/src/audio/FattiDivertentiColosseoIT.m4a" type="audio/mpeg">
-    </audio>
-</div>
-
-
 <section class="content-section" id="curiosita">
   <span class="section-anchor"></span>
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h2 class="section-title-left">Leggende e fatti divertenti</h2>
+        <h2 class="section-title-left">
+          Leggende e fatti divertenti
+          <button class="audio-button" onclick="toggleAudio('audio4')">
+            <i id="audioIcon4" class="fas fa-volume-up icon"></i>
+          </button>
+        </h2>
+        <audio id="audio4" src="/src/resources/audio/monument/piazzaDelPopolo/it/audio4.m4a"></audio>
         <div class="row">
-          <div class="col-md-6 order-md-2 text-justify">
+          <div class="col-md-6 order-md-2 text-justify my-3">
             <ul class="custom-star-list">
-              <li> Non proprio gemelle: Santa Maria dei Miracoli (1681) e Santa Maria in Montesanto (1679) sono chiamate "chiese gemelle" per il loro stile barocco simile, ma non identiche.</li>
+              <li> Non sono proprio gemelle: Santa Maria dei Miracoli (1681) e Santa Maria in Montesanto (1679) sono chiamate "chiese gemelle" per il loro stile barocco simile, ma non identiche.</li>
               <li>Il Tridente: come detto la piazza è il punto di partenza del "Tridente" di Roma(Via del Corso, Via del Babuino e Via di Ripetta) che si snodano come un tridente, progettato per guidare i viaggiatori nel cuore della città.</li>
             </ul>
           </div>
-          <div class="col-md-6 order-md-1">
-            <img alt="Leggende e fatti divertenti" class="img-fluid rounded"
-                 src="/src/images/monuments/piazzaDelPopolo/img4.jpg"> <!-- img4 -->
+          <div class="col-md-6 order-md-1 my-3">
+            <img alt="Leggende e fatti divertenti" class="img-fluid rounded shadow-lg"
+                 src="/src/resources/images/monuments/piazzaDelPopolo/img4.jpg" style= "width: 450px; height: 300px"> <!-- img4 -->
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
 <!-- Mappa -->
 <section id="mappa">
   <div class="container">
@@ -363,19 +234,17 @@
       <div class="col-12">
         <h2 class="section-title-left text-center">Posizione</h2>
 
-
         <iframe id="osm-iframe"
                 width="100%"
                 height="400"
                 style="border:none; border-radius:8px;"
-                data-default-pos="41.8902,12.4924"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=12.47129559516907%2C41.90861307147966%2C12.480254173278809%2C41.91216608371762&amp;layer=mapnik">
+                data-default-pos="41.91061,12.47622"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=12.45830297470093%2C41.90350676713863%2C12.494137287139894%2C41.917718766310124&amp;layer=mapnik&amp;marker=41.910613162247955%2C12.47622013092041">
         </iframe>
-
 
         <div class="text-center mt-4">
 
-          <a class="btn btn-outline-turchese d-inline-flex align-items-center"
+          <a class="it btn btn-outline-turchese d-inline-flex align-items-center"
              href="https://www.google.com/maps/place/Piazza+del+Popolo,+Roma+RM/@41.9110163,12.4736344,17z/data=!3m1!4b1!4m6!3m5!1s0x132f60f8e5fa32d1:0xc87b8749f3592a6a!8m2!3d41.9110163!4d12.4762093!16s%2Fg%2F1w02gwt1?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D"
              target="_blank">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
@@ -404,13 +273,15 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script><!-- script per l'icona speaker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- sostituisce quello deprecato -->
 
 <script src="/src/js/osm-map-monument.js"></script>
 <script src="/src/js/slider-card.js"></script>
 <script src="/src/js/gallery-monuments-scroll.js"></script> <!-- script per la galleria di immagini -->
 <script src="/src/js/language-switcher.js"></script> <!-- script per lo switch lingua -->
+<script src="/src/js/audio-player.js"></script> <!-- script per l'audio lingua -->
 <script src="/src/js/include.js"></script> <!-- script per l'inclusione di altre pagine  -->
+
 <script>
   document.addEventListener("DOMContentLoaded", function() {
       includeHTML({
