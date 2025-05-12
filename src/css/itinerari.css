@@ -246,6 +246,7 @@
     margin-bottom: 0;
 }
 
+
 /* ==================== BOTTONI ==================== */
 .btn {
     padding: 10px 25px;
@@ -761,14 +762,13 @@
 .tab-content .tab-pane {
   display: none;
 }
+
 .tab-content .tab-pane.active {
   display: block;
 }
 
-<style>
 .leaflet-container {
   height: 100%;
   width: 100%;
   min-height: 300px;
 }
-</style>
