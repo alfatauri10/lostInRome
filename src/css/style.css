@@ -19,7 +19,19 @@ VERSION:    Version Number
   font-display: swap; /* Ottimizzazione caricamento font */
 }
 
+    .contenitore {
+      display: flex;
+      justify-content: center;   /* Centra orizzontalmente */
+      align-items: center;
+      padding: 2em;
+    }
 
+    .testo {
+      max-width: 600px;
+      padding: 1.5em;
+      border-radius: 8px;S
+      line-height: 1.6;
+    }
 /* Stili base per il body */
 body {
   line-height: 1.5;
