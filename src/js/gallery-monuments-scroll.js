@@ -10,8 +10,8 @@ function initGallery() {
         cssEase: 'ease-in-out',
         autoplay: true,
         autoplaySpeed: 5000,
-        prevArrow: '<button type="button" class="slick-prev"><</button>',
-        nextArrow: '<button type="button" class="slick-next">></button>'
+        prevArrow: '<button type="button" class="slick-prev"><i class="ti-angle-left"></i></button>',
+        nextArrow: '<button type="button" class="slick-next"><i class="ti-angle-right"></i></button>'
     });
 }
 
