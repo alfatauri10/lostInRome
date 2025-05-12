@@ -54,7 +54,7 @@ function initItineraryMaps() {
         id: 'castelli-romani-mappa-generale',
         center: [41.77, 12.65],
         zoom: 12
-      }
+      },
       {
           id: 'roma-gastronomica-mappa-generale',
           center: [41.8950, 12.4750],
