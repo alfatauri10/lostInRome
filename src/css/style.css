@@ -1535,3 +1535,11 @@ main {
 }
 
 
+.titolo-recensioni {
+    font-family: 'Verdana';
+    font-size: 1.5rem;
+    color: #fff;
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px rgba(107, 82, 42, 0.2);
+
+}
