@@ -19,7 +19,19 @@ VERSION:    Version Number
   font-display: swap; /* Ottimizzazione caricamento font */
 }
 
+    .contenitore {
+      display: flex;
+      justify-content: center;   /* Centra orizzontalmente */
+      align-items: center;
+      padding: 2em;
+    }
 
+    .testo {
+      max-width: 600px;
+      padding: 1.5em;
+      border-radius: 8px;S
+      line-height: 1.6;
+    }
 /* Stili base per il body */
 body {
   line-height: 1.5;
@@ -1520,6 +1532,15 @@ main {
    opacity: 0.3;
   margin: 10px 30px;
   width: calc(100% - 60px);
+}
+
+
+.titolo-recensioni {
+    font-family: 'Verdana';
+    font-size: 1.5rem;
+    color: #fff;
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px rgba(107, 82, 42, 0.2);
 }
 
 
