@@ -7,7 +7,7 @@
 
   <!-- Meta e stili -->
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <link rel="icon" type="image-png" href="/src/images/loghi/logoLostInRome_icona.png">
+  <link rel="icon" type="image-png" href="/src/resources/images/loghi/logoLostInRome_icona.png">
   <link href="/src/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
   <link href="/src/plugins/slick/slick.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
@@ -16,6 +16,8 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="/src/css/style.css" rel="stylesheet">
   <link href="/src/css/monument.css" rel="stylesheet">
+  <link href="/src/css/audio-player.css" rel="stylesheet">
+
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
           crossorigin="anonymous">
   </script>
@@ -68,7 +70,7 @@
         <!-- TODO (JAlfandari): inserisci qui il nome del monumento -->
         <h1 class="titoli">Pantheon</h1>
         <!-- TODO (JAlfandari): inserisci qui una breve frase ad effetto sul monumento -->
-        <p class="lead">Il Pantheon, simbolo intramontabile di Roma e meraviglia dell'antica architettura romana</p>
+        <p class="lead">Il Pantheon, simbolo intramontabile di Roma e meraviglia dell'antica architettura romana.</p>
       </div>
 
       <div class="col-lg-7">
@@ -79,28 +81,28 @@
           <div class="gallery-item">
             <a href="#storia">
               <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
-              <img alt="Pantheon notturno" src="/src/images/monuments/pantheon/img1.jpg">
+              <img alt="Pantheon notturno" src="/src/resources/images/monuments/pantheon/img1.jpg">
             </a>
           </div>
 
           <div class="gallery-item">
             <a href="#usato-oggi">
               <!-- TODO (JAlfandari): Inserisci qui la tua img2. Modifica ALT con una breve descrizione e SRC con percorso -->
-              <img alt="Dettagli architettonici" src="/src/images/monuments/pantheon/img2.jpg">
+              <img alt="Dettagli architettonici" src="/src/resources/images/monuments/pantheon/img2.jpg">
             </a>
           </div>
 
           <div class="gallery-item">
             <a href="#fatti-recenti">
               <!-- TODO (JAlfandari): Inserisci qui la tua img3. Modifica ALT con una breve descrizione e SRC con percorso -->
-              <img alt="Pantheon oggi" src="/src/images/monuments/pantheon/img3.jpg">
+              <img alt="Pantheon oggi" src="/src/resources/images/monuments/pantheon/img3.jpg">
             </a>
           </div>
 
           <div class="gallery-item">
             <a href="#curiosita">
               <!-- TODO (JAlfandari): Inserisci qui la tua img4. Modifica ALT con una breve descrizione e SRC con percorso -->
-              <img alt="Particolari curiosi" src="/src/images/monuments/pantheon/img4.jpg">
+              <img alt="Particolari curiosi" src="/src/resources/images/monuments/pantheon/img4.jpg">
             </a>
           </div>
 
@@ -111,56 +113,26 @@
 </section>
 
 <!-- Sezione Storia -->
-
-<style>
-  .button1 {
-      position: absolute;   /* Posizionamento assoluto */
-      left: 1050px;           /* Distanza dal lato sinistro */
-      top: 798px;            /* Distanza dall'alto */
-      z-index: 100;         /* In cima a altri elementi */
-`   }
-
-  .button1 button {
-      background-color: #e1dcd3;  /* Colore di sfondo grigio */
-      color: black;               /* Colore del testo */
-      padding: 10px 20px;         /* Spaziatura interna */
-      border: none;               /* Nessun bordo */
-      border-radius: 5px;         /* Bordo arrotondato */
-      font-size: 16px;            /* Grandezza del font */
-      cursor: pointer;           /* Cambio cursore */
-  }
-
-  .button1 button .icon {
-    font-size: 20px;            /* Grandezza dell'icona */
-    margin-right: 8px;          /* Distanza tra icona e testo */
-  }
-</style>
-
-
-<div class ="button1">
-  <button onclick="playAudio()">
-    <i class="fas fa-volume-up icon"></i>
-  </button>
-
-  <audio id="myAudio">
-    <source src="/src/audio/StoriaECostruzioneColosseoIT.m4a" type="audio/mpeg">
-  </audio>
-</div>
-
 <section class="content-section" id="storia">
   <span class="section-anchor"></span>
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h2 class="section-title-right text-right">Storia e costruzione</h2>
+        <h2 class="section-title-right text-right">
+          <button class="audio-button" onclick="toggleAudio('audio1')">
+            <i id="audioIcon1" class="fas fa-volume-up icon"></i>
+          </button>
+          Storia e costruzione
+        </h2>
+        <audio id="audio1" src="/src/resources/audio/monument/pantheon/it/audio1.m4a"></audio>
         <div class="row">
           <div class="col-md-6">
             <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
-            <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/images/monuments/pantheon/img1.jpg">
+            <img alt="Ricostruzione storica" class="img-fluid rounded" src="/src/resources/images/monuments/pantheon/img1.jpg" style= "width: 450px; height: 300px;">
           </div>
           <div class="col-md-6 text-justify">
             <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Storia" -->
-            <p>Il primo Pantheon fu costruito nel 27 a.C. da Marco Vipsanio Agrippa, generale romano e amico dell'imperatore Augusto. Tuttavia, questo primo edificio fu distrutto da un incendio. L'attuale Pantheon fu ricostruito dall'imperatore Adriano intorno al 118-125 d.C.</p>
+            <p>Il primo Pantheon fu costruito nel 27 A.C. da Marco Vipsanio Agrippa, generale romano e amico dell'imperatore Augusto. Tuttavia, questo primo edificio fu distrutto da un incendio. L'attuale Pantheon fu ricostruito dall'imperatore Adriano intorno al 118-125 d.C.</p>
             <p>Inizialmente fu costruito come tempio dedicato a tutte le divinità romane. Successivamente, nel 609 d.C., divenne una chiesa cristiana, il che contribuì a preservarlo in buone condizioni.</p>
           </div>
         </div>
@@ -171,60 +143,28 @@
 
 
 <!-- Sezione "Come è usato oggi" -->
-
-<style>
-  .button2 {
-      position: absolute;   /* Posizionamento assoluto */
-      left: 1160px;           /* Distanza dal lato sinistro */
-      top: 1825px;            /* Distanza dall'alto */
-      z-index: 100;         /* In cima a altri elementi */
-`   }
-
-  .button2 button {
-      background-color: #e1dcd3;  /* Colore di sfondo grigio */
-      color: black;               /* Colore del testo */
-      padding: 10px 20px;         /* Spaziatura interna */
-      border: none;               /* Nessun bordo */
-      border-radius: 5px;         /* Bordo arrotondato */
-      font-size: 16px;            /* Grandezza del font */
-      cursor: pointer;           /* Cambio cursore */
-  }
-
-  .button2 button .icon {
-    font-size: 20px;            /* Grandezza dell'icona */
-    margin-right: 8px;          /* Distanza tra icona e testo */
-  }
-</style>
-
-
-<div class ="button2">
-  <button onclick="playAudio2()">
-    <i class="fas fa-volume-up icon"></i>
-  </button>
-
-  <audio id="myAudio2">
-    <source src="/src/audio/FattiRecentiColosseoIT.m4a" type="audio/mpeg">
-  </audio>
-</div>
-
-
-
 <section class="content-section" id="usato-oggi">
   <span class="section-anchor"></span>
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h2 class="section-title-left">Come è usato oggi</h2>
+        <h2 class="section-title-left">
+          Come è usato oggi
+          <button class="audio-button" onclick="toggleAudio('audio2')">
+            <i id="audioIcon2" class="fas fa-volume-up icon"></i>
+          </button>
+        </h2>
+        <audio id="audio2" src="/src/resources/audio/monument/pantheon/it/audio2.m4a"></audio>
         <div class="row">
           <div class="col-md-6 order-md-2 text-justify">
             <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Usato oggi" -->
-            <p>Il Pantheon è stato utilizzato come chiesa cattolica con il nome di Basilica di Santa Maria e dei Martiri dal 609 d.C. Ancora oggi vi si svolgono cerimonie religiose.</p>
+            <p>Il Pantheon è stato utilizzato come chiesa cattolica con il nome di Basilica di Santa Maria degli Angeli e dei Martiri dal 609 d.C. Ancora oggi vi si svolgono cerimonie religiose.</p>
             <p>Milioni di visitatori vengono a vederlo ogni anno. La gente rimane stupita dalla sua grande cupola e dall'oculo, che lascia entrare la luce naturale.</p>
           </div>
           <div class="col-md-6 order-md-1">
             <!-- TODO (JAlfandari): Inserisci qui la tua img2. Modifica ALT con una breve descrizione e SRC con percorso -->
             <img alt="Struttura architettonica" class="img-fluid rounded"
-                 src="/src/images/monuments/pantheon/img2.jpg"> <!-- img2 -->
+                 src="/src/resources/images/monuments/pantheon/img2.jpg" style= "width: 450px; height: 300px;"> <!-- img2 -->
           </div>
         </div>
       </div>
@@ -233,55 +173,24 @@
 </section>
 
 <!-- Sezione "Fatti recenti" -->
-
-<style>
-  .button3 {
-      position: absolute;   /* Posizionamento assoluto */
-      left: 415px;           /* Distanza dal lato sinistro */
-      top: 1290px;            /* Distanza dall'alto */
-      z-index: 100;         /* In cima a altri elementi */
-`   }
-
-  .button3 button {
-      background-color: var(--beige);  /* Colore di sfondo grigio */
-      color: black;               /* Colore del testo */
-      padding: 10px 20px;         /* Spaziatura interna */
-      border: none;               /* Nessun bordo */
-      border-radius: 5px;         /* Bordo arrotondato */
-      font-size: 16px;            /* Grandezza del font */
-      cursor: pointer;           /* Cambio cursore */
-  }
-
-  .button3 button .icon {
-    font-size: 20px;            /* Grandezza dell'icona */
-    margin-right: 8px;          /* Distanza tra icona e testo */
-  }
-</style>
-
-
-<div class ="button3">
-  <button onclick="playAudio3()">
-    <i class="fas fa-volume-up icon"></i>
-  </button>
-
-  <audio id="myAudio3">
-    <source src="/src/audio/UsoOdiernoColosseoIT.m4a" type="audio/mpeg">
-  </audio>
-</div>
-
-
 <section class="content-section" id="fatti-recenti">
   <span class="section-anchor"></span>
 
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h2 class="section-title-right text-right">Fatti recenti</h2>
+        <h2 class="section-title-right text-right">
+          <button class="audio-button" onclick="toggleAudio('audio3')">
+            <i id="audioIcon3" class="fas fa-volume-up icon"></i>
+          </button>
+          Fatti recenti
+        </h2>
+        <audio id="audio3" src="/src/resources/audio/monument/pantheon/it/audio3.m4a"></audio>
         <div class="row">
           <div class="col-md-6">
             <!-- TODO (JAlfandari): Inserisci qui la tua img3. Modifica ALT con una breve descrizione e SRC con percorso -->
             <img alt="Fatti recenti" class="img-fluid rounded"
-                 src="/src/images/monuments/pantheon/img3.jpg"> <!--img3 -->
+                 src="/src/resources/images/monuments/pantheon/img3.jpg" style= "width: 450px; height: 300px;"> <!--img3 -->
           </div>
           <div class="col-md-6 text-justify">
             <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "FATTI RECENTI" -->
@@ -295,48 +204,18 @@
 </section>
 
 <!-- Sezione "Leggende e fatti divertenti" -->
-
-<style>
-  .button4 {
-  position : absolute;   /* Posizionamento assoluto */
-  left: 410px;           /* Distanza dal lato sinistro */
-  top: 2360px;            /* Distanza dall'alto */
-  z-index: 100;         /* In cima a altri elementi */
-  }
-
-  .button4 button {
-  background-color: var(--beige)  /* Colore di sfondo grigio */
-  color: black;               /* Colore del testo */
-  padding: 10px 20px;         /* Spaziatura interna */
-  border: none;               /* Nessun bordo */
-  border-radius: 5px;         /* Bordo arrotondato */
-  font-size: 16px;            /* Grandezza del font */
-  cursor: pointer;           /* Cambio cursore */
-  }
-
-  .button4 button .icon {
-  font-size: 20px;            /* Grandezza dell'icona */
-  margin-right: 8px;          /* Distanza tra icona e testo */
-  }
-</style>
-
-
-<div class ="button4">
-  <button onclick="playAudio4()">
-    <i class="fas fa-volume-up icon"></i>
-  </button>
-
-  <audio id="myAudio4">
-    <source src="/src/audio/FattiDivertentiColosseoIT.m4a" type="audio/mpeg">
-  </audio>
-</div>
-
 <section class="content-section" id="curiosita">
   <span class="section-anchor"></span>
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h2 class="section-title-left">Leggende e fatti divertenti</h2>
+        <h2 class="section-title-left">
+          Leggende e fatti divertenti
+          <button class="audio-button" onclick="toggleAudio('audio4')">
+            <i id="audioIcon4" class="fas fa-volume-up icon"></i>
+          </button>
+        </h2>
+        <audio id="audio4" src="/src/resources/audio/monument/pantheon/it/audio4.m4a"></audio>
         <div class="row">
           <div class="col-md-6 order-md-2 text-justify">
             <!-- TODO (JAlfandari): Inserisci qui testo della sezione "CURIOSITA" -->
@@ -344,13 +223,13 @@
               <li>Il Pantheon è sopravvissuto a molti terremoti, ma non è rimasto completamente indenne. L'edificio ha subito alcuni danni in passato, in particolare nel IX secolo.</li>
               <li>Il Pantheon è apparso in molti film famosi. Ad esempio, nel film del 2009 Angeli e Demoni e nel film del 2015 Operazione U.N.C.L.E.</li>
               <li>Si dice che in certi periodi dell'anno la luce del sole filtra attraverso l'oculo in modo speciale e mette in risalto le statue o gli altari all'interno, facendo sembrare che gli dei stiano benedicendo il tempio.</li>
-              <li>Il pavimento del Pantheon è fatto di marmo colorato proveniente da diverse parti dell' Impero Romano.</li>
+              <li>Il pavimento del Pantheon è fatto di marmi colorati provenienti da diverse parti dell'Impero Romano.</li>
             </ul>
           </div>
-          <div class="col-md-6 order-md-1">
-            <!-- TODO (JAlfandari): Inserisci qui la tua img4. Modifica ALT con una breve descrizione e SRC con percorso -->
+          <!-- TODO (JAlfandari): Inserisci qui la tua img4. Modifica ALT con una breve descrizione e SRC con percorso -->
+          <div class="col-md-6 order-md-1 my-3">
             <img alt="Leggende e fatti divertenti" class="img-fluid rounded"
-                 src="/src/images/monuments/pantheon/img4.jpg"> <!-- img4 -->
+                 src="/src/resources/images/monuments/pantheon/img4.jpg" style= "width: 450px; height: 300px"> <!-- img4 -->
           </div>
         </div>
       </div>
@@ -376,7 +255,7 @@
 
         <div class="text-center mt-4">
           <!-- TODO (JAlfandari): Inserisci in href la posizione del tuo monumento -->
-          <a class="btn btn-outline-turchese d-inline-flex align-items-center"
+          <a class="it btn btn-outline-turchese d-inline-flex align-items-center"
              href="https://www.google.com/maps/place/Pantheon/@41.8986108,12.4768729,752m/data=!3m2!1e3!4b1!4m6!3m5!1s0x132f604f678640a9:0xcad165fa2036ce2c!8m2!3d41.8986108!4d12.4768729!16zL20vMDF4emR6?entry=ttu&g_ep=EgoyMDI1MDQyOC4wIKXMDSoASAFQAw%3D%3D"
              target="_blank">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
@@ -404,12 +283,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script><!-- script per l'icona speaker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- sostituisce quello deprecato -->
 
 <script src="/src/js/osm-map-monument.js"></script>
 <script src="/src/js/slider-card.js"></script>
 <script src="/src/js/gallery-monuments-scroll.js"></script> <!-- script per la galleria di immagini -->
 <script src="/src/js/language-switcher.js"></script> <!-- script per lo switch lingua -->
+<script src="/src/js/audio-player.js"></script> <!-- script per l'audio lingua -->
 <script src="/src/js/include.js"></script> <!-- script per l'inclusione di altre pagine  -->
 
 <script>
@@ -421,29 +301,7 @@
   });
 
 </script>
-<script>
-  function playAudio() {
-    const audio = document.getElementById("myAudio");
-    audio.play();
-  }
-</script>
-<script>
-  function playAudio2() {
-    const audio = document.getElementById("myAudio2");
-    audio.play();
-  }
-</script>
-<script>
-  function playAudio3() {
-    const audio = document.getElementById("myAudio3");
-    audio.play();
-  }
-</script>
-<script>
-  function playAudio4() {
-    const audio = document.getElementById("myAudio4");
-    audio.play();
-  }
-</script>
 </body>
 </html>
+
+

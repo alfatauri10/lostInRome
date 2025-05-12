@@ -7,7 +7,7 @@
 
   <!-- Meta e stili -->
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <link rel="icon" type="image-png" href="/src/images/loghi/logoLostInRome_icona.png">
+  <link rel="icon" type="image-png" href="/src/resources/images/loghi/logoLostInRome_icona.png">
   <link href="/src/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
   <link href="/src/plugins/slick/slick.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
@@ -16,6 +16,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="/src/css/style.css" rel="stylesheet">
   <link href="/src/css/monument.css" rel="stylesheet">
+  <link href="/src/css/audio-player.css" rel="stylesheet">
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
           crossorigin="anonymous">
@@ -79,28 +80,28 @@
             <div class="gallery-item">
               <a href="#storia">
                 <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
-                <img alt="The Pantheon at night" src="/src/images/monuments/pantheon/img1.jpg">
+                <img alt="The Pantheon at night" src="/src/resources/images/monuments/pantheon/img1.jpg">
               </a>
             </div>
 
             <div class="gallery-item">
               <a href="#usato-oggi">
                 <!-- TODO (JAlfandari): Inserisci qui la tua img2. Modifica ALT con una breve descrizione e SRC con percorso -->
-                <img alt="Interior architectural details" src="/src/images/monuments/pantheon/img2.jpg"><!-- Percorso img2 -->
+                <img alt="Interior architectural details" src="/src/resources/images/monuments/pantheon/img2.jpg"><!-- Percorso img2 -->
               </a>
             </div>
 
             <div class="gallery-item">
               <a href="#fatti-recenti">
                 <!-- TODO (JAlfandari): Inserisci qui la tua img3. Modifica ALT con una breve descrizione e SRC con percorso -->
-                <img alt="The Pantheon during the day" src="/src/images/monuments/pantheon/img3.jpg">    <!-- Percorso img3 -->
+                <img alt="The Pantheon during the day" src="/src/resources/images/monuments/pantheon/img3.jpg">    <!-- Percorso img3 -->
               </a>
             </div>
 
             <div class="gallery-item">
               <a href="#curiosita">
                 <!-- TODO (JAlfandari): Inserisci qui la tua img4. Modifica ALT con una breve descrizione e SRC con percorso -->
-                <img alt="View of the oculus" src="/src/images/monuments/pantheon/img4.jpg">       <!-- Percorso img4 -->
+                <img alt="View of the oculus" src="/src/resources/images/monuments/pantheon/img4.jpg">       <!-- Percorso img4 -->
               </a>
             </div>
 
@@ -116,16 +117,22 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2 class="section-title-right text-right">History and construction</h2>
+          <h2 class="section-title-right text-right">
+            <button class="audio-button" onclick="toggleAudio('audio1')">
+              <i id="audioIcon1" class="fas fa-volume-up icon"></i>
+            </button>
+            History and construction
+          </h2>
+          <audio id="audio1" src="/src/resources/audio/monument/pantheon/en/audio1.m4a"></audio>
           <div class="row">
             <div class="col-md-6">
               <!-- TODO (JAlfandari): Inserisci qui la tua img1. Modifica ALT con una breve descrizione e SRC con percorso -->
-              <img alt="The Pantheon at night" class="img-fluid rounded" src="/src/images/monuments/pantheon/img1.jpg">
+              <img alt="The Pantheon at night" class="img-fluid rounded shadow-lg" src="/src/resources/images/monuments/pantheon/img1.jpg" style= "width: 450px; height: 300px;">
             </div>
             <div class="col-md-6 text-justify">
               <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Storia" -->
-              <p>The first Pantheon was built in 27 BC by Marcus Vipsanius Agrippa, a Roman general and friend of Emperor Augustus. However, this first building was destroyed by fire. The current Pantheon was rebuilt by Emperor Hadrian around 118-125 AD.</p>
-              <p>It was initially built as a temple for all the Roman gods. Later, in 609 AD, it became a Christian church, which helped preserve it in good condition.</p>
+              <p>The first Pantheon was built in 27 b.C. by Marco Vipsanio Agrippa, a Roman general and friend of Emperor Augusto. However, this first building was destroyed by fire. The current Pantheon was rebuilt by Emperor Adriano around 118-125 b.C.</p>
+              <p>It was initially built as a temple for all the Roman gods. Later, in 609 b.C. , it became a Christian church, which helped preserve it in good condition.</p>
             </div>
           </div>
         </div>
@@ -139,17 +146,23 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2 class="section-title-left">How it is used</h2>
+          <h2 class="section-title-left">
+            How it is used
+            <button class="audio-button" onclick="toggleAudio('audio2')">
+              <i id="audioIcon2" class="fas fa-volume-up icon"></i>
+            </button>
+          </h2>
+          <audio id="audio2" src="/src/resources/audio/monument/pantheon/en/audio2.m4a"></audio>
           <div class="row">
             <div class="col-md-6 order-md-2 text-justify">
               <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "Usato oggi" -->
-              <p>The Pantheon has been used as a Catholic church called the Basilica of St. Mary and the Martyrs since 609 AD. Religious ceremonies are still held there today.</p>
+              <p>The Pantheon has been used as a Catholic church called the Basilica di Santa Maria degli Angeli e dei Martiri since 609 b.C. Religious ceremonies are still held there today.</p>
               <p> Millions of visitors come to see the Pantheon every year. People are amazed by its large dome and the oculus, which lets in natural light.</p>
             </div>
             <div class="col-md-6 order-md-1 ">
               <!-- TODO (JAlfandari): Inserisci qui la tua img2. Modifica ALT con una breve descrizione e SRC con percorso -->
-              <img alt="Interior architectural details" class="img-fluid rounded"
-                   src="/src/images/monuments/pantheon/img2.jpg"> <!-- img2 -->
+              <img alt="Interior architectural details" class="img-fluid rounded shadow-lg"
+                   src="/src/resources/images/monuments/pantheon/img2.jpg" style= "width: 450px; height: 300px;"> <!-- img2 -->
             </div>
           </div>
         </div>
@@ -160,16 +173,21 @@
   <!-- Sezione "Fatti recenti" -->
   <section class="content-section" id="fatti-recenti">
     <span class="section-anchor"></span>
-
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2 class="section-title-right text-right">Recent facts</h2>
+          <h2 class="section-title-right text-right">
+            <button class="audio-button" onclick="toggleAudio('audio3')">
+              <i id="audioIcon3" class="fas fa-volume-up icon"></i>
+            </button>
+            Recent facts
+          </h2>
+          <audio id="audio3" src="/src/resources/audio/monument/pantheon/en/audio3.m4a"></audio>
           <div class="row">
             <div class="col-md-6">
               <!-- TODO (JAlfandari): Inserisci qui la tua img3. Modifica ALT con una breve descrizione e SRC con percorso -->
-              <img alt="The Pantheon during the day" class="img-fluid rounded"
-                   src="/src/images/monuments/pantheon/img3.jpg"> <!--img3 -->
+              <img alt="The Pantheon during the day" class="img-fluid rounded shadow-lg"
+                   src="/src/resources/images/monuments/pantheon/img3.jpg" style= "width: 450px; height: 300px;"> <!--img3 -->
             </div>
             <div class="col-md-6 text-justify">
               <!-- TODO (JAlfandari): Inserisci qui il testo della sezione "FATTI RECENTI" -->
@@ -188,21 +206,27 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2 class="section-title-left">Legends and fun facts</h2>
+          <h2 class="section-title-left">
+            Legends and fun facts
+            <button class="audio-button" onclick="toggleAudio('audio4')">
+              <i id="audioIcon4" class="fas fa-volume-up icon"></i>
+            </button>
+          </h2>
+          <audio id="audio4" src="/src/resources/audio/monument/pantheon/en/audio4.m4a"></audio>
           <div class="row">
             <div class="col-md-6 order-md-2">
               <!-- TODO (JAlfandari): Inserisci qui testo della sezione "CURIOSITA" -->
               <ul class="custom-star-list">
-                <li> The Pantheon has survived many earthquakes, but it has not been completely unscathed. The building has suffered some damage in the past, most notably in the 9th century</li>
-                <li> The Pantheon has appeared in many famous films. For example, in the 2009 movie Angels & Demons and in the 2015 film The Man from U.N.C.L.E</li>
-                <li> It is said that during certain times of the year, the sunlight shines through the oculus in a special way and highlights the statues or altars inside, making it look like the gods are blessing the temple</li>
-                <li> The floor of the Pantheon is made of colored marble from different parts of the Roman Empire</li>
+                <li> The Pantheon has survived many earthquakes, but it has not been completely unscathed. The building has suffered some damage in the past, most notably in the 9th century.</li>
+                <li> The Pantheon has appeared in many famous films. For example, in the 2009 movie Angels & Demons and in the 2015 film The Man from U.N.C.L.E.</li>
+                <li> It is said that during certain times of the year, the sunlight shines through the oculus in a special way and highlights the statues or altars inside, making it look like the gods are blessing the temple.</li>
+                <li> The floor of the Pantheon is made of colored marble from different parts of the Roman Empire.</li>
               </ul>
             </div>
             <div class="col-md-6 order-md-1">
               <!-- TODO (JAlfandari): Inserisci qui la tua img4. Modifica ALT con una breve descrizione e SRC con percorso -->
-              <img alt="View of the oculus" class="img-fluid rounded"
-                   src="/src/images/monuments/pantheon/img4.jpg"> <!-- img4 -->
+              <img alt="Legends and fun facts" class="img-fluid rounded shadow-lg"
+                   src="/src/resources/images/monuments/pantheon/img4.jpg" style= "width: 450px; height: 300px;"> <!-- img4 -->
             </div>
           </div>
         </div>
@@ -228,7 +252,7 @@
 
           <div class="text-center mt-4">
             <!-- TODO (JAlfandari): Inserisci in href la posizione del tuo monumento -->
-            <a class="btn btn-outline-turchese d-inline-flex align-items-center"
+            <a class="en btn btn-outline-turchese d-inline-flex align-items-center"
                href="https://www.google.com/maps/place/Pantheon/@41.8986108,12.4768729,752m/data=!3m2!1e3!4b1!4m6!3m5!1s0x132f604f678640a9:0xcad165fa2036ce2c!8m2!3d41.8986108!4d12.4768729!16zL20vMDF4emR6?entry=ttu&g_ep=EgoyMDI1MDQyOC4wIKXMDSoASAFQAw%3D%3D"
                target="_blank">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
@@ -254,12 +278,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script><!-- script per l'icona speaker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- sostituisce quello deprecato -->
 
 <script src="/src/js/osm-map-monument.js"></script>
 <script src="/src/js/slider-card.js"></script>
 <script src="/src/js/gallery-monuments-scroll.js"></script> <!-- script per la galleria di immagini -->
 <script src="/src/js/language-switcher.js"></script> <!-- script per lo switch lingua -->
+<script src="/src/js/audio-player.js"></script> <!-- script per l'audio lingua -->
 <script src="/src/js/include.js"></script> <!-- script per l'inclusione di altre pagine  -->
 
 <script>

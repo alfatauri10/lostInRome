@@ -40,16 +40,26 @@ function initMapButtons() {
 function initItineraryMaps() {
   // Configurazioni delle mappe
   const mapsConfig = [
-    {
-      id: 'avventura-mappa-generale',
-      center: [41.87, 12.49],
-      zoom: 13
-    },
-    {
-      id: 'roma-discovery-mappa-generale',
-      center: [41.9025, 12.4800],
-      zoom: 14
-    }
+      {
+        id: 'avventura-mappa-generale',
+        center: [41.87, 12.49],
+        zoom: 13
+      },
+      {
+        id: 'roma-discovery-mappa-generale',
+        center: [41.9025, 12.4800],
+        zoom: 14
+      },
+      {
+        id: 'castelli-romani-mappa-generale',
+        center: [41.77, 12.65],
+        zoom: 12
+      },
+      {
+          id: 'roma-gastronomica-mappa-generale',
+          center: [41.8950, 12.4750],
+          zoom: 14
+      }
   ];
 
 
@@ -116,7 +126,9 @@ function checkMapsLoaded() {
   // Controlla ogni 200ms se i placeholder sono stati popolati
   const checkInterval = setInterval(() => {
     if (document.getElementById('lostInRomePlaceHolder').innerHTML &&
-        document.getElementById('adventureItineraryPlaceHolder').innerHTML) {
+        document.getElementById('adventureItineraryPlaceHolder').innerHTML &&
+        document.getElementById('castelliRomaniPlaceHolder').innerHTML &&
+        document.getElementById('enoGastronomicoPlaceHolder').innerHTML ) {
       clearInterval(checkInterval);
       initializeMaps();
     }
@@ -133,7 +145,9 @@ function initializeMaps() {
     setTimeout(() => {
       const maps = [
         document.getElementById('avventura-mappa-generale'),
-        document.getElementById('lostInRome-mappa-generale')
+        document.getElementById('lostInRome-mappa-generale'),
+         document.getElementById('castelli-romani-mappa-generale'),
+          document.getElementById('roma-gastronomica-mappa-generale')
       ];
 
       maps.forEach(map => {
