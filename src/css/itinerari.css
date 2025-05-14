@@ -254,6 +254,17 @@
     opacity: 0.8;
     margin-bottom: 0;
 }
+@media (max-width: 768px) {
+    .testimonial-card {
+        width: 250px; /* Riduci la larghezza per dispositivi medi */
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-card {
+        width: 200px; /* Ancora più piccole per schermi molto piccoli */
+    }
+}
 
 
 /* ==================== BOTTONI ==================== */
