@@ -134,16 +134,33 @@ h6, .h6 { font-size: 16px; }
     background: rgba(255,255,255,0.2) !important;
     backdrop-filter: blur(5px);
     border: 1px solid #068D9D !important;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    padding: 5px 15px !important;
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+
+    padding: 5px 10px !important;
+
     transition: all 0.3s ease !important;
+    border-width: 2px;
+
+    /* Centratura ORIZZONTALE */
+      display: inline-block;    /* Larghezza si adatta al testo */
+      margin: 10px auto;       /* Centra orizzontalmente */
+
+      /* Gestione del TESTO su Mobile */
+      white-space: nowrap;     /* Impedisce al testo di andare a capo */
+      max-width: 90vw;         /* Massima larghezza = 90% dello schermo */
+
+      /* Mobile-specific fixes */
+      @media (max-width: 768px) {
+        padding: 3px 2px;     /* Padding più stretto su mobile */
+      }
+
   }
 
-  .btn-outline-light:hover {
-    background: rgba(255,255,255,0.8) !important;
-    color: #056974 !important;
-  }
+
+.btn-outline-light:hover {
+background: rgba(255,255,255,0.8) !important;
+color: #056974 !important;
+}
 
 
 .btn-outline-light.active,
@@ -1098,15 +1115,7 @@ body {
   background: #068D9D;
 }
 
-/* Pulsante outline light */
-.btn-outline-light {
-  padding: 0.25rem 0.75rem;
-  font-size: clamp(0.7rem, 2vw, 0.9rem);
-  border-width: 2px;
-  transition: all 0.2s;
-  background: rgba(255,255,255,0.15) !important;
 
-}
 
 /* ==================== DROPDOWN MENU ==================== */
 .dropdown-menu {
