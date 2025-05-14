@@ -33,7 +33,7 @@
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 3
+          slidesToShow: 2
         }
       },
       {

@@ -81,12 +81,26 @@
   $(window).on('resize', positionArrows);
 
   // Stili responsivi aggiuntivi per le card su mobile
+  /*
   if ($(window).width() <= 768) {
     $('.testimonial-card').css({
       'padding': '10px',
       'font-size': '14px',
       'margin': '10px',
       'max-width': '90%',
+      'box-sizing': 'border-box'
+    });
+  }
+  */
+
+  // Stili responsivi aggiuntivi per le card su mobile
+  if ($(window).width() <= 768) {
+    $('.testimonial-card').css({
+      'padding': '15px',
+      'font-size': '14px',
+      'margin': '10px auto', // Aggiunto auto per centrare orizzontalmente
+      'width': '85%', // Riduci la larghezza al 85% invece di 90%
+      'max-width': '80%', // Aggiungi una max-width per limitare la larghezza su schermi grandi
       'box-sizing': 'border-box'
     });
   }
