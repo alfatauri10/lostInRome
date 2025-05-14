@@ -227,6 +227,14 @@
     transition: all 0.3s ease;
     border: none;
 }
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 15px;
+}
+
 .testimonial-author.fixed-bottom-left {
     position: auto;
     bottom: 10px;
