@@ -218,7 +218,7 @@
     border: none;
 }
 .testimonial-author.fixed-bottom-left {
-    position: absolute;
+    position: auto;
     bottom: 10px;
     left: 10px;
     width: calc(100% - 20px);
