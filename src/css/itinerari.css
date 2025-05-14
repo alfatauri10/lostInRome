@@ -220,10 +220,10 @@
     border: none;
 }
 .fixed-bottom-left {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    width: calc(100% - 20px);
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
 }
 
 .testimonial-card:hover {
