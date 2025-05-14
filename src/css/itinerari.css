@@ -212,20 +212,18 @@
 /* ==================== TESTIMONIANZE ==================== */
 .featured-recensioni-slider {
     display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding-bottom: 10px;
+    overflow: hidden;
     width: 100%;
+    position: relative;
 }
 .testimonial-card {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 300px;
+    width: 40%;
     transition: all 0.3s ease;
     border: none;
+    margin-right: 20px;
+    flex-shrink: 0;
 }
 .card-body {
     display: flex;
@@ -280,6 +278,10 @@
     .testimonial-card {
         width: 200px; /* Ancora più piccole per schermi molto piccoli */
     }
+}
+
+body {
+    overflow-x: hidden; /* Rimuove la barra di scorrimento orizzontale dalla pagina */
 }
 
 
