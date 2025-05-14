@@ -246,7 +246,15 @@
     margin-bottom: 0;
 }
 
+.testimonial-card .card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Assicurati che la card abbia un'altezza definita */
+}
 
+.testimonial-author {
+    margin-top: auto; /* Spinge l'elemento in fondo */
+}
 /* ==================== BOTTONI ==================== */
 .btn {
     padding: 10px 25px;
