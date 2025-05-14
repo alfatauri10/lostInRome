@@ -213,17 +213,16 @@
 .testimonial-card {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    position: relative;
     height: 100%;
     transition: all 0.3s ease;
     border: none;
+    width: auto;
 }
-
-.fixed-bottom-left {
-    position: absolute;
+.testimonial-author.fixed-bottom-left {
+    position: auto;
     bottom: 10px;
     left: 10px;
-    width: calc(100% - 20px);
+    text-align: left;
 }
 
 .testimonial-card:hover {
