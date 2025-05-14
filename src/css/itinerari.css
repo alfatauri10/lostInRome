@@ -221,7 +221,6 @@
     position: auto;
     bottom: 10px;
     left: 10px;
-    width: calc(100% - 20px);
     text-align: left;
 }
 
