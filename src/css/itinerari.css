@@ -220,12 +220,11 @@
 .testimonial-card {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 300px;
+    width: 25%;
     transition: all 0.3s ease;
     border: none;
+    margin-right: 20px;
+    flex-shrink: 0;
 }
 .card-body {
     display: flex;
