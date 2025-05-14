@@ -215,12 +215,11 @@
     overflow: hidden;
     width: 100%;
     position: relative;
-    white-space: nowrap;
 }
 .testimonial-card {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    width: 25%;
+    width: 40%;
     transition: all 0.3s ease;
     border: none;
     margin-right: 20px;
@@ -279,6 +278,10 @@
     .testimonial-card {
         width: 200px; /* Ancora più piccole per schermi molto piccoli */
     }
+}
+
+body {
+    overflow-x: hidden; /* Rimuove la barra di scorrimento orizzontale dalla pagina */
 }
 
 
