@@ -236,9 +236,10 @@
 }
 
 .testimonial-author.fixed-bottom-left {
-    position: auto;
+    position: absolute;
     bottom: 10px;
     left: 10px;
+    width: calc(100% - 20px);
     text-align: left;
 }
 
