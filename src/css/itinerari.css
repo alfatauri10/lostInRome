@@ -212,10 +212,10 @@
 /* ==================== TESTIMONIANZE ==================== */
 .featured-recensioni-slider {
     display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding-bottom: 10px;
+    overflow: hidden;
     width: 100%;
+    position: relative;
+    white-space: nowrap;
 }
 .testimonial-card {
     background-color: rgba(255, 255, 255, 0.1);
