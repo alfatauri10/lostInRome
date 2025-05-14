@@ -219,7 +219,7 @@
     width: 100%;
 }
 .testimonial-author.fixed-bottom-left {
-    position: auto;
+    position: absolute;
     bottom: 10px;
     left: 10px;
     text-align: left;
