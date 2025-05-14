@@ -210,35 +210,12 @@
 }
 
 /* ==================== TESTIMONIANZE ==================== */
-.featured-recensioni-slider {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-}
 .testimonial-card {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    width: 40%;
+    height: 100%;
     transition: all 0.3s ease;
     border: none;
-    margin-right: 20px;
-    flex-shrink: 0;
-}
-.card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    padding: 15px;
-}
-
-.testimonial-author.fixed-bottom-left {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    width: calc(100% - 20px);
-    text-align: left;
 }
 
 .testimonial-card:hover {
@@ -267,21 +244,6 @@
     font-size: 0.85rem;
     opacity: 0.8;
     margin-bottom: 0;
-}
-@media (max-width: 768px) {
-    .testimonial-card {
-        width: 250px; /* Riduci la larghezza per dispositivi medi */
-    }
-}
-
-@media (max-width: 480px) {
-    .testimonial-card {
-        width: 200px; /* Ancora più piccole per schermi molto piccoli */
-    }
-}
-
-body {
-    overflow-x: hidden; /* Rimuove la barra di scorrimento orizzontale dalla pagina */
 }
 
 
@@ -810,3 +772,4 @@ body {
   width: 100%;
   min-height: 300px;
 }
+
