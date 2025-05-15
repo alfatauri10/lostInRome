@@ -1267,11 +1267,11 @@ main {
 }
 
 .slick-prev {
-  left: -20px;
+  left: 0px;
 }
 
 .slick-next {
-  right: -20px;
+  right: 0px;
 }
 
 /*Animazione galleria*/
