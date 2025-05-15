@@ -846,7 +846,8 @@ body {
   background-color: var(--beige);
 }
 .page-content {
-  flex: 1 0 auto; /* Flex grow, flex shrink, flex basis */
+  /*flex: 1 0 auto; /* Flex grow, flex shrink, flex basis */
+  margin-top: 90px !important;  /* Regola questo valore a piacere */
 }
 
 /* ==================== HEADER ==================== */
