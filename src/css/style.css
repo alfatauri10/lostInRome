@@ -1266,13 +1266,16 @@ main {
   color: white;
 }
 
+/*
 .slick-prev {
-  left: 0px;
+  left: -20px;
 }
 
 .slick-next {
-  right: 0px;
+  right: -20px;
 }
+*/
+
 
 /*Animazione galleria*/
 @keyframes float {
