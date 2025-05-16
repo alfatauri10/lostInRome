@@ -28,6 +28,8 @@ function setupSmoothScrolling() {
     });
 }
 
+
+
   // Posizionamento frecce su mobile
   function positionArrows() {
     if ($(window).width() <= 768) {
@@ -37,6 +39,29 @@ function setupSmoothScrolling() {
       $('.slick-prev').css('left', '-20px');
       $('.slick-next').css('right', '-20px');
     }
+
+
+
+    // Stile personalizzato per le frecce
+    $('.slick-prev, .slick-next').css({
+      'display': 'flex',
+      'align-items': 'center',
+      'justify-content': 'center',
+      'position': 'absolute',
+      'top': '50%',
+      'transform': 'translateY(-50%)',
+      'z-index': '1',
+      'background': 'rgba(255,255,255,0.8)',
+      'border': 'none',
+      'border-radius': '50%',
+      'width': '40px',
+      'height': '40px',
+      'color': '#333',
+      'font-size': '20px',
+      'cursor': 'pointer',
+      'transition': 'all 0.3s ease'
+    });
+
   }
 
 
