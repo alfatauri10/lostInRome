@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+
     includeHTML({
       headerPlaceHolder: "../../include/header.html",
       footerPlaceHolder: "../../include/footer.html"
