@@ -150,3 +150,23 @@
     left: 0;
     font-size: 0.9em;      /* Dimensione leggermente ridotta */
 }
+
+/* ==================== VR ==================== */
+
+/* Stile per l'icona VR */
+.vr-icon-link {
+    color: #ff6b6b;
+    font-size: 0.8em;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+    vertical-align: middle;
+}
+
+.vr-icon-link:hover {
+    color: #ff3838;
+    transform: scale(1.1);
+}
+
+.fa-vr-cardboard {
+    vertical-align: middle;
+}
