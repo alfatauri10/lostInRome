@@ -56,9 +56,9 @@ function initItineraryMaps() {
         zoom: 12
       },
       {
-          id: 'roma-gastronomica-mappa-generale',
-          center: [41.8950, 12.4750],
-          zoom: 14
+        id: 'roma-gastronomica-mappa-generale',
+        center: [41.8950, 12.4750],
+        zoom: 14
       }
   ];
 
@@ -119,16 +119,20 @@ if (document.readyState !== 'loading') {
   document.addEventListener('DOMContentLoaded', initAllMapFeatures);
 }
 
-
-
 // Attende che il contenuto dinamico sia caricato
 function checkMapsLoaded() {
-  // Controlla ogni 200ms se i placeholder sono stati popolati
   const checkInterval = setInterval(() => {
-    if (document.getElementById('lostInRomePlaceHolder').innerHTML &&
-        document.getElementById('adventureItineraryPlaceHolder').innerHTML &&
-        document.getElementById('castelliRomaniPlaceHolder').innerHTML &&
-        document.getElementById('enoGastronomicoPlaceHolder').innerHTML ) {
+    const itLoaded = document.getElementById('lostInRomePlaceHolder')?.innerHTML &&
+                     document.getElementById('adventureItineraryPlaceHolder')?.innerHTML &&
+                     document.getElementById('castelliRomaniPlaceHolder')?.innerHTML &&
+                     document.getElementById('enoGastronomicoPlaceHolder')?.innerHTML;
+
+    const enLoaded = document.getElementById('lostInRomePlaceHolderEN')?.innerHTML &&
+                     document.getElementById('adventureItineraryPlaceHolderEN')?.innerHTML &&
+                     document.getElementById('castelliRomaniPlaceHolderEN')?.innerHTML &&
+                     document.getElementById('enoGastronomicoPlaceHolderEN')?.innerHTML;
+
+    if (itLoaded || enLoaded) {
       clearInterval(checkInterval);
       initializeMaps();
     }
@@ -146,8 +150,8 @@ function initializeMaps() {
       const maps = [
         document.getElementById('avventura-mappa-generale'),
         document.getElementById('lostInRome-mappa-generale'),
-         document.getElementById('castelli-romani-mappa-generale'),
-          document.getElementById('roma-gastronomica-mappa-generale')
+        document.getElementById('castelli-romani-mappa-generale'),
+        document.getElementById('roma-gastronomica-mappa-generale')
       ];
 
       maps.forEach(map => {

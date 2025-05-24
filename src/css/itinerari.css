@@ -418,6 +418,17 @@
     border: 1px solid rgba(0,0,0,0.1);
 }
 
+/* Evita che la mappa copra l'header fisso*/
+.map_itinerary{
+   height: 350px;
+   width: 100%;
+   border-radius: 8px;
+   position: relative;
+   z-index: 1;
+   margin-top: 0;
+   isolation: isolate;
+}
+
 .tappa-card {
     border: none;
     border-radius: 8px;
