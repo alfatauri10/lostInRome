@@ -7,7 +7,11 @@ const APP_COMPONENTS = {
     lostInRomePlaceHolder: "/src/pages/itinerary/it/lostInRome.html",
     adventureItineraryPlaceHolder: "/src/pages/itinerary/it/avventura.html",
     castelliRomaniPlaceHolder: "src/pages/itinerary/it/castelliRomani.html",
-    enoGastronomicoPlaceHolder: "src/pages/itinerary/it/enoGastronomico.html"
+    enoGastronomicoPlaceHolder: "src/pages/itinerary/it/enoGastronomico.html",
+    lostInRomePlaceHolderEN: "src/pages/itinerary/en/lostInRome.html",
+    castelliRomaniPlaceHolderEN: "src/pages/itinerary/en/castelliRomani.html",
+    enoGastronomicoPlaceHolderEN: "src/pages/itinerary/en/enoGastronomico.html",
+    adventureItineraryPlaceHolderEN: "src/pages/itinerary/en/avventura.html"
 
 };
 
