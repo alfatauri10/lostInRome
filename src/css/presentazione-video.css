@@ -1,0 +1,67 @@
+.fa-play-circle:hover {
+    opacity: 1;
+    filter: drop-shadow(0 2px 4px rgba(107, 82, 42, 0.3));
+}
+
+.fa-play-circle{
+    font-size: 2.2rem;
+    color: #6B522A;
+    opacity: 0.52;
+    mix-blend-mode: multiply;
+}
+
+.fa-play-container{
+    display: inline-block;
+    border-radius: 50%;
+    padding: 8px;
+    transition: all 0.3s;"
+}
+
+/*DIMENSIONE IMMAGINE ANTEPRIMA VIDEO*/
+.video-preview-wrapper{
+    max-width: 220px;
+    margin: 0 auto;
+}
+
+.video-overlay{
+    background-color: #F5F0E6;
+    position: relative;
+}
+
+.btn-close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    z-index: 10;
+    color: #6B522A;
+}
+
+.modal-content{
+    width: auto;
+    max-width: min(90vw, 300px); /*DIMENSIONE FINESTRA RIPRODUZIONE VIDEO*/
+    margin: 0;
+    background: rgba(0,0,0,0.7);
+    padding: 15px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.modal-dialog{
+    max-width: 100vw;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.video-player-style{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+    border-radius: 8px;
+}

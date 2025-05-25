@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="/src/css/itinerari.css" rel="stylesheet">
   <link href="/src/css/expand.css" rel="stylesheet">
@@ -25,6 +24,7 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4592673091672168"
           crossorigin="anonymous">
   </script>
+
 </head>
 
 <body>
@@ -52,6 +52,7 @@
     <a class="navbar-brand" href="/lostInRome/index.html">
       <span class="motto-text-body">Per chi ama perdersi nei vicoli di Roma</span>
     </a>
+    <div id="presentazioneVideoHolder"></div>
   </section>
 
   <!-- Featured Posts -->
@@ -328,15 +329,12 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 <!-- footer -->
 <div id="footerPlaceHolder"></div>
-
-
 
 <!-- Scripts esterni-->
 <script src="/src/plugins/jQuery/jquery.min.js"></script>
@@ -356,8 +354,11 @@
 <script src="/src/js/include.js"></script>
 <script src="/src/js/osm-map-itinerary.js"></script> <!-- qsto è da modificare per ogni itinerario -->
 <script src="/src/js/expandable-section.js"></script>
-<script src="/src/js/virtual-tour.js" defer></script>
 
+<!-- inizio script presentazione video -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/src/js/presentazione-video-player.js" defer></script>
+<!-- fine script presentazione video -->
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -367,13 +368,11 @@
           lostInRomePlaceHolder: "src/pages/itinerary/it/lostInRome.html",
           castelliRomaniPlaceHolder: "src/pages/itinerary/it/castelliRomani.html",
           enoGastronomicoPlaceHolder: "src/pages/itinerary/it/enoGastronomico.html",
-          adventureItineraryPlaceHolder: "src/pages/itinerary/it/avventura.html"
-
+          adventureItineraryPlaceHolder: "src/pages/itinerary/it/avventura.html",
+          presentazioneVideoHolder: "src/pages/include/videoPresentazione.html"
       });
   });
 </script>
-
-
 
 </body>
 </html>

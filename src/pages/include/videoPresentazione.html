@@ -1,0 +1,36 @@
+<link href="/src/css/presentazione-video.css" rel="stylesheet">
+
+<!-- ANTEPRIMA VIDEO (cliccabile)-->
+<div class="text-center mt-4 mb-5">
+    <div class="video-preview-wrapper" >
+        <div class="video-overlay rounded shadow">
+            <article class="card bg-transparent border-0 rounded-0">
+                <img src="/src/resources/images/shared/anteprimaVideoPresentazioneLostInRome.png"
+                     alt="Guarda il video di Roma"
+                     class="card-img rounded-0 img-fluid w-100">
+                <div class="fa-play-container">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+<!-- MODAL VIDEO -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered m-0">
+        <div class="modal-content bg-transparent border-0">
+            <!-- Bottone close -->
+            <button type="button" class="btn-close fa fa-close bg-transparent border-0"
+                    data-bs-dismiss="modal" aria-label="Close">
+            </button>
+            <div class="ratio ratio-9x16" style="width: 100%;margin: 0 auto;">
+                <video id="videoPlayer" class="video-player-style" controls controlsList="nodownload" disablePictureInPicture>
+                    <source src="/src/resources/video/presentazioneLostInRome.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
