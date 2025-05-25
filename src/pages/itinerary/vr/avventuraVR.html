@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image-png" href="/src/resources/images/loghi/logoLostInRome_icona.png">
+  <title>Itinerario Avventura VR Experience | Desktop & Oculus Quest 3</title>
+  <!-- Polyfill per WebXR -->
+  <script src="https://cdn.jsdelivr.net/npm/webxr-polyfill@latest/build/webxr-polyfill.js"></script>
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+  <style>
+    /* Stili per desktop e VR */
+    a-scene {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .desktop-notification {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      z-index: 10000;
+      font-family: Arial;
+      max-width: 300px;
+    }
+
+    .info-panel {
+      position: absolute;
+      width: 400px;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      font-family: Arial;
+      visibility: hidden;
+      z-index: 999;
+    }
+
+    .close-btn {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+    }
+
+    .nav-arrow {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* Stili solo per desktop */
+    @media screen and (max-width: 768px) {
+      .desktop-notification {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Notifica solo per desktop -->
+<div id="desktop-notification" class="desktop-notification">
+  ⚠ Modalità Desktop: Usa WASD per muoverti e il mouse per guardarti intorno.
+  Per l'esperienza VR completa, apri questa pagina con Oculus Browser su Quest 3.
+</div>
+
+<!-- Scena principale -->
+<a-scene embedded xr-mode-ui="enabled: false">
+  <!-- Skybox a 360° per l'itinerario -->
+  <a-assets>
+    <img id="colosseo" src="/src/resources/images/360/colosseo360Test.jpg">
+    <img id="appia-antica" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+    <img id="aventino" src="/src/resources/images/360/colosseo360Test.jpg">
+    <img id="giardino-giapponese" src="/src/resources/images/360/colosseo360Test.jpg">
+    <img id="voodoo-bar" src="/src/resources/images/360/colosseo360Test.jpg">
+  </a-assets>
+
+  <!-- Skybox dinamica -->
+  <a-sky id="skybox" src="#colosseo" rotation="0 -90 0"></a-sky>
+
+  <!-- Cursore per desktop -->
+  <a-entity id="mouse-cursor"
+            cursor="rayOrigin: mouse"
+            raycaster="objects: .hotspot"
+            visible="false">
+  </a-entity>
+
+  <!-- Hotspot interattivi -->
+  <!-- TAPPA 1: Appia Antica -->
+  <a-entity class="hotspot clickable"
+            geometry="primitive: circle; radius: 0.5"
+            material="color: #FF3366; shader: flat"
+            position="-3 0 -8"
+            look-at="#camera"
+            data-info="appia"
+            event-set__enter="scale: 1.2 1.2 1.2"
+            event-set__leave="scale: 1 1 1"
+            onclick="showInfo('appia')">
+    <a-text value="🚲" align="center" position="0 0.5 0" scale="2 2 2"></a-text>
+  </a-entity>
+
+  <!-- TAPPA 2: Aventino -->
+  <a-entity class="hotspot clickable"
+            geometry="primitive: circle; radius: 0.5"
+            material="color: #33FF66; shader: flat"
+            position="5 0 -6"
+            look-at="#camera"
+            data-info="aventino"
+            event-set__enter="scale: 1.2 1.2 1.2"
+            event-set__leave="scale: 1 1 1"
+            onclick="showInfo('aventino')">
+    <a-text value="🔭" align="center" position="0 0.5 0" scale="2 2 2"></a-text>
+  </a-entity>
+
+  <!-- TAPPA 3: Giardino Giapponese -->
+  <a-entity class="hotspot clickable"
+            geometry="primitive: circle; radius: 0.5"
+            material="color: #FF33FF; shader: flat"
+            position="0 0 10"
+            look-at="#camera"
+            data-info="giardino"
+            event-set__enter="scale: 1.2 1.2 1.2"
+            event-set__leave="scale: 1 1 1"
+            onclick="showInfo('giardino')">
+    <a-text value="🌸" align="center" position="0 0.5 0" scale="2 2 2"></a-text>
+  </a-entity>
+
+  <!-- TAPPA 4: Voodoo Bar -->
+  <a-entity class="hotspot clickable"
+            geometry="primitive: circle; radius: 0.5"
+            material="color: #3366FF; shader: flat"
+            position="-5 0 5"
+            look-at="#camera"
+            data-info="voodoo"
+            event-set__enter="scale: 1.2 1.2 1.2"
+            event-set__leave="scale: 1 1 1"
+            onclick="showInfo('voodoo')">
+    <a-text value="🍸" align="center" position="0 0.5 0" scale="2 2 2"></a-text>
+  </a-entity>
+
+  <!-- Pannello informazioni -->
+  <a-entity id="info-panel" class="info-panel" position="0 1.5 -2">
+    <a-text id="panel-title" value="Itinerario Roma VR" width="5" position="-1.5 0.4 0.01" color="#FFF"></a-text>
+    <a-text id="panel-content" value="Seleziona un hotspot per iniziare" width="4" position="-1.5 0 0.01" color="#FFF"></a-text>
+    <a-entity class="close-btn" text="value: X; width: 0.5" position="1.8 0.4 0.01" onclick="hideInfoPanel()"></a-entity>
+  </a-entity>
+
+  <!-- Freccia di navigazione -->
+  <a-entity id="nav-arrow" class="nav-arrow" position="0 -0.5 -3" onclick="nextLocation()" visible="false">
+    <a-text value="→" align="center" color="#000"></a-text>
+  </a-entity>
+
+  <!-- Telecamera + controlli -->
+  <a-entity id="camera" camera look-controls wasd-controls position="0 1.6 0">
+    <a-entity cursor="fuse: true; fuseTimeout: 500"
+              position="0 0 -1"
+              geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+              material="color: white; shader: flat">
+    </a-entity>
+  </a-entity>
+
+  <!-- Controlli VR solo se supportati -->
+  <a-entity id="vr-controls" laser-controls="hand: right"></a-entity>
+  <a-entity id="vr-controls" laser-controls="hand: left"></a-entity>
+
+  <!-- Elementi visibili solo su desktop -->
+  <a-entity class="desktop-helper" position="0 1.6 -3" visible="true">
+    <a-text value="Benvenuto nell'esperienza Roma VR"
+            color="#FFF"
+            align="center"
+            width="8"
+            position="0 0.5 0"></a-text>
+    <a-text value="Clicca sugli hotspot per informazioni"
+            color="#AAA"
+            align="center"
+            width="6"
+            position="0 -0.2 0"></a-text>
+  </a-entity>
+</a-scene>
+
+<script>
+    // Dati dell'itinerario
+    const itineraryData = {
+      appia: {
+        title: "1. Appia Antica in bici",
+        content: "Dalle catacombe alle terme di Caracalla, tra storia, natura e archeologia. Dove ogni pietra racconta una storia 🚲\n\n- Durata: 3 ore\n- Distanza: ~12 km\n- Budget: €15-25 per noleggio bici",
+        skybox: "#appia-antica",
+        next: "aventino"
+      },
+      aventino: {
+        title: "2. Giardino degli Aranci e Buco della Serratura",
+        content: "Un mix perfetto di storia, panorami e curiosità 🌿\n\n- Vista mozzafiato su Roma\n- La famosa serratura che incornicia San Pietro\n- Consiglio: Spritz con vista al tramonto",
+        skybox: "#aventino",
+        next: "giardino"
+      },
+      giardino: {
+        title: "3. Giardino Giapponese",
+        content: "Momento zen tra ciliegi e laghetti 🌸\n\n- Oasi di pace nel quartiere EUR\n- Periodo ideale: Marzo-aprile per la fioritura\n- Ingresso gratuito",
+        skybox: "#giardino-giapponese",
+        next: "voodoo"
+      },
+      voodoo: {
+        title: "4. Voodoo Bar",
+        content: "Cocktail con vista sul Colosseo 🎵🍸\n\n- Happy hour: 18:30-21:30\n- DJ set: Afrobeat e Tribal House\n- Dress code: Casual",
+        skybox: "#voodoo-bar",
+        next: "appia"
+      }
+    };
+
+    // Inizializzazione
+    document.addEventListener('DOMContentLoaded', function() {
+      const isVR = navigator.xr && navigator.xr.isSessionSupported('immersive-vr');
+
+      if (!isVR) {
+        // Modalità desktop
+        console.log("Modalità desktop attivata");
+        document.querySelector('a-scene').setAttribute('wasd-controls', 'enabled: true');
+        document.querySelector('a-scene').setAttribute('look-controls', 'enabled: true');
+        document.querySelectorAll('.desktop-helper').forEach(el => el.setAttribute('visible', 'true'));
+
+        // Attiva cursore mouse
+        document.getElementById('mouse-cursor').setAttribute('visible', 'true');
+
+        // Nascondi controlli VR
+        document.querySelectorAll('#vr-controls').forEach(el => el.remove());
+      } else {
+        // Modalità VR
+        console.log("Modalità VR rilevata");
+        document.querySelectorAll('.desktop-helper').forEach(el => el.setAttribute('visible', 'false'));
+        document.getElementById('desktop-notification').style.display = 'none';
+      }
+    });
+
+    // Mostra informazioni quando si clicca su un hotspot
+    function showInfo(infoType) {
+      console.log("Hotspot cliccato:", infoType);
+      const data = itineraryData[infoType];
+
+      document.querySelector('#panel-title').setAttribute('value', data.title);
+      document.querySelector('#panel-content').setAttribute('value', data.content);
+      document.querySelector('#info-panel').setAttribute('visible', 'true');
+
+      // Cambia skybox
+      document.querySelector('#skybox').setAttribute('src', data.skybox);
+
+      // Mostra freccia di navigazione
+      document.querySelector('#nav-arrow').setAttribute('visible', 'true');
+      document.querySelector('#nav-arrow').setAttribute('data-next', data.next);
+    }
+
+    // Nascondi pannello
+    function hideInfoPanel() {
+      document.querySelector('#info-panel').setAttribute('visible', 'false');
+    }
+
+    // Vai alla prossima location
+    function nextLocation() {
+      const nextLocation = document.querySelector('#nav-arrow').getAttribute('data-next');
+      const data = itineraryData[nextLocation];
+
+      document.querySelector('#panel-title').setAttribute('value', data.title);
+      document.querySelector('#panel-content').setAttribute('value', data.content);
+      document.querySelector('#skybox').setAttribute('src', data.skybox);
+      document.querySelector('#nav-arrow').setAttribute('data-next', data.next);
+    }
+  </script>
+</body>
+</html>
