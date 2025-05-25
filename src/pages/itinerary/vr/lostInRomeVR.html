@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LostInRome VR Experience | Oculus Quest 3</title>
+    <link rel="icon" type="image-png" href="/src/resources/images/loghi/logoLostInRome_icona.png">
+    <link rel="icon" type="image-png" href="/src/resources/images/loghi/logoLostInRome_icona.png">
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <style>
+    .info-panel {
+      position: absolute;
+      width: 400px;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      font-family: Arial;
+      visibility: hidden;
+      z-index: 999;
+    }
+    .close-btn {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+    }
+    .nav-arrow {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .time-badge {
+      background: rgba(0,150,255,0.7);
+      padding: 5px 10px;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+<a-scene webxr>
+    <!-- Skybox a 360° per l'itinerario -->
+    <a-assets>
+        <!-- TODO: DA SOSTITUIRE CON IMMAGINI 360-->
+        <img id="altare-della-patria" src="https://example.com/altare360.jpg">
+        <img id="fontana-di-trevi" src="https://example.com/trevi360.jpg">
+        <img id="pantheon" src="https://example.com/pantheon360.jpg">
+        <img id="ara-pacis" src="https://example.com/arapacis360.jpg">
+        <img id="piazza-di-spagna" src="https://example.com/spagna360.jpg">
+        <img id="piazza-del-popolo" src="https://example.com/popolo360.jpg">
+    </a-assets>
+
+    <!-- Skybox dinamica che cambierà -->
+    <a-sky id="skybox" src="#altare-della-patria" rotation="0 -90 0"></a-sky>
+
+    <!-- Hotspot interattivi -->
+    <!-- TAPPA 1: Altare della Patria -->
+    <a-entity class="hotspot"
+              geometry="primitive: circle; radius: 0.5"
+              material="color: #FF3366; shader: flat"
+              position="-3 0 -8"
+              look-at="#camera"
+              data-info="altare"
+              event-set__enter="scale: 1.2 1.2 1.2"
+              event-set__leave="scale: 1 1 1"
+              cursor-listener>
+        <a-text value="🏛️" align="center" position="0 0.5 0" scale="2 2 2"></a-text>
+    </a-entity>
+
+    <!-- TAPPA 2: Fontana di Trevi -->
+    <a-entity class="hotspot"
+              geometry="primitive: circle; radius: 0.5"
+              material="color: #33FF66; shader: flat"
+              position="5 0 -6"
+              look-at="#camera"
+              data-info="trevi"
+              event-set__enter="scale: 1.2 1.2 1.2"
+              event-set__leave="scale: 1 1 1"
+              cursor-listener>
+        <a-text value="⛲" align="center" position="0 0.5 0" scale="2 2 2"></a-text>
+    </a-entity>
+
+    <!-- TAPPA 3: Pantheon -->
+    <a-entity class="hotspot"
+              geometry="primitive: circle; radius: 0.5"
+              material="color: #FF33FF; shader: flat"
+              position="0 0 10"
+              look-at="#camera"
+              data-info="pantheon"
+              event-set__enter="scale: 1.2 1.2 1.2"
+              event-set__leave="scale: 1 1 1"
+              cursor-listener>
+        <a-text value="🕰️" align="center" position="0 0.5 0" scale="2 2 2"></a-text>
+    </a-entity>
+
+    <!-- TAPPA 4: Ara Pacis -->
+    <a-entity class="hotspot"
+              geometry="primitive: circle; radius: 0.5"
+              material="color: #3366FF; shader: flat"
+              position="-5 0 5"
+              look-at="#camera"
+              data-info="arapacis"
+              event-set__enter="scale: 1.2 1.2 1.2"
+              event-set__leave="scale: 1 1 1"
+              cursor-listener>
+        <a-text value="🕊️" align="center" position="0 0.5 0" scale="2 2 2"></a-text>
+    </a-entity>
+
+    <!-- TAPPA 5: Piazza di Spagna -->
+    <a-entity class="hotspot"
+              geometry="primitive: circle; radius: 0.5"
+              material="color: #FF9933; shader: flat"
+              position="3 0 -10"
+              look-at="#camera"
+              data-info="spagna"
+              event-set__enter="scale: 1.2 1.2 1.2"
+              event-set__leave="scale: 1 1 1"
+              cursor-listener>
+        <a-text value="🌸" align="center" position="0 0.5 0" scale="2 2 2"></a-text>
+    </a-entity>
+
+    <!-- TAPPA 6: Piazza del Popolo -->
+    <a-entity class="hotspot"
+              geometry="primitive: circle; radius: 0.5"
+              material="color: #33FFFF; shader: flat"
+              position="6 0 4"
+              look-at="#camera"
+              data-info="popolo"
+              event-set__enter="scale: 1.2 1.2 1.2"
+              event-set__leave="scale: 1 1 1"
+              cursor-listener>
+        <a-text value="🌅" align="center" position="0 0.5 0" scale="2 2 2"></a-text>
+    </a-entity>
+
+    <!-- Pannello informazioni -->
+    <a-entity id="info-panel" class="info-panel" position="0 1.5 -2">
+        <a-text id="panel-title" value="LostInRome VR Experience" width="5" position="-1.5 0.4 0.01" color="#FFF"></a-text>
+        <a-text id="panel-time" value="" width="5" position="-1.5 0.2 0.01" color="#FFF" opacity="0.8"></a-text>
+        <a-text id="panel-content" value="Seleziona un hotspot per iniziare" width="4" position="-1.5 0 0.01" color="#FFF"></a-text>
+        <a-entity class="close-btn" text="value: X; width: 0.5" position="1.8 0.4 0.01" onclick="hideInfoPanel()"></a-entity>
+    </a-entity>
+
+    <!-- Freccia di navigazione -->
+    <a-entity id="nav-arrow" class="nav-arrow" position="0 -0.5 -3" onclick="nextLocation()" visible="false">
+        <a-text value="→" align="center" color="#000"></a-text>
+    </a-entity>
+
+    <!-- Telecamera + controlli VR -->
+    <a-entity id="camera" camera look-controls wasd-controls position="0 1.6 0">
+        <a-entity cursor="fuse: true; fuseTimeout: 500"
+                  position="0 0 -1"
+                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                  material="color: white; shader: flat">
+        </a-entity>
+    </a-entity>
+    <a-entity laser-controls="hand: right"></a-entity>
+    <a-entity laser-controls="hand: left"></a-entity>
+</a-scene>
+
+<script>
+  // Dati dell'itinerario
+  const itineraryData = {
+    altare: {
+      title: "1. Altare della Patria (Piazza Venezia)",
+      time: "08:30-10:00",
+      content: "Il monumento simbolo dell'Italia unita, con una terrazza panoramica mozzafiato 🏛️🌅\n\n- Terrazza panoramica: 5/18€ (ascensore incluso)\n- Orari: 9:30-19:30 (ultimo ingresso 18:45)\n- Consiglio: Arriva presto per evitare le code e goditi la vista al mattino con luce perfetta per le foto!",
+      skybox: "#altare-della-patria",
+      next: "trevi"
+    },
+    trevi: {
+      title: "2. Fontana di Trevi e colazione",
+      time: "10:00-11:00",
+      content: "La fontana più celebre di Roma e una deliziosa colazione romana ⛲🥐\n\n- Colazione: Antico Forno Di Trevi (€4-8)\n- Tour sotterraneo: €15-20 (consigliato)\n- Consiglio: Visita la Fontana di Trevi a notte fonda per un'atmosfera magica",
+      skybox: "#fontana-di-trevi",
+      next: "pantheon"
+    },
+    pantheon: {
+      title: "3. Pantheon",
+      time: "11:30-13:00",
+      content: "Il tempio degli dèi e un salto nell'eternità romana 🏛️🕰️\n\n- Pranzo: Pizzicheria Romana (€5)\n- Biglietto: €2-5 (prenotazione obbligatoria)\n- Consiglio: Visita la Chiesa di San Luigi dei Francesi per i dipinti di Caravaggio",
+      skybox: "#pantheon",
+      next: "arapacis"
+    },
+    arapacis: {
+      title: "4. Ara Pacis",
+      time: "13:30-14:30",
+      content: "Il marmo che racconta la pace più potente della guerra 🕊️⚔️\n\n- Biglietto: Prezzo variabile (prenotazione obbligatoria)\n- Consiglio: La luce del pomeriggio esalta i rilievi marmorei, ideale per fotografie\n- Da non perdere: I pannelli con Enea e la Lupa Capitolina",
+      skybox: "#ara-pacis",
+      next: "spagna"
+    },
+    spagna: {
+      title: "5. Piazza di Spagna",
+      time: "15:00-17:00",
+      content: "Da secoli il salotto di Roma, dove storia, arte e nobiltà si incontrano ai piedi della scalinata 🏛️🌸\n\n- Aperitivo: Terrazza del Palazzetto (€15-30)\n- Pranzo: Pastificio Guerra (€5-6 primi piatti)\n- Consiglio: Salite fino in cima per una splendida foto con Roma ai vostri piedi",
+      skybox: "#piazza-di-spagna",
+      next: "popolo"
+    },
+    popolo: {
+      title: "6. Piazza del Popolo",
+      time: "17:30-19:00",
+      content: "Dove la storia di Roma si svela in ogni angolo, un'antica porta d'ingresso che accoglieva viaggiatori da secoli 🏛️⚔️\n\n- Aperitivo: Terrazza Nainer (€15-30)\n- Consiglio: Provate l'eccezionale acustica della piazza parlando da una parte all'altra\n- Esperienza: Noleggiate una barchetta nel laghetto di Villa Borghese (€3)",
+      skybox: "#piazza-del-popolo",
+      next: "altare"
+    }
+  };
+
+  // Mostra informazioni quando si clicca su un hotspot
+  document.querySelectorAll('.hotspot').forEach(el => {
+    el.addEventListener('click', function() {
+      const infoType = this.getAttribute('data-info');
+      const data = itineraryData[infoType];
+
+      document.querySelector('#panel-title').setAttribute('value', data.title);
+      document.querySelector('#panel-time').setAttribute('value', data.time);
+      document.querySelector('#panel-content').setAttribute('value', data.content);
+      document.querySelector('#info-panel').setAttribute('visible', 'true');
+
+      // Cambia skybox
+      document.querySelector('#skybox').setAttribute('src', data.skybox);
+
+      // Mostra freccia di navigazione
+      document.querySelector('#nav-arrow').setAttribute('visible', 'true');
+      document.querySelector('#nav-arrow').setAttribute('data-next', data.next);
+    });
+  });
+
+  // Nascondi pannello
+  function hideInfoPanel() {
+    document.querySelector('#info-panel').setAttribute('visible', 'false');
+  }
+
+  // Vai alla prossima location
+  function nextLocation() {
+    const nextLocation = document.querySelector('#nav-arrow').getAttribute('data-next');
+    const data = itineraryData[nextLocation];
+
+    document.querySelector('#panel-title').setAttribute('value', data.title);
+    document.querySelector('#panel-time').setAttribute('value', data.time);
+    document.querySelector('#panel-content').setAttribute('value', data.content);
+    document.querySelector('#skybox').setAttribute('src', data.skybox);
+    document.querySelector('#nav-arrow').setAttribute('data-next', data.next);
+  }
+</script>
+</body>
+</html>
