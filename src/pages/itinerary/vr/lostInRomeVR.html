@@ -3,254 +3,664 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LostInRome VR Experience | Oculus Quest 3</title>
-    <link rel="icon" type="image-png" href="/src/resources/images/loghi/logoLostInRome_icona.png">
-    <link rel="icon" type="image-png" href="/src/resources/images/loghi/logoLostInRome_icona.png">
+    <title>Itinerario LostInRome | Tour Virtuale</title>
+    <link rel="icon" type="image/png" href="/src/resources/images/loghi/logoLostInRome_icona.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
     <style>
-    .info-panel {
-      position: absolute;
-      width: 400px;
-      background: rgba(0,0,0,0.8);
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-      font-family: Arial;
-      visibility: hidden;
-      z-index: 999;
-    }
-    .close-btn {
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      cursor: pointer;
-      color: white;
-      font-weight: bold;
-    }
-    .nav-arrow {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      background: rgba(255,255,255,0.3);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 30px;
-      cursor: pointer;
-    }
-    .time-badge {
-      background: rgba(0,150,255,0.7);
-      padding: 5px 10px;
-      border-radius: 20px;
-      margin-right: 10px;
-    }
-  </style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Lexend', sans-serif;
+        }
+        #ui-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+        .info-panel {
+            position: absolute;
+            width: 300px;
+            background: rgba(245, 240, 230, 0.9);
+            color: #333;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid #E0D8C0;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            display: none;
+            pointer-events: auto;
+            cursor: move;
+        }
+        .panel-header {
+            border-bottom: 1px solid rgba(90, 113, 106, 0.2);
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .panel-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+            color: #5a716a;
+        }
+        .panel-time {
+            display: inline-block;
+            background: rgba(90, 113, 106, 0.1);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            color: #5a716a;
+        }
+        .panel-content {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 10px 0;
+            white-space: pre-line;
+            color: #444;
+        }
+        .close-btn {
+            cursor: pointer;
+            color: #5a716a;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.2s;
+            margin-left: 10px;
+            pointer-events: auto;
+        }
+        .close-btn:hover {
+            transform: scale(1.2);
+            color: #3a514a;
+        }
+        .nav-arrow {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: rgba(90, 113, 106, 0.8);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+            pointer-events: auto;
+            bottom: 20px;
+            color: white;
+            z-index: 1000;
+        }
+        #next-arrow {
+            right: 70px;
+        }
+        #prev-arrow {
+            left: 70px;
+            display: none;
+        }
+        .hotspot-label {
+            font-size: 30px;
+            text-shadow: 0 0 10px rgba(0,0,0,0.7);
+            transition: all 0.3s;
+        }
+        .hotspot-circle {
+            transition: all 0.3s;
+        }
+        .itinerary-progress {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.9);
+            padding: 6px 15px;
+            border-radius: 15px;
+            color: #5a716a;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            border: 1px solid rgba(90, 113, 106, 0.2);
+            z-index: 1000;
+        }
+        .map-indicator {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 120px;
+            height: 120px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            overflow: hidden;
+            display: none;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            border: 1px solid rgba(90, 113, 106, 0.2);
+            z-index: 1000;
+        }
+        .help-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 30px;
+            height: 30px;
+            background: rgba(90, 113, 106, 0.8);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            pointer-events: auto;
+            color: white;
+            font-weight: bold;
+            z-index: 1000;
+        }
+        .help-panel {
+            position: absolute;
+            top: 55px;
+            left: 15px;
+            width: 250px;
+            background: rgba(245, 240, 230, 0.95);
+            color: #333;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid rgba(90, 113, 106, 0.2);
+            display: none;
+            pointer-events: auto;
+            z-index: 1000;
+        }
+        .help-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #5a716a;
+            border-bottom: 1px solid rgba(90, 113, 106, 0.2);
+            padding-bottom: 6px;
+        }
+        .help-content {
+            font-size: 12px;
+            line-height: 1.4;
+            color: #444;
+        }
+        .intro-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+            pointer-events: auto;
+        }
+        .intro-title {
+            color: #FFF;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #5a716a;
+        }
+        .intro-subtitle {
+            color: #DDD;
+            font-size: 16px;
+            margin-bottom: 25px;
+            text-align: center;
+            max-width: 500px;
+        }
+        .start-btn {
+            background: #5a716a;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 14px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            font-family: 'Lexend', sans-serif;
+        }
+        .start-btn:hover {
+            background: #3a514a;
+            transform: scale(1.05);
+        }
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            display: none;
+            z-index: 998;
+        }
+    </style>
 </head>
 <body>
-<a-scene webxr>
-    <!-- Skybox a 360° per l'itinerario -->
+<!-- Schermata introduttiva -->
+<div id="intro-overlay" class="intro-overlay">
+    <div class="intro-title">Itinerario LostInRome</div>
+    <div class="intro-subtitle">Esplora i monumenti più iconici di Roma in un tour virtuale a 360°</div>
+    <button class="start-btn" id="start-btn">Inizia l'esperienza</button>
+</div>
+
+<!-- Overlay per chiudere i pannelli cliccando fuori -->
+<div id="overlay"></div>
+
+<!-- Contenitore UI -->
+<div id="ui-container">
+    <div id="info-panel" class="info-panel">
+        <div class="panel-header">
+            <div>
+                <h2 class="panel-title" id="panel-title">LostInRome</h2>
+                <span class="panel-time" id="panel-time"></span>
+            </div>
+            <div class="close-btn" id="close-btn">✕</div>
+        </div>
+        <div class="panel-content" id="panel-content">Seleziona un hotspot per iniziare</div>
+    </div>
+
+    <div id="next-arrow" class="nav-arrow" title="Prossima tappa">→</div>
+    <div id="prev-arrow" class="nav-arrow" title="Tappa precedente">←</div>
+
+    <div class="itinerary-progress" id="itinerary-progress">
+        <span id="current-step">1/5</span> - <span id="current-location">Altare della Patria</span>
+    </div>
+
+    <div class="map-indicator" id="map-indicator">
+        <canvas id="map-canvas" width="120" height="120"></canvas>
+    </div>
+
+    <div class="help-btn" id="help-btn">i</div>
+    <div class="help-panel" id="help-panel">
+        <div class="help-title" id="help-title">INFORMAZIONI DI NAVIGAZIONE</div>
+        <div class="help-content" id="help-content">
+            <strong>Da computer:</strong><br>
+            - Clicca sugli hotspot<br>
+            - Usa le frecce in basso<br>
+            - Premi M per la mappa<br><br>
+            <strong>Da visore VR:</strong><br>
+            - Punta e usa il trigger<br>
+            - Usa le frecce in basso<br>
+            - Premi B/Y per la mappa
+        </div>
+    </div>
+</div>
+
+<a-scene vr-mode-ui="enabled: true" webxr="optionalFeatures: local-floor; referenceSpaceType: local-floor" cursor="rayOrigin: mouse" id="scene">
+    <!-- Skybox a 360° -->
     <a-assets>
-        <!-- TODO: DA SOSTITUIRE CON IMMAGINI 360-->
-        <img id="altare-della-patria" src="https://example.com/altare360.jpg">
-        <img id="fontana-di-trevi" src="https://example.com/trevi360.jpg">
-        <img id="pantheon" src="https://example.com/pantheon360.jpg">
-        <img id="ara-pacis" src="https://example.com/arapacis360.jpg">
-        <img id="piazza-di-spagna" src="https://example.com/spagna360.jpg">
-        <img id="piazza-del-popolo" src="https://example.com/popolo360.jpg">
+        <img id="altare-della-patria" src="/src/resources/images/monuments/vr/altareDellaPatria/img1.jpg">
+        <img id="fontana-di-trevi" src="/src/resources/images/monuments/vr/fontanaDiTrevi/img1.jpg">
+        <img id="pantheon" src="/src/resources/images/monuments/vr/pantheon/img1.jpg">
+        <img id="piazza-di-spagna" src="/src/resources/images/monuments/vr/piazzaDiSpagna/img1.jpg">
+        <img id="piazza-del-popolo" src="/src/resources/images/monuments/vr/piazzaDelPopolo/img3.JPG">
     </a-assets>
 
-    <!-- Skybox dinamica che cambierà -->
+    <!-- Skybox dinamica -->
     <a-sky id="skybox" src="#altare-della-patria" rotation="0 -90 0"></a-sky>
 
-    <!-- Hotspot interattivi -->
-    <!-- TAPPA 1: Altare della Patria -->
-    <a-entity class="hotspot"
-              geometry="primitive: circle; radius: 0.5"
-              material="color: #FF3366; shader: flat"
-              position="-3 0 -8"
-              look-at="#camera"
-              data-info="altare"
-              event-set__enter="scale: 1.2 1.2 1.2"
-              event-set__leave="scale: 1 1 1"
-              cursor-listener>
-        <a-text value="🏛️" align="center" position="0 0.5 0" scale="2 2 2"></a-text>
+    <!-- Hotspot posizionati accuratamente -->
+    <a-entity class="hotspot" position="-2.5 0.5 -7" data-info="altare" clickable>
+        <a-circle class="hotspot-circle" radius="0.5" color="#FF3366" opacity="0.8" segments="64"></a-circle>
+        <a-text class="hotspot-label" value="🏛️" align="center" position="0 0.7 0.1"></a-text>
     </a-entity>
 
-    <!-- TAPPA 2: Fontana di Trevi -->
-    <a-entity class="hotspot"
-              geometry="primitive: circle; radius: 0.5"
-              material="color: #33FF66; shader: flat"
-              position="5 0 -6"
-              look-at="#camera"
-              data-info="trevi"
-              event-set__enter="scale: 1.2 1.2 1.2"
-              event-set__leave="scale: 1 1 1"
-              cursor-listener>
-        <a-text value="⛲" align="center" position="0 0.5 0" scale="2 2 2"></a-text>
+    <a-entity class="hotspot" position="4.5 0.5 -5" data-info="trevi" clickable>
+        <a-circle class="hotspot-circle" radius="0.5" color="#33FF66" opacity="0.8" segments="64"></a-circle>
+        <a-text class="hotspot-label" value="⛲" align="center" position="0 0.7 0.1"></a-text>
     </a-entity>
 
-    <!-- TAPPA 3: Pantheon -->
-    <a-entity class="hotspot"
-              geometry="primitive: circle; radius: 0.5"
-              material="color: #FF33FF; shader: flat"
-              position="0 0 10"
-              look-at="#camera"
-              data-info="pantheon"
-              event-set__enter="scale: 1.2 1.2 1.2"
-              event-set__leave="scale: 1 1 1"
-              cursor-listener>
-        <a-text value="🕰️" align="center" position="0 0.5 0" scale="2 2 2"></a-text>
+    <a-entity class="hotspot" position="0 0.5 9" data-info="pantheon" clickable>
+        <a-circle class="hotspot-circle" radius="0.5" color="#FF33FF" opacity="0.8" segments="64"></a-circle>
+        <a-text class="hotspot-label" value="🕰️" align="center" position="0 0.7 0.1"></a-text>
     </a-entity>
 
-    <!-- TAPPA 4: Ara Pacis -->
-    <a-entity class="hotspot"
-              geometry="primitive: circle; radius: 0.5"
-              material="color: #3366FF; shader: flat"
-              position="-5 0 5"
-              look-at="#camera"
-              data-info="arapacis"
-              event-set__enter="scale: 1.2 1.2 1.2"
-              event-set__leave="scale: 1 1 1"
-              cursor-listener>
-        <a-text value="🕊️" align="center" position="0 0.5 0" scale="2 2 2"></a-text>
+    <a-entity class="hotspot" position="2.5 0.5 -9" data-info="spagna" clickable>
+        <a-circle class="hotspot-circle" radius="0.5" color="#FF9933" opacity="0.8" segments="64"></a-circle>
+        <a-text class="hotspot-label" value="🌸" align="center" position="0 0.7 0.1"></a-text>
     </a-entity>
 
-    <!-- TAPPA 5: Piazza di Spagna -->
-    <a-entity class="hotspot"
-              geometry="primitive: circle; radius: 0.5"
-              material="color: #FF9933; shader: flat"
-              position="3 0 -10"
-              look-at="#camera"
-              data-info="spagna"
-              event-set__enter="scale: 1.2 1.2 1.2"
-              event-set__leave="scale: 1 1 1"
-              cursor-listener>
-        <a-text value="🌸" align="center" position="0 0.5 0" scale="2 2 2"></a-text>
+    <a-entity class="hotspot" position="5.5 0.5 3" data-info="popolo" clickable>
+        <a-circle class="hotspot-circle" radius="0.5" color="#33FFFF" opacity="0.8" segments="64"></a-circle>
+        <a-text class="hotspot-label" value="🌅" align="center" position="0 0.7 0.1"></a-text>
     </a-entity>
 
-    <!-- TAPPA 6: Piazza del Popolo -->
-    <a-entity class="hotspot"
-              geometry="primitive: circle; radius: 0.5"
-              material="color: #33FFFF; shader: flat"
-              position="6 0 4"
-              look-at="#camera"
-              data-info="popolo"
-              event-set__enter="scale: 1.2 1.2 1.2"
-              event-set__leave="scale: 1 1 1"
-              cursor-listener>
-        <a-text value="🌅" align="center" position="0 0.5 0" scale="2 2 2"></a-text>
-    </a-entity>
-
-    <!-- Pannello informazioni -->
-    <a-entity id="info-panel" class="info-panel" position="0 1.5 -2">
-        <a-text id="panel-title" value="LostInRome VR Experience" width="5" position="-1.5 0.4 0.01" color="#FFF"></a-text>
-        <a-text id="panel-time" value="" width="5" position="-1.5 0.2 0.01" color="#FFF" opacity="0.8"></a-text>
-        <a-text id="panel-content" value="Seleziona un hotspot per iniziare" width="4" position="-1.5 0 0.01" color="#FFF"></a-text>
-        <a-entity class="close-btn" text="value: X; width: 0.5" position="1.8 0.4 0.01" onclick="hideInfoPanel()"></a-entity>
-    </a-entity>
-
-    <!-- Freccia di navigazione -->
-    <a-entity id="nav-arrow" class="nav-arrow" position="0 -0.5 -3" onclick="nextLocation()" visible="false">
-        <a-text value="→" align="center" color="#000"></a-text>
-    </a-entity>
-
-    <!-- Telecamera + controlli VR -->
-    <a-entity id="camera" camera look-controls wasd-controls position="0 1.6 0">
+    <!-- Telecamera + controlli -->
+    <a-entity id="camera" camera="active: true" look-controls wasd-controls position="0 1.6 0">
         <a-entity cursor="fuse: true; fuseTimeout: 500"
                   position="0 0 -1"
                   geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
                   material="color: white; shader: flat">
         </a-entity>
     </a-entity>
-    <a-entity laser-controls="hand: right"></a-entity>
-    <a-entity laser-controls="hand: left"></a-entity>
+
+    <!-- Controller per VR -->
+    <a-entity laser-controls="hand: right" line="color: #118A7E"></a-entity>
+    <a-entity laser-controls="hand: left" line="color: #118A7E"></a-entity>
 </a-scene>
 
 <script>
-  // Dati dell'itinerario
-  const itineraryData = {
-    altare: {
-      title: "1. Altare della Patria (Piazza Venezia)",
-      time: "08:30-10:00",
-      content: "Il monumento simbolo dell'Italia unita, con una terrazza panoramica mozzafiato 🏛️🌅\n\n- Terrazza panoramica: 5/18€ (ascensore incluso)\n- Orari: 9:30-19:30 (ultimo ingresso 18:45)\n- Consiglio: Arriva presto per evitare le code e goditi la vista al mattino con luce perfetta per le foto!",
-      skybox: "#altare-della-patria",
-      next: "trevi"
-    },
-    trevi: {
-      title: "2. Fontana di Trevi e colazione",
-      time: "10:00-11:00",
-      content: "La fontana più celebre di Roma e una deliziosa colazione romana ⛲🥐\n\n- Colazione: Antico Forno Di Trevi (€4-8)\n- Tour sotterraneo: €15-20 (consigliato)\n- Consiglio: Visita la Fontana di Trevi a notte fonda per un'atmosfera magica",
-      skybox: "#fontana-di-trevi",
-      next: "pantheon"
-    },
-    pantheon: {
-      title: "3. Pantheon",
-      time: "11:30-13:00",
-      content: "Il tempio degli dèi e un salto nell'eternità romana 🏛️🕰️\n\n- Pranzo: Pizzicheria Romana (€5)\n- Biglietto: €2-5 (prenotazione obbligatoria)\n- Consiglio: Visita la Chiesa di San Luigi dei Francesi per i dipinti di Caravaggio",
-      skybox: "#pantheon",
-      next: "arapacis"
-    },
-    arapacis: {
-      title: "4. Ara Pacis",
-      time: "13:30-14:30",
-      content: "Il marmo che racconta la pace più potente della guerra 🕊️⚔️\n\n- Biglietto: Prezzo variabile (prenotazione obbligatoria)\n- Consiglio: La luce del pomeriggio esalta i rilievi marmorei, ideale per fotografie\n- Da non perdere: I pannelli con Enea e la Lupa Capitolina",
-      skybox: "#ara-pacis",
-      next: "spagna"
-    },
-    spagna: {
-      title: "5. Piazza di Spagna",
-      time: "15:00-17:00",
-      content: "Da secoli il salotto di Roma, dove storia, arte e nobiltà si incontrano ai piedi della scalinata 🏛️🌸\n\n- Aperitivo: Terrazza del Palazzetto (€15-30)\n- Pranzo: Pastificio Guerra (€5-6 primi piatti)\n- Consiglio: Salite fino in cima per una splendida foto con Roma ai vostri piedi",
-      skybox: "#piazza-di-spagna",
-      next: "popolo"
-    },
-    popolo: {
-      title: "6. Piazza del Popolo",
-      time: "17:30-19:00",
-      content: "Dove la storia di Roma si svela in ogni angolo, un'antica porta d'ingresso che accoglieva viaggiatori da secoli 🏛️⚔️\n\n- Aperitivo: Terrazza Nainer (€15-30)\n- Consiglio: Provate l'eccezionale acustica della piazza parlando da una parte all'altra\n- Esperienza: Noleggiate una barchetta nel laghetto di Villa Borghese (€3)",
-      skybox: "#piazza-del-popolo",
-      next: "altare"
-    }
-  };
+    // Dati dell'itinerario con ordine sequenziale
+    const itineraryData = [
+        {
+            id: "altare",
+            title: "1. Altare della Patria",
+            time: "08:30-10:00",
+            content: "Il monumento simbolo dell'Italia unita, con una terrazza panoramica mozzafiato.\n\n📍 Piazza Venezia\n💰 Terrazza: 5-18€ (ascensore incluso)\n🕒 Orari: 9:30-19:30\n\nConsiglio: Arriva presto per evitare le code e goditi la vista al mattino con luce perfetta per le foto!",
+            skybox: "#altare-della-patria",
+            position: {x: -2.5, y: 0.5, z: -7}
+        },
+        {
+            id: "trevi",
+            title: "2. Fontana di Trevi",
+            time: "10:00-11:00",
+            content: "La fontana più celebre di Roma e una deliziosa colazione romana.\n\n🍳 Colazione: Antico Forno Di Trevi (€4-8)\n🏛️ Tour sotterraneo: €15-20 (consigliato)\n\nCuriosità: Ogni giorno vengono raccolti circa €3.000 in monete lanciate nella fontana!",
+            skybox: "#fontana-di-trevi",
+            position: {x: 4.5, y: 0.5, z: -5}
+        },
+        {
+            id: "pantheon",
+            title: "3. Pantheon",
+            time: "11:30-13:00",
+            content: "Il tempio degli dèi e un salto nell'eternità romana.\n\n🍝 Pranzo: Pizzicheria Romana (€5)\n🎟️ Biglietto: €2-5 (prenotazione obbligatoria)\n\nArchitettura: L'oculo di 9 metri al centro della cupola è l'unica fonte di luce naturale.",
+            skybox: "#pantheon",
+            position: {x: 0, y: 0.5, z: 9}
+        },
+        {
+            id: "spagna",
+            title: "4. Piazza di Spagna",
+            time: "15:00-17:00",
+            content: "Da secoli il salotto di Roma, dove storia e arte si incontrano.\n\n🍹 Aperitivo: Terrazza del Palazzetto (€15-30)\n🍝 Pranzo: Pastificio Guerra (€5-6 primi piatti)\n\nStoria: La scalinata di Trinità dei Monti ha 135 gradini, costruiti nel 1725.",
+            skybox: "#piazza-di-spagna",
+            position: {x: 2.5, y: 0.5, z: -9}
+        },
+        {
+            id: "popolo",
+            title: "5. Piazza del Popolo",
+            time: "17:30-19:00",
+            content: "Dove la storia di Roma si svela in ogni angolo.\n\n🍹 Aperitivo: Terrazza Nainer (€15-30)\n🚣 Esperienza: Barchetta a Villa Borghese (€3)\n\nAcustica: Prova a parlare da un angolo all'altro della piazza - l'effetto è sorprendente!",
+            skybox: "#piazza-del-popolo",
+            position: {x: 5.5, y: 0.5, z: 3}
+        }
+    ];
 
-  // Mostra informazioni quando si clicca su un hotspot
-  document.querySelectorAll('.hotspot').forEach(el => {
-    el.addEventListener('click', function() {
-      const infoType = this.getAttribute('data-info');
-      const data = itineraryData[infoType];
+    // Stato dell'applicazione
+    let currentStep = 0;
+    let isVR = false;
+    let isDragging = false;
+    let offsetX, offsetY;
+    const hotspots = document.querySelectorAll('.hotspot');
 
-      document.querySelector('#panel-title').setAttribute('value', data.title);
-      document.querySelector('#panel-time').setAttribute('value', data.time);
-      document.querySelector('#panel-content').setAttribute('value', data.content);
-      document.querySelector('#info-panel').setAttribute('visible', 'true');
+    // Registra il componente clickable
+    AFRAME.registerComponent('clickable', {
+        init: function () {
+            // Per mouse/desktop
+            this.el.addEventListener('click', (evt) => {
+                if (!isVR) this.handleClick();
+            });
 
-      // Cambia skybox
-      document.querySelector('#skybox').setAttribute('src', data.skybox);
+            // Per VR (controller)
+            this.el.addEventListener('raycaster-intersected', (evt) => {
+                this.intersected = true;
+            });
 
-      // Mostra freccia di navigazione
-      document.querySelector('#nav-arrow').setAttribute('visible', 'true');
-      document.querySelector('#nav-arrow').setAttribute('data-next', data.next);
+            this.el.addEventListener('raycaster-intersected-cleared', (evt) => {
+                this.intersected = false;
+            });
+
+            this.intersected = false;
+
+            // Controlla se l'utente sta mantenendo il puntamento
+            this.el.sceneEl.addEventListener('controller-trigger-down', (evt) => {
+                if (this.intersected && isVR) {
+                    this.handleClick();
+                }
+            });
+        },
+
+        handleClick: function() {
+            const infoType = this.el.getAttribute('data-info');
+            const stepIndex = itineraryData.findIndex(item => item.id === infoType);
+
+            if (stepIndex !== -1) {
+                currentStep = stepIndex;
+                showInfoPanel(currentStep);
+            }
+
+            // Animazione feedback
+            const circle = this.el.querySelector('.hotspot-circle');
+            const label = this.el.querySelector('.hotspot-label');
+
+            circle.setAttribute('animation', 'property: scale; to: 1.2 1.2 1; dur: 200; easing: easeOutElastic');
+            label.setAttribute('animation', 'property: scale; to: 1.3 1.3 1; dur: 300; easing: easeOutElastic');
+
+            setTimeout(() => {
+                circle.removeAttribute('animation');
+                label.removeAttribute('animation');
+            }, 300);
+        }
     });
-  });
 
-  // Nascondi pannello
-  function hideInfoPanel() {
-    document.querySelector('#info-panel').setAttribute('visible', 'false');
-  }
+    // Mostra il pannello informazioni
+    function showInfoPanel(stepIndex) {
+        const data = itineraryData[stepIndex];
+        const panel = document.getElementById('info-panel');
 
-  // Vai alla prossima location
-  function nextLocation() {
-    const nextLocation = document.querySelector('#nav-arrow').getAttribute('data-next');
-    const data = itineraryData[nextLocation];
+        document.getElementById('panel-title').textContent = data.title;
+        document.getElementById('panel-time').textContent = data.time;
+        document.getElementById('panel-content').textContent = data.content;
 
-    document.querySelector('#panel-title').setAttribute('value', data.title);
-    document.querySelector('#panel-time').setAttribute('value', data.time);
-    document.querySelector('#panel-content').setAttribute('value', data.content);
-    document.querySelector('#skybox').setAttribute('src', data.skybox);
-    document.querySelector('#nav-arrow').setAttribute('data-next', data.next);
-  }
+        // Mostra pannello e overlay
+        panel.style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+
+        // Cambia skybox
+        document.querySelector('#skybox').setAttribute('src', data.skybox);
+
+        // Mostra/nascondi frecce di navigazione
+        document.getElementById('next-arrow').style.display = stepIndex < itineraryData.length - 1 ? 'flex' : 'none';
+        document.getElementById('prev-arrow').style.display = stepIndex > 0 ? 'flex' : 'none';
+
+        // Aggiorna stato itinerario
+        updateProgress(stepIndex);
+        updateHelpContent();
+    }
+
+    // Nascondi pannello
+    function hideInfoPanel() {
+        document.getElementById('info-panel').style.display = 'none';
+        document.getElementById('help-panel').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    // Vai alla prossima location
+    function nextLocation() {
+        if (currentStep < itineraryData.length - 1) {
+            currentStep++;
+            showInfoPanel(currentStep);
+        }
+    }
+
+    // Vai alla location precedente
+    function prevLocation() {
+        if (currentStep > 0) {
+            currentStep--;
+            showInfoPanel(currentStep);
+        }
+    }
+
+    // Aggiorna la barra di progresso
+    function updateProgress(stepIndex) {
+        const progress = document.getElementById('itinerary-progress');
+        progress.textContent = `${stepIndex + 1}/${itineraryData.length} - ${itineraryData[stepIndex].title.split('. ')[1]}`;
+    }
+
+    // Aggiorna il contenuto dell'aiuto in base alla modalità
+    function updateHelpContent() {
+        const helpContent = document.getElementById('help-content');
+        if (isVR) {
+            helpContent.innerHTML = `
+                <strong>Navigazione da visore VR:</strong><br>
+                - Punta il controller sugli hotspot e premi il trigger<br>
+                - Usa le frecce in basso per cambiare tappa<br>
+                - Premi il pulsante B/Y per visualizzare la mappa<br>
+                - Clicca sulla <strong>X</strong> per chiudere i pannelli
+            `;
+        } else {
+            helpContent.innerHTML = `
+                <strong>Navigazione da computer:</strong><br>
+                - Clicca sugli hotspot per vedere le informazioni<br>
+                - Usa le frecce in basso per cambiare tappa<br>
+                - Premi <strong>M</strong> per visualizzare la mappa<br>
+                - Clicca sulla <strong>X</strong> per chiudere i pannelli
+            `;
+        }
+    }
+
+    // Inizializza mappa
+    function initMap() {
+        const canvas = document.getElementById('map-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Disegna mappa semplificata
+        ctx.fillStyle = '#F5F0E6';
+        ctx.fillRect(0, 0, 120, 120);
+
+        // Disegna punti di interesse
+        itineraryData.forEach((loc, index) => {
+            const x = (loc.position.x + 10) * 6;
+            const y = (loc.position.z + 10) * 6;
+
+            ctx.fillStyle = index === currentStep ? '#5a716a' : '#888';
+            ctx.beginPath();
+            ctx.arc(x, y, 4, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Collegamenti tra punti
+            if (index > 0) {
+                const prev = itineraryData[index - 1];
+                const prevX = (prev.position.x + 10) * 6;
+                const prevY = (prev.position.z + 10) * 6;
+
+                ctx.strokeStyle = '#aaa';
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.moveTo(prevX, prevY);
+                ctx.lineTo(x, y);
+                ctx.stroke();
+            }
+        });
+    }
+
+    // Rileva se siamo in VR
+    function checkVR() {
+        const scene = document.querySelector('a-scene');
+        scene.addEventListener('enter-vr', () => {
+            isVR = true;
+            updateHelpContent();
+        });
+        scene.addEventListener('exit-vr', () => {
+            isVR = false;
+            updateHelpContent();
+        });
+    }
+
+    // Funzioni per il drag and drop del pannello
+    function startDrag(e) {
+        isDragging = true;
+        const panel = document.getElementById('info-panel');
+        offsetX = e.clientX - panel.getBoundingClientRect().left;
+        offsetY = e.clientY - panel.getBoundingClientRect().top;
+        panel.style.cursor = 'grabbing';
+    }
+
+    function dragPanel(e) {
+        if (!isDragging) return;
+        const panel = document.getElementById('info-panel');
+        panel.style.left = `${e.clientX - offsetX}px`;
+        panel.style.bottom = 'auto';
+        panel.style.top = `${e.clientY - offsetY}px`;
+        panel.style.transform = 'none';
+    }
+
+    function stopDrag() {
+        isDragging = false;
+        document.getElementById('info-panel').style.cursor = 'move';
+    }
+
+    // Event listeners
+    document.getElementById('close-btn').addEventListener('click', hideInfoPanel);
+    document.getElementById('next-arrow').addEventListener('click', nextLocation);
+    document.getElementById('prev-arrow').addEventListener('click', prevLocation);
+    document.getElementById('help-btn').addEventListener('click', () => {
+        const panel = document.getElementById('help-panel');
+        panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+        document.getElementById('overlay').style.display = panel.style.display === 'block' ? 'block' : 'none';
+    });
+    document.getElementById('start-btn').addEventListener('click', () => {
+        document.getElementById('intro-overlay').style.display = 'none';
+    });
+    document.getElementById('overlay').addEventListener('click', hideInfoPanel);
+
+    // Drag and drop per il pannello
+    const panelHeader = document.querySelector('.panel-header');
+    panelHeader.addEventListener('mousedown', startDrag);
+    document.addEventListener('mousemove', dragPanel);
+    document.addEventListener('mouseup', stopDrag);
+
+    // Animazioni hover per hotspot
+    hotspots.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            const circle = el.querySelector('.hotspot-circle');
+            const label = el.querySelector('.hotspot-label');
+            circle.setAttribute('scale', '1.1 1.1 1');
+            label.setAttribute('scale', '1.2 1.2 1');
+        });
+
+        el.addEventListener('mouseleave', () => {
+            const circle = el.querySelector('.hotspot-circle');
+            const label = el.querySelector('.hotspot-label');
+            circle.setAttribute('scale', '1 1 1');
+            label.setAttribute('scale', '1 1 1');
+        });
+    });
+
+    // Mostra/nascondi mappa con il tasto M
+    document.addEventListener('keydown', (e) => {
+        if (e.key.toLowerCase() === 'm') {
+            const map = document.getElementById('map-indicator');
+            map.style.display = map.style.display === 'none' ? 'block' : 'none';
+            if (map.style.display === 'block') {
+                initMap();
+            }
+        }
+    });
+
+    // Controlli VR per la mappa
+    document.querySelector('a-scene').addEventListener('buttondown', (e) => {
+        if (isVR && (e.detail.id === 'b-button' || e.detail.id === 'y-button')) {
+            const map = document.getElementById('map-indicator');
+            map.style.display = map.style.display === 'none' ? 'block' : 'none';
+            if (map.style.display === 'block') {
+                initMap();
+            }
+        }
+    });
+
+    // Inizializzazione
+    checkVR();
+    updateHelpContent();
 </script>
 </body>
 </html>

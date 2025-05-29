@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<!--
+Come testare su Oculus
+Usa Oculus Browser
+Apri il tuo sito tramite Oculus Browser (il browser integrato nel visore).
+
+Modalità VR
+Cerca il pulsante "Enter VR" nell'angolo in basso a destra della scena A-Frame.
+
+Debug remoto
+Se hai problemi, connetti il visore al PC e usa Oculus Developer Hub per il debug.
+-->
+<html>
+<head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+</head>
+<body>
+<a-scene webxr>
+    <!-- Skybox a 360°
+    deve essere immagine equirettangolare 8192×4096 px
+    -->
+    <a-sky src="/src/resources/images/monuments/vr/altareDellaPatria/img1.jpg" rotation="0 -90 0"></a-sky>
+
+    <!-- Hotspot per VR
+    <a-entity
+            geometry="primitive: circle; radius: 0.5"
+            material="color: #FF3366; shader: flat"
+            position="0 0 -5"
+            look-at="#camera"
+            class="clickable"
+            cursor-listener
+            onclick="showInfo('Colosseo')">
+    </a-entity>
+    -->
+
+    <!-- Testo ottimizzato per VR -->
+    <a-text
+            value="Altare della Patria"
+            position="-1 1 -3"
+            color="#FFF"
+            align="center"
+            scale="2 2 2">
+    </a-text>
+
+    <!-- Telecamera + controlli VR -->
+    <a-entity id="camera" camera look-controls wasd-controls position="0 0 0"></a-entity>
+    <a-entity laser-controls="hand: right"></a-entity>
+    <a-entity laser-controls="hand: left"></a-entity>
+</a-scene>
+
+<script>
+      function showInfo(place) {
+        alert(`Hai cliccato su ${place}!`);
+        // Sostituisci con un modal VR-friendly se necessario
+      }
+    </script>
+</body>
+</html>
