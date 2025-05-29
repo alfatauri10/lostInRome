@@ -48,11 +48,23 @@
     <a-entity laser-controls="hand: right"></a-entity>
     <a-entity laser-controls="hand: left"></a-entity>
     
-    <!-- Pulsante di uscita in VR -->
-    <a-entity position="1 1.5 -2" class="exit-button-vr" geometry="primitive: circle; radius: 0.2" 
-              material="color: #FF3366; shader: flat" text="value: X; align: center; color: white; width: 0.4"
-              onclick="exitVR()" look-at="#camera">
+    <!-- Pulsante di uscita in VR migliorato -->
+    <a-entity class="exit-button-vr" 
+              position="1 1.5 -2"
+              geometry="primitive: box; width: 0.4; height: 0.4; depth: 0.01"
+              material="color: #FF3366; shader: flat"
+              text="value: Esci; align: center; color: white; width: 0.6"
+              look-at="#camera"
+              cursor-listener
+              animation__hover="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200"
+              animation__unhover="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200"
+              animation__click="property: scale; to: 0.9 0.9 0.9; startEvents: click; dur: 100; dir: alternate"
+              sound="src: #click-sound; on: click">
+      <a-entity position="0 0 0.021"
+                text="value: X; align: center; color: white; width: 0.2"></a-entity>
     </a-entity>
+    
+    <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg" preload="auto"></audio>
   </a-scene>
 
   <script>
@@ -63,16 +75,33 @@
     function exitVR() {
       const scene = document.querySelector('a-scene');
       if (scene.is('vr-mode')) {
-        // Se siamo in VR, usciamo dalla modalità VR
-        scene.exitVR();
-      } else {
-        // Altrimenti torniamo alla pagina precedente o facciamo altro
-        alert('Uscita dalla scena VR');
-        // window.location.href = 'pagina_precedente.html'; // Sostituisci con l'URL desiderato
+        // Forza l'uscita dalla VR
+        scene.exitVR().then(() => {
+          console.log("Uscito dalla modalità VR");
+          // Aggiungi qui eventuali azioni post-uscita
+        }).catch(err => {
+          console.error("Errore nell'uscita dalla VR:", err);
+        });
       }
+      // Puoi aggiungere un reindirizzamento o altre azioni qui
+      // window.location.href = 'index.html';
     }
     
-    // Nascondi il pulsante 2D quando siamo in VR
+    // Migliora l'interazione con il visore
+    document.addEventListener('DOMContentLoaded', function() {
+      const vrButton = document.querySelector('.exit-button-vr');
+      
+      // Aggiungi event listener per controller VR
+      vrButton.addEventListener('click', exitVR);
+      vrButton.addEventListener('mouseenter', function() {
+        this.setAttribute('material', 'color', '#FF0033');
+      });
+      vrButton.addEventListener('mouseleave', function() {
+        this.setAttribute('material', 'color', '#FF3366');
+      });
+    });
+    
+    // Gestione della visibilità del pulsante 2D
     document.querySelector('a-scene').addEventListener('enter-vr', function() {
       document.querySelector('.exit-button').style.display = 'none';
     });
