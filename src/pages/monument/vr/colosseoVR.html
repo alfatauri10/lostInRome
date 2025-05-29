@@ -1,60 +1,85 @@
 <!DOCTYPE html>
 <html lang="it">
+<head>
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <style>
+    .exit-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: #FF3366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 9999;
+      border: 2px solid white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .exit-button:hover {
+      background-color: #FF0033;
+    }
+  </style>
+</head>
+<body>
+  <div class="exit-button" onclick="exitVR()">X</div>
+  
+  <a-scene webxr>
+    <!-- Skybox a 360° -->
+    <a-sky src="/src/resources/images/monuments/vr/colosseo/img1.jpg" rotation="0 -90 0"></a-sky>
 
-<!--
-Come testare su Oculus
-Usa Oculus Browser
-Apri il tuo sito tramite Oculus Browser (il browser integrato nel visore).
+    <!-- Testo ottimizzato per VR -->
+    <a-text
+            value="Colosseo"
+            position="-1 1 -3"
+            color="#FFF"
+            align="center"
+            scale="2 2 2">
+    </a-text>
 
-Modalità VR
-Cerca il pulsante "Enter VR" nell'angolo in basso a destra della scena A-Frame.
+    <!-- Telecamera + controlli VR -->
+    <a-entity id="camera" camera look-controls wasd-controls position="0 0 0"></a-entity>
+    <a-entity laser-controls="hand: right"></a-entity>
+    <a-entity laser-controls="hand: left"></a-entity>
+    
+    <!-- Pulsante di uscita in VR -->
+    <a-entity position="1 1.5 -2" class="exit-button-vr" geometry="primitive: circle; radius: 0.2" 
+              material="color: #FF3366; shader: flat" text="value: X; align: center; color: white; width: 0.4"
+              onclick="exitVR()" look-at="#camera">
+    </a-entity>
+  </a-scene>
 
-Debug remoto
-Se hai problemi, connetti il visore al PC e usa Oculus Developer Hub per il debug.
--->
-<html>
-    <head>
-      <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    </head>
-  <body>
-    <a-scene webxr>
-      <!-- Skybox a 360°
-      deve essere immagine equirettangolare 8192×4096 px
-      -->
-      <a-sky src="/src/resources/images/monuments/vr/colosseo/img1.jpg" rotation="0 -90 0"></a-sky>
-
-      <!-- Hotspot per VR
-      <a-entity
-              geometry="primitive: circle; radius: 0.5"
-              material="color: #FF3366; shader: flat"
-              position="0 0 -5"
-              look-at="#camera"
-              class="clickable"
-              cursor-listener
-              onclick="showInfo('Colosseo')">
-      </a-entity>
-      -->
-
-      <!-- Testo ottimizzato per VR -->
-      <a-text
-              value="Colosseo"
-              position="-1 1 -3"
-              color="#FFF"
-              align="center"
-              scale="2 2 2">
-      </a-text>
-
-      <!-- Telecamera + controlli VR -->
-      <a-entity id="camera" camera look-controls wasd-controls position="0 0 0"></a-entity>
-      <a-entity laser-controls="hand: right"></a-entity>
-      <a-entity laser-controls="hand: left"></a-entity>
-    </a-scene>
-
-    <script>
-      function showInfo(place) {
-        alert(`Hai cliccato su ${place}!`);
-        // Sostituisci con un modal VR-friendly se necessario
+  <script>
+    function showInfo(place) {
+      alert(`Hai cliccato su ${place}!`);
+    }
+    
+    function exitVR() {
+      const scene = document.querySelector('a-scene');
+      if (scene.is('vr-mode')) {
+        // Se siamo in VR, usciamo dalla modalità VR
+        scene.exitVR();
+      } else {
+        // Altrimenti torniamo alla pagina precedente o facciamo altro
+        alert('Uscita dalla scena VR');
+        // window.location.href = 'pagina_precedente.html'; // Sostituisci con l'URL desiderato
       }
-    </script>
-  </body>
+    }
+    
+    // Nascondi il pulsante 2D quando siamo in VR
+    document.querySelector('a-scene').addEventListener('enter-vr', function() {
+      document.querySelector('.exit-button').style.display = 'none';
+    });
+    
+    document.querySelector('a-scene').addEventListener('exit-vr', function() {
+      document.querySelector('.exit-button').style.display = 'flex';
+    });
+  </script>
+</body>
 </html>
