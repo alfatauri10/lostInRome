@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -297,7 +298,11 @@
     </div>
 </div>
 
-<a-scene vr-mode-ui="enabled: true" webxr="optionalFeatures: local-floor; referenceSpaceType: local-floor" cursor="rayOrigin: mouse" id="scene">
+<a-scene vr-mode-ui="enabled: true" 
+        webxr="optionalFeatures: local-floor; referenceSpaceType: local-floor" 
+        cursor="rayOrigin: mouse" 
+        id="scene"
+        raycaster="objects: .hotspot; far: 20">
     <!-- Skybox a 360° -->
     <a-assets>
         <img id="altare-della-patria" src="/src/resources/images/monuments/vr/altareDellaPatria/img1.jpg">
@@ -311,27 +316,27 @@
     <a-sky id="skybox" src="#altare-della-patria" rotation="0 -90 0"></a-sky>
 
     <!-- Hotspot posizionati accuratamente -->
-    <a-entity class="hotspot" position="-2.5 0.5 -7" data-info="altare" clickable>
+    <a-entity class="hotspot" position="-2.5 0.5 -7" data-info="altare">
         <a-circle class="hotspot-circle" radius="0.5" color="#FF3366" opacity="0.8" segments="64"></a-circle>
         <a-text class="hotspot-label" value="🏛️" align="center" position="0 0.7 0.1"></a-text>
     </a-entity>
 
-    <a-entity class="hotspot" position="4.5 0.5 -5" data-info="trevi" clickable>
+    <a-entity class="hotspot" position="4.5 0.5 -5" data-info="trevi">
         <a-circle class="hotspot-circle" radius="0.5" color="#33FF66" opacity="0.8" segments="64"></a-circle>
         <a-text class="hotspot-label" value="⛲" align="center" position="0 0.7 0.1"></a-text>
     </a-entity>
 
-    <a-entity class="hotspot" position="0 0.5 9" data-info="pantheon" clickable>
+    <a-entity class="hotspot" position="0 0.5 9" data-info="pantheon">
         <a-circle class="hotspot-circle" radius="0.5" color="#FF33FF" opacity="0.8" segments="64"></a-circle>
         <a-text class="hotspot-label" value="🕰️" align="center" position="0 0.7 0.1"></a-text>
     </a-entity>
 
-    <a-entity class="hotspot" position="2.5 0.5 -9" data-info="spagna" clickable>
+    <a-entity class="hotspot" position="2.5 0.5 -9" data-info="spagna">
         <a-circle class="hotspot-circle" radius="0.5" color="#FF9933" opacity="0.8" segments="64"></a-circle>
         <a-text class="hotspot-label" value="🌸" align="center" position="0 0.7 0.1"></a-text>
     </a-entity>
 
-    <a-entity class="hotspot" position="5.5 0.5 3" data-info="popolo" clickable>
+    <a-entity class="hotspot" position="5.5 0.5 3" data-info="popolo">
         <a-circle class="hotspot-circle" radius="0.5" color="#33FFFF" opacity="0.8" segments="64"></a-circle>
         <a-text class="hotspot-label" value="🌅" align="center" position="0 0.7 0.1"></a-text>
     </a-entity>
@@ -341,7 +346,8 @@
         <a-entity cursor="fuse: true; fuseTimeout: 500"
                   position="0 0 -1"
                   geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-                  material="color: white; shader: flat">
+                  material="color: white; shader: flat"
+                  raycaster="objects: .hotspot">
         </a-entity>
     </a-entity>
 
@@ -402,34 +408,44 @@
     let offsetX, offsetY;
     const hotspots = document.querySelectorAll('.hotspot');
 
-    // Registra il componente clickable
-    AFRAME.registerComponent('clickable', {
+    // Registra il componente per gli hotspot
+    AFRAME.registerComponent('hotspot-interaction', {
         init: function () {
             // Per mouse/desktop
             this.el.addEventListener('click', (evt) => {
-                if (!isVR) this.handleClick();
+                if (!isVR) this.handleInteraction();
             });
 
             // Per VR (controller)
             this.el.addEventListener('raycaster-intersected', (evt) => {
                 this.intersected = true;
+                this.intersectionDetails = evt.detail;
             });
 
             this.el.addEventListener('raycaster-intersected-cleared', (evt) => {
                 this.intersected = false;
+                this.intersectionDetails = null;
             });
 
             this.intersected = false;
-
-            // Controlla se l'utente sta mantenendo il puntamento
-            this.el.sceneEl.addEventListener('controller-trigger-down', (evt) => {
-                if (this.intersected && isVR) {
-                    this.handleClick();
-                }
-            });
+            this.intersectionDetails = null;
         },
 
-        handleClick: function() {
+        tick: function() {
+            // Controlla se il trigger del controller è stato premuto
+            if (this.intersected && isVR) {
+                const scene = this.el.sceneEl;
+                const rightController = scene.querySelector('[laser-controls="hand: right"]');
+                const leftController = scene.querySelector('[laser-controls="hand: left"]');
+                
+                if ((rightController && rightController.components['laser-controls'].isTriggerDown) || 
+                    (leftController && leftController.components['laser-controls'].isTriggerDown)) {
+                    this.handleInteraction();
+                }
+            }
+        },
+
+        handleInteraction: function() {
             const infoType = this.el.getAttribute('data-info');
             const stepIndex = itineraryData.findIndex(item => item.id === infoType);
 
@@ -450,6 +466,11 @@
                 label.removeAttribute('animation');
             }, 300);
         }
+    });
+
+    // Aggiungi il componente a tutti gli hotspot
+    document.querySelectorAll('.hotspot').forEach(el => {
+        el.setAttribute('hotspot-interaction', '');
     });
 
     // Mostra il pannello informazioni
@@ -600,67 +621,69 @@
     }
 
     // Event listeners
-    document.getElementById('close-btn').addEventListener('click', hideInfoPanel);
-    document.getElementById('next-arrow').addEventListener('click', nextLocation);
-    document.getElementById('prev-arrow').addEventListener('click', prevLocation);
-    document.getElementById('help-btn').addEventListener('click', () => {
-        const panel = document.getElementById('help-panel');
-        panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
-        document.getElementById('overlay').style.display = panel.style.display === 'block' ? 'block' : 'none';
-    });
-    document.getElementById('start-btn').addEventListener('click', () => {
-        document.getElementById('intro-overlay').style.display = 'none';
-    });
-    document.getElementById('overlay').addEventListener('click', hideInfoPanel);
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('close-btn').addEventListener('click', hideInfoPanel);
+        document.getElementById('next-arrow').addEventListener('click', nextLocation);
+        document.getElementById('prev-arrow').addEventListener('click', prevLocation);
+        document.getElementById('help-btn').addEventListener('click', () => {
+            const panel = document.getElementById('help-panel');
+            panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+            document.getElementById('overlay').style.display = panel.style.display === 'block' ? 'block' : 'none';
+        });
+        document.getElementById('start-btn').addEventListener('click', () => {
+            document.getElementById('intro-overlay').style.display = 'none';
+        });
+        document.getElementById('overlay').addEventListener('click', hideInfoPanel);
 
-    // Drag and drop per il pannello
-    const panelHeader = document.querySelector('.panel-header');
-    panelHeader.addEventListener('mousedown', startDrag);
-    document.addEventListener('mousemove', dragPanel);
-    document.addEventListener('mouseup', stopDrag);
+        // Drag and drop per il pannello
+        const panelHeader = document.querySelector('.panel-header');
+        panelHeader.addEventListener('mousedown', startDrag);
+        document.addEventListener('mousemove', dragPanel);
+        document.addEventListener('mouseup', stopDrag);
 
-    // Animazioni hover per hotspot
-    hotspots.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            const circle = el.querySelector('.hotspot-circle');
-            const label = el.querySelector('.hotspot-label');
-            circle.setAttribute('scale', '1.1 1.1 1');
-            label.setAttribute('scale', '1.2 1.2 1');
+        // Animazioni hover per hotspot
+        hotspots.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                const circle = el.querySelector('.hotspot-circle');
+                const label = el.querySelector('.hotspot-label');
+                circle.setAttribute('scale', '1.1 1.1 1');
+                label.setAttribute('scale', '1.2 1.2 1');
+            });
+
+            el.addEventListener('mouseleave', () => {
+                const circle = el.querySelector('.hotspot-circle');
+                const label = el.querySelector('.hotspot-label');
+                circle.setAttribute('scale', '1 1 1');
+                label.setAttribute('scale', '1 1 1');
+            });
         });
 
-        el.addEventListener('mouseleave', () => {
-            const circle = el.querySelector('.hotspot-circle');
-            const label = el.querySelector('.hotspot-label');
-            circle.setAttribute('scale', '1 1 1');
-            label.setAttribute('scale', '1 1 1');
+        // Mostra/nascondi mappa con il tasto M
+        document.addEventListener('keydown', (e) => {
+            if (e.key.toLowerCase() === 'm') {
+                const map = document.getElementById('map-indicator');
+                map.style.display = map.style.display === 'none' ? 'block' : 'none';
+                if (map.style.display === 'block') {
+                    initMap();
+                }
+            }
         });
-    });
 
-    // Mostra/nascondi mappa con il tasto M
-    document.addEventListener('keydown', (e) => {
-        if (e.key.toLowerCase() === 'm') {
-            const map = document.getElementById('map-indicator');
-            map.style.display = map.style.display === 'none' ? 'block' : 'none';
-            if (map.style.display === 'block') {
-                initMap();
+        // Controlli VR per la mappa
+        document.querySelector('a-scene').addEventListener('buttondown', (e) => {
+            if (isVR && (e.detail.id === 'b-button' || e.detail.id === 'y-button')) {
+                const map = document.getElementById('map-indicator');
+                map.style.display = map.style.display === 'none' ? 'block' : 'none';
+                if (map.style.display === 'block') {
+                    initMap();
+                }
             }
-        }
-    });
+        });
 
-    // Controlli VR per la mappa
-    document.querySelector('a-scene').addEventListener('buttondown', (e) => {
-        if (isVR && (e.detail.id === 'b-button' || e.detail.id === 'y-button')) {
-            const map = document.getElementById('map-indicator');
-            map.style.display = map.style.display === 'none' ? 'block' : 'none';
-            if (map.style.display === 'block') {
-                initMap();
-            }
-        }
+        // Inizializzazione
+        checkVR();
+        updateHelpContent();
     });
-
-    // Inizializzazione
-    checkVR();
-    updateHelpContent();
 </script>
 </body>
 </html>
