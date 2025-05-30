@@ -2,7 +2,12 @@
     <div class="row">
       <!-- Descrizione -->
       <div class="col-12 mb-4">
-        <h3 class="section-subtitle text-left mb-3">LostInRome</h3>
+        <h3 class="section-subtitle text-left mb-3">LostInRome
+          <!-- Link con icona VR -->
+          <a href="/lostInRome/src/pages/itinerary/vr/lostInRomeVR.html"  target="_blank" class="vr-icon-link" title="Esplora in VR">
+            <i class="fas fa-vr-cardboard"></i>
+          </a>
+        </h3>
         <p class="text-justify mb-2">
           <i>
             Il nostro itinerario nasce come parte di un progetto scolastico volto a scoprire e valorizzare, a modo nostro, il patrimonio storico di Roma.
@@ -688,7 +693,7 @@
 
       <div class="compact-map-container">
         <h2 class="section-title text-center">Mappa</h2>
-        <div id="roma-discovery-mappa-generale"
+        <div class="map_itinerary" id="roma-discovery-mappa-generale"
              data-tappe='{
            "Altare della Patria": [41.8965, 12.4823],
            "Fontana di Trevi": [41.9009, 12.4833],
@@ -705,10 +710,8 @@
            "Piazza del Popolo": [41.9106, 12.4764],
            "Terrazza Nainar": [41.9108, 12.4766],
            "Pincio": [41.9114, 12.4779]
-         }'
-           style="height: 350px; width: 100%;border-radius: 8px;">
+         }'>
         </div>
-
 
       </div>
 
