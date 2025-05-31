@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8">
+  <title>Auguri 🤍</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/src/plugins/bootstrap/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --beige: #F5F0E6;
+      --turchese: #068D9D;
+      --turchese-scuro: #056974;
+      --testo: #5a716a;
+      --marrone: #6b522a;
+      --rosa: #e67e7e;
+    }
+
+    body {
+      background: var(--beige);
+      font-family: "Lexend", sans-serif;
+      color: var(--testo);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .page-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .birthday-card {
+      max-width: 400px;
+      padding: 2.5rem;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(6, 141, 157, 0.08);
+      border: 1px solid rgba(90, 113, 106, 0.15);
+    }
+
+    .message {
+      font-size: 1rem;
+      color: var(--testo);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .message-main {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--turchese-scuro);
+    }
+
+    .message-secondary {
+      font-style: italic;
+      opacity: 0.85;
+    }
+
+    .signature {
+      font-family: 'Allison', cursive;
+      font-size: 1rem;
+      color: var(--marrone);
+      margin-top: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    .emoji {
+      font-size: 1.2rem;
+      margin: 0 3px;
+      vertical-align: middle;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(90, 113, 106, 0.2), transparent);
+      margin: 1.2rem auto;
+      width: 60%;
+    }
+
+    /* Animazioni */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .birthday-card {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    /* Preloader */
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--beige);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loader {
+      width: 48px;
+      height: 48px;
+      border: 3px solid rgba(6, 141, 157, 0.2);
+      border-radius: 50%;
+      border-top-color: var(--turchese);
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Responsive */
+    @media (max-width: 767px) {
+      .birthday-card {
+        padding: 2rem 1.5rem;
+        max-width: 90%;
+      }
+
+      .message {
+        font-size: 0.95rem;
+      }
+
+      .signature {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- preloader -->
+<div class="preloader">
+  <div class="loader"></div>
+</div>
+<!-- /preloader -->
+
+<!-- Main Content -->
+<div class="page-content">
+  <div class="birthday-card">
+    <div class="message">
+      <p class="message-secondary">Buon compleanno, <i>Jacopo</i>! <span class="emoji">☺️</span></p>
+    </div>
+    <div class="signature">Ti voglio bene, Vale</div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="/src/plugins/jQuery/jquery.min.js"></script>
+<script src="/src/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script>
+  // Nascondi il preloader dopo il caricamento
+  document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(function() {
+        document.querySelector('.preloader').style.opacity = '0';
+        setTimeout(() => {
+          document.querySelector('.preloader').style.display = 'none';
+        }, 300);
+      }, 800);
+  });
+</script>
+
+</body>
+</html>
