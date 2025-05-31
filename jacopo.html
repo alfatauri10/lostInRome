@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8">
+  <title>Auguri!!!</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23e67e7e%22>🤍</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/src/plugins/bootstrap/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --beige: #F5F0E6;
+      --turchese: #068D9D;
+      --turchese-scuro: #056974;
+      --testo: #5a716a;
+      --marrone: #6b522a;
+      --rosa: #e67e7e;
+    }
+
+    body {
+      background: var(--beige);
+      font-family: "Lexend", sans-serif;
+      color: var(--testo);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      background-image: radial-gradient(circle at 10% 20%, rgba(6, 141, 157, 0.03) 0%, transparent 20%);
+    }
+
+    .page-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .birthday-card {
+      max-width: 420px;
+      padding: 2.8rem;
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(6, 141, 157, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .message {
+      font-size: 1.05rem;
+      color: var(--testo);
+      line-height: 1.8;
+      margin-bottom: 1.8rem;
+      position: relative;
+    }
+
+    .message-main {
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+      color: var(--turchese-scuro);
+    }
+
+    .message-secondary {
+      font-style: italic;
+      opacity: 0.9;
+      position: relative;
+      display: inline-block;
+    }
+
+    .message-secondary::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, transparent);
+    }
+
+    .signature {
+      font-family: 'Parisienne', cursive;
+      font-size: 0.9rem;
+      color: var(--rosa);
+      margin-top: 2rem;
+      letter-spacing: 1px;
+      line-height: 1.2;
+    }
+
+    /* Contenitore per i calici */
+    .cheers-container {
+      display: inline-block;
+      position: relative;
+      height: 30px;
+      width: 60px;
+      margin: 0 5px;
+    }
+
+    /* Stile dei calici */
+    .glass {
+      position: absolute;
+      font-size: 1.5rem;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      transform-origin: bottom;
+    }
+
+    .glass.left {
+      left: 0;
+      animation-name: cheers-left;
+    }
+
+    .glass.right {
+      right: 0;
+      animation-name: cheers-right;
+    }
+
+    /* Animazione "cin cin" */
+    @keyframes cheers-left {
+      0%, 100% { transform: rotate(0deg) translateY(0); }
+      25% { transform: rotate(-25deg) translateY(-5px); }
+      50% { transform: rotate(0deg) translateY(0); }
+    }
+
+    @keyframes cheers-right {
+      0%, 100% { transform: rotate(0deg) translateY(0); }
+      25% { transform: rotate(25deg) translateY(-5px); }
+      50% { transform: rotate(0deg) translateY(0); }
+    }
+
+    /* Effetto scintillio */
+    .sparkle {
+      position: absolute;
+      font-size: 0.8rem;
+      opacity: 0;
+      animation: sparkle 2s infinite;
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+
+    .smile-emoji {
+      animation: float 2.5s ease-in-out infinite 0.5s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(90, 113, 106, 0.15), transparent);
+      margin: 1.5rem auto;
+      width: 65%;
+    }
+
+    /* Animazioni */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .birthday-card {
+      animation: fadeIn 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+
+    /* Preloader */
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--beige);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(6, 141, 157, 0.1);
+      border-radius: 50%;
+      border-top-color: var(--rosa);
+      animation: spin 1.1s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Effetto cuore pulsante */
+    .heart-emoji {
+      animation: pulse 1.5s ease infinite;
+      display: inline-block;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    /* Responsive */
+    @media (max-width: 767px) {
+      .birthday-card {
+        padding: 2.2rem 1.8rem;
+        max-width: 88%;
+      }
+
+      .message {
+        font-size: 1rem;
+      }
+
+      .signature {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- preloader -->
+<div class="preloader">
+  <div class="loader"></div>
+</div>
+
+<!-- Main Content -->
+<div class="page-content">
+  <div class="birthday-card">
+    <div class="message">
+      <p class="message-secondary">Tanti tanti tanti auguri di buon compleanno, <i>Jacopo</i>!
+        <span class="cheers-container">
+          <span class="glass left">🥂</span>
+          <span class="glass right">🥂</span>
+          <span class="sparkle" style="left: 15px; top: -10px; animation-delay: 0.5s;">✨</span>
+          <span class="sparkle" style="left: 25px; top: -15px; animation-delay: 0.8s;">✨</span>
+          <span class="sparkle" style="left: 35px; top: -10px; animation-delay: 1.1s;">✨</span>
+        </span><br>
+        <span class="smile-emoji">☺️</span>
+      </p>
+    </div>
+    <div class="signature">...ti voglio bene <span class="heart-emoji">🤍</span></div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="/src/plugins/jQuery/jquery.min.js"></script>
+<script src="/src/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script>
+  // Nascondi il preloader dopo il caricamento
+  document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(function() {
+        document.querySelector('.preloader').style.opacity = '0';
+        setTimeout(() => {
+          document.querySelector('.preloader').style.display = 'none';
+        }, 500);
+      }, 1000);
+  });
+</script>
+
+</body>
+</html>
