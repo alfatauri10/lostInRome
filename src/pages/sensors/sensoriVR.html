@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>Lost in Rome | Monitoraggio Sensori AR</title>
+
+  <!-- Meta e stili -->
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link rel="icon" type="image-png" href="/src/resources/images/loghi/logoLostInRome_icona.png">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link href="/src/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="/src/plugins/slick/slick.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="/src/css/style.css" rel="stylesheet">
+
+  <!-- Script A-Frame e Firebase -->
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
+  <style>
+    /* STILI SPECIFICI PER QUESTA PAGINA */
+    .sensor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin: 60px 0;
+    }
+
+    .sensor-card {
+      background: #FFFCF5;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(107, 82, 42, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(107, 82, 42, 0.1);
+      text-align: center;
+    }
+
+    .sensor-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 45px rgba(107, 82, 42, 0.15);
+    }
+
+    .sensor-icon {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #068D9D;
+    }
+
+    .sensor-title {
+      font-family: "hanskendrick";
+      font-size: 1.5rem;
+      color: #056974;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .sensor-value {
+      font-family: "Lexend", sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #068D9D;
+      margin: 10px 0;
+    }
+
+    .sensor-unit {
+      font-family: "Lexend", sans-serif;
+      font-size: 1rem;
+      color: #7a6a5f;
+    }
+
+    .vr-icon-link {
+      font-size: 2rem;
+      color: #068D9D;
+      transition: all 0.3s ease;
+      margin-left: 15px;
+      vertical-align: middle;
+    }
+
+    .vr-icon-link:hover {
+      color: #056974;
+      transform: scale(1.1);
+    }
+
+    .status {
+      text-align: center;
+      margin-top: 20px;
+      font-style: italic;
+      color: #7a6a5f;
+    }
+
+    #xr-scene {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10000;
+      display: none;
+    }
+
+    .section-title {
+        font-size: 2.0rem;
+        font-weight: 600;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+        position: relative;
+        font-family: 'Lexend', sans-serif;
+        color: #6b522a;
+    }
+    .section-title:after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: #068d9d;
+        margin: 15px auto 0;
+    }
+
+    /* Rimuovi il loading screen */
+    .loading-screen {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div id="headerPlaceHolder"></div>
+
+<!-- Contenuto principale -->
+<div class="container page-content">
+
+  <!-- Titolo principale -->
+  <div class="row">
+    <div class="col-12 text-center mb-5">
+      <h2 class="section-title">Monitoraggio Sensori
+        <!-- Link con icona VR -->
+        <a href="javascript:void(0)" onclick="startAR()" class="vr-icon-link" title="Esplora in Realtà Aumentata">
+          <i class="fas fa-vr-cardboard"></i>
+        </a>
+      </h2>
+      <p class="lead" style="color:var(--turchese);">
+        Dati in tempo reale dai sensori ambientali
+      </p>
+    </div>
+  </div>
+
+  <!-- Griglia sensori -->
+  <div class="sensor-grid">
+    <div class="sensor-card">
+      <div class="sensor-icon">🌡️</div>
+      <h3 class="sensor-title">TEMPERATURA</h3>
+      <div class="sensor-value" id="tempValue">--</div>
+      <div class="sensor-unit">gradi Celsius</div>
+    </div>
+
+    <div class="sensor-card">
+      <div class="sensor-icon">💧</div>
+      <h3 class="sensor-title">UMIDITÀ ARIA</h3>
+      <div class="sensor-value" id="humValue">--</div>
+      <div class="sensor-unit">percentuale</div>
+    </div>
+
+    <div class="sensor-card">
+      <div class="sensor-icon">🌱</div>
+      <h3 class="sensor-title">UMIDITÀ SUOLO</h3>
+      <div class="sensor-value" id="soilValue">--</div>
+      <div class="sensor-unit">valore analogico</div>
+    </div>
+  </div>
+
+  <!-- Status connessione -->
+  <div class="status" id="status">
+    🔗 Connessione in corso...
+  </div>
+
+</div>
+
+<!-- SCENA AR - REALTÀ AUMENTATA -->
+<div id="xr-scene">
+  <a-scene
+          vr-mode-ui="enabled: true"
+          ar-mode-ui="enabled: true"
+          embedded
+          background="color: transparent"
+          renderer="colorManagement: true; alpha: true;">
+
+    <!-- PANNELLI FLUTTUANTI IN AR -->
+    <a-entity id="sensor-panels" position="0 1.6 -2">
+
+      <!-- PANNELLO TEMPERATURA -->
+      <a-entity position="-1.5 0.5 0">
+        <a-plane
+                width="1.2"
+                height="0.8"
+                color="#FFFCF5"
+                material="shader: flat; side: double; transparent: true; opacity: 0.9"
+                shadow="cast: true; receive: true">
+        </a-plane>
+        <a-text
+                value="🌡️ TEMPERATURA"
+                position="0 0.25 0.01"
+                align="center"
+                width="1.8"
+                color="#056974"
+                font="roboto">
+        </a-text>
+        <a-text
+                id="xr-temp"
+                value="--°C"
+                position="0 -0.1 0.01"
+                align="center"
+                width="1.5"
+                color="#068D9D"
+                font="roboto"
+                scale="1.2 1.2 1.2">
+        </a-text>
+      </a-entity>
+
+      <!-- PANNELLO UMIDITÀ -->
+      <a-entity position="0 0.5 0">
+        <a-plane
+                width="1.2"
+                height="0.8"
+                color="#FFFCF5"
+                material="shader: flat; side: double; transparent: true; opacity: 0.9"
+                shadow="cast: true; receive: true">
+        </a-plane>
+        <a-text
+                value="💧 UMIDITÀ ARIA"
+                position="0 0.25 0.01"
+                align="center"
+                width="1.8"
+                color="#056974"
+                font="roboto">
+        </a-text>
+        <a-text
+                id="xr-hum"
+                value="--%"
+                position="0 -0.1 0.01"
+                align="center"
+                width="1.5"
+                color="#068D9D"
+                font="roboto"
+                scale="1.2 1.2 1.2">
+        </a-text>
+      </a-entity>
+
+      <!-- PANNELLO SUOLO -->
+      <a-entity position="1.5 0.5 0">
+        <a-plane
+                width="1.2"
+                height="0.8"
+                color="#FFFCF5"
+                material="shader: flat; side: double; transparent: true; opacity: 0.9"
+                shadow="cast: true; receive: true">
+        </a-plane>
+        <a-text
+                value="🌱 UMIDITÀ SUOLO"
+                position="0 0.25 0.01"
+                align="center"
+                width="1.8"
+                color="#056974"
+                font="roboto">
+        </a-text>
+        <a-text
+                id="xr-soil"
+                value="--"
+                position="0 -0.1 0.01"
+                align="center"
+                width="1.5"
+                color="#068D9D"
+                font="roboto"
+                scale="1.2 1.2 1.2">
+        </a-text>
+      </a-entity>
+
+    </a-entity>
+
+    <!-- LUCE PER I PANNELLI -->
+    <a-light type="directional" color="#ffffff" position="0 3 -1" intensity="0.8"></a-light>
+
+    <!-- CONTROLLER PER INTERAZIONE -->
+    <a-entity laser-controls="hand: right" line="color: #068D9D; opacity: 0.6"></a-entity>
+    <a-entity laser-controls="hand: left" line="color: #068D9D; opacity: 0.6"></a-entity>
+
+    <!-- CAMERA -->
+    <a-entity camera look-controls position="0 1.6 0"></a-entity>
+
+  </a-scene>
+</div>
+
+<!-- Footer -->
+<div id="footerPlaceHolder"></div>
+
+<!-- Scripts -->
+<script src="/src/plugins/jQuery/jquery.min.js"></script>
+<script src="/src/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/src/plugins/masonry/masonry.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="/src/js/include.js"></script>
+
+<script>
+  // ====================== CONFIGURA FIREBASE ======================
+  const firebaseConfig = {
+    apiKey: "AIzaSyDIQvE7tX26uYVR9EeYHm5VaJdDosQguN8",
+    authDomain: "lostinrome-sensori.firebaseapp.com",
+    databaseURL: "https://lostinrome-sensori-default-rtdb.firebaseio.com",
+    projectId: "lostinrome-sensori",
+    storageBucket: "lostinrome-sensori.firebasestorage.app",
+    messagingSenderId: "87005047553",
+    appId: "1:87005047553:web:dd55bd83d1bdacdd7c0900"
+  };
+
+  // Inizializza Firebase
+  firebase.initializeApp(firebaseConfig);
+  const database = firebase.database();
+
+  // Riferimenti agli elementi
+  const tempElement = document.getElementById('tempValue');
+  const humElement = document.getElementById('humValue');
+  const soilElement = document.getElementById('soilValue');
+  const statusElement = document.getElementById('status');
+  const xrScene = document.getElementById('xr-scene');
+
+  // Ascolta i dati in tempo reale
+  function setupFirebaseListener() {
+    const sensorsRef = database.ref('sensors/');
+
+    sensorsRef.on('value', (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        updateDisplay(data);
+        statusElement.textContent = '✅ Dati aggiornati in tempo reale';
+        statusElement.style.color = '#068D9D';
+      }
+    }, (error) => {
+      console.error('Firebase error:', error);
+      statusElement.textContent = '❌ Errore di connessione';
+      statusElement.style.color = '#dc3545';
+    });
+  }
+
+  // Aggiorna il display
+  function updateDisplay(data) {
+    const temp = data.temperature !== undefined ? data.temperature.toFixed(1) : '--';
+    const hum = data.humidity !== undefined ? data.humidity.toFixed(1) : '--';
+    const soil = data.soil_moisture !== undefined ? data.soil_moisture : '--';
+
+    // Aggiorna il sito
+    tempElement.textContent = temp;
+    humElement.textContent = hum;
+    soilElement.textContent = soil;
+
+    // Aggiorna la scena AR
+    if (document.getElementById('xr-temp')) {
+      document.getElementById('xr-temp').setAttribute('value', `${temp}°C`);
+      document.getElementById('xr-hum').setAttribute('value', `${hum}%`);
+      document.getElementById('xr-soil').setAttribute('value', soil);
+    }
+  }
+
+  // Avvia Realtà Aumentata
+  function startAR() {
+    xrScene.style.display = 'block';
+    const scene = xrScene.querySelector('a-scene');
+
+    // Entra direttamente in AR senza loading screen
+    if (scene.hasLoaded) {
+      enterAR();
+    } else {
+      scene.addEventListener('loaded', enterAR);
+    }
+  }
+
+  function enterAR() {
+    const scene = xrScene.querySelector('a-scene');
+
+    // Prova ad entrare in modalità AR
+    if (scene.enterAR) {
+      scene.enterAR().then(() => {
+        statusElement.textContent = '📱 Modalità Realtà Aumentata attiva';
+      }).catch((error) => {
+        console.log('AR non supportato, entro in VR:', error);
+        enterVR();
+      });
+    } else {
+      enterVR();
+    }
+  }
+
+  function enterVR() {
+    const scene = xrScene.querySelector('a-scene');
+    scene.enterVR().then(() => {
+      statusElement.textContent = '🥽 Modalità VR attiva';
+    }).catch((error) => {
+      console.error('Errore VR:', error);
+      statusElement.textContent = '❌ Errore attivazione XR';
+    });
+  }
+
+  // Inizializza tutto al caricamento
+  document.addEventListener("DOMContentLoaded", function() {
+    // Includi header e footer
+    includeHTML({
+      headerPlaceHolder: "../include/header.html",
+      footerPlaceHolder: "../include/footer.html"
+    });
+
+    // Setup Firebase
+    setupFirebaseListener();
+    statusElement.textContent = '🔗 Connesso a Firebase - In attesa di dati...';
+  });
+</script>
+
+</body>
+</html>
+

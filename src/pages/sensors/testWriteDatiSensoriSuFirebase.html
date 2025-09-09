@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Firebase Direct</title>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+</head>
+<body>
+<h2>Test Scrittura Diretta Dati Ambientali random su Firebase</h2>
+<button onclick="writeData()">Invia Dati di Test</button><br>
+<br><div id="status">Pronto...</div><br>
+<div id="data"></div>
+
+<script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDIQvE7tX26uYVR9EeYHm5VaJdDosQguN8",
+            authDomain: "lostinrome-sensori.firebaseapp.com",
+            databaseURL: "https://lostinrome-sensori-default-rtdb.firebaseio.com",
+            projectId: "lostinrome-sensori",
+            storageBucket: "lostinrome-sensori.firebasestorage.app",
+            messagingSenderId: "87005047553",
+            appId: "1:87005047553:web:dd55bd83d1bdacdd7c0900"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        function writeData() {
+            const temperature = (Math.random() * 20 + 15).toFixed(1);
+            const humidity = (Math.random() * 50 + 30).toFixed(1);
+            const soilMoisture = Math.floor(Math.random() * 1024);
+
+            const sensorsRef = database.ref('sensors');
+
+            sensorsRef.set({
+                temperature: parseFloat(temperature),
+                humidity: parseFloat(humidity),
+                soil_moisture: soilMoisture
+            }).then(() => {
+                document.getElementById('status').innerHTML = '<br>Dati inviati!<br>';
+                document.getElementById('data').innerHTML = `
+                    Temperatura: ${temperature}&#176C<br>
+                    Umidit&#224: ${humidity}%<br>
+                     Umidit&#224 Suolo: ${soilMoisture}
+                `;
+            }).catch((error) => {
+                document.getElementById('status').innerHTML = '❌ Errore: ' + error;
+            });
+        }
+
+        // Leggi dati esistenti
+        database.ref('sensors').on('value', (snapshot) => {
+            const data = snapshot.val();
+            if (data) {
+                document.getElementById('data').innerHTML = `
+                    Dati correnti:<br>
+                    Temperatura: ${data.temperature}&#176C<br>
+                    Umidit&#224: ${data.humidity}%<br>
+                    Umidit&#224 Suolo: ${data.soil_moisture}
+                `;
+            }
+        });
+    </script>
+
+<div class="vr-section">
+    <h2 >Test lettura </h2>
+    <p>Visualizza i dati letti da LostInRome da Firebase cliccando sulla
+        <a href="/lostInRome/src/pages/sensors/sensoriVR.html" class="vr-button">
+             pagina di Monitoraggio Dati
+        </a>
+    </p>
+</div>
+</body>
+</html>
