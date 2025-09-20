@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <title>Lost in Rome | Monitoraggio Sensori AR</title>
 
-  <!-- Meta e stili -->
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link rel="icon" type="image-png" href="/src/resources/images/loghi/logoLostInRome_icona.png">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -15,10 +14,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="/src/css/style.css" rel="stylesheet">
 
-  <!-- Script A-Frame e Firebase -->
   <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-database-compat.js"></script>
 
   <style>
     /* STILI SPECIFICI PER QUESTA PAGINA */
@@ -124,23 +122,25 @@
     .loading-screen {
       display: none !important;
     }
+
+    /* Stili per pannelli AR migliorati */
+    .ar-panel {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      border-radius: 0.1m;
+    }
   </style>
 </head>
 
 <body>
 
-<!-- Header -->
 <div id="headerPlaceHolder"></div>
 
-<!-- Contenuto principale -->
 <div class="container page-content">
 
-  <!-- Titolo principale -->
   <div class="row">
     <div class="col-12 text-center mb-5">
       <h2 class="section-title">Monitoraggio Sensori
-        <!-- Link con icona VR -->
-        <a href="javascript:void(0)" onclick="startAR()" class="vr-icon-link" title="Esplora in Realtà Aumentata">
+        <a href="javascript:void(0)" onclick="startAR()" class="vr-icon-link" title="Esplora in Realt&agrave; Aumentata">
           <i class="fas fa-vr-cardboard"></i>
         </a>
       </h2>
@@ -150,7 +150,6 @@
     </div>
   </div>
 
-  <!-- Griglia sensori -->
   <div class="sensor-grid">
     <div class="sensor-card">
       <div class="sensor-icon">🌡️</div>
@@ -158,30 +157,20 @@
       <div class="sensor-value" id="tempValue">--</div>
       <div class="sensor-unit">gradi Celsius</div>
     </div>
-
-    <div class="sensor-card">
-      <div class="sensor-icon">💧</div>
-      <h3 class="sensor-title">UMIDITÀ ARIA</h3>
-      <div class="sensor-value" id="humValue">--</div>
-      <div class="sensor-unit">percentuale</div>
-    </div>
-
     <div class="sensor-card">
       <div class="sensor-icon">🌱</div>
-      <h3 class="sensor-title">UMIDITÀ SUOLO</h3>
+      <h3 class="sensor-title">UMIDIT&Agrave; SUOLO</h3>
       <div class="sensor-value" id="soilValue">--</div>
-      <div class="sensor-unit">valore analogico</div>
+      <div class="sensor-unit">percentuale</div>
     </div>
   </div>
 
-  <!-- Status connessione -->
   <div class="status" id="status">
     🔗 Connessione in corso...
   </div>
 
 </div>
 
-<!-- SCENA AR - REALTÀ AUMENTATA -->
 <div id="xr-scene">
   <a-scene
           vr-mode-ui="enabled: true"
@@ -190,16 +179,15 @@
           background="color: transparent"
           renderer="colorManagement: true; alpha: true;">
 
-    <!-- PANNELLI FLUTTUANTI IN AR -->
     <a-entity id="sensor-panels" position="0 1.6 -2">
 
-      <!-- PANNELLO TEMPERATURA -->
-      <a-entity position="-1.5 0.5 0">
+      <a-entity position="-0.7 0.5 0">
         <a-plane
                 width="1.2"
                 height="0.8"
                 color="#FFFCF5"
                 material="shader: flat; side: double; transparent: true; opacity: 0.9"
+                class="ar-panel"
                 shadow="cast: true; receive: true">
         </a-plane>
         <a-text
@@ -208,97 +196,64 @@
                 align="center"
                 width="1.8"
                 color="#056974"
-                font="roboto">
+                font="monoid">
         </a-text>
         <a-text
                 id="xr-temp"
-                value="--°C"
+                value="-- °C"
                 position="0 -0.1 0.01"
                 align="center"
                 width="1.5"
                 color="#068D9D"
-                font="roboto"
+                font="monoid"
                 scale="1.2 1.2 1.2">
         </a-text>
       </a-entity>
 
-      <!-- PANNELLO UMIDITÀ -->
-      <a-entity position="0 0.5 0">
+      <a-entity position="0.7 0.5 0">
         <a-plane
                 width="1.2"
                 height="0.8"
                 color="#FFFCF5"
                 material="shader: flat; side: double; transparent: true; opacity: 0.9"
+                class="ar-panel"
                 shadow="cast: true; receive: true">
         </a-plane>
-        <a-text
-                value="💧 UMIDITÀ ARIA"
-                position="0 0.25 0.01"
-                align="center"
-                width="1.8"
-                color="#056974"
-                font="roboto">
-        </a-text>
-        <a-text
-                id="xr-hum"
-                value="--%"
-                position="0 -0.1 0.01"
-                align="center"
-                width="1.5"
-                color="#068D9D"
-                font="roboto"
-                scale="1.2 1.2 1.2">
-        </a-text>
-      </a-entity>
 
-      <!-- PANNELLO SUOLO -->
-      <a-entity position="1.5 0.5 0">
-        <a-plane
-                width="1.2"
-                height="0.8"
-                color="#FFFCF5"
-                material="shader: flat; side: double; transparent: true; opacity: 0.9"
-                shadow="cast: true; receive: true">
-        </a-plane>
         <a-text
-                value="🌱 UMIDITÀ SUOLO"
+                value="🌱 UMIDITA' SUOLO"
                 position="0 0.25 0.01"
                 align="center"
                 width="1.8"
                 color="#056974"
-                font="roboto">
+                font="monoid">
         </a-text>
         <a-text
                 id="xr-soil"
-                value="--"
+                value="-- %"
                 position="0 -0.1 0.01"
                 align="center"
                 width="1.5"
                 color="#068D9D"
-                font="roboto"
+                font="monoid"
                 scale="1.2 1.2 1.2">
         </a-text>
       </a-entity>
 
     </a-entity>
 
-    <!-- LUCE PER I PANNELLI -->
     <a-light type="directional" color="#ffffff" position="0 3 -1" intensity="0.8"></a-light>
 
-    <!-- CONTROLLER PER INTERAZIONE -->
     <a-entity laser-controls="hand: right" line="color: #068D9D; opacity: 0.6"></a-entity>
     <a-entity laser-controls="hand: left" line="color: #068D9D; opacity: 0.6"></a-entity>
 
-    <!-- CAMERA -->
     <a-entity camera look-controls position="0 1.6 0"></a-entity>
 
   </a-scene>
 </div>
 
-<!-- Footer -->
 <div id="footerPlaceHolder"></div>
 
-<!-- Scripts -->
 <script src="/src/plugins/jQuery/jquery.min.js"></script>
 <script src="/src/plugins/bootstrap/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -325,7 +280,6 @@
 
   // Riferimenti agli elementi
   const tempElement = document.getElementById('tempValue');
-  const humElement = document.getElementById('humValue');
   const soilElement = document.getElementById('soilValue');
   const statusElement = document.getElementById('status');
   const xrScene = document.getElementById('xr-scene');
@@ -350,20 +304,19 @@
 
   // Aggiorna il display
   function updateDisplay(data) {
+
     const temp = data.temperature !== undefined ? data.temperature.toFixed(1) : '--';
-    const hum = data.humidity !== undefined ? data.humidity.toFixed(1) : '--';
     const soil = data.soil_moisture !== undefined ? data.soil_moisture : '--';
 
     // Aggiorna il sito
-    tempElement.textContent = temp;
-    humElement.textContent = hum;
+    const correctedTemp = (temp !== '--') ? (temp - 6).toFixed(1) : '--';
+    tempElement.textContent = correctedTemp;
     soilElement.textContent = soil;
 
     // Aggiorna la scena AR
     if (document.getElementById('xr-temp')) {
-      document.getElementById('xr-temp').setAttribute('value', `${temp}°C`);
-      document.getElementById('xr-hum').setAttribute('value', `${hum}%`);
-      document.getElementById('xr-soil').setAttribute('value', soil);
+      document.getElementById('xr-temp').setAttribute('value', `${correctedTemp} °C`);
+      document.getElementById('xr-soil').setAttribute('value', `${soil} %`);
     }
   }
 
@@ -422,4 +375,3 @@
 
 </body>
 </html>
-
