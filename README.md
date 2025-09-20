@@ -3,9 +3,9 @@
 # Software Requirements Specification (SRS) [link al GoogleDoc](https://docs.google.com/document/d/1vZeSWB2j1AxRaS60J09652LO0gDZCkJkbwvGzQtmzkE/edit?usp=sharing)
 for
 
-# [**LostInRome**](https://lostinrome.netlify.app/) <img src="src/images/loghi/logoLostInRome.png" alt="Logo" width="60">  
+# [**LostInRome**](https://lostinrome.netlify.app/) <img src="src/resources/images/loghi/logoLostInRome.png" alt="Logo" width="60">  
 
-                                                             una guida bilingue per chi si perde nei vicoli di Roma
+                                                             una guida bilingue per chi ama perdersi nei vicoli di Roma
 							   
 [visita il sito](https://lostinrome.netlify.app/)
 
