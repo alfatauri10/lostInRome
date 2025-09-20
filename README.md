@@ -144,7 +144,76 @@ Inoltre, saranno presenti tre icone dei seguenti social network: Facebook, Insta
 	- footer (RF-3) 
 	- content (RF-4)
 	- responsive (RF-5)
+
+ # RF-9: Audiolingua 
+ Accanto ad ogni sezione delle pagine dei monumenti dovrà essere presente un’icona 🔈che al click riprodurrá un audio relativo testo a cui si riferisce.
+Deve essere possibile mettere in pausa l’audio e poi riprenderne la riproduzione.
+Questo dovrà essere presente sia nella pagine in inglese che in quelle in italiano.
+
+# RF-10:  Pagina Chi siamo/About us 
+
+# RF11: Pagina Contatti/Contact
+
+# RF12: Creazione itinerari
+Gli itinerari dovranno essere sviluppati prendendo spunto dall’itinerario LostInRome contenuto nel file: Itinerari. Ogni itinerario dovrà avere una breve descrizione.
+		
+Ci saranno 4 tipi di itinerari
+LostInRome
+Eno-Gastronomico (Roma)
+Castelli Romani
+Avventura
+
+		2. Itinerario Enogastronomico (Roma)
+L’itinerario dovrà includere una selezione di locali tipici della tradizione romana per colazione, pranzo e cena, suggerendo per ciascuno i piatti consigliati in base ai diversi gusti (carne, pesce, vegetariano, ecc.), il vino o la bevanda ideale in abbinamento e un’indicazione orientativa dei costi.
+
+3. Itinerario Culturale e Paesaggistico – Castelli Romani
+L’itinerario dovrà proporre un percorso accuratamente selezionato tra le migliori attività, attrazioni e bellezze naturali che la zona dei Castelli Romani ha da offrire. Verranno inclusi i borghi più suggestivi, i punti panoramici imperdibili, le ville storiche, i parchi naturali e gli itinerari enogastronomici locali.
+Sarà inoltre indicato come raggiungere ciascuna tappa, sia con mezzi pubblici che privati, insieme a eventuali consigli pratici per il parcheggio, i periodi migliori per la visita e le esperienze autentiche da non perdere.
+
+4. Avventura 
+Dovrà essere un itinerario tematico dedicato all’avventura nella città di Roma, pensato per utenti che desiderano esperienze dinamiche, emozionanti e fuori dai percorsi turistici tradizionali.
+Il sistema dovrà selezionare attività ad alto contenuto esperienziale, come escursioni urbane, percorsi in bici, trekking nei parchi archeologici, escape room a tema storico, e tour notturni insoliti.
+ogni tappa dovrà avere:
+una descrizione dell’attività,
+il livello di avventura (moderato, intenso, estremo),
+la durata media,
+l’indirizzo o posizione sulla mappa,
+i costi indicativi,
+eventuali requisiti fisici o di età.
+ Dovranno essere fornite indicazioni su come raggiungere ogni luogo, con opzioni per mezzi pubblici, bicicletta o a piedi e il costo.
  
+
+# RF13: Monitoraggio Dati Ambientali
+Il sito dovrà prevedere una sezione accessibile dal menù per la visualizzazione di dati ambientali in tempo reale.
+A tal fine sarà implementato un modulo IoT Arduino UNO R4 Wi-Fi collegato a sensori ambientali per il monitoraggio in tempo reale di parametri come temperatura e umidità. I dati raccolti vengono inviati in formato JSON a un database Firebase e saranno letti tramite JavaScript e visualizzati in un'apposita sezione del sito.
+
+Arduino ESP32:
+ si collega al wifi
+ legge i dati ambientali rilevati dai sensori 
+ invia (scrive) i dati ambientali sul cloud (Firebase) in un database
+Il sito web 
+si collega a Firebase e legge i dati ambientali tramite Javascript 
+visualizza i dati ambientali  in VR con A-Frame.
+Il visore apre il sito web e vede i dati aggiornarsi in tempo reale
+
+
+
+Formato in cui i dati saranno salvati sul Database Firebase:
+json
+{
+  "sensors": {
+    "temperature": 22.5,
+    "humidity": 65.3,
+    "soil_moisture": 2048
+  }
+}
+
+# RF14: Quiz “Quanto conosci Roma?”
+
+Il sito dovrà prevedere una sezione accessibile dal menù che consentirà agli utenti di mettersi alla prova su quanto conosce Roma.
+
+
+
 
 # Stack tecnologico ⚙️
  # LINGUAGGI DI PROGRAMMAZIONE
