@@ -239,7 +239,7 @@ Il sito dovrà prevedere una sezione accessibile dal menù che consentirà agli 
 
 A questo LINK c’è la repository del progetto.
 
-Url del progetto: https://github.com/alfatauri10/4H_TravelGuide
+Url del progetto: https://github.com/alfatauri10/lostInRome
 
 # Deployment, Hosting e dominio - Netlify
 Come sito di hosting abbiamo scelto di usare **Netlify** a cui è stata collegata la repository **GitHub** del progetto. 
