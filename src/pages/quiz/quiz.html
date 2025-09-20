@@ -319,6 +319,48 @@
     .incorrect-feedback {
       color: #e74c3c;
     }
+
+    #start-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 0;
+    }
+
+    #start-btn {
+        background-color: var(--turchese);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 20px;
+    }
+
+    #start-btn:hover {
+        background-color: var(--turchese-scuro);
+        transform: translateY(-2px);
+    }
+
+    #question-container {
+        display: none;
+    }
+
+    #countdown-container {
+        display: none;
+        font-size: 5rem;
+        font-weight: 700;
+        color: var(--marrone);
+        text-shadow: 2px 2px var(--beige);
+    }
+
+    #quiz-music {
+        display: none;
+    }
   </style>
 </head>
 <body class="quiz-page-body">
@@ -328,12 +370,19 @@
   <div class="quiz-container">
     <div class="quiz-header">
       <h1 class="quiz-title">Quanto conosci la Città Eterna?</h1>
-      <a href="quiz_vr.html" class="vr-icon-link" title="Esplora il quiz in Realt&agrave; Virtuale">
+      <a href="quiz_vr.html" class="vr-icon-link" title="Esplora in Realt&agrave; Aumentata">
         <i class="fas fa-vr-cardboard"></i>
       </a>
     </div>
 
-    <div class="progress-container">
+    <div id="start-container">
+      <p class="quiz-description">Pronto a viaggiare nel tempo? Rispondi alle domande e scopri i segreti della Roma antica e moderna!</p>
+      <button id="start-btn">Inizia Quiz</button>
+    </div>
+
+    <div id="countdown-container"></div>
+
+    <div class="progress-container" style="display: none;" id="progress-quiz">
       <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
     </div>
 
@@ -368,6 +417,7 @@
   </div>
 </div>
 
+<audio id="quiz-music" src="/src/resources/audio/quiz/laDolceVita.mp3" loop preload="auto"></audio>
 <script src="/src/plugins/jQuery/jquery.min.js"></script>
 <script src="/src/plugins/bootstrap/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -476,10 +526,41 @@
   const feedbackOverlay = document.getElementById('feedback-overlay');
   const feedbackIcon = document.getElementById('feedback-icon');
   const feedbackText = document.getElementById('feedback-text');
+  const quizMusic = document.getElementById('quiz-music');
 
   function initQuiz() {
     showQuestion();
     updateProgress();
+  }
+
+  function startCountdown() {
+    const countdownContainer = document.getElementById('countdown-container');
+    const startContainer = document.getElementById('start-container');
+    const questionContainer = document.getElementById('question-container');
+    const progressQuiz = document.getElementById('progress-quiz');
+    let count = 3;
+
+    startContainer.style.display = 'none';
+    countdownContainer.style.display = 'block';
+
+    // Riproduci la musica del quiz
+    quizMusic.play();
+
+    const countdownInterval = setInterval(() => {
+        if (count > 0) {
+            countdownContainer.textContent = count;
+            count--;
+        } else {
+            clearInterval(countdownInterval);
+            countdownContainer.textContent = 'VIA!';
+            setTimeout(() => {
+                countdownContainer.style.display = 'none';
+                questionContainer.style.display = 'block';
+                progressQuiz.style.display = 'block';
+                initQuiz();
+            }, 500); // 0.5s di ritardo per mostrare "VIA!"
+        }
+    }, 1000); // 1s
   }
 
   function showQuestion() {
@@ -562,13 +643,14 @@
   function updateProgress() {
     const progress = ((currentQuestion) / questions.length) * 100;
     document.getElementById('progress-bar').style.width = `${progress}%`;
-    document.getElementById('progress-text').textContent = `Domanda ${currentQuestion + 1} di ${questions.length}`;
   }
 
   function showResults() {
     document.getElementById('question-container').style.display = 'none';
+    document.getElementById('progress-quiz').style.display = 'none';
     document.getElementById('result-container').style.display = 'block';
     document.getElementById('result-score').textContent = `${score}/${questions.length}`;
+    quizMusic.pause();
 
     let message = "";
     if (score === questions.length) {
@@ -589,22 +671,21 @@
     score = 0;
     userAnswers = [];
     document.getElementById('question-container').style.display = 'block';
+    document.getElementById('progress-quiz').style.display = 'block';
     document.getElementById('result-container').style.display = 'none';
+    quizMusic.play();
     initQuiz();
   }
 
+  document.getElementById('start-btn').addEventListener('click', startCountdown);
+
   document.addEventListener('DOMContentLoaded', function() {
-    initQuiz();
+    includeHTML({
+        headerPlaceHolder: "../include/header.html",
+        footerPlaceHolder: "../include/footer.html"
+    });
   });
 </script>
 <div id="footerPlaceHolder"></div>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-      includeHTML({
-          headerPlaceHolder: "../include/header.html",
-          footerPlaceHolder: "../include/footer.html"
-      });
-  });
-</script>
 </body>
 </html>
