@@ -23,7 +23,7 @@
       --beige: #FFFCF5;
     }
 
-    .quiz-page-body {
+    body.quiz-page-body {
       background-color: var(--beige);
       color: #333;
       margin: 0;
@@ -33,9 +33,14 @@
       flex-direction: column;
     }
 
+    /* Reset per l'header incluso */
+    #headerPlaceHolder, #headerPlaceHolder > * {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
     .quiz-main-content {
       padding: 30px 0;
-      padding-top: 100px;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
@@ -55,6 +60,7 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 40px;
+      margin-top: 20px;
     }
 
     .quiz-title {
@@ -361,6 +367,10 @@
     #quiz-music {
         display: none;
     }
+
+    #countdown-beep {
+        display: none;
+    }
   </style>
 </head>
 <body class="quiz-page-body">
@@ -376,7 +386,7 @@
     </div>
 
     <div id="start-container">
-      <p class="quiz-description">Pronto a viaggiare nel tempo? Rispondi alle domande e scopri i segreti della Roma antica e moderna!</p>
+      <p class="quiz-description">Pronto a viaggiare nel tempo? Rispondi alle domande and scopri i segreti della Roma antica e moderna!</p>
       <button id="start-btn">Inizia Quiz</button>
     </div>
 
@@ -418,6 +428,7 @@
 </div>
 
 <audio id="quiz-music" src="/src/resources/audio/quiz/laDolceVita.mp3" loop preload="auto"></audio>
+<audio id="countdown-beep" src="/src/resources/audio/quiz/countdown-beep.mp3" preload="auto"></audio>
 <script src="/src/plugins/jQuery/jquery.min.js"></script>
 <script src="/src/plugins/bootstrap/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -453,7 +464,7 @@
       question: "A chi è dedicato l'Altare della Pace Augustea?",
       options: [ "Alla dea Pace", "All'imperatore Augusto", "Al dio Marte" ],
       correctAnswer: 1,
-      correctFeedback: "Bravo! L'Ara Pacis è dedicata all'imperatore Augusto, che portò pace a Roma dopo anni di guerre! ✨",
+      correctFeedback: "Bravo! L'Ara Pacis è dedicata all'imperatore Augusto, che portò pace a Roma dopo anni de guerre! ✨",
       incorrectFeedback: "Quasi! In realtà è dedicata all'imperatore Augusto. Pace e prosperità! 🕊️"
     },
     {
@@ -490,7 +501,7 @@
       options: [ "Lanciare una moneta con la mano destra sopra la spalla sinistra", "Bagnarsi i piedi nelle sue acque", "Toccare le statue principali" ],
       correctAnswer: 0,
       correctFeedback: "Esatto! Si dice che lanciare una moneta con la mano destra sopra la spalla sinistra assicuri il ritorno a Roma! 💰",
-      incorrectFeedback: "No, in realtà si dice che lanciare una moneta con la mano destra sopra la spalla sinistra porti fortuna! Prova la prossima volta! 😉"
+      incorrectFeedback: "No, in realtà si dice que lanciare una moneta con la mano destra sopra la spalla sinistra porti fortuna! Prova la prossima volta! 😉"
     },
     {
       monument: "Foro Romano",
@@ -516,7 +527,7 @@
       question: "Sappi che la Basilica di San Pietro sorge sopra...",
       options: [ "Il circo di Nerone e la tomba di San Pietro", "Le terme di Caracalla", "L'antico foro boario" ],
       correctAnswer: 0,
-      correctFeedback: "Esatto! La basilica sorge sopra il circo di Nerone, dove San Pietro fu martirizzato! ✝️",
+      correctFeedback: "Esatto! La basilica sorge sopra il circo di Nerone, donde San Pietro fu martirizzato! ✝️",
       incorrectFeedback: "No, in realtà sorge sopra il circo di Nerone e la tomba di San Pietro! Curioso, vero? 🤓"
     }
   ];
@@ -528,6 +539,47 @@
   const feedbackIcon = document.getElementById('feedback-icon');
   const feedbackText = document.getElementById('feedback-text');
   const quizMusic = document.getElementById('quiz-music');
+  const countdownBeep = document.getElementById('countdown-beep');
+  let audioContext; // Per generare bip se il file audio non funziona
+
+  // Funzione per generare un bip con Web Audio API
+  function generateBeep() {
+    try {
+      if (!audioContext) {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      }
+
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+
+      oscillator.type = 'sine';
+      oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+
+      gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+
+      oscillator.start();
+      oscillator.stop(audioContext.currentTime + 0.2);
+    } catch (e) {
+      console.error("Impossibile generare il bip:", e);
+    }
+  }
+
+  // Funzione per riprodurre il bip (usa il file audio se disponibile, altrimenti genera il suono)
+  function playBeep() {
+    if (countdownBeep && countdownBeep.play) {
+      countdownBeep.currentTime = 0;
+      countdownBeep.play().catch(e => {
+        console.log("Impossibile riprodurre il file bip, generazione in corso...", e);
+        generateBeep();
+      });
+    } else {
+      generateBeep();
+    }
+  }
 
   function initQuiz() {
     showQuestion();
@@ -544,20 +596,30 @@
     startContainer.style.display = 'none';
     countdownContainer.style.display = 'block';
 
-    // Riproduci la musica del quiz
-    quizMusic.play();
+    // Riproduci il primo bip immediatamente
+    playBeep();
 
     const countdownInterval = setInterval(() => {
         if (count > 0) {
             countdownContainer.textContent = count;
+            playBeep(); // Riproduci il bip per ogni numero
             count--;
         } else {
             clearInterval(countdownInterval);
             countdownContainer.textContent = 'VIA!';
+            playBeep(); // Riproduci il bip per "VIA!"
+
             setTimeout(() => {
                 countdownContainer.style.display = 'none';
                 questionContainer.style.display = 'block';
                 progressQuiz.style.display = 'block';
+
+                // Interrompi i bip e avvia la musica
+                if (countdownBeep) {
+                  countdownBeep.pause();
+                }
+                quizMusic.play().catch(e => console.log("Impossibile riprodurre la musica:", e));
+
                 initQuiz();
             }, 500); // 0.5s di ritardo per mostrare "VIA!"
         }
