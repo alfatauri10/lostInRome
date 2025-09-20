@@ -23,7 +23,6 @@
       --beige: #FFFCF5;
     }
 
-    /* Rimuovi il flex centrato dal body */
     .quiz-page-body {
       background-color: var(--beige);
       color: #333;
@@ -36,8 +35,8 @@
 
     .quiz-main-content {
       padding: 30px 0;
-      padding-top: 100px; /* Sposta il titolo più in basso */
-      flex-grow: 1; /* Spinge il footer verso il basso */
+      padding-top: 100px;
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -49,6 +48,44 @@
       margin: 0 auto;
       padding: 30px;
       text-align: center;
+    }
+
+    .quiz-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .quiz-title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--marrone);
+      margin: 0;
+    }
+
+    .vr-icon-link {
+      background-color: transparent;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: var(--turchese-scuro);
+      transition: all 0.3s ease;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+
+    .vr-icon-link:hover {
+      background-color: var(--turchese);
+      color: white;
+    }
+
+    .vr-icon-link i {
+      pointer-events: none;
     }
 
     .progress-container {
@@ -141,7 +178,6 @@
     }
 
     .navigation {
-      //display: flex;
       justify-content: center;
       gap: 15px;
       margin-top: 20px;
@@ -276,19 +312,6 @@
       transform: translateY(-2px);
     }
 
-    .quiz-title {
-      font-size: 2.2rem;
-      font-weight: 600;
-      color: var(--marrone);
-      margin-bottom: 10px;
-    }
-
-    .quiz-subtitle {
-      font-size: 1.1rem;
-      color: var(--marrone-chiaro);
-      margin-bottom: 40px;
-    }
-
     .correct-feedback {
       color: #27ae60;
     }
@@ -303,7 +326,12 @@
 
 <div class="quiz-main-content">
   <div class="quiz-container">
-    <h1 class="quiz-title">Metti alla prova la tua conoscenza dei monumenti della Città Eterna</h1>
+    <div class="quiz-header">
+      <h1 class="quiz-title">Metti alla prova la tua conoscenza dei monumenti della Città Eterna</h1>
+      <a href="quiz_vr.html" class="vr-icon-link" title="Esplora il quiz in Realt&agrave; Virtuale">
+        <i class="fas fa-vr-cardboard"></i>
+      </a>
+    </div>
 
     <div class="progress-container">
       <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
@@ -340,7 +368,6 @@
   </div>
 </div>
 
-
 <script src="/src/plugins/jQuery/jquery.min.js"></script>
 <script src="/src/plugins/bootstrap/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -350,17 +377,12 @@
 <script src="/src/js/include.js"></script>
 
 <script>
-  // Domande del quiz
   const questions = [
     {
       monument: "Colosseo",
       image: "https://images.unsplash.com/photo-1552832230-c0197043d9fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       question: "In quale anno fu completato il Colosseo?",
-      options: [
-        "80 d.C.",
-        "100 d.C.",
-        "50 d.C."
-      ],
+      options: [ "80 d.C.", "100 d.C.", "50 d.C." ],
       correctAnswer: 0,
       correctFeedback: "Esatto! Il Colosseo fu completato nell'80 d.C. sotto l'imperatore Tito! 🏛️",
       incorrectFeedback: "Nooo! In realtà fu completato nell'80 d.C. Ci sei andato vicino! 😅"
@@ -369,11 +391,7 @@
       monument: "Pantheon",
       image: "https://images.unsplash.com/photo-1593009314325-9527a31d52c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       question: "Chi ricostruì il Pantheon come lo vediamo oggi?",
-      options: [
-        "Adriano",
-        "Augusto",
-        "Nerone"
-      ],
+      options: [ "Adriano", "Augusto", "Nerone" ],
       correctAnswer: 0,
       correctFeedback: "Giusto! Fu l'imperatore Adriano a ricostruirlo tra il 118 e il 125 d.C.!",
       incorrectFeedback: "Eh no! In realtà fu Adriano. Ma non ti preoccupare, anche gli imperatori si confondevano! 😄"
@@ -382,11 +400,7 @@
       monument: "Ara Pacis",
       image: "https://images.unsplash.com/photo-1632961920535-0e97bc113b33?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       question: "A chi è dedicato l'Altare della Pace Augustea?",
-      options: [
-        "Alla dea Pace",
-        "All'imperatore Augusto",
-        "Al dio Marte"
-      ],
+      options: [ "Alla dea Pace", "All'imperatore Augusto", "Al dio Marte" ],
       correctAnswer: 1,
       correctFeedback: "Bravo! L'Ara Pacis è dedicata all'imperatore Augusto, che portò pace a Roma dopo anni di guerre! ✨",
       incorrectFeedback: "Quasi! In realtà è dedicata all'imperatore Augusto. Pace e prosperità! 🕊️"
@@ -395,11 +409,7 @@
       monument: "Piazza del Popolo",
       image: "https://images.unsplash.com/photo-1577988316128-c49c4064ec2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       question: "Cosa significa 'Popolo' nel nome di Piazza del Popolo?",
-      options: [
-        "Il popolo romano",
-        "I pioppi (piante)",
-        "La chiesa di Santa Maria del Popolo"
-      ],
+      options: [ "Il popolo romano", "I pioppi (piante)", "La chiesa di Santa Maria del Popolo" ],
       correctAnswer: 1,
       correctFeedback: "Esatto! Il nome deriva dai pioppi (populus in latino) che un tempo crescevano nella zona! 🌳",
       incorrectFeedback: "No, in realtà deriva dai pioppi (populus in latino)! Ma ci sta la confusione! 😊"
@@ -408,11 +418,7 @@
       monument: "Piazza di Spagna",
       image: "https://images.unsplash.com/photo-1596484552970-4f285ef15d33?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       question: "Perché Piazza di Spagna si chiama così?",
-      options: [
-        "Perché vi risiedeva l'ambasciata spagnola",
-        "Perché fu finanziata dal re di Spagna",
-        "Perché ispirata all'architettura spagnola"
-      ],
+      options: [ "Perché vi risiedeva l'ambasciata spagnola", "Perché fu finanziata dal re di Spagna", "Perché ispirata all'architettura spagnola" ],
       correctAnswer: 0,
       correctFeedback: "Giusto! Deve il suo nome al Palazzo di Spagna, sede dell'ambasciata spagnola presso la Santa Sede! 🇪🇸",
       incorrectFeedback: "No, in realtà deve il nome al Palazzo di Spagna, sede dell'ambasciata! Ma ci hai provato! 👍"
@@ -421,11 +427,7 @@
       monument: "Piazza Venezia",
       image: "https://images.unsplash.com/photo-1592417817096-5fd75f3d3578?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       question: "Quale monumento domina Piazza Venezia?",
-      options: [
-        "Il Vittoriano",
-        "La Colonna Traiana",
-        "Il Campidoglio"
-      ],
+      options: [ "Il Vittoriano", "La Colonna Traiana", "Il Campidoglio" ],
       correctAnswer: 0,
       correctFeedback: "Corretto! Il Vittoriano, monumento a Vittorio Emanuele II, domina la piazza! 🏔️",
       incorrectFeedback: "No, in realtà è il Vittoriano! Quella grande 'macchina da scrivere' bianca! 😄"
@@ -434,11 +436,7 @@
       monument: "Fontana di Trevi",
       image: "https://images.unsplash.com/photo-1555169061-4cb6f3c06c43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       question: "Cosa si dice porti fortuna fare alla Fontana di Trevi?",
-      options: [
-        "Lanciare una moneta con la mano destra sopra la spalla sinistra",
-        "Bagnarsi i piedi nelle sue acque",
-        "Toccare le statue principali"
-      ],
+      options: [ "Lanciare una moneta con la mano destra sopra la spalla sinistra", "Bagnarsi i piedi nelle sue acque", "Toccare le statue principali" ],
       correctAnswer: 0,
       correctFeedback: "Esatto! Si dice che lanciare una moneta con la mano destra sopra la spalla sinistra assicuri il ritorno a Roma! 💰",
       incorrectFeedback: "No, in realtà si dice che lanciare una moneta con la mano destra sopra la spalla sinistra porti fortuna! Prova la prossima volta! 😉"
@@ -447,23 +445,16 @@
       monument: "Foro Romano",
       image: "https://images.unsplash.com/photo-1574688110028-9c6aade9df58?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       question: "Quale era la funzione principale del Foro Romano nell'antichità?",
-      options: [
-        "Centro politico, commerciale e religioso",
-        "Arena per combattimenti entre gladiatori",
-        "Residenza degli imperatori"
-      ],
+      options: [ "Centro politico, commerciale e religioso", "Arena per combattimenti entre gladiatori", "Residenza degli imperatori" ],
       correctAnswer: 0,
       correctFeedback: "Perfetto! Il Foro era il centro della vita pubblica romana: politica, commercio e religione! 🏛️",
       incorrectFeedback: "No, in realtà era il centro politico, commerciale e religioso di Roma antica! Quasi! 🤔"
     },
     {
       monument: "Castel Sant'Angelo",
+      image: "https://images.unsplash.com/photo-1597843472093-4e4b9f0b1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       question: "Cosa era originariamente Castel Sant'Angelo?",
-      options: [
-        "Mausoleo dell'imperatore Adriano",
-        "Forte militare",
-        "Palazzo papale"
-      ],
+      options: [ "Mausoleo dell'imperatore Adriano", "Forte militare", "Palazzo papale" ],
       correctAnswer: 0,
       correctFeedback: "Giusto! Fu costruito come mausoleo para l'imperatore Adriano e la sua famiglia! ⚱️",
       incorrectFeedback: "No, in realtà era originariamente il mausoleo dell'imperatore Adriano! Storia interessante! 📚"
@@ -472,18 +463,13 @@
       monument: "Basilica di San Pietro",
       image: "https://images.unsplash.com/photo-1604528112425-6fdd6c0e5b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       question: "Sappi che la Basilica di San Pietro sorge sopra...",
-      options: [
-        "Il circo di Nerone e la tomba di San Pietro",
-        "Le terme di Caracalla",
-        "L'antico foro boario"
-      ],
+      options: [ "Il circo di Nerone e la tomba di San Pietro", "Le terme di Caracalla", "L'antico foro boario" ],
       correctAnswer: 0,
       correctFeedback: "Esatto! La basilica sorge sopra il circo di Nerone, dove San Pietro fu martirizzato! ✝️",
       incorrectFeedback: "No, in realtà sorge sopra il circo di Nerone e la tomba di San Pietro! Curioso, vero? 🤓"
     }
   ];
 
-  // Variabili di stato
   let currentQuestion = 0;
   let score = 0;
   let userAnswers = [];
@@ -491,13 +477,11 @@
   const feedbackIcon = document.getElementById('feedback-icon');
   const feedbackText = document.getElementById('feedback-text');
 
-  // Inizializza il quiz
   function initQuiz() {
     showQuestion();
     updateProgress();
   }
 
-  // Mostra la domanda corrente
   function showQuestion() {
     const question = questions[currentQuestion];
     document.getElementById('monument-image').src = question.image;
@@ -521,20 +505,15 @@
     document.getElementById('next-btn').disabled = true;
   }
 
-  // Seleziona un'opzione
   function selectOption(optionIndex) {
     const question = questions[currentQuestion];
     const options = document.querySelectorAll('.option-btn');
-
-    // Disabilita tutte le opzioni dopo la selezione
     options.forEach(option => {
       option.disabled = true;
     });
 
-    // Salva la risposta dell'utente
     userAnswers[currentQuestion] = optionIndex;
 
-    // Controlla se la risposta è corretta
     if (optionIndex === question.correctAnswer) {
       score++;
       options[optionIndex].style.borderColor = '#068D9D';
@@ -548,27 +527,22 @@
       showFeedback(false, question.incorrectFeedback);
     }
 
-    // Abilita il pulsante per la prossima domanda
     document.getElementById('next-btn').disabled = false;
   }
 
-  // Mostra feedback
   function showFeedback(isCorrect, message) {
     feedbackOverlay.className = isCorrect ? 'feedback-overlay show correct-feedback' : 'feedback-overlay show incorrect-feedback';
     feedbackIcon.innerHTML = isCorrect ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-times-circle"></i>';
     feedbackText.textContent = message;
   }
 
-  // Nascondi feedback
   function hideFeedback() {
     feedbackOverlay.classList.remove('show');
-    // Se siamo all'ultima domanda, mostra i risultati
     if (currentQuestion === questions.length - 1) {
       setTimeout(showResults, 300);
     }
   }
 
-  // Passa alla prossima domanda
   function nextQuestion() {
     currentQuestion++;
 
@@ -580,20 +554,17 @@
     }
   }
 
-  // Salta la domanda corrente
   function skipQuestion() {
-    userAnswers[currentQuestion] = -1; // -1 indica domanda saltata
+    userAnswers[currentQuestion] = -1;
     nextQuestion();
   }
 
-  // Aggiorna la barra di progresso
   function updateProgress() {
     const progress = ((currentQuestion) / questions.length) * 100;
     document.getElementById('progress-bar').style.width = `${progress}%`;
     document.getElementById('progress-text').textContent = `Domanda ${currentQuestion + 1} di ${questions.length}`;
   }
 
-  // Mostra i risultati finali
   function showResults() {
     document.getElementById('question-container').style.display = 'none';
     document.getElementById('result-container').style.display = 'block';
@@ -613,7 +584,6 @@
     document.getElementById('result-message').textContent = message;
   }
 
-  // Riavvia il quiz
   function restartQuiz() {
     currentQuestion = 0;
     score = 0;
@@ -623,7 +593,6 @@
     initQuiz();
   }
 
-  // Inizializza il quiz quando la pagina è caricata
   document.addEventListener('DOMContentLoaded', function() {
     initQuiz();
   });
@@ -637,7 +606,5 @@
       });
   });
 </script>
-
-
 </body>
 </html>
