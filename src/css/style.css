@@ -1342,7 +1342,7 @@ main {
 }
 
 /* Nascondi motto su mobile */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .motto-text {
     display: none;
   }
@@ -1379,7 +1379,7 @@ main {
 }
 
 /* Mostra motto body su mobile */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .motto-text-body {
     display: block;
     padding: 0 1rem; /* Padding ridotto e uniforme */
@@ -1434,7 +1434,7 @@ main {
   white-space: nowrap !important;
   position: relative !important;
   margin-left: 0 !important;
-  font-size: 1.5rem !important;
+  font-size: 1.3rem !important;
   top: auto !important;
   left: auto !important;
   transform: none !important;
@@ -1471,7 +1471,7 @@ main {
 }
 
 /* Nascondi motto su mobile */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .navbar-brand {
     padding-right: 0 !important;
   }
