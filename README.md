@@ -12,16 +12,16 @@ for
 Prepared by _**Alfandari Jacopo**_
 
  
-**Data ultima modifica:** 31/03/2025
+**Data ultima modifica:** 16/09/2025
 
 # Cronologia versioni SRS
 
-| Version  | Data Ultima modifica | Autore     |   Stato    |
-|----------|----------------------|------------|----------- |
-| v1.0     | 27/03/2025           | JAlfandari |Approved ☑️  |
-| v1.1     | 31/03/2025           | JAlfandari |Approved ☑️  |
-
- 
+| Version  | Data Ultima modifica | Autore     |   Stato    |  Modifica                                         |
+|----------|----------------------|------------|----------- |-------------------------------------------------- |
+| v1.0     | 27/03/2025           | JAlfandari |Approved ☑️ |first release										|
+| v1.1     | 31/03/2025           | JAlfandari |Approved ☑️ |Add functionality e mockup							|
+| v1.2     | 27/04/2025           | JAlfandari |Approved ☑️ |Add Itinerary Section								|
+| v1.3     | 16/09/2025           | JAlfandari |Approved ☑️ |Add Modulo IoT Monitoraggio dati ambientali e Quiz  |
 
 
 
