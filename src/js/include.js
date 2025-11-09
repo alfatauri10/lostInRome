@@ -39,7 +39,44 @@ function includeHTML(customComponents = {}) {
         if (window.LanguageSwitcher && window.LanguageSwitcher.initialize) {
             window.LanguageSwitcher.initialize();
         }
+        fixLinksForCapacitor(); // <--- questa è la chiamata
+
     });
+
+    
+}
+
+// ===============================================================
+// FIX AUTOMATICO LINK per Capacitor (funziona solo in app mobile)
+// ===============================================================
+function fixLinksForCapacitor() {
+    const isCapacitor = window.location.protocol === 'capacitor:';
+    if (!isCapacitor) return; // sul sito web non fa nulla
+
+    console.log('Modalità Capacitor rilevata: correggo i link');
+
+    // 1️⃣ Corregge tutti i link assoluti (href="/pagina.html")
+    document.querySelectorAll('a[href^="/"]').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href.startsWith('/')) {
+            const newHref = href.substring(1);
+            link.setAttribute('href', newHref);
+        }
+    });
+
+    // 2️⃣ Aggiunge una funzione globale per lo switch lingua
+    window.goTo = function(path) {
+        if (isCapacitor) {
+            // Rimuove lo slash iniziale se presente
+            window.location.href = path.replace(/^\//, '');
+        } else {
+            // Sul sito web resta invariato
+            window.location.href = path;
+        }
+    };
+
+    console.log('Link e switch lingua sistemati ✅');
 }
 
 document.addEventListener("DOMContentLoaded", includeHTML);
+
