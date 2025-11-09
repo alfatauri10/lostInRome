@@ -18,6 +18,8 @@ const APP_COMPONENTS = {
 //includeHTML riceve i path dei placeholder in ingresso
 //(perchè cambiano a seconda della pagina in cui sono inclusi)
 function includeHTML(customComponents = {}) {
+    console.log('chiamato includeHTML');
+
     const components = { ...APP_COMPONENTS, ...customComponents };
     const promises = [];
 
@@ -55,16 +57,31 @@ function fixLinksForCapacitor() {
 
     console.log('Modalità Capacitor rilevata: correggo i link');
 
-    // 1️⃣ Corregge tutti i link assoluti (href="/pagina.html")
+    // Corregge tutti i link assoluti (href="/pagina.html")
     document.querySelectorAll('a[href^="/"]').forEach(link => {
         const href = link.getAttribute('href');
-        if (href.startsWith('/')) {
+        console.log('è stato chiesto '+href);
+
+        
+        if (href.startsWith('/lostInRome/index.html')) {
+            const newHref = 'index.html';
+            link.setAttribute('href', newHref);
+        }else if (href.startsWith('/lostInRome/indexEN.html')) {
+            const newHref = 'indexEN.html';
+            link.setAttribute('href', newHref);
+        }else if(href.startsWith('/lostInRome/')){
+            const newHref = href.substring(11);
+            link.setAttribute('href', newHref);
+        }else if (href.startsWith('/')) {
             const newHref = href.substring(1);
             link.setAttribute('href', newHref);
         }
+         
+        
     });
 
-    // 2️⃣ Aggiunge una funzione globale per lo switch lingua
+    // Aggiunge una funzione globale per lo switch lingua
+   
     window.goTo = function(path) {
         if (isCapacitor) {
             // Rimuove lo slash iniziale se presente
@@ -74,9 +91,11 @@ function fixLinksForCapacitor() {
             window.location.href = path;
         }
     };
+    
 
     console.log('Link e switch lingua sistemati ✅');
 }
 
 document.addEventListener("DOMContentLoaded", includeHTML);
+
 
